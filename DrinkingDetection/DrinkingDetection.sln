@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31729.503
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DrinkingDetection", "DrinkingDetection.vcxproj", "{DB2B2A0C-1F4D-4DBD-8624-4264BE52211F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|VisualGDB = Debug|VisualGDB
+		Release|VisualGDB = Release|VisualGDB
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DB2B2A0C-1F4D-4DBD-8624-4264BE52211F}.Debug|VisualGDB.ActiveCfg = Debug|VisualGDB
+		{DB2B2A0C-1F4D-4DBD-8624-4264BE52211F}.Debug|VisualGDB.Build.0 = Debug|VisualGDB
+		{DB2B2A0C-1F4D-4DBD-8624-4264BE52211F}.Release|VisualGDB.ActiveCfg = Release|VisualGDB
+		{DB2B2A0C-1F4D-4DBD-8624-4264BE52211F}.Release|VisualGDB.Build.0 = Release|VisualGDB
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A5FCCE5F-515A-47FB-A394-01239B79C0AB}
+	EndGlobalSection
+EndGlobal

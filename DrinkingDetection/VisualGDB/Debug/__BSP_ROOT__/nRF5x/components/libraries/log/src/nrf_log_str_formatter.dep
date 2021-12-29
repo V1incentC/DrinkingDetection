@@ -1,0 +1,215 @@
+VisualGDB/Debug/__BSP_ROOT__/nRF5x/components/libraries/log/src/nrf_log_str_formatter.o: \
+ C:/Users/rumen/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/17.0/nRF5x/components/libraries/log/src/nrf_log_str_formatter.c \
+ C:/Users/rumen/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/17.0/nRF5x/components/libraries/util/sdk_common.h \
+ c:\program\ files\ (x86)\gnu\ tools\ arm\ embedded\7\ 2018-q2-update\lib\gcc\arm-none-eabi\7.3.1\include\stdint.h \
+ c:\program\ files\ (x86)\gnu\ tools\ arm\ embedded\7\ 2018-q2-update\arm-none-eabi\include\stdint.h \
+ c:\program\ files\ (x86)\gnu\ tools\ arm\ embedded\7\ 2018-q2-update\arm-none-eabi\include\machine\_default_types.h \
+ c:\program\ files\ (x86)\gnu\ tools\ arm\ embedded\7\ 2018-q2-update\arm-none-eabi\include\sys\features.h \
+ c:\program\ files\ (x86)\gnu\ tools\ arm\ embedded\7\ 2018-q2-update\arm-none-eabi\include\_newlib_version.h \
+ c:\program\ files\ (x86)\gnu\ tools\ arm\ embedded\7\ 2018-q2-update\arm-none-eabi\include\sys\_intsup.h \
+ c:\program\ files\ (x86)\gnu\ tools\ arm\ embedded\7\ 2018-q2-update\arm-none-eabi\include\sys\_stdint.h \
+ c:\program\ files\ (x86)\gnu\ tools\ arm\ embedded\7\ 2018-q2-update\lib\gcc\arm-none-eabi\7.3.1\include\stdbool.h \
+ c:\program\ files\ (x86)\gnu\ tools\ arm\ embedded\7\ 2018-q2-update\arm-none-eabi\include\string.h \
+ c:\program\ files\ (x86)\gnu\ tools\ arm\ embedded\7\ 2018-q2-update\arm-none-eabi\include\_ansi.h \
+ c:\program\ files\ (x86)\gnu\ tools\ arm\ embedded\7\ 2018-q2-update\arm-none-eabi\include\newlib.h \
+ c:\program\ files\ (x86)\gnu\ tools\ arm\ embedded\7\ 2018-q2-update\arm-none-eabi\include\sys\config.h \
+ c:\program\ files\ (x86)\gnu\ tools\ arm\ embedded\7\ 2018-q2-update\arm-none-eabi\include\machine\ieeefp.h \
+ c:\program\ files\ (x86)\gnu\ tools\ arm\ embedded\7\ 2018-q2-update\arm-none-eabi\include\sys\reent.h \
+ c:\program\ files\ (x86)\gnu\ tools\ arm\ embedded\7\ 2018-q2-update\arm-none-eabi\include\_ansi.h \
+ c:\program\ files\ (x86)\gnu\ tools\ arm\ embedded\7\ 2018-q2-update\lib\gcc\arm-none-eabi\7.3.1\include\stddef.h \
+ c:\program\ files\ (x86)\gnu\ tools\ arm\ embedded\7\ 2018-q2-update\arm-none-eabi\include\sys\_types.h \
+ c:\program\ files\ (x86)\gnu\ tools\ arm\ embedded\7\ 2018-q2-update\arm-none-eabi\include\machine\_types.h \
+ c:\program\ files\ (x86)\gnu\ tools\ arm\ embedded\7\ 2018-q2-update\arm-none-eabi\include\sys\lock.h \
+ c:\program\ files\ (x86)\gnu\ tools\ arm\ embedded\7\ 2018-q2-update\arm-none-eabi\include\sys\cdefs.h \
+ c:\program\ files\ (x86)\gnu\ tools\ arm\ embedded\7\ 2018-q2-update\arm-none-eabi\include\sys\string.h \
+ D:/Root/Documents/Programming/NRF/DrinkingDetection/DrinkingDetection/sdk_config.h \
+ C:/Users/rumen/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/17.0/nRF5x/components/libraries/util/nordic_common.h \
+ C:/Users/rumen/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/17.0/nRF5x/modules/nrfx/mdk/compiler_abstraction.h \
+ C:/Users/rumen/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/17.0/nRF5x/components/libraries/util/sdk_os.h \
+ C:/Users/rumen/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/17.0/nRF5x/components/libraries/util/sdk_errors.h \
+ C:/Users/rumen/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/17.0/nRF5x/components/softdevice/s112/headers/nrf_error.h \
+ C:/Users/rumen/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/17.0/nRF5x/components/libraries/util/app_util.h \
+ C:/Users/rumen/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/17.0/nRF5x/modules/nrfx/mdk/nrf.h \
+ C:/Users/rumen/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/17.0/nRF5x/modules/nrfx/mdk/nrf52840.h \
+ C:/Users/rumen/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/17.0/nRF5x/components/toolchain/cmsis/include/core_cm4.h \
+ C:/Users/rumen/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/17.0/nRF5x/components/toolchain/cmsis/include/cmsis_version.h \
+ C:/Users/rumen/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/17.0/nRF5x/components/toolchain/cmsis/include/cmsis_compiler.h \
+ C:/Users/rumen/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/17.0/nRF5x/components/toolchain/cmsis/include/cmsis_gcc.h \
+ C:/Users/rumen/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/17.0/nRF5x/components/toolchain/cmsis/include/mpu_armv7.h \
+ C:/Users/rumen/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/17.0/nRF5x/modules/nrfx/mdk/system_nrf52840.h \
+ C:/Users/rumen/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/17.0/nRF5x/modules/nrfx/mdk/nrf52840_bitfields.h \
+ C:/Users/rumen/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/17.0/nRF5x/modules/nrfx/mdk/nrf51_to_nrf52840.h \
+ C:/Users/rumen/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/17.0/nRF5x/modules/nrfx/mdk/nrf52_to_nrf52840.h \
+ C:/Users/rumen/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/17.0/nRF5x/modules/nrfx/mdk/compiler_abstraction.h \
+ C:/Users/rumen/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/17.0/nRF5x/components/libraries/util/sdk_macros.h \
+ C:/Users/rumen/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/17.0/nRF5x/components/libraries/util/nrf_assert.h \
+ C:/Users/rumen/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/17.0/nRF5x/components/libraries/log/nrf_log_str_formatter.h \
+ C:/Users/rumen/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/17.0/nRF5x/external/fprintf/nrf_fprintf.h \
+ C:/Users/rumen/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/17.0/nRF5x/components/libraries/log/nrf_log_ctrl.h \
+ C:/Users/rumen/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/17.0/nRF5x/components/libraries/util/sdk_errors.h \
+ C:/Users/rumen/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/17.0/nRF5x/components/libraries/log/nrf_log_types.h \
+ C:/Users/rumen/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/17.0/nRF5x/components/libraries/log/src/nrf_log_ctrl_internal.h \
+ C:/Users/rumen/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/17.0/nRF5x/components/libraries/log/nrf_log_backend_interface.h \
+ C:/Users/rumen/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/17.0/nRF5x/components/libraries/memobj/nrf_memobj.h \
+ c:\program\ files\ (x86)\gnu\ tools\ arm\ embedded\7\ 2018-q2-update\arm-none-eabi\include\stdlib.h \
+ c:\program\ files\ (x86)\gnu\ tools\ arm\ embedded\7\ 2018-q2-update\arm-none-eabi\include\machine\stdlib.h \
+ C:/Users/rumen/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/17.0/nRF5x/components/libraries/balloc/nrf_balloc.h \
+ C:/Users/rumen/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/17.0/nRF5x/components/libraries/util/app_util_platform.h \
+ C:/Users/rumen/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/17.0/nRF5x/components/libraries/util/app_error.h \
+ c:\program\ files\ (x86)\gnu\ tools\ arm\ embedded\7\ 2018-q2-update\arm-none-eabi\include\stdio.h \
+ c:\program\ files\ (x86)\gnu\ tools\ arm\ embedded\7\ 2018-q2-update\lib\gcc\arm-none-eabi\7.3.1\include\stdarg.h \
+ c:\program\ files\ (x86)\gnu\ tools\ arm\ embedded\7\ 2018-q2-update\arm-none-eabi\include\sys\types.h \
+ c:\program\ files\ (x86)\gnu\ tools\ arm\ embedded\7\ 2018-q2-update\arm-none-eabi\include\sys\_pthreadtypes.h \
+ c:\program\ files\ (x86)\gnu\ tools\ arm\ embedded\7\ 2018-q2-update\arm-none-eabi\include\machine\types.h \
+ c:\program\ files\ (x86)\gnu\ tools\ arm\ embedded\7\ 2018-q2-update\arm-none-eabi\include\sys\stdio.h \
+ C:/Users/rumen/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/17.0/nRF5x/components/libraries/util/app_error_weak.h \
+ C:/Users/rumen/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/17.0/nRF5x/components/libraries/util/app_util.h \
+ C:/Users/rumen/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/17.0/nRF5x/components/libraries/log/nrf_log_instance.h \
+ C:/Users/rumen/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/17.0/nRF5x/components/libraries/experimental_section_vars/nrf_section.h \
+ C:/Users/rumen/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/17.0/nRF5x/components/libraries/util/nordic_common.h \
+ C:/Users/rumen/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/17.0/nRF5x/components/libraries/log/src/nrf_log_internal.h \
+ C:/Users/rumen/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/17.0/nRF5x/components/libraries/log/nrf_log_types.h \
+ C:/Users/rumen/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/17.0/nRF5x/components/libraries/log/nrf_log_ctrl.h \
+ c:\program\ files\ (x86)\gnu\ tools\ arm\ embedded\7\ 2018-q2-update\arm-none-eabi\include\ctype.h
+
+C:/Users/rumen/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/17.0/nRF5x/components/libraries/util/sdk_common.h:
+
+c:\program\ files\ (x86)\gnu\ tools\ arm\ embedded\7\ 2018-q2-update\lib\gcc\arm-none-eabi\7.3.1\include\stdint.h:
+
+c:\program\ files\ (x86)\gnu\ tools\ arm\ embedded\7\ 2018-q2-update\arm-none-eabi\include\stdint.h:
+
+c:\program\ files\ (x86)\gnu\ tools\ arm\ embedded\7\ 2018-q2-update\arm-none-eabi\include\machine\_default_types.h:
+
+c:\program\ files\ (x86)\gnu\ tools\ arm\ embedded\7\ 2018-q2-update\arm-none-eabi\include\sys\features.h:
+
+c:\program\ files\ (x86)\gnu\ tools\ arm\ embedded\7\ 2018-q2-update\arm-none-eabi\include\_newlib_version.h:
+
+c:\program\ files\ (x86)\gnu\ tools\ arm\ embedded\7\ 2018-q2-update\arm-none-eabi\include\sys\_intsup.h:
+
+c:\program\ files\ (x86)\gnu\ tools\ arm\ embedded\7\ 2018-q2-update\arm-none-eabi\include\sys\_stdint.h:
+
+c:\program\ files\ (x86)\gnu\ tools\ arm\ embedded\7\ 2018-q2-update\lib\gcc\arm-none-eabi\7.3.1\include\stdbool.h:
+
+c:\program\ files\ (x86)\gnu\ tools\ arm\ embedded\7\ 2018-q2-update\arm-none-eabi\include\string.h:
+
+c:\program\ files\ (x86)\gnu\ tools\ arm\ embedded\7\ 2018-q2-update\arm-none-eabi\include\_ansi.h:
+
+c:\program\ files\ (x86)\gnu\ tools\ arm\ embedded\7\ 2018-q2-update\arm-none-eabi\include\newlib.h:
+
+c:\program\ files\ (x86)\gnu\ tools\ arm\ embedded\7\ 2018-q2-update\arm-none-eabi\include\sys\config.h:
+
+c:\program\ files\ (x86)\gnu\ tools\ arm\ embedded\7\ 2018-q2-update\arm-none-eabi\include\machine\ieeefp.h:
+
+c:\program\ files\ (x86)\gnu\ tools\ arm\ embedded\7\ 2018-q2-update\arm-none-eabi\include\sys\reent.h:
+
+c:\program\ files\ (x86)\gnu\ tools\ arm\ embedded\7\ 2018-q2-update\arm-none-eabi\include\_ansi.h:
+
+c:\program\ files\ (x86)\gnu\ tools\ arm\ embedded\7\ 2018-q2-update\lib\gcc\arm-none-eabi\7.3.1\include\stddef.h:
+
+c:\program\ files\ (x86)\gnu\ tools\ arm\ embedded\7\ 2018-q2-update\arm-none-eabi\include\sys\_types.h:
+
+c:\program\ files\ (x86)\gnu\ tools\ arm\ embedded\7\ 2018-q2-update\arm-none-eabi\include\machine\_types.h:
+
+c:\program\ files\ (x86)\gnu\ tools\ arm\ embedded\7\ 2018-q2-update\arm-none-eabi\include\sys\lock.h:
+
+c:\program\ files\ (x86)\gnu\ tools\ arm\ embedded\7\ 2018-q2-update\arm-none-eabi\include\sys\cdefs.h:
+
+c:\program\ files\ (x86)\gnu\ tools\ arm\ embedded\7\ 2018-q2-update\arm-none-eabi\include\sys\string.h:
+
+D:/Root/Documents/Programming/NRF/DrinkingDetection/DrinkingDetection/sdk_config.h:
+
+C:/Users/rumen/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/17.0/nRF5x/components/libraries/util/nordic_common.h:
+
+C:/Users/rumen/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/17.0/nRF5x/modules/nrfx/mdk/compiler_abstraction.h:
+
+C:/Users/rumen/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/17.0/nRF5x/components/libraries/util/sdk_os.h:
+
+C:/Users/rumen/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/17.0/nRF5x/components/libraries/util/sdk_errors.h:
+
+C:/Users/rumen/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/17.0/nRF5x/components/softdevice/s112/headers/nrf_error.h:
+
+C:/Users/rumen/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/17.0/nRF5x/components/libraries/util/app_util.h:
+
+C:/Users/rumen/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/17.0/nRF5x/modules/nrfx/mdk/nrf.h:
+
+C:/Users/rumen/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/17.0/nRF5x/modules/nrfx/mdk/nrf52840.h:
+
+C:/Users/rumen/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/17.0/nRF5x/components/toolchain/cmsis/include/core_cm4.h:
+
+C:/Users/rumen/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/17.0/nRF5x/components/toolchain/cmsis/include/cmsis_version.h:
+
+C:/Users/rumen/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/17.0/nRF5x/components/toolchain/cmsis/include/cmsis_compiler.h:
+
+C:/Users/rumen/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/17.0/nRF5x/components/toolchain/cmsis/include/cmsis_gcc.h:
+
+C:/Users/rumen/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/17.0/nRF5x/components/toolchain/cmsis/include/mpu_armv7.h:
+
+C:/Users/rumen/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/17.0/nRF5x/modules/nrfx/mdk/system_nrf52840.h:
+
+C:/Users/rumen/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/17.0/nRF5x/modules/nrfx/mdk/nrf52840_bitfields.h:
+
+C:/Users/rumen/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/17.0/nRF5x/modules/nrfx/mdk/nrf51_to_nrf52840.h:
+
+C:/Users/rumen/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/17.0/nRF5x/modules/nrfx/mdk/nrf52_to_nrf52840.h:
+
+C:/Users/rumen/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/17.0/nRF5x/modules/nrfx/mdk/compiler_abstraction.h:
+
+C:/Users/rumen/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/17.0/nRF5x/components/libraries/util/sdk_macros.h:
+
+C:/Users/rumen/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/17.0/nRF5x/components/libraries/util/nrf_assert.h:
+
+C:/Users/rumen/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/17.0/nRF5x/components/libraries/log/nrf_log_str_formatter.h:
+
+C:/Users/rumen/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/17.0/nRF5x/external/fprintf/nrf_fprintf.h:
+
+C:/Users/rumen/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/17.0/nRF5x/components/libraries/log/nrf_log_ctrl.h:
+
+C:/Users/rumen/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/17.0/nRF5x/components/libraries/util/sdk_errors.h:
+
+C:/Users/rumen/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/17.0/nRF5x/components/libraries/log/nrf_log_types.h:
+
+C:/Users/rumen/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/17.0/nRF5x/components/libraries/log/src/nrf_log_ctrl_internal.h:
+
+C:/Users/rumen/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/17.0/nRF5x/components/libraries/log/nrf_log_backend_interface.h:
+
+C:/Users/rumen/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/17.0/nRF5x/components/libraries/memobj/nrf_memobj.h:
+
+c:\program\ files\ (x86)\gnu\ tools\ arm\ embedded\7\ 2018-q2-update\arm-none-eabi\include\stdlib.h:
+
+c:\program\ files\ (x86)\gnu\ tools\ arm\ embedded\7\ 2018-q2-update\arm-none-eabi\include\machine\stdlib.h:
+
+C:/Users/rumen/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/17.0/nRF5x/components/libraries/balloc/nrf_balloc.h:
+
+C:/Users/rumen/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/17.0/nRF5x/components/libraries/util/app_util_platform.h:
+
+C:/Users/rumen/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/17.0/nRF5x/components/libraries/util/app_error.h:
+
+c:\program\ files\ (x86)\gnu\ tools\ arm\ embedded\7\ 2018-q2-update\arm-none-eabi\include\stdio.h:
+
+c:\program\ files\ (x86)\gnu\ tools\ arm\ embedded\7\ 2018-q2-update\lib\gcc\arm-none-eabi\7.3.1\include\stdarg.h:
+
+c:\program\ files\ (x86)\gnu\ tools\ arm\ embedded\7\ 2018-q2-update\arm-none-eabi\include\sys\types.h:
+
+c:\program\ files\ (x86)\gnu\ tools\ arm\ embedded\7\ 2018-q2-update\arm-none-eabi\include\sys\_pthreadtypes.h:
+
+c:\program\ files\ (x86)\gnu\ tools\ arm\ embedded\7\ 2018-q2-update\arm-none-eabi\include\machine\types.h:
+
+c:\program\ files\ (x86)\gnu\ tools\ arm\ embedded\7\ 2018-q2-update\arm-none-eabi\include\sys\stdio.h:
+
+C:/Users/rumen/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/17.0/nRF5x/components/libraries/util/app_error_weak.h:
+
+C:/Users/rumen/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/17.0/nRF5x/components/libraries/util/app_util.h:
+
+C:/Users/rumen/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/17.0/nRF5x/components/libraries/log/nrf_log_instance.h:
+
+C:/Users/rumen/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/17.0/nRF5x/components/libraries/experimental_section_vars/nrf_section.h:
+
+C:/Users/rumen/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/17.0/nRF5x/components/libraries/util/nordic_common.h:
+
+C:/Users/rumen/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/17.0/nRF5x/components/libraries/log/src/nrf_log_internal.h:
+
+C:/Users/rumen/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/17.0/nRF5x/components/libraries/log/nrf_log_types.h:
+
+C:/Users/rumen/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/17.0/nRF5x/components/libraries/log/nrf_log_ctrl.h:
+
+c:\program\ files\ (x86)\gnu\ tools\ arm\ embedded\7\ 2018-q2-update\arm-none-eabi\include\ctype.h:
