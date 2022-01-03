@@ -1,0 +1,114 @@
+\hypertarget{group___l_s_m6_d_s_l__significant__motion}{}\doxysection{LSM6\+DSL\+\_\+significant\+\_\+motion}
+\label{group___l_s_m6_d_s_l__significant__motion}\index{LSM6DSL\_significant\_motion@{LSM6DSL\_significant\_motion}}
+
+
+This section groups all the functions that manage the significant motion detection.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l__significant__motion_ga97b1a7dcdd10dc19612ba45afd2e35eb}{lsm6dsl\+\_\+motion\+\_\+sens\+\_\+set}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, uint8\+\_\+t val)
+\begin{DoxyCompactList}\small\item\em Enable significant motion detection function.\mbox{[}set\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l__significant__motion_ga83a556791f150fdad8ff396ff57ea688}{lsm6dsl\+\_\+motion\+\_\+sens\+\_\+get}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, uint8\+\_\+t $\ast$val)
+\begin{DoxyCompactList}\small\item\em Enable significant motion detection function.\mbox{[}get\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l__significant__motion_ga79e01c4d132877e675cd0cbe113a5830}{lsm6dsl\+\_\+motion\+\_\+threshold\+\_\+set}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, uint8\+\_\+t $\ast$buff)
+\begin{DoxyCompactList}\small\item\em Significant motion threshold.\mbox{[}set\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l__significant__motion_ga833d3336e424264b40f4689e4cb6093e}{lsm6dsl\+\_\+motion\+\_\+threshold\+\_\+get}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, uint8\+\_\+t $\ast$buff)
+\begin{DoxyCompactList}\small\item\em Significant motion threshold.\mbox{[}get\mbox{]}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This section groups all the functions that manage the significant motion detection. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l__significant__motion_ga83a556791f150fdad8ff396ff57ea688}\label{group___l_s_m6_d_s_l__significant__motion_ga83a556791f150fdad8ff396ff57ea688}} 
+\index{LSM6DSL\_significant\_motion@{LSM6DSL\_significant\_motion}!lsm6dsl\_motion\_sens\_get@{lsm6dsl\_motion\_sens\_get}}
+\index{lsm6dsl\_motion\_sens\_get@{lsm6dsl\_motion\_sens\_get}!LSM6DSL\_significant\_motion@{LSM6DSL\_significant\_motion}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_motion\_sens\_get()}{lsm6dsl\_motion\_sens\_get()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+motion\+\_\+sens\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{uint8\+\_\+t $\ast$}]{val }\end{DoxyParamCaption})}
+
+
+
+Enable significant motion detection function.\mbox{[}get\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Change the values of sign\+\_\+motion\+\_\+en in reg CTRL10\+\_\+C \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l__significant__motion_ga97b1a7dcdd10dc19612ba45afd2e35eb}\label{group___l_s_m6_d_s_l__significant__motion_ga97b1a7dcdd10dc19612ba45afd2e35eb}} 
+\index{LSM6DSL\_significant\_motion@{LSM6DSL\_significant\_motion}!lsm6dsl\_motion\_sens\_set@{lsm6dsl\_motion\_sens\_set}}
+\index{lsm6dsl\_motion\_sens\_set@{lsm6dsl\_motion\_sens\_set}!LSM6DSL\_significant\_motion@{LSM6DSL\_significant\_motion}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_motion\_sens\_set()}{lsm6dsl\_motion\_sens\_set()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+motion\+\_\+sens\+\_\+set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{uint8\+\_\+t}]{val }\end{DoxyParamCaption})}
+
+
+
+Enable significant motion detection function.\mbox{[}set\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Change the values of sign\+\_\+motion\+\_\+en in reg CTRL10\+\_\+C \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l__significant__motion_ga833d3336e424264b40f4689e4cb6093e}\label{group___l_s_m6_d_s_l__significant__motion_ga833d3336e424264b40f4689e4cb6093e}} 
+\index{LSM6DSL\_significant\_motion@{LSM6DSL\_significant\_motion}!lsm6dsl\_motion\_threshold\_get@{lsm6dsl\_motion\_threshold\_get}}
+\index{lsm6dsl\_motion\_threshold\_get@{lsm6dsl\_motion\_threshold\_get}!LSM6DSL\_significant\_motion@{LSM6DSL\_significant\_motion}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_motion\_threshold\_get()}{lsm6dsl\_motion\_threshold\_get()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+motion\+\_\+threshold\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{uint8\+\_\+t $\ast$}]{buff }\end{DoxyParamCaption})}
+
+
+
+Significant motion threshold.\mbox{[}get\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em buff} & Buffer that store significant motion threshold. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l__significant__motion_ga79e01c4d132877e675cd0cbe113a5830}\label{group___l_s_m6_d_s_l__significant__motion_ga79e01c4d132877e675cd0cbe113a5830}} 
+\index{LSM6DSL\_significant\_motion@{LSM6DSL\_significant\_motion}!lsm6dsl\_motion\_threshold\_set@{lsm6dsl\_motion\_threshold\_set}}
+\index{lsm6dsl\_motion\_threshold\_set@{lsm6dsl\_motion\_threshold\_set}!LSM6DSL\_significant\_motion@{LSM6DSL\_significant\_motion}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_motion\_threshold\_set()}{lsm6dsl\_motion\_threshold\_set()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+motion\+\_\+threshold\+\_\+set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{uint8\+\_\+t $\ast$}]{buff }\end{DoxyParamCaption})}
+
+
+
+Significant motion threshold.\mbox{[}set\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em buff} & Buffer that store significant motion threshold. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}

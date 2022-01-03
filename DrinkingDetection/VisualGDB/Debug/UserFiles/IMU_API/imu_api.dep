@@ -1,0 +1,4 @@
+VisualGDB/Debug/UserFiles/IMU_API/imu_api.o: UserFiles/IMU_API/imu_api.c \
+ UserFiles/IMU_API/imu_api.h
+
+UserFiles/IMU_API/imu_api.h:

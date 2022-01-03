@@ -1,0 +1,258 @@
+\hypertarget{group___l_s_m6_d_s_l__tilt__detection}{}\doxysection{LSM6\+DSL\+\_\+tilt\+\_\+detection}
+\label{group___l_s_m6_d_s_l__tilt__detection}\index{LSM6DSL\_tilt\_detection@{LSM6DSL\_tilt\_detection}}
+
+
+This section groups all the functions that manage the tilt event detection.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l__tilt__detection_gafbb7aab875ac73e8852961ebe6c7ff56}{lsm6dsl\+\_\+tilt\+\_\+sens\+\_\+set}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, uint8\+\_\+t val)
+\begin{DoxyCompactList}\small\item\em Enable tilt calculation.\mbox{[}set\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l__tilt__detection_ga9fa820c8b461fbcef39713ddc8671a1b}{lsm6dsl\+\_\+tilt\+\_\+sens\+\_\+get}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, uint8\+\_\+t $\ast$val)
+\begin{DoxyCompactList}\small\item\em Enable tilt calculation.\mbox{[}get\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l__tilt__detection_ga6ed2bd63942c046b6be69da5cdd26a0a}{lsm6dsl\+\_\+wrist\+\_\+tilt\+\_\+sens\+\_\+set}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, uint8\+\_\+t val)
+\begin{DoxyCompactList}\small\item\em Enable tilt calculation.\mbox{[}set\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l__tilt__detection_ga777a1a5bb3975b846ee7e85014c7ffa9}{lsm6dsl\+\_\+wrist\+\_\+tilt\+\_\+sens\+\_\+get}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, uint8\+\_\+t $\ast$val)
+\begin{DoxyCompactList}\small\item\em Enable tilt calculation.\mbox{[}get\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l__tilt__detection_gaa0880ff2e7fc0e9031ed88af3bf005bc}{lsm6dsl\+\_\+tilt\+\_\+latency\+\_\+set}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, uint8\+\_\+t $\ast$buff)
+\begin{DoxyCompactList}\small\item\em Absolute Wrist Tilt latency register (r/w). Absolute wrist tilt latency parameters. 1 LSB = 40 ms. Default value\+: 0Fh (600 ms).\mbox{[}set\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l__tilt__detection_ga6e6d6b12b5c8c1977f08ea21d3396997}{lsm6dsl\+\_\+tilt\+\_\+latency\+\_\+get}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, uint8\+\_\+t $\ast$buff)
+\begin{DoxyCompactList}\small\item\em Absolute Wrist Tilt latency register (r/w). Absolute wrist tilt latency parameters. 1 LSB = 40 ms. Default value\+: 0Fh (600 ms).\mbox{[}get\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l__tilt__detection_ga68a6d6a3bcd4ff2a6c3804d9d92f8ce6}{lsm6dsl\+\_\+tilt\+\_\+threshold\+\_\+set}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, uint8\+\_\+t $\ast$buff)
+\begin{DoxyCompactList}\small\item\em Absolute Wrist Tilt threshold register(r/w). Absolute wrist tilt threshold parameters. 1 LSB = 15.\+625 mg.\+Default value\+: 20h (500 mg).\mbox{[}set\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l__tilt__detection_ga06aa2b680b48f8ce78c6b33c08253a9b}{lsm6dsl\+\_\+tilt\+\_\+threshold\+\_\+get}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, uint8\+\_\+t $\ast$buff)
+\begin{DoxyCompactList}\small\item\em Absolute Wrist Tilt threshold register(r/w). Absolute wrist tilt threshold parameters. 1 LSB = 15.\+625 mg.\+Default value\+: 20h (500 mg).\mbox{[}get\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l__tilt__detection_gad8a28619a174d6d124467d04ddda9582}{lsm6dsl\+\_\+tilt\+\_\+src\+\_\+set}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, \mbox{\hyperlink{structlsm6dsl__a__wrist__tilt__mask__t}{lsm6dsl\+\_\+a\+\_\+wrist\+\_\+tilt\+\_\+mask\+\_\+t}} $\ast$val)
+\begin{DoxyCompactList}\small\item\em Absolute Wrist Tilt mask register (r/w).\mbox{[}set\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l__tilt__detection_gab349170c06c2c32fcfd23803bcbca8c5}{lsm6dsl\+\_\+tilt\+\_\+src\+\_\+get}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, \mbox{\hyperlink{structlsm6dsl__a__wrist__tilt__mask__t}{lsm6dsl\+\_\+a\+\_\+wrist\+\_\+tilt\+\_\+mask\+\_\+t}} $\ast$val)
+\begin{DoxyCompactList}\small\item\em Absolute Wrist Tilt mask register (r/w).\mbox{[}get\mbox{]}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This section groups all the functions that manage the tilt event detection. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l__tilt__detection_ga6e6d6b12b5c8c1977f08ea21d3396997}\label{group___l_s_m6_d_s_l__tilt__detection_ga6e6d6b12b5c8c1977f08ea21d3396997}} 
+\index{LSM6DSL\_tilt\_detection@{LSM6DSL\_tilt\_detection}!lsm6dsl\_tilt\_latency\_get@{lsm6dsl\_tilt\_latency\_get}}
+\index{lsm6dsl\_tilt\_latency\_get@{lsm6dsl\_tilt\_latency\_get}!LSM6DSL\_tilt\_detection@{LSM6DSL\_tilt\_detection}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_tilt\_latency\_get()}{lsm6dsl\_tilt\_latency\_get()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+tilt\+\_\+latency\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{uint8\+\_\+t $\ast$}]{buff }\end{DoxyParamCaption})}
+
+
+
+Absolute Wrist Tilt latency register (r/w). Absolute wrist tilt latency parameters. 1 LSB = 40 ms. Default value\+: 0Fh (600 ms).\mbox{[}get\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em buff} & Buffer that stores data read \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l__tilt__detection_gaa0880ff2e7fc0e9031ed88af3bf005bc}\label{group___l_s_m6_d_s_l__tilt__detection_gaa0880ff2e7fc0e9031ed88af3bf005bc}} 
+\index{LSM6DSL\_tilt\_detection@{LSM6DSL\_tilt\_detection}!lsm6dsl\_tilt\_latency\_set@{lsm6dsl\_tilt\_latency\_set}}
+\index{lsm6dsl\_tilt\_latency\_set@{lsm6dsl\_tilt\_latency\_set}!LSM6DSL\_tilt\_detection@{LSM6DSL\_tilt\_detection}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_tilt\_latency\_set()}{lsm6dsl\_tilt\_latency\_set()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+tilt\+\_\+latency\+\_\+set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{uint8\+\_\+t $\ast$}]{buff }\end{DoxyParamCaption})}
+
+
+
+Absolute Wrist Tilt latency register (r/w). Absolute wrist tilt latency parameters. 1 LSB = 40 ms. Default value\+: 0Fh (600 ms).\mbox{[}set\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em buff} & Buffer that contains data to write \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l__tilt__detection_ga9fa820c8b461fbcef39713ddc8671a1b}\label{group___l_s_m6_d_s_l__tilt__detection_ga9fa820c8b461fbcef39713ddc8671a1b}} 
+\index{LSM6DSL\_tilt\_detection@{LSM6DSL\_tilt\_detection}!lsm6dsl\_tilt\_sens\_get@{lsm6dsl\_tilt\_sens\_get}}
+\index{lsm6dsl\_tilt\_sens\_get@{lsm6dsl\_tilt\_sens\_get}!LSM6DSL\_tilt\_detection@{LSM6DSL\_tilt\_detection}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_tilt\_sens\_get()}{lsm6dsl\_tilt\_sens\_get()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+tilt\+\_\+sens\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{uint8\+\_\+t $\ast$}]{val }\end{DoxyParamCaption})}
+
+
+
+Enable tilt calculation.\mbox{[}get\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Change the values of tilt\+\_\+en in reg CTRL10\+\_\+C \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l__tilt__detection_gafbb7aab875ac73e8852961ebe6c7ff56}\label{group___l_s_m6_d_s_l__tilt__detection_gafbb7aab875ac73e8852961ebe6c7ff56}} 
+\index{LSM6DSL\_tilt\_detection@{LSM6DSL\_tilt\_detection}!lsm6dsl\_tilt\_sens\_set@{lsm6dsl\_tilt\_sens\_set}}
+\index{lsm6dsl\_tilt\_sens\_set@{lsm6dsl\_tilt\_sens\_set}!LSM6DSL\_tilt\_detection@{LSM6DSL\_tilt\_detection}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_tilt\_sens\_set()}{lsm6dsl\_tilt\_sens\_set()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+tilt\+\_\+sens\+\_\+set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{uint8\+\_\+t}]{val }\end{DoxyParamCaption})}
+
+
+
+Enable tilt calculation.\mbox{[}set\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Change the values of tilt\+\_\+en in reg CTRL10\+\_\+C \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l__tilt__detection_gab349170c06c2c32fcfd23803bcbca8c5}\label{group___l_s_m6_d_s_l__tilt__detection_gab349170c06c2c32fcfd23803bcbca8c5}} 
+\index{LSM6DSL\_tilt\_detection@{LSM6DSL\_tilt\_detection}!lsm6dsl\_tilt\_src\_get@{lsm6dsl\_tilt\_src\_get}}
+\index{lsm6dsl\_tilt\_src\_get@{lsm6dsl\_tilt\_src\_get}!LSM6DSL\_tilt\_detection@{LSM6DSL\_tilt\_detection}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_tilt\_src\_get()}{lsm6dsl\_tilt\_src\_get()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+tilt\+\_\+src\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{\mbox{\hyperlink{structlsm6dsl__a__wrist__tilt__mask__t}{lsm6dsl\+\_\+a\+\_\+wrist\+\_\+tilt\+\_\+mask\+\_\+t}} $\ast$}]{val }\end{DoxyParamCaption})}
+
+
+
+Absolute Wrist Tilt mask register (r/w).\mbox{[}get\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Registers A\+\_\+\+WRIST\+\_\+\+TILT\+\_\+\+MASK \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l__tilt__detection_gad8a28619a174d6d124467d04ddda9582}\label{group___l_s_m6_d_s_l__tilt__detection_gad8a28619a174d6d124467d04ddda9582}} 
+\index{LSM6DSL\_tilt\_detection@{LSM6DSL\_tilt\_detection}!lsm6dsl\_tilt\_src\_set@{lsm6dsl\_tilt\_src\_set}}
+\index{lsm6dsl\_tilt\_src\_set@{lsm6dsl\_tilt\_src\_set}!LSM6DSL\_tilt\_detection@{LSM6DSL\_tilt\_detection}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_tilt\_src\_set()}{lsm6dsl\_tilt\_src\_set()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+tilt\+\_\+src\+\_\+set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{\mbox{\hyperlink{structlsm6dsl__a__wrist__tilt__mask__t}{lsm6dsl\+\_\+a\+\_\+wrist\+\_\+tilt\+\_\+mask\+\_\+t}} $\ast$}]{val }\end{DoxyParamCaption})}
+
+
+
+Absolute Wrist Tilt mask register (r/w).\mbox{[}set\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Registers A\+\_\+\+WRIST\+\_\+\+TILT\+\_\+\+MASK \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l__tilt__detection_ga06aa2b680b48f8ce78c6b33c08253a9b}\label{group___l_s_m6_d_s_l__tilt__detection_ga06aa2b680b48f8ce78c6b33c08253a9b}} 
+\index{LSM6DSL\_tilt\_detection@{LSM6DSL\_tilt\_detection}!lsm6dsl\_tilt\_threshold\_get@{lsm6dsl\_tilt\_threshold\_get}}
+\index{lsm6dsl\_tilt\_threshold\_get@{lsm6dsl\_tilt\_threshold\_get}!LSM6DSL\_tilt\_detection@{LSM6DSL\_tilt\_detection}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_tilt\_threshold\_get()}{lsm6dsl\_tilt\_threshold\_get()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+tilt\+\_\+threshold\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{uint8\+\_\+t $\ast$}]{buff }\end{DoxyParamCaption})}
+
+
+
+Absolute Wrist Tilt threshold register(r/w). Absolute wrist tilt threshold parameters. 1 LSB = 15.\+625 mg.\+Default value\+: 20h (500 mg).\mbox{[}get\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em buff} & Buffer that stores data read \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l__tilt__detection_ga68a6d6a3bcd4ff2a6c3804d9d92f8ce6}\label{group___l_s_m6_d_s_l__tilt__detection_ga68a6d6a3bcd4ff2a6c3804d9d92f8ce6}} 
+\index{LSM6DSL\_tilt\_detection@{LSM6DSL\_tilt\_detection}!lsm6dsl\_tilt\_threshold\_set@{lsm6dsl\_tilt\_threshold\_set}}
+\index{lsm6dsl\_tilt\_threshold\_set@{lsm6dsl\_tilt\_threshold\_set}!LSM6DSL\_tilt\_detection@{LSM6DSL\_tilt\_detection}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_tilt\_threshold\_set()}{lsm6dsl\_tilt\_threshold\_set()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+tilt\+\_\+threshold\+\_\+set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{uint8\+\_\+t $\ast$}]{buff }\end{DoxyParamCaption})}
+
+
+
+Absolute Wrist Tilt threshold register(r/w). Absolute wrist tilt threshold parameters. 1 LSB = 15.\+625 mg.\+Default value\+: 20h (500 mg).\mbox{[}set\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em buff} & Buffer that contains data to write \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l__tilt__detection_ga777a1a5bb3975b846ee7e85014c7ffa9}\label{group___l_s_m6_d_s_l__tilt__detection_ga777a1a5bb3975b846ee7e85014c7ffa9}} 
+\index{LSM6DSL\_tilt\_detection@{LSM6DSL\_tilt\_detection}!lsm6dsl\_wrist\_tilt\_sens\_get@{lsm6dsl\_wrist\_tilt\_sens\_get}}
+\index{lsm6dsl\_wrist\_tilt\_sens\_get@{lsm6dsl\_wrist\_tilt\_sens\_get}!LSM6DSL\_tilt\_detection@{LSM6DSL\_tilt\_detection}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_wrist\_tilt\_sens\_get()}{lsm6dsl\_wrist\_tilt\_sens\_get()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+wrist\+\_\+tilt\+\_\+sens\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{uint8\+\_\+t $\ast$}]{val }\end{DoxyParamCaption})}
+
+
+
+Enable tilt calculation.\mbox{[}get\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Change the values of tilt\+\_\+en in reg CTRL10\+\_\+C \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l__tilt__detection_ga6ed2bd63942c046b6be69da5cdd26a0a}\label{group___l_s_m6_d_s_l__tilt__detection_ga6ed2bd63942c046b6be69da5cdd26a0a}} 
+\index{LSM6DSL\_tilt\_detection@{LSM6DSL\_tilt\_detection}!lsm6dsl\_wrist\_tilt\_sens\_set@{lsm6dsl\_wrist\_tilt\_sens\_set}}
+\index{lsm6dsl\_wrist\_tilt\_sens\_set@{lsm6dsl\_wrist\_tilt\_sens\_set}!LSM6DSL\_tilt\_detection@{LSM6DSL\_tilt\_detection}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_wrist\_tilt\_sens\_set()}{lsm6dsl\_wrist\_tilt\_sens\_set()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+wrist\+\_\+tilt\+\_\+sens\+\_\+set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{uint8\+\_\+t}]{val }\end{DoxyParamCaption})}
+
+
+
+Enable tilt calculation.\mbox{[}set\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Change the values of tilt\+\_\+en in reg CTRL10\+\_\+C \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}

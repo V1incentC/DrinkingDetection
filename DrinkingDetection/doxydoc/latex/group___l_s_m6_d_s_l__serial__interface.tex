@@ -1,0 +1,114 @@
+\hypertarget{group___l_s_m6_d_s_l__serial__interface}{}\doxysection{LSM6\+DSL\+\_\+serial\+\_\+interface}
+\label{group___l_s_m6_d_s_l__serial__interface}\index{LSM6DSL\_serial\_interface@{LSM6DSL\_serial\_interface}}
+
+
+This section groups all the functions concerning serial interface management.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l__serial__interface_gae33533e901d0c7a1e22797efb5944f7c}{lsm6dsl\+\_\+spi\+\_\+mode\+\_\+set}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, \mbox{\hyperlink{group___l_s_m6_d_s_l_gae03d3acba062783447c01761a7a50372}{lsm6dsl\+\_\+sim\+\_\+t}} val)
+\begin{DoxyCompactList}\small\item\em SPI Serial Interface Mode selection.\mbox{[}set\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l__serial__interface_ga3dda73756c293038523087931355c9dc}{lsm6dsl\+\_\+spi\+\_\+mode\+\_\+get}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, \mbox{\hyperlink{group___l_s_m6_d_s_l_gae03d3acba062783447c01761a7a50372}{lsm6dsl\+\_\+sim\+\_\+t}} $\ast$val)
+\begin{DoxyCompactList}\small\item\em SPI Serial Interface Mode selection.\mbox{[}get\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l__serial__interface_ga9125017b1dafb5c645c0618421520bc5}{lsm6dsl\+\_\+i2c\+\_\+interface\+\_\+set}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, \mbox{\hyperlink{group___l_s_m6_d_s_l_gafa8867568a4747449ddcba67043c7111}{lsm6dsl\+\_\+i2c\+\_\+disable\+\_\+t}} val)
+\begin{DoxyCompactList}\small\item\em Disable / Enable I2C interface.\mbox{[}set\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l__serial__interface_gace9b7b4fc5c643e4beae185e9d216b2e}{lsm6dsl\+\_\+i2c\+\_\+interface\+\_\+get}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, \mbox{\hyperlink{group___l_s_m6_d_s_l_gafa8867568a4747449ddcba67043c7111}{lsm6dsl\+\_\+i2c\+\_\+disable\+\_\+t}} $\ast$val)
+\begin{DoxyCompactList}\small\item\em Disable / Enable I2C interface.\mbox{[}get\mbox{]}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This section groups all the functions concerning serial interface management. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l__serial__interface_gace9b7b4fc5c643e4beae185e9d216b2e}\label{group___l_s_m6_d_s_l__serial__interface_gace9b7b4fc5c643e4beae185e9d216b2e}} 
+\index{LSM6DSL\_serial\_interface@{LSM6DSL\_serial\_interface}!lsm6dsl\_i2c\_interface\_get@{lsm6dsl\_i2c\_interface\_get}}
+\index{lsm6dsl\_i2c\_interface\_get@{lsm6dsl\_i2c\_interface\_get}!LSM6DSL\_serial\_interface@{LSM6DSL\_serial\_interface}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_i2c\_interface\_get()}{lsm6dsl\_i2c\_interface\_get()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+i2c\+\_\+interface\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{\mbox{\hyperlink{group___l_s_m6_d_s_l_gafa8867568a4747449ddcba67043c7111}{lsm6dsl\+\_\+i2c\+\_\+disable\+\_\+t}} $\ast$}]{val }\end{DoxyParamCaption})}
+
+
+
+Disable / Enable I2C interface.\mbox{[}get\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Get the values of i2c\+\_\+disable in reg CTRL4\+\_\+C \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l__serial__interface_ga9125017b1dafb5c645c0618421520bc5}\label{group___l_s_m6_d_s_l__serial__interface_ga9125017b1dafb5c645c0618421520bc5}} 
+\index{LSM6DSL\_serial\_interface@{LSM6DSL\_serial\_interface}!lsm6dsl\_i2c\_interface\_set@{lsm6dsl\_i2c\_interface\_set}}
+\index{lsm6dsl\_i2c\_interface\_set@{lsm6dsl\_i2c\_interface\_set}!LSM6DSL\_serial\_interface@{LSM6DSL\_serial\_interface}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_i2c\_interface\_set()}{lsm6dsl\_i2c\_interface\_set()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+i2c\+\_\+interface\+\_\+set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{\mbox{\hyperlink{group___l_s_m6_d_s_l_gafa8867568a4747449ddcba67043c7111}{lsm6dsl\+\_\+i2c\+\_\+disable\+\_\+t}}}]{val }\end{DoxyParamCaption})}
+
+
+
+Disable / Enable I2C interface.\mbox{[}set\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Change the values of i2c\+\_\+disable in reg CTRL4\+\_\+C \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l__serial__interface_ga3dda73756c293038523087931355c9dc}\label{group___l_s_m6_d_s_l__serial__interface_ga3dda73756c293038523087931355c9dc}} 
+\index{LSM6DSL\_serial\_interface@{LSM6DSL\_serial\_interface}!lsm6dsl\_spi\_mode\_get@{lsm6dsl\_spi\_mode\_get}}
+\index{lsm6dsl\_spi\_mode\_get@{lsm6dsl\_spi\_mode\_get}!LSM6DSL\_serial\_interface@{LSM6DSL\_serial\_interface}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_spi\_mode\_get()}{lsm6dsl\_spi\_mode\_get()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+spi\+\_\+mode\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{\mbox{\hyperlink{group___l_s_m6_d_s_l_gae03d3acba062783447c01761a7a50372}{lsm6dsl\+\_\+sim\+\_\+t}} $\ast$}]{val }\end{DoxyParamCaption})}
+
+
+
+SPI Serial Interface Mode selection.\mbox{[}get\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Get the values of sim in reg CTRL3\+\_\+C \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l__serial__interface_gae33533e901d0c7a1e22797efb5944f7c}\label{group___l_s_m6_d_s_l__serial__interface_gae33533e901d0c7a1e22797efb5944f7c}} 
+\index{LSM6DSL\_serial\_interface@{LSM6DSL\_serial\_interface}!lsm6dsl\_spi\_mode\_set@{lsm6dsl\_spi\_mode\_set}}
+\index{lsm6dsl\_spi\_mode\_set@{lsm6dsl\_spi\_mode\_set}!LSM6DSL\_serial\_interface@{LSM6DSL\_serial\_interface}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_spi\_mode\_set()}{lsm6dsl\_spi\_mode\_set()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+spi\+\_\+mode\+\_\+set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{\mbox{\hyperlink{group___l_s_m6_d_s_l_gae03d3acba062783447c01761a7a50372}{lsm6dsl\+\_\+sim\+\_\+t}}}]{val }\end{DoxyParamCaption})}
+
+
+
+SPI Serial Interface Mode selection.\mbox{[}set\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Change the values of sim in reg CTRL3\+\_\+C \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}

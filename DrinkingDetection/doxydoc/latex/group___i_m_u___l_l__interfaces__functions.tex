@@ -1,0 +1,70 @@
+\hypertarget{group___i_m_u___l_l__interfaces__functions}{}\doxysection{IMU\+\_\+\+LL\+\_\+interfaces\+\_\+functions}
+\label{group___i_m_u___l_l__interfaces__functions}\index{IMU\_LL\_interfaces\_functions@{IMU\_LL\_interfaces\_functions}}
+
+
+This section provide an implementation of platform read and write functions. MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int32\+\_\+t \mbox{\hyperlink{group___i_m_u___l_l__interfaces__functions_ga2216e2af937e3f86115623ac15940b8e}{imu\+\_\+ll\+\_\+platform\+\_\+write}} (void $\ast$handle, uint8\+\_\+t reg, uint8\+\_\+t $\ast$buffer, size\+\_\+t length)
+\begin{DoxyCompactList}\small\item\em Hardware specific function for TWI interface writing. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___i_m_u___l_l__interfaces__functions_ga11760f6190cc2d5f987678930d16e1a8}{imu\+\_\+ll\+\_\+platform\+\_\+read}} (void $\ast$handle, uint8\+\_\+t reg, uint8\+\_\+t $\ast$buffer, size\+\_\+t length)
+\begin{DoxyCompactList}\small\item\em Hardware specific function for TWI interface writing. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This section provide an implementation of platform read and write functions. MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group___i_m_u___l_l__interfaces__functions_ga11760f6190cc2d5f987678930d16e1a8}\label{group___i_m_u___l_l__interfaces__functions_ga11760f6190cc2d5f987678930d16e1a8}} 
+\index{IMU\_LL\_interfaces\_functions@{IMU\_LL\_interfaces\_functions}!imu\_ll\_platform\_read@{imu\_ll\_platform\_read}}
+\index{imu\_ll\_platform\_read@{imu\_ll\_platform\_read}!IMU\_LL\_interfaces\_functions@{IMU\_LL\_interfaces\_functions}}
+\doxysubsubsection{\texorpdfstring{imu\_ll\_platform\_read()}{imu\_ll\_platform\_read()}}
+{\footnotesize\ttfamily int32\+\_\+t imu\+\_\+ll\+\_\+platform\+\_\+read (\begin{DoxyParamCaption}\item[{void $\ast$}]{handle,  }\item[{uint8\+\_\+t}]{reg,  }\item[{uint8\+\_\+t $\ast$}]{buffer,  }\item[{size\+\_\+t}]{len }\end{DoxyParamCaption})}
+
+
+
+Hardware specific function for TWI interface writing. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em handle} & Pointer to lsm6dsl object \\
+\hline
+\mbox{\texttt{ in}}  & {\em reg} & Register we want to adress \\
+\hline
+\mbox{\texttt{ in}}  & {\em buffer} & Pointer to a buffer for storing the read data \\
+\hline
+\mbox{\texttt{ in}}  & {\em len} & Length of the buffer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ret\+\_\+code\+\_\+t error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___i_m_u___l_l__interfaces__functions_ga2216e2af937e3f86115623ac15940b8e}\label{group___i_m_u___l_l__interfaces__functions_ga2216e2af937e3f86115623ac15940b8e}} 
+\index{IMU\_LL\_interfaces\_functions@{IMU\_LL\_interfaces\_functions}!imu\_ll\_platform\_write@{imu\_ll\_platform\_write}}
+\index{imu\_ll\_platform\_write@{imu\_ll\_platform\_write}!IMU\_LL\_interfaces\_functions@{IMU\_LL\_interfaces\_functions}}
+\doxysubsubsection{\texorpdfstring{imu\_ll\_platform\_write()}{imu\_ll\_platform\_write()}}
+{\footnotesize\ttfamily int32\+\_\+t imu\+\_\+ll\+\_\+platform\+\_\+write (\begin{DoxyParamCaption}\item[{void $\ast$}]{handle,  }\item[{uint8\+\_\+t}]{reg,  }\item[{uint8\+\_\+t $\ast$}]{buffer,  }\item[{size\+\_\+t}]{len }\end{DoxyParamCaption})}
+
+
+
+Hardware specific function for TWI interface writing. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em handle} & Pointer to lsm6dsl object \\
+\hline
+\mbox{\texttt{ in}}  & {\em reg} & Register we want to adress \\
+\hline
+\mbox{\texttt{ in}}  & {\em buffer} & Pointer to a buffer containing data we want to write to the device \\
+\hline
+\mbox{\texttt{ in}}  & {\em len} & Length of the buffer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ret\+\_\+code\+\_\+t error code 
+\end{DoxyReturn}

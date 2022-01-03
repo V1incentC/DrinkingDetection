@@ -1,0 +1,39 @@
+\hypertarget{group___interfaces___functions}{}\doxysection{Interfaces\+\_\+\+Functions}
+\label{group___interfaces___functions}\index{Interfaces\_Functions@{Interfaces\_Functions}}
+
+
+This section provide a set of functions used to read and write a generic register of the device. MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error.  
+
+
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef int32\+\_\+t($\ast$ \mbox{\hyperlink{group___interfaces___functions_ga296d3819b161c0fa87e4e1cfd5033f9b}{stmdev\+\_\+write\+\_\+ptr}}) (void $\ast$, uint8\+\_\+t, uint8\+\_\+t $\ast$, uint16\+\_\+t)
+\item 
+typedef int32\+\_\+t($\ast$ \mbox{\hyperlink{group___interfaces___functions_ga4c9361a3b8f50a3ecdf2485a90fb6e59}{stmdev\+\_\+read\+\_\+ptr}}) (void $\ast$, uint8\+\_\+t, uint8\+\_\+t $\ast$, uint16\+\_\+t)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This section provide a set of functions used to read and write a generic register of the device. MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error. 
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{group___interfaces___functions_ga4c9361a3b8f50a3ecdf2485a90fb6e59}\label{group___interfaces___functions_ga4c9361a3b8f50a3ecdf2485a90fb6e59}} 
+\index{Interfaces\_Functions@{Interfaces\_Functions}!stmdev\_read\_ptr@{stmdev\_read\_ptr}}
+\index{stmdev\_read\_ptr@{stmdev\_read\_ptr}!Interfaces\_Functions@{Interfaces\_Functions}}
+\doxysubsubsection{\texorpdfstring{stmdev\_read\_ptr}{stmdev\_read\_ptr}}
+{\footnotesize\ttfamily typedef int32\+\_\+t($\ast$ stmdev\+\_\+read\+\_\+ptr) (void $\ast$, uint8\+\_\+t, uint8\+\_\+t $\ast$, uint16\+\_\+t)}
+
+\mbox{\Hypertarget{group___interfaces___functions_ga296d3819b161c0fa87e4e1cfd5033f9b}\label{group___interfaces___functions_ga296d3819b161c0fa87e4e1cfd5033f9b}} 
+\index{Interfaces\_Functions@{Interfaces\_Functions}!stmdev\_write\_ptr@{stmdev\_write\_ptr}}
+\index{stmdev\_write\_ptr@{stmdev\_write\_ptr}!Interfaces\_Functions@{Interfaces\_Functions}}
+\doxysubsubsection{\texorpdfstring{stmdev\_write\_ptr}{stmdev\_write\_ptr}}
+{\footnotesize\ttfamily typedef int32\+\_\+t($\ast$ stmdev\+\_\+write\+\_\+ptr) (void $\ast$, uint8\+\_\+t, uint8\+\_\+t $\ast$, uint16\+\_\+t)}
+

@@ -1,0 +1,114 @@
+\hypertarget{group___l_s_m6_d_s_l___wake___up__event}{}\doxysection{LSM6\+DSL\+\_\+\+Wake\+\_\+\+Up\+\_\+event}
+\label{group___l_s_m6_d_s_l___wake___up__event}\index{LSM6DSL\_Wake\_Up\_event@{LSM6DSL\_Wake\_Up\_event}}
+
+
+This section groups all the functions that manage the Wake Up event generation.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l___wake___up__event_ga38e561f0e045ff977a256dfa0f8f919d}{lsm6dsl\+\_\+wkup\+\_\+threshold\+\_\+set}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, uint8\+\_\+t val)
+\begin{DoxyCompactList}\small\item\em Threshold for wakeup.\+1 LSB = FS\+\_\+\+XL / 64.\mbox{[}set\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l___wake___up__event_ga2162651ec201cc1f9ca9192a9f42cd46}{lsm6dsl\+\_\+wkup\+\_\+threshold\+\_\+get}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, uint8\+\_\+t $\ast$val)
+\begin{DoxyCompactList}\small\item\em Threshold for wakeup.\+1 LSB = FS\+\_\+\+XL / 64.\mbox{[}get\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l___wake___up__event_ga13548ad15554acdf703e296b854b4b88}{lsm6dsl\+\_\+wkup\+\_\+dur\+\_\+set}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, uint8\+\_\+t val)
+\begin{DoxyCompactList}\small\item\em Wake up duration event.\+1\+LSb = 1 / ODR\mbox{[}set\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l___wake___up__event_gae6ef422a1de339eaa3e669c64b606934}{lsm6dsl\+\_\+wkup\+\_\+dur\+\_\+get}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, uint8\+\_\+t $\ast$val)
+\begin{DoxyCompactList}\small\item\em Wake up duration event.\+1\+LSb = 1 / ODR\mbox{[}get\mbox{]}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This section groups all the functions that manage the Wake Up event generation. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l___wake___up__event_gae6ef422a1de339eaa3e669c64b606934}\label{group___l_s_m6_d_s_l___wake___up__event_gae6ef422a1de339eaa3e669c64b606934}} 
+\index{LSM6DSL\_Wake\_Up\_event@{LSM6DSL\_Wake\_Up\_event}!lsm6dsl\_wkup\_dur\_get@{lsm6dsl\_wkup\_dur\_get}}
+\index{lsm6dsl\_wkup\_dur\_get@{lsm6dsl\_wkup\_dur\_get}!LSM6DSL\_Wake\_Up\_event@{LSM6DSL\_Wake\_Up\_event}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_wkup\_dur\_get()}{lsm6dsl\_wkup\_dur\_get()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+wkup\+\_\+dur\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{uint8\+\_\+t $\ast$}]{val }\end{DoxyParamCaption})}
+
+
+
+Wake up duration event.\+1\+LSb = 1 / ODR\mbox{[}get\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Change the values of wake\+\_\+dur in reg WAKE\+\_\+\+UP\+\_\+\+DUR \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l___wake___up__event_ga13548ad15554acdf703e296b854b4b88}\label{group___l_s_m6_d_s_l___wake___up__event_ga13548ad15554acdf703e296b854b4b88}} 
+\index{LSM6DSL\_Wake\_Up\_event@{LSM6DSL\_Wake\_Up\_event}!lsm6dsl\_wkup\_dur\_set@{lsm6dsl\_wkup\_dur\_set}}
+\index{lsm6dsl\_wkup\_dur\_set@{lsm6dsl\_wkup\_dur\_set}!LSM6DSL\_Wake\_Up\_event@{LSM6DSL\_Wake\_Up\_event}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_wkup\_dur\_set()}{lsm6dsl\_wkup\_dur\_set()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+wkup\+\_\+dur\+\_\+set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{uint8\+\_\+t}]{val }\end{DoxyParamCaption})}
+
+
+
+Wake up duration event.\+1\+LSb = 1 / ODR\mbox{[}set\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Change the values of wake\+\_\+dur in reg WAKE\+\_\+\+UP\+\_\+\+DUR \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l___wake___up__event_ga2162651ec201cc1f9ca9192a9f42cd46}\label{group___l_s_m6_d_s_l___wake___up__event_ga2162651ec201cc1f9ca9192a9f42cd46}} 
+\index{LSM6DSL\_Wake\_Up\_event@{LSM6DSL\_Wake\_Up\_event}!lsm6dsl\_wkup\_threshold\_get@{lsm6dsl\_wkup\_threshold\_get}}
+\index{lsm6dsl\_wkup\_threshold\_get@{lsm6dsl\_wkup\_threshold\_get}!LSM6DSL\_Wake\_Up\_event@{LSM6DSL\_Wake\_Up\_event}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_wkup\_threshold\_get()}{lsm6dsl\_wkup\_threshold\_get()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+wkup\+\_\+threshold\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{uint8\+\_\+t $\ast$}]{val }\end{DoxyParamCaption})}
+
+
+
+Threshold for wakeup.\+1 LSB = FS\+\_\+\+XL / 64.\mbox{[}get\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Change the values of wk\+\_\+ths in reg WAKE\+\_\+\+UP\+\_\+\+THS \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l___wake___up__event_ga38e561f0e045ff977a256dfa0f8f919d}\label{group___l_s_m6_d_s_l___wake___up__event_ga38e561f0e045ff977a256dfa0f8f919d}} 
+\index{LSM6DSL\_Wake\_Up\_event@{LSM6DSL\_Wake\_Up\_event}!lsm6dsl\_wkup\_threshold\_set@{lsm6dsl\_wkup\_threshold\_set}}
+\index{lsm6dsl\_wkup\_threshold\_set@{lsm6dsl\_wkup\_threshold\_set}!LSM6DSL\_Wake\_Up\_event@{LSM6DSL\_Wake\_Up\_event}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_wkup\_threshold\_set()}{lsm6dsl\_wkup\_threshold\_set()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+wkup\+\_\+threshold\+\_\+set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{uint8\+\_\+t}]{val }\end{DoxyParamCaption})}
+
+
+
+Threshold for wakeup.\+1 LSB = FS\+\_\+\+XL / 64.\mbox{[}set\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Change the values of wk\+\_\+ths in reg WAKE\+\_\+\+UP\+\_\+\+THS \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}

@@ -1,0 +1,74 @@
+\hypertarget{group___l_s_m6_d_s_l__interfaces__functions}{}\doxysection{LSM6\+DSL\+\_\+interfaces\+\_\+functions}
+\label{group___l_s_m6_d_s_l__interfaces__functions}\index{LSM6DSL\_interfaces\_functions@{LSM6DSL\_interfaces\_functions}}
+
+
+This section provide a set of functions used to read and write a generic register of the device. MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l__interfaces__functions_ga7ad5e0d379d6cc9a6a2dff69c6df5a50}{lsm6dsl\+\_\+read\+\_\+reg}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, uint8\+\_\+t reg, uint8\+\_\+t $\ast$data, uint16\+\_\+t len)
+\begin{DoxyCompactList}\small\item\em Read generic device register. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l__interfaces__functions_gacbf451bb4fac251559c911d462ca5e50}{lsm6dsl\+\_\+write\+\_\+reg}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, uint8\+\_\+t reg, uint8\+\_\+t $\ast$data, uint16\+\_\+t len)
+\begin{DoxyCompactList}\small\item\em Write generic device register. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This section provide a set of functions used to read and write a generic register of the device. MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l__interfaces__functions_ga7ad5e0d379d6cc9a6a2dff69c6df5a50}\label{group___l_s_m6_d_s_l__interfaces__functions_ga7ad5e0d379d6cc9a6a2dff69c6df5a50}} 
+\index{LSM6DSL\_interfaces\_functions@{LSM6DSL\_interfaces\_functions}!lsm6dsl\_read\_reg@{lsm6dsl\_read\_reg}}
+\index{lsm6dsl\_read\_reg@{lsm6dsl\_read\_reg}!LSM6DSL\_interfaces\_functions@{LSM6DSL\_interfaces\_functions}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_read\_reg()}{lsm6dsl\_read\_reg()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+read\+\_\+reg (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{uint8\+\_\+t}]{reg,  }\item[{uint8\+\_\+t $\ast$}]{data,  }\item[{uint16\+\_\+t}]{len }\end{DoxyParamCaption})}
+
+
+
+Read generic device register. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & read / write interface definitions(ptr) \\
+\hline
+{\em reg} & register to read \\
+\hline
+{\em data} & pointer to buffer that store the data read(ptr) \\
+\hline
+{\em len} & number of consecutive register to read \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error) \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l__interfaces__functions_gacbf451bb4fac251559c911d462ca5e50}\label{group___l_s_m6_d_s_l__interfaces__functions_gacbf451bb4fac251559c911d462ca5e50}} 
+\index{LSM6DSL\_interfaces\_functions@{LSM6DSL\_interfaces\_functions}!lsm6dsl\_write\_reg@{lsm6dsl\_write\_reg}}
+\index{lsm6dsl\_write\_reg@{lsm6dsl\_write\_reg}!LSM6DSL\_interfaces\_functions@{LSM6DSL\_interfaces\_functions}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_write\_reg()}{lsm6dsl\_write\_reg()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+write\+\_\+reg (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{uint8\+\_\+t}]{reg,  }\item[{uint8\+\_\+t $\ast$}]{data,  }\item[{uint16\+\_\+t}]{len }\end{DoxyParamCaption})}
+
+
+
+Write generic device register. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & read / write interface definitions(ptr) \\
+\hline
+{\em reg} & register to write \\
+\hline
+{\em data} & pointer to data to write in register reg(ptr) \\
+\hline
+{\em len} & number of consecutive register to write \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error) \\
+\hline
+\end{DoxyRetVals}

@@ -1,0 +1,86 @@
+\hypertarget{imu__low__level_8c}{}\doxysection{User\+Files/\+IMU\+\_\+\+API/nrfx\+\_\+twim\+\_\+imu/imu\+\_\+low\+\_\+level.c File Reference}
+\label{imu__low__level_8c}\index{UserFiles/IMU\_API/nrfx\_twim\_imu/imu\_low\_level.c@{UserFiles/IMU\_API/nrfx\_twim\_imu/imu\_low\_level.c}}
+{\ttfamily \#include \char`\"{}imu\+\_\+low\+\_\+level.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}nrfx\+\_\+twim.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}nrfx\+\_\+gpiote.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}nrfx\+\_\+ppi.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}nrf\+\_\+gpio.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}lsm6dsl\+\_\+reg.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{imu__low__level_8c_aa5100436bfa179e7c7cf8777b9abe70a}{TWIM\+\_\+\+INSTANCE\+\_\+\+ID}}~0
+\item 
+\#define \mbox{\hyperlink{imu__low__level_8c_a0027a07ab47bb521b33dcdb0c3c5887c}{TWIM\+\_\+\+FREQ}}~NRF\+\_\+\+TWIM\+\_\+\+FREQ\+\_\+100K
+\item 
+\#define \mbox{\hyperlink{imu__low__level_8c_ae38bc631871717929a3a751772e8417d}{TWIM\+\_\+\+IRQ\+\_\+\+PRIORITY}}~APP\+\_\+\+IRQ\+\_\+\+PRIORITY\+\_\+\+HIGH
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int32\+\_\+t \mbox{\hyperlink{group___i_m_u___l_l__interfaces__functions_ga2216e2af937e3f86115623ac15940b8e}{imu\+\_\+ll\+\_\+platform\+\_\+write}} (void $\ast$handle, uint8\+\_\+t reg, uint8\+\_\+t $\ast$buffer, size\+\_\+t length)
+\begin{DoxyCompactList}\small\item\em Hardware specific function for TWI interface writing. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___i_m_u___l_l__interfaces__functions_ga11760f6190cc2d5f987678930d16e1a8}{imu\+\_\+ll\+\_\+platform\+\_\+read}} (void $\ast$handle, uint8\+\_\+t reg, uint8\+\_\+t $\ast$buffer, size\+\_\+t length)
+\begin{DoxyCompactList}\small\item\em Hardware specific function for TWI interface writing. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___i_m_u___l_o_w___l_e_v_e_l_gac6fa65b5be05082da07458f3cb6a6a68}{imu\+\_\+ll\+\_\+twi\+\_\+master\+\_\+init}} ()
+\begin{DoxyCompactList}\small\item\em Function for initializing and enabling TWI. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___i_m_u___l_o_w___l_e_v_e_l_ga7e5e378594ddc75c4a5fb342196b7ce7}{imu\+\_\+ll\+\_\+twim\+\_\+dma\+\_\+init}} (uint8\+\_\+t ppi\+\_\+trigger\+\_\+pin, uint8\+\_\+t reg, uint8\+\_\+t $\ast$buffer, size\+\_\+t buffer\+\_\+length)
+\begin{DoxyCompactList}\small\item\em Function for initializing TWIM DMA reading triggered by PPI and GPIO. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___i_m_u___l_o_w___l_e_v_e_l_gac3d344c560bbfe2cf2c6d1c766271e50}{imu\+\_\+ll\+\_\+prepare\+\_\+dma}} (uint8\+\_\+t reg, uint8\+\_\+t $\ast$buffer, size\+\_\+t buffer\+\_\+length)
+\begin{DoxyCompactList}\small\item\em Function for preparing TWIM for a new DMA transfer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___i_m_u___l_o_w___l_e_v_e_l_ga566aaa91ef1f25b3446fba4c51a059fa}{imu\+\_\+ll\+\_\+gpio\+\_\+init}} ()
+\begin{DoxyCompactList}\small\item\em Function for initializing input pins required to sense imu interrupts and output pins for status LED. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+nrfx\+\_\+twim\+\_\+t const \mbox{\hyperlink{imu__low__level_8c_a6ba51115f2cd154bc3d7418dcc0bde47}{twim\+\_\+t}} = NRFX\+\_\+\+TWIM\+\_\+\+INSTANCE(\mbox{\hyperlink{imu__low__level_8c_aa5100436bfa179e7c7cf8777b9abe70a}{TWIM\+\_\+\+INSTANCE\+\_\+\+ID}})
+\item 
+volatile bool \mbox{\hyperlink{imu__low__level_8c_af62b58398c34fe831dac55b52c2c5f09}{m\+\_\+xfer\+\_\+done}} = true
+\item 
+volatile bool \mbox{\hyperlink{imu__low__level_8c_aff35f9caccd1dadca68aaac238964850}{fifo\+\_\+transfer\+\_\+done}} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{imu__low__level_8c_a0027a07ab47bb521b33dcdb0c3c5887c}\label{imu__low__level_8c_a0027a07ab47bb521b33dcdb0c3c5887c}} 
+\index{imu\_low\_level.c@{imu\_low\_level.c}!TWIM\_FREQ@{TWIM\_FREQ}}
+\index{TWIM\_FREQ@{TWIM\_FREQ}!imu\_low\_level.c@{imu\_low\_level.c}}
+\doxysubsubsection{\texorpdfstring{TWIM\_FREQ}{TWIM\_FREQ}}
+{\footnotesize\ttfamily \#define TWIM\+\_\+\+FREQ~NRF\+\_\+\+TWIM\+\_\+\+FREQ\+\_\+100K}
+
+\mbox{\Hypertarget{imu__low__level_8c_aa5100436bfa179e7c7cf8777b9abe70a}\label{imu__low__level_8c_aa5100436bfa179e7c7cf8777b9abe70a}} 
+\index{imu\_low\_level.c@{imu\_low\_level.c}!TWIM\_INSTANCE\_ID@{TWIM\_INSTANCE\_ID}}
+\index{TWIM\_INSTANCE\_ID@{TWIM\_INSTANCE\_ID}!imu\_low\_level.c@{imu\_low\_level.c}}
+\doxysubsubsection{\texorpdfstring{TWIM\_INSTANCE\_ID}{TWIM\_INSTANCE\_ID}}
+{\footnotesize\ttfamily \#define TWIM\+\_\+\+INSTANCE\+\_\+\+ID~0}
+
+\mbox{\Hypertarget{imu__low__level_8c_ae38bc631871717929a3a751772e8417d}\label{imu__low__level_8c_ae38bc631871717929a3a751772e8417d}} 
+\index{imu\_low\_level.c@{imu\_low\_level.c}!TWIM\_IRQ\_PRIORITY@{TWIM\_IRQ\_PRIORITY}}
+\index{TWIM\_IRQ\_PRIORITY@{TWIM\_IRQ\_PRIORITY}!imu\_low\_level.c@{imu\_low\_level.c}}
+\doxysubsubsection{\texorpdfstring{TWIM\_IRQ\_PRIORITY}{TWIM\_IRQ\_PRIORITY}}
+{\footnotesize\ttfamily \#define TWIM\+\_\+\+IRQ\+\_\+\+PRIORITY~APP\+\_\+\+IRQ\+\_\+\+PRIORITY\+\_\+\+HIGH}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{imu__low__level_8c_aff35f9caccd1dadca68aaac238964850}\label{imu__low__level_8c_aff35f9caccd1dadca68aaac238964850}} 
+\index{imu\_low\_level.c@{imu\_low\_level.c}!fifo\_transfer\_done@{fifo\_transfer\_done}}
+\index{fifo\_transfer\_done@{fifo\_transfer\_done}!imu\_low\_level.c@{imu\_low\_level.c}}
+\doxysubsubsection{\texorpdfstring{fifo\_transfer\_done}{fifo\_transfer\_done}}
+{\footnotesize\ttfamily volatile bool fifo\+\_\+transfer\+\_\+done = false}
+
+Flag for indicating DMA complete transfer event \mbox{\Hypertarget{imu__low__level_8c_af62b58398c34fe831dac55b52c2c5f09}\label{imu__low__level_8c_af62b58398c34fe831dac55b52c2c5f09}} 
+\index{imu\_low\_level.c@{imu\_low\_level.c}!m\_xfer\_done@{m\_xfer\_done}}
+\index{m\_xfer\_done@{m\_xfer\_done}!imu\_low\_level.c@{imu\_low\_level.c}}
+\doxysubsubsection{\texorpdfstring{m\_xfer\_done}{m\_xfer\_done}}
+{\footnotesize\ttfamily volatile bool m\+\_\+xfer\+\_\+done = true}
+
+Flag for indicating TWIM transfer event done \mbox{\Hypertarget{imu__low__level_8c_a6ba51115f2cd154bc3d7418dcc0bde47}\label{imu__low__level_8c_a6ba51115f2cd154bc3d7418dcc0bde47}} 
+\index{imu\_low\_level.c@{imu\_low\_level.c}!twim\_t@{twim\_t}}
+\index{twim\_t@{twim\_t}!imu\_low\_level.c@{imu\_low\_level.c}}
+\doxysubsubsection{\texorpdfstring{twim\_t}{twim\_t}}
+{\footnotesize\ttfamily nrfx\+\_\+twim\+\_\+t const twim\+\_\+t = NRFX\+\_\+\+TWIM\+\_\+\+INSTANCE(\mbox{\hyperlink{imu__low__level_8c_aa5100436bfa179e7c7cf8777b9abe70a}{TWIM\+\_\+\+INSTANCE\+\_\+\+ID}})}
+

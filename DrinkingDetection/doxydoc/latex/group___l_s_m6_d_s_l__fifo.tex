@@ -1,0 +1,666 @@
+\hypertarget{group___l_s_m6_d_s_l__fifo}{}\doxysection{LSM6\+DSL\+\_\+fifo}
+\label{group___l_s_m6_d_s_l__fifo}\index{LSM6DSL\_fifo@{LSM6DSL\_fifo}}
+
+
+This section group all the functions concerning the fifo usage.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l__fifo_gadb036be67eefb30b35b5d7981f5b2c6a}{lsm6dsl\+\_\+fifo\+\_\+watermark\+\_\+set}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, uint16\+\_\+t val)
+\begin{DoxyCompactList}\small\item\em FIFO watermark level selection.\mbox{[}set\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l__fifo_ga121304bb61774ac1f5f0eb6677ec1ee5}{lsm6dsl\+\_\+fifo\+\_\+watermark\+\_\+get}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, uint16\+\_\+t $\ast$val)
+\begin{DoxyCompactList}\small\item\em FIFO watermark level selection.\mbox{[}get\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l__fifo_gafba2a7ce4e90085e80f394ccf7c63b8c}{lsm6dsl\+\_\+fifo\+\_\+data\+\_\+level\+\_\+get}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, uint16\+\_\+t $\ast$val)
+\begin{DoxyCompactList}\small\item\em FIFO data level.\mbox{[}get\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l__fifo_ga48133f6124bae7e7e47e5d8e01c3e9de}{lsm6dsl\+\_\+fifo\+\_\+wtm\+\_\+flag\+\_\+get}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, uint8\+\_\+t $\ast$val)
+\begin{DoxyCompactList}\small\item\em FIFO watermark.\mbox{[}get\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l__fifo_gadffa8b0607764af5190c38140220642a}{lsm6dsl\+\_\+fifo\+\_\+pattern\+\_\+get}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, uint16\+\_\+t $\ast$val)
+\begin{DoxyCompactList}\small\item\em FIFO pattern.\mbox{[}get\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l__fifo_gaf7061e92bc0348ab204b66199ca9490b}{lsm6dsl\+\_\+fifo\+\_\+temp\+\_\+batch\+\_\+set}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, uint8\+\_\+t val)
+\begin{DoxyCompactList}\small\item\em Batching of temperature data\mbox{[}set\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l__fifo_gab239bea3ed2a96d2c0f5fbfc5369d559}{lsm6dsl\+\_\+fifo\+\_\+temp\+\_\+batch\+\_\+get}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, uint8\+\_\+t $\ast$val)
+\begin{DoxyCompactList}\small\item\em Batching of temperature data\mbox{[}get\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l__fifo_ga19a6da95733f21b95d60ae271c234958}{lsm6dsl\+\_\+fifo\+\_\+write\+\_\+trigger\+\_\+set}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, \mbox{\hyperlink{group___l_s_m6_d_s_l_gaa8acf5785f7abb0e723e56b51276a23c}{lsm6dsl\+\_\+trigger\+\_\+fifo\+\_\+t}} val)
+\begin{DoxyCompactList}\small\item\em Trigger signal for FIFO write operation.\mbox{[}set\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l__fifo_ga993b194b148b7332650ae7eddd6f0079}{lsm6dsl\+\_\+fifo\+\_\+write\+\_\+trigger\+\_\+get}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, \mbox{\hyperlink{group___l_s_m6_d_s_l_gaa8acf5785f7abb0e723e56b51276a23c}{lsm6dsl\+\_\+trigger\+\_\+fifo\+\_\+t}} $\ast$val)
+\begin{DoxyCompactList}\small\item\em Trigger signal for FIFO write operation.\mbox{[}get\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l__fifo_ga89530cabd961d938f7ec45585b5461a7}{lsm6dsl\+\_\+fifo\+\_\+pedo\+\_\+and\+\_\+timestamp\+\_\+batch\+\_\+set}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, uint8\+\_\+t val)
+\begin{DoxyCompactList}\small\item\em Enable pedometer step counter and timestamp as 4th FIFO data set.\mbox{[}set\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l__fifo_ga6fb3e2b4c8874574cd13a9804ea8da8f}{lsm6dsl\+\_\+fifo\+\_\+pedo\+\_\+and\+\_\+timestamp\+\_\+batch\+\_\+get}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, uint8\+\_\+t $\ast$val)
+\begin{DoxyCompactList}\small\item\em Enable pedometer step counter and timestamp as 4th FIFO data set.\mbox{[}get\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l__fifo_gadb1475da1b0d707e3db369c0d697c488}{lsm6dsl\+\_\+fifo\+\_\+xl\+\_\+batch\+\_\+set}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, \mbox{\hyperlink{group___l_s_m6_d_s_l_ga593429fedb5f5c8106e34aad48f39438}{lsm6dsl\+\_\+dec\+\_\+fifo\+\_\+xl\+\_\+t}} val)
+\begin{DoxyCompactList}\small\item\em Selects Batching Data Rate (writing frequency in FIFO) for accelerometer data.\mbox{[}set\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l__fifo_ga82418afbf67287142eb1f87951ddf856}{lsm6dsl\+\_\+fifo\+\_\+xl\+\_\+batch\+\_\+get}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, \mbox{\hyperlink{group___l_s_m6_d_s_l_ga593429fedb5f5c8106e34aad48f39438}{lsm6dsl\+\_\+dec\+\_\+fifo\+\_\+xl\+\_\+t}} $\ast$val)
+\begin{DoxyCompactList}\small\item\em Selects Batching Data Rate (writing frequency in FIFO) for accelerometer data.\mbox{[}get\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l__fifo_ga9a82213d2d067f413985563e5ade8db5}{lsm6dsl\+\_\+fifo\+\_\+gy\+\_\+batch\+\_\+set}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, \mbox{\hyperlink{group___l_s_m6_d_s_l_ga99f0a1b5cc73498ac2c6a512d4c706d0}{lsm6dsl\+\_\+dec\+\_\+fifo\+\_\+gyro\+\_\+t}} val)
+\begin{DoxyCompactList}\small\item\em Selects Batching Data Rate (writing frequency in FIFO) for gyroscope data.\mbox{[}set\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l__fifo_ga46bf1dfbb0a6cfe176df1c674aa91979}{lsm6dsl\+\_\+fifo\+\_\+gy\+\_\+batch\+\_\+get}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, \mbox{\hyperlink{group___l_s_m6_d_s_l_ga99f0a1b5cc73498ac2c6a512d4c706d0}{lsm6dsl\+\_\+dec\+\_\+fifo\+\_\+gyro\+\_\+t}} $\ast$val)
+\begin{DoxyCompactList}\small\item\em Selects Batching Data Rate (writing frequency in FIFO) for gyroscope data.\mbox{[}get\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l__fifo_ga383d108885bf6cddc776c4a970edd244}{lsm6dsl\+\_\+fifo\+\_\+dataset\+\_\+3\+\_\+batch\+\_\+set}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, \mbox{\hyperlink{group___l_s_m6_d_s_l_ga78c99993964e8f27a1f215803d822a9f}{lsm6dsl\+\_\+dec\+\_\+ds3\+\_\+fifo\+\_\+t}} val)
+\begin{DoxyCompactList}\small\item\em Selects Batching Data Rate (writing frequency in FIFO) for third data set.\mbox{[}set\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l__fifo_ga9f5d6b35a19d05c29a17e01b5935015a}{lsm6dsl\+\_\+fifo\+\_\+dataset\+\_\+3\+\_\+batch\+\_\+get}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, \mbox{\hyperlink{group___l_s_m6_d_s_l_ga78c99993964e8f27a1f215803d822a9f}{lsm6dsl\+\_\+dec\+\_\+ds3\+\_\+fifo\+\_\+t}} $\ast$val)
+\begin{DoxyCompactList}\small\item\em Selects Batching Data Rate (writing frequency in FIFO) for third data set.\mbox{[}get\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l__fifo_ga906bdf4deecaf2899171430fa856a339}{lsm6dsl\+\_\+fifo\+\_\+dataset\+\_\+4\+\_\+batch\+\_\+set}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, \mbox{\hyperlink{group___l_s_m6_d_s_l_ga755d408239bdcac3ae3e8012ebfed03e}{lsm6dsl\+\_\+dec\+\_\+ds4\+\_\+fifo\+\_\+t}} val)
+\begin{DoxyCompactList}\small\item\em Selects Batching Data Rate (writing frequency in FIFO) for fourth data set.\mbox{[}set\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l__fifo_ga7a205a19017458bb47d8cb67a912fabe}{lsm6dsl\+\_\+fifo\+\_\+dataset\+\_\+4\+\_\+batch\+\_\+get}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, \mbox{\hyperlink{group___l_s_m6_d_s_l_ga755d408239bdcac3ae3e8012ebfed03e}{lsm6dsl\+\_\+dec\+\_\+ds4\+\_\+fifo\+\_\+t}} $\ast$val)
+\begin{DoxyCompactList}\small\item\em Selects Batching Data Rate (writing frequency in FIFO) for fourth data set.\mbox{[}get\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l__fifo_ga7752fcb19e51797c95a81e6786ba4a57}{lsm6dsl\+\_\+fifo\+\_\+xl\+\_\+gy\+\_\+8bit\+\_\+format\+\_\+set}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, uint8\+\_\+t val)
+\begin{DoxyCompactList}\small\item\em 8-\/bit data storage in FIFO.\mbox{[}set\mbox{]} \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l__fifo_ga4cfb99b3ea492d75b0699f3461fdba98}{lsm6dsl\+\_\+fifo\+\_\+xl\+\_\+gy\+\_\+8bit\+\_\+format\+\_\+get}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, uint8\+\_\+t $\ast$val)
+\begin{DoxyCompactList}\small\item\em 8-\/bit data storage in FIFO.\mbox{[}get\mbox{]} \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l__fifo_ga0b43a0a6424ecd64d217ee4bc7f66352}{lsm6dsl\+\_\+fifo\+\_\+stop\+\_\+on\+\_\+wtm\+\_\+set}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, uint8\+\_\+t val)
+\begin{DoxyCompactList}\small\item\em Sensing chain FIFO stop values memorization at threshold level.\mbox{[}set\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l__fifo_gada509234ad0b468f3bebc3bdf150d7c0}{lsm6dsl\+\_\+fifo\+\_\+stop\+\_\+on\+\_\+wtm\+\_\+get}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, uint8\+\_\+t $\ast$val)
+\begin{DoxyCompactList}\small\item\em Sensing chain FIFO stop values memorization at threshold level.\mbox{[}get\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l__fifo_ga5b0fc9c05ee8e282dcd69f4625551917}{lsm6dsl\+\_\+fifo\+\_\+mode\+\_\+set}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, \mbox{\hyperlink{group___l_s_m6_d_s_l_ga6a081c650835d01dacd1c0c7eb0474c6}{lsm6dsl\+\_\+fifo\+\_\+mode\+\_\+t}} val)
+\begin{DoxyCompactList}\small\item\em FIFO mode selection.\mbox{[}set\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l__fifo_ga5d4644f08ff9088a00170e7a02a27f35}{lsm6dsl\+\_\+fifo\+\_\+mode\+\_\+get}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, \mbox{\hyperlink{group___l_s_m6_d_s_l_ga6a081c650835d01dacd1c0c7eb0474c6}{lsm6dsl\+\_\+fifo\+\_\+mode\+\_\+t}} $\ast$val)
+\begin{DoxyCompactList}\small\item\em FIFO mode selection.\mbox{[}get\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l__fifo_gafaffa96ddcc144c0dafeb9f8e409ebc6}{lsm6dsl\+\_\+fifo\+\_\+data\+\_\+rate\+\_\+set}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, \mbox{\hyperlink{group___l_s_m6_d_s_l_ga4a327b2461aab330f496c18ca0db361e}{lsm6dsl\+\_\+odr\+\_\+fifo\+\_\+t}} val)
+\begin{DoxyCompactList}\small\item\em FIFO ODR selection, setting FIFO\+\_\+\+MODE also.\mbox{[}set\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l__fifo_ga428a82c993636bcf8d6e39a26d94ed09}{lsm6dsl\+\_\+fifo\+\_\+data\+\_\+rate\+\_\+get}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, \mbox{\hyperlink{group___l_s_m6_d_s_l_ga4a327b2461aab330f496c18ca0db361e}{lsm6dsl\+\_\+odr\+\_\+fifo\+\_\+t}} $\ast$val)
+\begin{DoxyCompactList}\small\item\em FIFO ODR selection, setting FIFO\+\_\+\+MODE also.\mbox{[}get\mbox{]}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This section group all the functions concerning the fifo usage. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l__fifo_gafba2a7ce4e90085e80f394ccf7c63b8c}\label{group___l_s_m6_d_s_l__fifo_gafba2a7ce4e90085e80f394ccf7c63b8c}} 
+\index{LSM6DSL\_fifo@{LSM6DSL\_fifo}!lsm6dsl\_fifo\_data\_level\_get@{lsm6dsl\_fifo\_data\_level\_get}}
+\index{lsm6dsl\_fifo\_data\_level\_get@{lsm6dsl\_fifo\_data\_level\_get}!LSM6DSL\_fifo@{LSM6DSL\_fifo}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_fifo\_data\_level\_get()}{lsm6dsl\_fifo\_data\_level\_get()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+fifo\+\_\+data\+\_\+level\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{uint16\+\_\+t $\ast$}]{val }\end{DoxyParamCaption})}
+
+
+
+FIFO data level.\mbox{[}get\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & get the values of diff\+\_\+fifo in reg FIFO\+\_\+\+STATUS1 and FIFO\+\_\+\+STATUS2(diff\+\_\+fifo), it is recommended to set the BDU bit. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l__fifo_ga428a82c993636bcf8d6e39a26d94ed09}\label{group___l_s_m6_d_s_l__fifo_ga428a82c993636bcf8d6e39a26d94ed09}} 
+\index{LSM6DSL\_fifo@{LSM6DSL\_fifo}!lsm6dsl\_fifo\_data\_rate\_get@{lsm6dsl\_fifo\_data\_rate\_get}}
+\index{lsm6dsl\_fifo\_data\_rate\_get@{lsm6dsl\_fifo\_data\_rate\_get}!LSM6DSL\_fifo@{LSM6DSL\_fifo}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_fifo\_data\_rate\_get()}{lsm6dsl\_fifo\_data\_rate\_get()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+fifo\+\_\+data\+\_\+rate\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{\mbox{\hyperlink{group___l_s_m6_d_s_l_ga4a327b2461aab330f496c18ca0db361e}{lsm6dsl\+\_\+odr\+\_\+fifo\+\_\+t}} $\ast$}]{val }\end{DoxyParamCaption})}
+
+
+
+FIFO ODR selection, setting FIFO\+\_\+\+MODE also.\mbox{[}get\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Get the values of odr\+\_\+fifo in reg FIFO\+\_\+\+CTRL5 \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l__fifo_gafaffa96ddcc144c0dafeb9f8e409ebc6}\label{group___l_s_m6_d_s_l__fifo_gafaffa96ddcc144c0dafeb9f8e409ebc6}} 
+\index{LSM6DSL\_fifo@{LSM6DSL\_fifo}!lsm6dsl\_fifo\_data\_rate\_set@{lsm6dsl\_fifo\_data\_rate\_set}}
+\index{lsm6dsl\_fifo\_data\_rate\_set@{lsm6dsl\_fifo\_data\_rate\_set}!LSM6DSL\_fifo@{LSM6DSL\_fifo}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_fifo\_data\_rate\_set()}{lsm6dsl\_fifo\_data\_rate\_set()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+fifo\+\_\+data\+\_\+rate\+\_\+set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{\mbox{\hyperlink{group___l_s_m6_d_s_l_ga4a327b2461aab330f496c18ca0db361e}{lsm6dsl\+\_\+odr\+\_\+fifo\+\_\+t}}}]{val }\end{DoxyParamCaption})}
+
+
+
+FIFO ODR selection, setting FIFO\+\_\+\+MODE also.\mbox{[}set\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Change the values of odr\+\_\+fifo in reg FIFO\+\_\+\+CTRL5 \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l__fifo_ga9f5d6b35a19d05c29a17e01b5935015a}\label{group___l_s_m6_d_s_l__fifo_ga9f5d6b35a19d05c29a17e01b5935015a}} 
+\index{LSM6DSL\_fifo@{LSM6DSL\_fifo}!lsm6dsl\_fifo\_dataset\_3\_batch\_get@{lsm6dsl\_fifo\_dataset\_3\_batch\_get}}
+\index{lsm6dsl\_fifo\_dataset\_3\_batch\_get@{lsm6dsl\_fifo\_dataset\_3\_batch\_get}!LSM6DSL\_fifo@{LSM6DSL\_fifo}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_fifo\_dataset\_3\_batch\_get()}{lsm6dsl\_fifo\_dataset\_3\_batch\_get()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+fifo\+\_\+dataset\+\_\+3\+\_\+batch\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{\mbox{\hyperlink{group___l_s_m6_d_s_l_ga78c99993964e8f27a1f215803d822a9f}{lsm6dsl\+\_\+dec\+\_\+ds3\+\_\+fifo\+\_\+t}} $\ast$}]{val }\end{DoxyParamCaption})}
+
+
+
+Selects Batching Data Rate (writing frequency in FIFO) for third data set.\mbox{[}get\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Get the values of dec\+\_\+ds3\+\_\+fifo in reg FIFO\+\_\+\+CTRL4 \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l__fifo_ga383d108885bf6cddc776c4a970edd244}\label{group___l_s_m6_d_s_l__fifo_ga383d108885bf6cddc776c4a970edd244}} 
+\index{LSM6DSL\_fifo@{LSM6DSL\_fifo}!lsm6dsl\_fifo\_dataset\_3\_batch\_set@{lsm6dsl\_fifo\_dataset\_3\_batch\_set}}
+\index{lsm6dsl\_fifo\_dataset\_3\_batch\_set@{lsm6dsl\_fifo\_dataset\_3\_batch\_set}!LSM6DSL\_fifo@{LSM6DSL\_fifo}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_fifo\_dataset\_3\_batch\_set()}{lsm6dsl\_fifo\_dataset\_3\_batch\_set()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+fifo\+\_\+dataset\+\_\+3\+\_\+batch\+\_\+set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{\mbox{\hyperlink{group___l_s_m6_d_s_l_ga78c99993964e8f27a1f215803d822a9f}{lsm6dsl\+\_\+dec\+\_\+ds3\+\_\+fifo\+\_\+t}}}]{val }\end{DoxyParamCaption})}
+
+
+
+Selects Batching Data Rate (writing frequency in FIFO) for third data set.\mbox{[}set\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions15x \\
+\hline
+{\em val} & Change the values of dec\+\_\+ds3\+\_\+fifo in reg FIFO\+\_\+\+CTRL4 \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l__fifo_ga7a205a19017458bb47d8cb67a912fabe}\label{group___l_s_m6_d_s_l__fifo_ga7a205a19017458bb47d8cb67a912fabe}} 
+\index{LSM6DSL\_fifo@{LSM6DSL\_fifo}!lsm6dsl\_fifo\_dataset\_4\_batch\_get@{lsm6dsl\_fifo\_dataset\_4\_batch\_get}}
+\index{lsm6dsl\_fifo\_dataset\_4\_batch\_get@{lsm6dsl\_fifo\_dataset\_4\_batch\_get}!LSM6DSL\_fifo@{LSM6DSL\_fifo}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_fifo\_dataset\_4\_batch\_get()}{lsm6dsl\_fifo\_dataset\_4\_batch\_get()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+fifo\+\_\+dataset\+\_\+4\+\_\+batch\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{\mbox{\hyperlink{group___l_s_m6_d_s_l_ga755d408239bdcac3ae3e8012ebfed03e}{lsm6dsl\+\_\+dec\+\_\+ds4\+\_\+fifo\+\_\+t}} $\ast$}]{val }\end{DoxyParamCaption})}
+
+
+
+Selects Batching Data Rate (writing frequency in FIFO) for fourth data set.\mbox{[}get\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Get the values of dec\+\_\+ds4\+\_\+fifo in reg FIFO\+\_\+\+CTRL4 \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l__fifo_ga906bdf4deecaf2899171430fa856a339}\label{group___l_s_m6_d_s_l__fifo_ga906bdf4deecaf2899171430fa856a339}} 
+\index{LSM6DSL\_fifo@{LSM6DSL\_fifo}!lsm6dsl\_fifo\_dataset\_4\_batch\_set@{lsm6dsl\_fifo\_dataset\_4\_batch\_set}}
+\index{lsm6dsl\_fifo\_dataset\_4\_batch\_set@{lsm6dsl\_fifo\_dataset\_4\_batch\_set}!LSM6DSL\_fifo@{LSM6DSL\_fifo}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_fifo\_dataset\_4\_batch\_set()}{lsm6dsl\_fifo\_dataset\_4\_batch\_set()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+fifo\+\_\+dataset\+\_\+4\+\_\+batch\+\_\+set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{\mbox{\hyperlink{group___l_s_m6_d_s_l_ga755d408239bdcac3ae3e8012ebfed03e}{lsm6dsl\+\_\+dec\+\_\+ds4\+\_\+fifo\+\_\+t}}}]{val }\end{DoxyParamCaption})}
+
+
+
+Selects Batching Data Rate (writing frequency in FIFO) for fourth data set.\mbox{[}set\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Change the values of dec\+\_\+ds4\+\_\+fifo in reg FIFO\+\_\+\+CTRL4 \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l__fifo_ga46bf1dfbb0a6cfe176df1c674aa91979}\label{group___l_s_m6_d_s_l__fifo_ga46bf1dfbb0a6cfe176df1c674aa91979}} 
+\index{LSM6DSL\_fifo@{LSM6DSL\_fifo}!lsm6dsl\_fifo\_gy\_batch\_get@{lsm6dsl\_fifo\_gy\_batch\_get}}
+\index{lsm6dsl\_fifo\_gy\_batch\_get@{lsm6dsl\_fifo\_gy\_batch\_get}!LSM6DSL\_fifo@{LSM6DSL\_fifo}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_fifo\_gy\_batch\_get()}{lsm6dsl\_fifo\_gy\_batch\_get()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+fifo\+\_\+gy\+\_\+batch\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{\mbox{\hyperlink{group___l_s_m6_d_s_l_ga99f0a1b5cc73498ac2c6a512d4c706d0}{lsm6dsl\+\_\+dec\+\_\+fifo\+\_\+gyro\+\_\+t}} $\ast$}]{val }\end{DoxyParamCaption})}
+
+
+
+Selects Batching Data Rate (writing frequency in FIFO) for gyroscope data.\mbox{[}get\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Get the values of dec\+\_\+fifo\+\_\+gyro in reg FIFO\+\_\+\+CTRL3 \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l__fifo_ga9a82213d2d067f413985563e5ade8db5}\label{group___l_s_m6_d_s_l__fifo_ga9a82213d2d067f413985563e5ade8db5}} 
+\index{LSM6DSL\_fifo@{LSM6DSL\_fifo}!lsm6dsl\_fifo\_gy\_batch\_set@{lsm6dsl\_fifo\_gy\_batch\_set}}
+\index{lsm6dsl\_fifo\_gy\_batch\_set@{lsm6dsl\_fifo\_gy\_batch\_set}!LSM6DSL\_fifo@{LSM6DSL\_fifo}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_fifo\_gy\_batch\_set()}{lsm6dsl\_fifo\_gy\_batch\_set()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+fifo\+\_\+gy\+\_\+batch\+\_\+set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{\mbox{\hyperlink{group___l_s_m6_d_s_l_ga99f0a1b5cc73498ac2c6a512d4c706d0}{lsm6dsl\+\_\+dec\+\_\+fifo\+\_\+gyro\+\_\+t}}}]{val }\end{DoxyParamCaption})}
+
+
+
+Selects Batching Data Rate (writing frequency in FIFO) for gyroscope data.\mbox{[}set\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Change the values of dec\+\_\+fifo\+\_\+gyro in reg FIFO\+\_\+\+CTRL3 \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l__fifo_ga5d4644f08ff9088a00170e7a02a27f35}\label{group___l_s_m6_d_s_l__fifo_ga5d4644f08ff9088a00170e7a02a27f35}} 
+\index{LSM6DSL\_fifo@{LSM6DSL\_fifo}!lsm6dsl\_fifo\_mode\_get@{lsm6dsl\_fifo\_mode\_get}}
+\index{lsm6dsl\_fifo\_mode\_get@{lsm6dsl\_fifo\_mode\_get}!LSM6DSL\_fifo@{LSM6DSL\_fifo}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_fifo\_mode\_get()}{lsm6dsl\_fifo\_mode\_get()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+fifo\+\_\+mode\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{\mbox{\hyperlink{group___l_s_m6_d_s_l_ga6a081c650835d01dacd1c0c7eb0474c6}{lsm6dsl\+\_\+fifo\+\_\+mode\+\_\+t}} $\ast$}]{val }\end{DoxyParamCaption})}
+
+
+
+FIFO mode selection.\mbox{[}get\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Get the values of fifo\+\_\+mode in reg FIFO\+\_\+\+CTRL5 \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l__fifo_ga5b0fc9c05ee8e282dcd69f4625551917}\label{group___l_s_m6_d_s_l__fifo_ga5b0fc9c05ee8e282dcd69f4625551917}} 
+\index{LSM6DSL\_fifo@{LSM6DSL\_fifo}!lsm6dsl\_fifo\_mode\_set@{lsm6dsl\_fifo\_mode\_set}}
+\index{lsm6dsl\_fifo\_mode\_set@{lsm6dsl\_fifo\_mode\_set}!LSM6DSL\_fifo@{LSM6DSL\_fifo}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_fifo\_mode\_set()}{lsm6dsl\_fifo\_mode\_set()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+fifo\+\_\+mode\+\_\+set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{\mbox{\hyperlink{group___l_s_m6_d_s_l_ga6a081c650835d01dacd1c0c7eb0474c6}{lsm6dsl\+\_\+fifo\+\_\+mode\+\_\+t}}}]{val }\end{DoxyParamCaption})}
+
+
+
+FIFO mode selection.\mbox{[}set\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Change the values of fifo\+\_\+mode in reg FIFO\+\_\+\+CTRL5 \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l__fifo_gadffa8b0607764af5190c38140220642a}\label{group___l_s_m6_d_s_l__fifo_gadffa8b0607764af5190c38140220642a}} 
+\index{LSM6DSL\_fifo@{LSM6DSL\_fifo}!lsm6dsl\_fifo\_pattern\_get@{lsm6dsl\_fifo\_pattern\_get}}
+\index{lsm6dsl\_fifo\_pattern\_get@{lsm6dsl\_fifo\_pattern\_get}!LSM6DSL\_fifo@{LSM6DSL\_fifo}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_fifo\_pattern\_get()}{lsm6dsl\_fifo\_pattern\_get()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+fifo\+\_\+pattern\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{uint16\+\_\+t $\ast$}]{val }\end{DoxyParamCaption})}
+
+
+
+FIFO pattern.\mbox{[}get\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & get the values of fifo\+\_\+pattern in reg FIFO\+\_\+\+STATUS3 and FIFO\+\_\+\+STATUS4, it is recommended to set the BDU bit \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l__fifo_ga6fb3e2b4c8874574cd13a9804ea8da8f}\label{group___l_s_m6_d_s_l__fifo_ga6fb3e2b4c8874574cd13a9804ea8da8f}} 
+\index{LSM6DSL\_fifo@{LSM6DSL\_fifo}!lsm6dsl\_fifo\_pedo\_and\_timestamp\_batch\_get@{lsm6dsl\_fifo\_pedo\_and\_timestamp\_batch\_get}}
+\index{lsm6dsl\_fifo\_pedo\_and\_timestamp\_batch\_get@{lsm6dsl\_fifo\_pedo\_and\_timestamp\_batch\_get}!LSM6DSL\_fifo@{LSM6DSL\_fifo}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_fifo\_pedo\_and\_timestamp\_batch\_get()}{lsm6dsl\_fifo\_pedo\_and\_timestamp\_batch\_get()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+fifo\+\_\+pedo\+\_\+and\+\_\+timestamp\+\_\+batch\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{uint8\+\_\+t $\ast$}]{val }\end{DoxyParamCaption})}
+
+
+
+Enable pedometer step counter and timestamp as 4th FIFO data set.\mbox{[}get\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Change the values of timer\+\_\+pedo\+\_\+fifo\+\_\+en in reg FIFO\+\_\+\+CTRL2 \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l__fifo_ga89530cabd961d938f7ec45585b5461a7}\label{group___l_s_m6_d_s_l__fifo_ga89530cabd961d938f7ec45585b5461a7}} 
+\index{LSM6DSL\_fifo@{LSM6DSL\_fifo}!lsm6dsl\_fifo\_pedo\_and\_timestamp\_batch\_set@{lsm6dsl\_fifo\_pedo\_and\_timestamp\_batch\_set}}
+\index{lsm6dsl\_fifo\_pedo\_and\_timestamp\_batch\_set@{lsm6dsl\_fifo\_pedo\_and\_timestamp\_batch\_set}!LSM6DSL\_fifo@{LSM6DSL\_fifo}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_fifo\_pedo\_and\_timestamp\_batch\_set()}{lsm6dsl\_fifo\_pedo\_and\_timestamp\_batch\_set()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+fifo\+\_\+pedo\+\_\+and\+\_\+timestamp\+\_\+batch\+\_\+set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{uint8\+\_\+t}]{val }\end{DoxyParamCaption})}
+
+
+
+Enable pedometer step counter and timestamp as 4th FIFO data set.\mbox{[}set\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Change the values of timer\+\_\+pedo\+\_\+fifo\+\_\+en in reg FIFO\+\_\+\+CTRL2 \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l__fifo_gada509234ad0b468f3bebc3bdf150d7c0}\label{group___l_s_m6_d_s_l__fifo_gada509234ad0b468f3bebc3bdf150d7c0}} 
+\index{LSM6DSL\_fifo@{LSM6DSL\_fifo}!lsm6dsl\_fifo\_stop\_on\_wtm\_get@{lsm6dsl\_fifo\_stop\_on\_wtm\_get}}
+\index{lsm6dsl\_fifo\_stop\_on\_wtm\_get@{lsm6dsl\_fifo\_stop\_on\_wtm\_get}!LSM6DSL\_fifo@{LSM6DSL\_fifo}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_fifo\_stop\_on\_wtm\_get()}{lsm6dsl\_fifo\_stop\_on\_wtm\_get()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+fifo\+\_\+stop\+\_\+on\+\_\+wtm\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{uint8\+\_\+t $\ast$}]{val }\end{DoxyParamCaption})}
+
+
+
+Sensing chain FIFO stop values memorization at threshold level.\mbox{[}get\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Change the values of stop\+\_\+on\+\_\+fth in reg FIFO\+\_\+\+CTRL4 \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l__fifo_ga0b43a0a6424ecd64d217ee4bc7f66352}\label{group___l_s_m6_d_s_l__fifo_ga0b43a0a6424ecd64d217ee4bc7f66352}} 
+\index{LSM6DSL\_fifo@{LSM6DSL\_fifo}!lsm6dsl\_fifo\_stop\_on\_wtm\_set@{lsm6dsl\_fifo\_stop\_on\_wtm\_set}}
+\index{lsm6dsl\_fifo\_stop\_on\_wtm\_set@{lsm6dsl\_fifo\_stop\_on\_wtm\_set}!LSM6DSL\_fifo@{LSM6DSL\_fifo}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_fifo\_stop\_on\_wtm\_set()}{lsm6dsl\_fifo\_stop\_on\_wtm\_set()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+fifo\+\_\+stop\+\_\+on\+\_\+wtm\+\_\+set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{uint8\+\_\+t}]{val }\end{DoxyParamCaption})}
+
+
+
+Sensing chain FIFO stop values memorization at threshold level.\mbox{[}set\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Change the values of stop\+\_\+on\+\_\+fth in reg FIFO\+\_\+\+CTRL4 \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l__fifo_gab239bea3ed2a96d2c0f5fbfc5369d559}\label{group___l_s_m6_d_s_l__fifo_gab239bea3ed2a96d2c0f5fbfc5369d559}} 
+\index{LSM6DSL\_fifo@{LSM6DSL\_fifo}!lsm6dsl\_fifo\_temp\_batch\_get@{lsm6dsl\_fifo\_temp\_batch\_get}}
+\index{lsm6dsl\_fifo\_temp\_batch\_get@{lsm6dsl\_fifo\_temp\_batch\_get}!LSM6DSL\_fifo@{LSM6DSL\_fifo}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_fifo\_temp\_batch\_get()}{lsm6dsl\_fifo\_temp\_batch\_get()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+fifo\+\_\+temp\+\_\+batch\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{uint8\+\_\+t $\ast$}]{val }\end{DoxyParamCaption})}
+
+
+
+Batching of temperature data\mbox{[}get\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Change the values of fifo\+\_\+temp\+\_\+en in reg FIFO\+\_\+\+CTRL2 \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l__fifo_gaf7061e92bc0348ab204b66199ca9490b}\label{group___l_s_m6_d_s_l__fifo_gaf7061e92bc0348ab204b66199ca9490b}} 
+\index{LSM6DSL\_fifo@{LSM6DSL\_fifo}!lsm6dsl\_fifo\_temp\_batch\_set@{lsm6dsl\_fifo\_temp\_batch\_set}}
+\index{lsm6dsl\_fifo\_temp\_batch\_set@{lsm6dsl\_fifo\_temp\_batch\_set}!LSM6DSL\_fifo@{LSM6DSL\_fifo}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_fifo\_temp\_batch\_set()}{lsm6dsl\_fifo\_temp\_batch\_set()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+fifo\+\_\+temp\+\_\+batch\+\_\+set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{uint8\+\_\+t}]{val }\end{DoxyParamCaption})}
+
+
+
+Batching of temperature data\mbox{[}set\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Change the values of fifo\+\_\+temp\+\_\+en in reg FIFO\+\_\+\+CTRL2 \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l__fifo_ga121304bb61774ac1f5f0eb6677ec1ee5}\label{group___l_s_m6_d_s_l__fifo_ga121304bb61774ac1f5f0eb6677ec1ee5}} 
+\index{LSM6DSL\_fifo@{LSM6DSL\_fifo}!lsm6dsl\_fifo\_watermark\_get@{lsm6dsl\_fifo\_watermark\_get}}
+\index{lsm6dsl\_fifo\_watermark\_get@{lsm6dsl\_fifo\_watermark\_get}!LSM6DSL\_fifo@{LSM6DSL\_fifo}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_fifo\_watermark\_get()}{lsm6dsl\_fifo\_watermark\_get()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+fifo\+\_\+watermark\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{uint16\+\_\+t $\ast$}]{val }\end{DoxyParamCaption})}
+
+
+
+FIFO watermark level selection.\mbox{[}get\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Change the values of fth in reg FIFO\+\_\+\+CTRL1 \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l__fifo_gadb036be67eefb30b35b5d7981f5b2c6a}\label{group___l_s_m6_d_s_l__fifo_gadb036be67eefb30b35b5d7981f5b2c6a}} 
+\index{LSM6DSL\_fifo@{LSM6DSL\_fifo}!lsm6dsl\_fifo\_watermark\_set@{lsm6dsl\_fifo\_watermark\_set}}
+\index{lsm6dsl\_fifo\_watermark\_set@{lsm6dsl\_fifo\_watermark\_set}!LSM6DSL\_fifo@{LSM6DSL\_fifo}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_fifo\_watermark\_set()}{lsm6dsl\_fifo\_watermark\_set()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+fifo\+\_\+watermark\+\_\+set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{uint16\+\_\+t}]{val }\end{DoxyParamCaption})}
+
+
+
+FIFO watermark level selection.\mbox{[}set\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Change the values of fth in reg FIFO\+\_\+\+CTRL1 \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l__fifo_ga993b194b148b7332650ae7eddd6f0079}\label{group___l_s_m6_d_s_l__fifo_ga993b194b148b7332650ae7eddd6f0079}} 
+\index{LSM6DSL\_fifo@{LSM6DSL\_fifo}!lsm6dsl\_fifo\_write\_trigger\_get@{lsm6dsl\_fifo\_write\_trigger\_get}}
+\index{lsm6dsl\_fifo\_write\_trigger\_get@{lsm6dsl\_fifo\_write\_trigger\_get}!LSM6DSL\_fifo@{LSM6DSL\_fifo}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_fifo\_write\_trigger\_get()}{lsm6dsl\_fifo\_write\_trigger\_get()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+fifo\+\_\+write\+\_\+trigger\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{\mbox{\hyperlink{group___l_s_m6_d_s_l_gaa8acf5785f7abb0e723e56b51276a23c}{lsm6dsl\+\_\+trigger\+\_\+fifo\+\_\+t}} $\ast$}]{val }\end{DoxyParamCaption})}
+
+
+
+Trigger signal for FIFO write operation.\mbox{[}get\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & act on FIFO\+\_\+\+CTRL2(timer\+\_\+pedo\+\_\+fifo\+\_\+drdy) and MASTER\+\_\+\+CONFIG(data\+\_\+valid\+\_\+sel\+\_\+fifo) \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l__fifo_ga19a6da95733f21b95d60ae271c234958}\label{group___l_s_m6_d_s_l__fifo_ga19a6da95733f21b95d60ae271c234958}} 
+\index{LSM6DSL\_fifo@{LSM6DSL\_fifo}!lsm6dsl\_fifo\_write\_trigger\_set@{lsm6dsl\_fifo\_write\_trigger\_set}}
+\index{lsm6dsl\_fifo\_write\_trigger\_set@{lsm6dsl\_fifo\_write\_trigger\_set}!LSM6DSL\_fifo@{LSM6DSL\_fifo}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_fifo\_write\_trigger\_set()}{lsm6dsl\_fifo\_write\_trigger\_set()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+fifo\+\_\+write\+\_\+trigger\+\_\+set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{\mbox{\hyperlink{group___l_s_m6_d_s_l_gaa8acf5785f7abb0e723e56b51276a23c}{lsm6dsl\+\_\+trigger\+\_\+fifo\+\_\+t}}}]{val }\end{DoxyParamCaption})}
+
+
+
+Trigger signal for FIFO write operation.\mbox{[}set\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & act on FIFO\+\_\+\+CTRL2(timer\+\_\+pedo\+\_\+fifo\+\_\+drdy) and MASTER\+\_\+\+CONFIG(data\+\_\+valid\+\_\+sel\+\_\+fifo) \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l__fifo_ga48133f6124bae7e7e47e5d8e01c3e9de}\label{group___l_s_m6_d_s_l__fifo_ga48133f6124bae7e7e47e5d8e01c3e9de}} 
+\index{LSM6DSL\_fifo@{LSM6DSL\_fifo}!lsm6dsl\_fifo\_wtm\_flag\_get@{lsm6dsl\_fifo\_wtm\_flag\_get}}
+\index{lsm6dsl\_fifo\_wtm\_flag\_get@{lsm6dsl\_fifo\_wtm\_flag\_get}!LSM6DSL\_fifo@{LSM6DSL\_fifo}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_fifo\_wtm\_flag\_get()}{lsm6dsl\_fifo\_wtm\_flag\_get()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+fifo\+\_\+wtm\+\_\+flag\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{uint8\+\_\+t $\ast$}]{val }\end{DoxyParamCaption})}
+
+
+
+FIFO watermark.\mbox{[}get\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & get the values of watermark in reg FIFO\+\_\+\+STATUS2 and \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l__fifo_ga82418afbf67287142eb1f87951ddf856}\label{group___l_s_m6_d_s_l__fifo_ga82418afbf67287142eb1f87951ddf856}} 
+\index{LSM6DSL\_fifo@{LSM6DSL\_fifo}!lsm6dsl\_fifo\_xl\_batch\_get@{lsm6dsl\_fifo\_xl\_batch\_get}}
+\index{lsm6dsl\_fifo\_xl\_batch\_get@{lsm6dsl\_fifo\_xl\_batch\_get}!LSM6DSL\_fifo@{LSM6DSL\_fifo}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_fifo\_xl\_batch\_get()}{lsm6dsl\_fifo\_xl\_batch\_get()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+fifo\+\_\+xl\+\_\+batch\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{\mbox{\hyperlink{group___l_s_m6_d_s_l_ga593429fedb5f5c8106e34aad48f39438}{lsm6dsl\+\_\+dec\+\_\+fifo\+\_\+xl\+\_\+t}} $\ast$}]{val }\end{DoxyParamCaption})}
+
+
+
+Selects Batching Data Rate (writing frequency in FIFO) for accelerometer data.\mbox{[}get\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Get the values of dec\+\_\+fifo\+\_\+xl in reg FIFO\+\_\+\+CTRL3 \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l__fifo_gadb1475da1b0d707e3db369c0d697c488}\label{group___l_s_m6_d_s_l__fifo_gadb1475da1b0d707e3db369c0d697c488}} 
+\index{LSM6DSL\_fifo@{LSM6DSL\_fifo}!lsm6dsl\_fifo\_xl\_batch\_set@{lsm6dsl\_fifo\_xl\_batch\_set}}
+\index{lsm6dsl\_fifo\_xl\_batch\_set@{lsm6dsl\_fifo\_xl\_batch\_set}!LSM6DSL\_fifo@{LSM6DSL\_fifo}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_fifo\_xl\_batch\_set()}{lsm6dsl\_fifo\_xl\_batch\_set()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+fifo\+\_\+xl\+\_\+batch\+\_\+set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{\mbox{\hyperlink{group___l_s_m6_d_s_l_ga593429fedb5f5c8106e34aad48f39438}{lsm6dsl\+\_\+dec\+\_\+fifo\+\_\+xl\+\_\+t}}}]{val }\end{DoxyParamCaption})}
+
+
+
+Selects Batching Data Rate (writing frequency in FIFO) for accelerometer data.\mbox{[}set\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Change the values of dec\+\_\+fifo\+\_\+xl in reg FIFO\+\_\+\+CTRL3 \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l__fifo_ga4cfb99b3ea492d75b0699f3461fdba98}\label{group___l_s_m6_d_s_l__fifo_ga4cfb99b3ea492d75b0699f3461fdba98}} 
+\index{LSM6DSL\_fifo@{LSM6DSL\_fifo}!lsm6dsl\_fifo\_xl\_gy\_8bit\_format\_get@{lsm6dsl\_fifo\_xl\_gy\_8bit\_format\_get}}
+\index{lsm6dsl\_fifo\_xl\_gy\_8bit\_format\_get@{lsm6dsl\_fifo\_xl\_gy\_8bit\_format\_get}!LSM6DSL\_fifo@{LSM6DSL\_fifo}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_fifo\_xl\_gy\_8bit\_format\_get()}{lsm6dsl\_fifo\_xl\_gy\_8bit\_format\_get()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+fifo\+\_\+xl\+\_\+gy\+\_\+8bit\+\_\+format\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{uint8\+\_\+t $\ast$}]{val }\end{DoxyParamCaption})}
+
+
+
+8-\/bit data storage in FIFO.\mbox{[}get\mbox{]} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Change the values of only\+\_\+high\+\_\+data in reg FIFO\+\_\+\+CTRL4 \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l__fifo_ga7752fcb19e51797c95a81e6786ba4a57}\label{group___l_s_m6_d_s_l__fifo_ga7752fcb19e51797c95a81e6786ba4a57}} 
+\index{LSM6DSL\_fifo@{LSM6DSL\_fifo}!lsm6dsl\_fifo\_xl\_gy\_8bit\_format\_set@{lsm6dsl\_fifo\_xl\_gy\_8bit\_format\_set}}
+\index{lsm6dsl\_fifo\_xl\_gy\_8bit\_format\_set@{lsm6dsl\_fifo\_xl\_gy\_8bit\_format\_set}!LSM6DSL\_fifo@{LSM6DSL\_fifo}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_fifo\_xl\_gy\_8bit\_format\_set()}{lsm6dsl\_fifo\_xl\_gy\_8bit\_format\_set()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+fifo\+\_\+xl\+\_\+gy\+\_\+8bit\+\_\+format\+\_\+set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{uint8\+\_\+t}]{val }\end{DoxyParamCaption})}
+
+
+
+8-\/bit data storage in FIFO.\mbox{[}set\mbox{]} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Change the values of only\+\_\+high\+\_\+data in reg FIFO\+\_\+\+CTRL4 \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}

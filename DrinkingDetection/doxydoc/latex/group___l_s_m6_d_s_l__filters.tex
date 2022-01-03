@@ -1,0 +1,114 @@
+\hypertarget{group___l_s_m6_d_s_l__filters}{}\doxysection{LSM6\+DSL\+\_\+filters}
+\label{group___l_s_m6_d_s_l__filters}\index{LSM6DSL\_filters@{LSM6DSL\_filters}}
+
+
+This section group all the functions concerning the filters configuration that impact both accelerometer and gyro.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l__filters_gafd202dd494dca1d95dfb25a9d2396c3d}{lsm6dsl\+\_\+filter\+\_\+settling\+\_\+mask\+\_\+set}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, uint8\+\_\+t val)
+\begin{DoxyCompactList}\small\item\em Mask DRDY on pin (both XL \& Gyro) until filter settling ends (XL and Gyro independently masked).\mbox{[}set\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l__filters_gabdc04d3527b28cabe6620a69deda4c21}{lsm6dsl\+\_\+filter\+\_\+settling\+\_\+mask\+\_\+get}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, uint8\+\_\+t $\ast$val)
+\begin{DoxyCompactList}\small\item\em Mask DRDY on pin (both XL \& Gyro) until filter settling ends (XL and Gyro independently masked).\mbox{[}get\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l__filters_gad15167b6514feb86aa6dc36830776b52}{lsm6dsl\+\_\+xl\+\_\+hp\+\_\+path\+\_\+internal\+\_\+set}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, \mbox{\hyperlink{group___l_s_m6_d_s_l_ga3c367a09d8d7ec1271850a7ced8d36ac}{lsm6dsl\+\_\+slope\+\_\+fds\+\_\+t}} val)
+\begin{DoxyCompactList}\small\item\em HPF or SLOPE filter selection on wake-\/up and Activity/\+Inactivity functions.\mbox{[}set\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l__filters_ga024d4649b143282c3a751205709cf378}{lsm6dsl\+\_\+xl\+\_\+hp\+\_\+path\+\_\+internal\+\_\+get}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, \mbox{\hyperlink{group___l_s_m6_d_s_l_ga3c367a09d8d7ec1271850a7ced8d36ac}{lsm6dsl\+\_\+slope\+\_\+fds\+\_\+t}} $\ast$val)
+\begin{DoxyCompactList}\small\item\em HPF or SLOPE filter selection on wake-\/up and Activity/\+Inactivity functions.\mbox{[}get\mbox{]}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This section group all the functions concerning the filters configuration that impact both accelerometer and gyro. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l__filters_gabdc04d3527b28cabe6620a69deda4c21}\label{group___l_s_m6_d_s_l__filters_gabdc04d3527b28cabe6620a69deda4c21}} 
+\index{LSM6DSL\_filters@{LSM6DSL\_filters}!lsm6dsl\_filter\_settling\_mask\_get@{lsm6dsl\_filter\_settling\_mask\_get}}
+\index{lsm6dsl\_filter\_settling\_mask\_get@{lsm6dsl\_filter\_settling\_mask\_get}!LSM6DSL\_filters@{LSM6DSL\_filters}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_filter\_settling\_mask\_get()}{lsm6dsl\_filter\_settling\_mask\_get()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+filter\+\_\+settling\+\_\+mask\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{uint8\+\_\+t $\ast$}]{val }\end{DoxyParamCaption})}
+
+
+
+Mask DRDY on pin (both XL \& Gyro) until filter settling ends (XL and Gyro independently masked).\mbox{[}get\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Change the values of drdy\+\_\+mask in reg CTRL4\+\_\+C \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l__filters_gafd202dd494dca1d95dfb25a9d2396c3d}\label{group___l_s_m6_d_s_l__filters_gafd202dd494dca1d95dfb25a9d2396c3d}} 
+\index{LSM6DSL\_filters@{LSM6DSL\_filters}!lsm6dsl\_filter\_settling\_mask\_set@{lsm6dsl\_filter\_settling\_mask\_set}}
+\index{lsm6dsl\_filter\_settling\_mask\_set@{lsm6dsl\_filter\_settling\_mask\_set}!LSM6DSL\_filters@{LSM6DSL\_filters}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_filter\_settling\_mask\_set()}{lsm6dsl\_filter\_settling\_mask\_set()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+filter\+\_\+settling\+\_\+mask\+\_\+set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{uint8\+\_\+t}]{val }\end{DoxyParamCaption})}
+
+
+
+Mask DRDY on pin (both XL \& Gyro) until filter settling ends (XL and Gyro independently masked).\mbox{[}set\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Change the values of drdy\+\_\+mask in reg CTRL4\+\_\+C \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l__filters_ga024d4649b143282c3a751205709cf378}\label{group___l_s_m6_d_s_l__filters_ga024d4649b143282c3a751205709cf378}} 
+\index{LSM6DSL\_filters@{LSM6DSL\_filters}!lsm6dsl\_xl\_hp\_path\_internal\_get@{lsm6dsl\_xl\_hp\_path\_internal\_get}}
+\index{lsm6dsl\_xl\_hp\_path\_internal\_get@{lsm6dsl\_xl\_hp\_path\_internal\_get}!LSM6DSL\_filters@{LSM6DSL\_filters}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_xl\_hp\_path\_internal\_get()}{lsm6dsl\_xl\_hp\_path\_internal\_get()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+xl\+\_\+hp\+\_\+path\+\_\+internal\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{\mbox{\hyperlink{group___l_s_m6_d_s_l_ga3c367a09d8d7ec1271850a7ced8d36ac}{lsm6dsl\+\_\+slope\+\_\+fds\+\_\+t}} $\ast$}]{val }\end{DoxyParamCaption})}
+
+
+
+HPF or SLOPE filter selection on wake-\/up and Activity/\+Inactivity functions.\mbox{[}get\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Get the values of slope\+\_\+fds in reg TAP\+\_\+\+CFG \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l__filters_gad15167b6514feb86aa6dc36830776b52}\label{group___l_s_m6_d_s_l__filters_gad15167b6514feb86aa6dc36830776b52}} 
+\index{LSM6DSL\_filters@{LSM6DSL\_filters}!lsm6dsl\_xl\_hp\_path\_internal\_set@{lsm6dsl\_xl\_hp\_path\_internal\_set}}
+\index{lsm6dsl\_xl\_hp\_path\_internal\_set@{lsm6dsl\_xl\_hp\_path\_internal\_set}!LSM6DSL\_filters@{LSM6DSL\_filters}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_xl\_hp\_path\_internal\_set()}{lsm6dsl\_xl\_hp\_path\_internal\_set()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+xl\+\_\+hp\+\_\+path\+\_\+internal\+\_\+set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{\mbox{\hyperlink{group___l_s_m6_d_s_l_ga3c367a09d8d7ec1271850a7ced8d36ac}{lsm6dsl\+\_\+slope\+\_\+fds\+\_\+t}}}]{val }\end{DoxyParamCaption})}
+
+
+
+HPF or SLOPE filter selection on wake-\/up and Activity/\+Inactivity functions.\mbox{[}set\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Change the values of slope\+\_\+fds in reg TAP\+\_\+\+CFG \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}

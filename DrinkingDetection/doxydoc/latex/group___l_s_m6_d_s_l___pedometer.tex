@@ -1,0 +1,354 @@
+\hypertarget{group___l_s_m6_d_s_l___pedometer}{}\doxysection{LSM6\+DSL\+\_\+\+Pedometer}
+\label{group___l_s_m6_d_s_l___pedometer}\index{LSM6DSL\_Pedometer@{LSM6DSL\_Pedometer}}
+
+
+This section groups all the functions that manage pedometer.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l___pedometer_ga1257536cde49607ec0657282663b09be}{lsm6dsl\+\_\+pedo\+\_\+step\+\_\+reset\+\_\+set}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, uint8\+\_\+t val)
+\begin{DoxyCompactList}\small\item\em Reset pedometer step counter.\mbox{[}set\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l___pedometer_ga7f1d853417411738067dfd1e76e404eb}{lsm6dsl\+\_\+pedo\+\_\+step\+\_\+reset\+\_\+get}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, uint8\+\_\+t $\ast$val)
+\begin{DoxyCompactList}\small\item\em Reset pedometer step counter.\mbox{[}get\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l___pedometer_ga5fd841ea457821c4587d8cc839c25918}{lsm6dsl\+\_\+pedo\+\_\+sens\+\_\+set}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, uint8\+\_\+t val)
+\begin{DoxyCompactList}\small\item\em Enable pedometer algorithm.\mbox{[}set\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l___pedometer_ga8e1c07df53d69c75f94901b92d8bb0ae}{lsm6dsl\+\_\+pedo\+\_\+sens\+\_\+get}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, uint8\+\_\+t $\ast$val)
+\begin{DoxyCompactList}\small\item\em pedo\+\_\+sens\+: Enable pedometer algorithm.\mbox{[}get\mbox{]} \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l___pedometer_ga3c991a094f61230715148882ee66177b}{lsm6dsl\+\_\+pedo\+\_\+threshold\+\_\+set}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, uint8\+\_\+t val)
+\begin{DoxyCompactList}\small\item\em Minimum threshold to detect a peak. Default is 10h.\mbox{[}set\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l___pedometer_gaea10678941aebea4391848995803218b}{lsm6dsl\+\_\+pedo\+\_\+threshold\+\_\+get}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, uint8\+\_\+t $\ast$val)
+\begin{DoxyCompactList}\small\item\em Minimum threshold to detect a peak. Default is 10h.\mbox{[}get\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l___pedometer_ga9fcff58f8aa4fda1d1b9983326ba59d4}{lsm6dsl\+\_\+pedo\+\_\+full\+\_\+scale\+\_\+set}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, \mbox{\hyperlink{group___l_s_m6_d_s_l_ga9142afbcbfadf21c0d0c827d686c0873}{lsm6dsl\+\_\+pedo\+\_\+fs\+\_\+t}} val)
+\begin{DoxyCompactList}\small\item\em pedo\+\_\+full\+\_\+scale\+: Pedometer data range.\mbox{[}set\mbox{]} \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l___pedometer_ga0872e9eb9ed5a5dcbff10876bfdebf93}{lsm6dsl\+\_\+pedo\+\_\+full\+\_\+scale\+\_\+get}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, \mbox{\hyperlink{group___l_s_m6_d_s_l_ga9142afbcbfadf21c0d0c827d686c0873}{lsm6dsl\+\_\+pedo\+\_\+fs\+\_\+t}} $\ast$val)
+\begin{DoxyCompactList}\small\item\em Pedometer data range.\mbox{[}get\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l___pedometer_ga0d92073f0d0548248226331e41e4ca07}{lsm6dsl\+\_\+pedo\+\_\+debounce\+\_\+steps\+\_\+set}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, uint8\+\_\+t val)
+\begin{DoxyCompactList}\small\item\em Pedometer debounce configuration register (r/w).\mbox{[}set\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l___pedometer_gab1ae8ff64c8061f9c28b016a0fd270d0}{lsm6dsl\+\_\+pedo\+\_\+debounce\+\_\+steps\+\_\+get}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, uint8\+\_\+t $\ast$val)
+\begin{DoxyCompactList}\small\item\em Pedometer debounce configuration register (r/w).\mbox{[}get\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l___pedometer_ga3e341bde90a6ab48b0ca43b88e7feae4}{lsm6dsl\+\_\+pedo\+\_\+timeout\+\_\+set}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, uint8\+\_\+t val)
+\begin{DoxyCompactList}\small\item\em Debounce time. If the time between two consecutive steps is greater than DEB\+\_\+\+TIME$\ast$80ms, the debouncer is reactivated. Default value\+: 01101\mbox{[}set\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l___pedometer_gadb4b37b0cd8a27a53c6ecfa40cb67b60}{lsm6dsl\+\_\+pedo\+\_\+timeout\+\_\+get}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, uint8\+\_\+t $\ast$val)
+\begin{DoxyCompactList}\small\item\em Debounce time. If the time between two consecutive steps is greater than DEB\+\_\+\+TIME$\ast$80ms, the debouncer is reactivated. Default value\+: 01101\mbox{[}get\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l___pedometer_ga95a5cb027783981bf6081484d6972e72}{lsm6dsl\+\_\+pedo\+\_\+steps\+\_\+period\+\_\+set}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, uint8\+\_\+t $\ast$buff)
+\begin{DoxyCompactList}\small\item\em Time period register for step detection on delta time (r/w).\mbox{[}set\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l___pedometer_gad982085d6554a5605bb98236827bbec8}{lsm6dsl\+\_\+pedo\+\_\+steps\+\_\+period\+\_\+get}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, uint8\+\_\+t $\ast$buff)
+\begin{DoxyCompactList}\small\item\em Time period register for step detection on delta time (r/w).\mbox{[}get\mbox{]}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This section groups all the functions that manage pedometer. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l___pedometer_gab1ae8ff64c8061f9c28b016a0fd270d0}\label{group___l_s_m6_d_s_l___pedometer_gab1ae8ff64c8061f9c28b016a0fd270d0}} 
+\index{LSM6DSL\_Pedometer@{LSM6DSL\_Pedometer}!lsm6dsl\_pedo\_debounce\_steps\_get@{lsm6dsl\_pedo\_debounce\_steps\_get}}
+\index{lsm6dsl\_pedo\_debounce\_steps\_get@{lsm6dsl\_pedo\_debounce\_steps\_get}!LSM6DSL\_Pedometer@{LSM6DSL\_Pedometer}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_pedo\_debounce\_steps\_get()}{lsm6dsl\_pedo\_debounce\_steps\_get()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+pedo\+\_\+debounce\+\_\+steps\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{uint8\+\_\+t $\ast$}]{val }\end{DoxyParamCaption})}
+
+
+
+Pedometer debounce configuration register (r/w).\mbox{[}get\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Change the values of deb\+\_\+step in reg PEDO\+\_\+\+DEB\+\_\+\+REG \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l___pedometer_ga0d92073f0d0548248226331e41e4ca07}\label{group___l_s_m6_d_s_l___pedometer_ga0d92073f0d0548248226331e41e4ca07}} 
+\index{LSM6DSL\_Pedometer@{LSM6DSL\_Pedometer}!lsm6dsl\_pedo\_debounce\_steps\_set@{lsm6dsl\_pedo\_debounce\_steps\_set}}
+\index{lsm6dsl\_pedo\_debounce\_steps\_set@{lsm6dsl\_pedo\_debounce\_steps\_set}!LSM6DSL\_Pedometer@{LSM6DSL\_Pedometer}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_pedo\_debounce\_steps\_set()}{lsm6dsl\_pedo\_debounce\_steps\_set()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+pedo\+\_\+debounce\+\_\+steps\+\_\+set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{uint8\+\_\+t}]{val }\end{DoxyParamCaption})}
+
+
+
+Pedometer debounce configuration register (r/w).\mbox{[}set\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Change the values of deb\+\_\+step in reg PEDO\+\_\+\+DEB\+\_\+\+REG \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l___pedometer_ga0872e9eb9ed5a5dcbff10876bfdebf93}\label{group___l_s_m6_d_s_l___pedometer_ga0872e9eb9ed5a5dcbff10876bfdebf93}} 
+\index{LSM6DSL\_Pedometer@{LSM6DSL\_Pedometer}!lsm6dsl\_pedo\_full\_scale\_get@{lsm6dsl\_pedo\_full\_scale\_get}}
+\index{lsm6dsl\_pedo\_full\_scale\_get@{lsm6dsl\_pedo\_full\_scale\_get}!LSM6DSL\_Pedometer@{LSM6DSL\_Pedometer}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_pedo\_full\_scale\_get()}{lsm6dsl\_pedo\_full\_scale\_get()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+pedo\+\_\+full\+\_\+scale\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{\mbox{\hyperlink{group___l_s_m6_d_s_l_ga9142afbcbfadf21c0d0c827d686c0873}{lsm6dsl\+\_\+pedo\+\_\+fs\+\_\+t}} $\ast$}]{val }\end{DoxyParamCaption})}
+
+
+
+Pedometer data range.\mbox{[}get\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Get the values of pedo\+\_\+fs in reg CONFIG\+\_\+\+PEDO\+\_\+\+THS\+\_\+\+MIN \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l___pedometer_ga9fcff58f8aa4fda1d1b9983326ba59d4}\label{group___l_s_m6_d_s_l___pedometer_ga9fcff58f8aa4fda1d1b9983326ba59d4}} 
+\index{LSM6DSL\_Pedometer@{LSM6DSL\_Pedometer}!lsm6dsl\_pedo\_full\_scale\_set@{lsm6dsl\_pedo\_full\_scale\_set}}
+\index{lsm6dsl\_pedo\_full\_scale\_set@{lsm6dsl\_pedo\_full\_scale\_set}!LSM6DSL\_Pedometer@{LSM6DSL\_Pedometer}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_pedo\_full\_scale\_set()}{lsm6dsl\_pedo\_full\_scale\_set()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+pedo\+\_\+full\+\_\+scale\+\_\+set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{\mbox{\hyperlink{group___l_s_m6_d_s_l_ga9142afbcbfadf21c0d0c827d686c0873}{lsm6dsl\+\_\+pedo\+\_\+fs\+\_\+t}}}]{val }\end{DoxyParamCaption})}
+
+
+
+pedo\+\_\+full\+\_\+scale\+: Pedometer data range.\mbox{[}set\mbox{]} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Change the values of pedo\+\_\+fs in reg CONFIG\+\_\+\+PEDO\+\_\+\+THS\+\_\+\+MIN \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l___pedometer_ga8e1c07df53d69c75f94901b92d8bb0ae}\label{group___l_s_m6_d_s_l___pedometer_ga8e1c07df53d69c75f94901b92d8bb0ae}} 
+\index{LSM6DSL\_Pedometer@{LSM6DSL\_Pedometer}!lsm6dsl\_pedo\_sens\_get@{lsm6dsl\_pedo\_sens\_get}}
+\index{lsm6dsl\_pedo\_sens\_get@{lsm6dsl\_pedo\_sens\_get}!LSM6DSL\_Pedometer@{LSM6DSL\_Pedometer}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_pedo\_sens\_get()}{lsm6dsl\_pedo\_sens\_get()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+pedo\+\_\+sens\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{uint8\+\_\+t $\ast$}]{val }\end{DoxyParamCaption})}
+
+
+
+pedo\+\_\+sens\+: Enable pedometer algorithm.\mbox{[}get\mbox{]} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Change the values of pedo\+\_\+en in reg CTRL10\+\_\+C \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l___pedometer_ga5fd841ea457821c4587d8cc839c25918}\label{group___l_s_m6_d_s_l___pedometer_ga5fd841ea457821c4587d8cc839c25918}} 
+\index{LSM6DSL\_Pedometer@{LSM6DSL\_Pedometer}!lsm6dsl\_pedo\_sens\_set@{lsm6dsl\_pedo\_sens\_set}}
+\index{lsm6dsl\_pedo\_sens\_set@{lsm6dsl\_pedo\_sens\_set}!LSM6DSL\_Pedometer@{LSM6DSL\_Pedometer}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_pedo\_sens\_set()}{lsm6dsl\_pedo\_sens\_set()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+pedo\+\_\+sens\+\_\+set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{uint8\+\_\+t}]{val }\end{DoxyParamCaption})}
+
+
+
+Enable pedometer algorithm.\mbox{[}set\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Change the values of pedo\+\_\+en in reg CTRL10\+\_\+C \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l___pedometer_ga7f1d853417411738067dfd1e76e404eb}\label{group___l_s_m6_d_s_l___pedometer_ga7f1d853417411738067dfd1e76e404eb}} 
+\index{LSM6DSL\_Pedometer@{LSM6DSL\_Pedometer}!lsm6dsl\_pedo\_step\_reset\_get@{lsm6dsl\_pedo\_step\_reset\_get}}
+\index{lsm6dsl\_pedo\_step\_reset\_get@{lsm6dsl\_pedo\_step\_reset\_get}!LSM6DSL\_Pedometer@{LSM6DSL\_Pedometer}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_pedo\_step\_reset\_get()}{lsm6dsl\_pedo\_step\_reset\_get()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+pedo\+\_\+step\+\_\+reset\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{uint8\+\_\+t $\ast$}]{val }\end{DoxyParamCaption})}
+
+
+
+Reset pedometer step counter.\mbox{[}get\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Change the values of pedo\+\_\+rst\+\_\+step in reg CTRL10\+\_\+C \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l___pedometer_ga1257536cde49607ec0657282663b09be}\label{group___l_s_m6_d_s_l___pedometer_ga1257536cde49607ec0657282663b09be}} 
+\index{LSM6DSL\_Pedometer@{LSM6DSL\_Pedometer}!lsm6dsl\_pedo\_step\_reset\_set@{lsm6dsl\_pedo\_step\_reset\_set}}
+\index{lsm6dsl\_pedo\_step\_reset\_set@{lsm6dsl\_pedo\_step\_reset\_set}!LSM6DSL\_Pedometer@{LSM6DSL\_Pedometer}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_pedo\_step\_reset\_set()}{lsm6dsl\_pedo\_step\_reset\_set()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+pedo\+\_\+step\+\_\+reset\+\_\+set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{uint8\+\_\+t}]{val }\end{DoxyParamCaption})}
+
+
+
+Reset pedometer step counter.\mbox{[}set\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Change the values of pedo\+\_\+rst\+\_\+step in reg CTRL10\+\_\+C \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l___pedometer_gad982085d6554a5605bb98236827bbec8}\label{group___l_s_m6_d_s_l___pedometer_gad982085d6554a5605bb98236827bbec8}} 
+\index{LSM6DSL\_Pedometer@{LSM6DSL\_Pedometer}!lsm6dsl\_pedo\_steps\_period\_get@{lsm6dsl\_pedo\_steps\_period\_get}}
+\index{lsm6dsl\_pedo\_steps\_period\_get@{lsm6dsl\_pedo\_steps\_period\_get}!LSM6DSL\_Pedometer@{LSM6DSL\_Pedometer}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_pedo\_steps\_period\_get()}{lsm6dsl\_pedo\_steps\_period\_get()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+pedo\+\_\+steps\+\_\+period\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{uint8\+\_\+t $\ast$}]{buff }\end{DoxyParamCaption})}
+
+
+
+Time period register for step detection on delta time (r/w).\mbox{[}get\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em buff} & Buffer that stores data read \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l___pedometer_ga95a5cb027783981bf6081484d6972e72}\label{group___l_s_m6_d_s_l___pedometer_ga95a5cb027783981bf6081484d6972e72}} 
+\index{LSM6DSL\_Pedometer@{LSM6DSL\_Pedometer}!lsm6dsl\_pedo\_steps\_period\_set@{lsm6dsl\_pedo\_steps\_period\_set}}
+\index{lsm6dsl\_pedo\_steps\_period\_set@{lsm6dsl\_pedo\_steps\_period\_set}!LSM6DSL\_Pedometer@{LSM6DSL\_Pedometer}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_pedo\_steps\_period\_set()}{lsm6dsl\_pedo\_steps\_period\_set()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+pedo\+\_\+steps\+\_\+period\+\_\+set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{uint8\+\_\+t $\ast$}]{buff }\end{DoxyParamCaption})}
+
+
+
+Time period register for step detection on delta time (r/w).\mbox{[}set\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em buff} & Buffer that contains data to write \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l___pedometer_gaea10678941aebea4391848995803218b}\label{group___l_s_m6_d_s_l___pedometer_gaea10678941aebea4391848995803218b}} 
+\index{LSM6DSL\_Pedometer@{LSM6DSL\_Pedometer}!lsm6dsl\_pedo\_threshold\_get@{lsm6dsl\_pedo\_threshold\_get}}
+\index{lsm6dsl\_pedo\_threshold\_get@{lsm6dsl\_pedo\_threshold\_get}!LSM6DSL\_Pedometer@{LSM6DSL\_Pedometer}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_pedo\_threshold\_get()}{lsm6dsl\_pedo\_threshold\_get()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+pedo\+\_\+threshold\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{uint8\+\_\+t $\ast$}]{val }\end{DoxyParamCaption})}
+
+
+
+Minimum threshold to detect a peak. Default is 10h.\mbox{[}get\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Change the values of ths\+\_\+min in reg CONFIG\+\_\+\+PEDO\+\_\+\+THS\+\_\+\+MIN \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l___pedometer_ga3c991a094f61230715148882ee66177b}\label{group___l_s_m6_d_s_l___pedometer_ga3c991a094f61230715148882ee66177b}} 
+\index{LSM6DSL\_Pedometer@{LSM6DSL\_Pedometer}!lsm6dsl\_pedo\_threshold\_set@{lsm6dsl\_pedo\_threshold\_set}}
+\index{lsm6dsl\_pedo\_threshold\_set@{lsm6dsl\_pedo\_threshold\_set}!LSM6DSL\_Pedometer@{LSM6DSL\_Pedometer}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_pedo\_threshold\_set()}{lsm6dsl\_pedo\_threshold\_set()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+pedo\+\_\+threshold\+\_\+set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{uint8\+\_\+t}]{val }\end{DoxyParamCaption})}
+
+
+
+Minimum threshold to detect a peak. Default is 10h.\mbox{[}set\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Change the values of ths\+\_\+min in reg CONFIG\+\_\+\+PEDO\+\_\+\+THS\+\_\+\+MIN \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l___pedometer_gadb4b37b0cd8a27a53c6ecfa40cb67b60}\label{group___l_s_m6_d_s_l___pedometer_gadb4b37b0cd8a27a53c6ecfa40cb67b60}} 
+\index{LSM6DSL\_Pedometer@{LSM6DSL\_Pedometer}!lsm6dsl\_pedo\_timeout\_get@{lsm6dsl\_pedo\_timeout\_get}}
+\index{lsm6dsl\_pedo\_timeout\_get@{lsm6dsl\_pedo\_timeout\_get}!LSM6DSL\_Pedometer@{LSM6DSL\_Pedometer}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_pedo\_timeout\_get()}{lsm6dsl\_pedo\_timeout\_get()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+pedo\+\_\+timeout\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{uint8\+\_\+t $\ast$}]{val }\end{DoxyParamCaption})}
+
+
+
+Debounce time. If the time between two consecutive steps is greater than DEB\+\_\+\+TIME$\ast$80ms, the debouncer is reactivated. Default value\+: 01101\mbox{[}get\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Change the values of deb\+\_\+time in reg PEDO\+\_\+\+DEB\+\_\+\+REG \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l___pedometer_ga3e341bde90a6ab48b0ca43b88e7feae4}\label{group___l_s_m6_d_s_l___pedometer_ga3e341bde90a6ab48b0ca43b88e7feae4}} 
+\index{LSM6DSL\_Pedometer@{LSM6DSL\_Pedometer}!lsm6dsl\_pedo\_timeout\_set@{lsm6dsl\_pedo\_timeout\_set}}
+\index{lsm6dsl\_pedo\_timeout\_set@{lsm6dsl\_pedo\_timeout\_set}!LSM6DSL\_Pedometer@{LSM6DSL\_Pedometer}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_pedo\_timeout\_set()}{lsm6dsl\_pedo\_timeout\_set()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+pedo\+\_\+timeout\+\_\+set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{uint8\+\_\+t}]{val }\end{DoxyParamCaption})}
+
+
+
+Debounce time. If the time between two consecutive steps is greater than DEB\+\_\+\+TIME$\ast$80ms, the debouncer is reactivated. Default value\+: 01101\mbox{[}set\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Change the values of deb\+\_\+time in reg PEDO\+\_\+\+DEB\+\_\+\+REG \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}

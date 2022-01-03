@@ -1,0 +1,114 @@
+\hypertarget{group___l_s_m6_d_s_l___timestamp}{}\doxysection{LSM6\+DSL\+\_\+\+Timestamp}
+\label{group___l_s_m6_d_s_l___timestamp}\index{LSM6DSL\_Timestamp@{LSM6DSL\_Timestamp}}
+
+
+This section groups all the functions that manage the timestamp generation.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l___timestamp_ga590b4d819a831fb77d9230497d9180fe}{lsm6dsl\+\_\+timestamp\+\_\+set}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, uint8\+\_\+t val)
+\begin{DoxyCompactList}\small\item\em Enable timestamp count. The count is saved in TIMESTAMP0\+\_\+\+REG (40h), TIMESTAMP1\+\_\+\+REG (41h) and TIMESTAMP2\+\_\+\+REG (42h).\mbox{[}set\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l___timestamp_ga1650f86b1d1366472d69272c7f3a8dac}{lsm6dsl\+\_\+timestamp\+\_\+get}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, uint8\+\_\+t $\ast$val)
+\begin{DoxyCompactList}\small\item\em Enable timestamp count. The count is saved in TIMESTAMP0\+\_\+\+REG (40h), TIMESTAMP1\+\_\+\+REG (41h) and TIMESTAMP2\+\_\+\+REG (42h).\mbox{[}get\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l___timestamp_ga3d47f2c0e308a30bf1c207894486ad2d}{lsm6dsl\+\_\+timestamp\+\_\+res\+\_\+set}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, \mbox{\hyperlink{group___l_s_m6_d_s_l_ga0c6a6abcc919ef0741ba811877e20110}{lsm6dsl\+\_\+timer\+\_\+hr\+\_\+t}} val)
+\begin{DoxyCompactList}\small\item\em Timestamp register resolution setting. Configuration of this bit affects TIMESTAMP0\+\_\+\+REG(40h), TIMESTAMP1\+\_\+\+REG(41h), TIMESTAMP2\+\_\+\+REG(42h), STEP\+\_\+\+TIMESTAMP\+\_\+\+L(49h), STEP\+\_\+\+TIMESTAMP\+\_\+\+H(4\+Ah) and STEP\+\_\+\+COUNT\+\_\+\+DELTA(15h) registers.\mbox{[}set\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l___timestamp_ga89404cd80d1e3c7771d9ac8abf70a597}{lsm6dsl\+\_\+timestamp\+\_\+res\+\_\+get}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, \mbox{\hyperlink{group___l_s_m6_d_s_l_ga0c6a6abcc919ef0741ba811877e20110}{lsm6dsl\+\_\+timer\+\_\+hr\+\_\+t}} $\ast$val)
+\begin{DoxyCompactList}\small\item\em Timestamp register resolution setting. Configuration of this bit affects TIMESTAMP0\+\_\+\+REG(40h), TIMESTAMP1\+\_\+\+REG(41h), TIMESTAMP2\+\_\+\+REG(42h), STEP\+\_\+\+TIMESTAMP\+\_\+\+L(49h), STEP\+\_\+\+TIMESTAMP\+\_\+\+H(4\+Ah) and STEP\+\_\+\+COUNT\+\_\+\+DELTA(15h) registers.\mbox{[}get\mbox{]}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This section groups all the functions that manage the timestamp generation. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l___timestamp_ga1650f86b1d1366472d69272c7f3a8dac}\label{group___l_s_m6_d_s_l___timestamp_ga1650f86b1d1366472d69272c7f3a8dac}} 
+\index{LSM6DSL\_Timestamp@{LSM6DSL\_Timestamp}!lsm6dsl\_timestamp\_get@{lsm6dsl\_timestamp\_get}}
+\index{lsm6dsl\_timestamp\_get@{lsm6dsl\_timestamp\_get}!LSM6DSL\_Timestamp@{LSM6DSL\_Timestamp}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_timestamp\_get()}{lsm6dsl\_timestamp\_get()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+timestamp\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{uint8\+\_\+t $\ast$}]{val }\end{DoxyParamCaption})}
+
+
+
+Enable timestamp count. The count is saved in TIMESTAMP0\+\_\+\+REG (40h), TIMESTAMP1\+\_\+\+REG (41h) and TIMESTAMP2\+\_\+\+REG (42h).\mbox{[}get\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Change the values of timer\+\_\+en in reg CTRL10\+\_\+C \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l___timestamp_ga89404cd80d1e3c7771d9ac8abf70a597}\label{group___l_s_m6_d_s_l___timestamp_ga89404cd80d1e3c7771d9ac8abf70a597}} 
+\index{LSM6DSL\_Timestamp@{LSM6DSL\_Timestamp}!lsm6dsl\_timestamp\_res\_get@{lsm6dsl\_timestamp\_res\_get}}
+\index{lsm6dsl\_timestamp\_res\_get@{lsm6dsl\_timestamp\_res\_get}!LSM6DSL\_Timestamp@{LSM6DSL\_Timestamp}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_timestamp\_res\_get()}{lsm6dsl\_timestamp\_res\_get()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+timestamp\+\_\+res\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{\mbox{\hyperlink{group___l_s_m6_d_s_l_ga0c6a6abcc919ef0741ba811877e20110}{lsm6dsl\+\_\+timer\+\_\+hr\+\_\+t}} $\ast$}]{val }\end{DoxyParamCaption})}
+
+
+
+Timestamp register resolution setting. Configuration of this bit affects TIMESTAMP0\+\_\+\+REG(40h), TIMESTAMP1\+\_\+\+REG(41h), TIMESTAMP2\+\_\+\+REG(42h), STEP\+\_\+\+TIMESTAMP\+\_\+\+L(49h), STEP\+\_\+\+TIMESTAMP\+\_\+\+H(4\+Ah) and STEP\+\_\+\+COUNT\+\_\+\+DELTA(15h) registers.\mbox{[}get\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Get the values of timer\+\_\+hr in reg WAKE\+\_\+\+UP\+\_\+\+DUR \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l___timestamp_ga3d47f2c0e308a30bf1c207894486ad2d}\label{group___l_s_m6_d_s_l___timestamp_ga3d47f2c0e308a30bf1c207894486ad2d}} 
+\index{LSM6DSL\_Timestamp@{LSM6DSL\_Timestamp}!lsm6dsl\_timestamp\_res\_set@{lsm6dsl\_timestamp\_res\_set}}
+\index{lsm6dsl\_timestamp\_res\_set@{lsm6dsl\_timestamp\_res\_set}!LSM6DSL\_Timestamp@{LSM6DSL\_Timestamp}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_timestamp\_res\_set()}{lsm6dsl\_timestamp\_res\_set()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+timestamp\+\_\+res\+\_\+set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{\mbox{\hyperlink{group___l_s_m6_d_s_l_ga0c6a6abcc919ef0741ba811877e20110}{lsm6dsl\+\_\+timer\+\_\+hr\+\_\+t}}}]{val }\end{DoxyParamCaption})}
+
+
+
+Timestamp register resolution setting. Configuration of this bit affects TIMESTAMP0\+\_\+\+REG(40h), TIMESTAMP1\+\_\+\+REG(41h), TIMESTAMP2\+\_\+\+REG(42h), STEP\+\_\+\+TIMESTAMP\+\_\+\+L(49h), STEP\+\_\+\+TIMESTAMP\+\_\+\+H(4\+Ah) and STEP\+\_\+\+COUNT\+\_\+\+DELTA(15h) registers.\mbox{[}set\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Change the values of timer\+\_\+hr in reg WAKE\+\_\+\+UP\+\_\+\+DUR \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l___timestamp_ga590b4d819a831fb77d9230497d9180fe}\label{group___l_s_m6_d_s_l___timestamp_ga590b4d819a831fb77d9230497d9180fe}} 
+\index{LSM6DSL\_Timestamp@{LSM6DSL\_Timestamp}!lsm6dsl\_timestamp\_set@{lsm6dsl\_timestamp\_set}}
+\index{lsm6dsl\_timestamp\_set@{lsm6dsl\_timestamp\_set}!LSM6DSL\_Timestamp@{LSM6DSL\_Timestamp}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_timestamp\_set()}{lsm6dsl\_timestamp\_set()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+timestamp\+\_\+set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{uint8\+\_\+t}]{val }\end{DoxyParamCaption})}
+
+
+
+Enable timestamp count. The count is saved in TIMESTAMP0\+\_\+\+REG (40h), TIMESTAMP1\+\_\+\+REG (41h) and TIMESTAMP2\+\_\+\+REG (42h).\mbox{[}set\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Change the values of timer\+\_\+en in reg CTRL10\+\_\+C \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}

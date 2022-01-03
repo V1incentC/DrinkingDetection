@@ -1,0 +1,162 @@
+\hypertarget{group___l_s_m6_d_s_l___activity}{}\doxysection{/\+Inactivity\+\_\+detection}
+\label{group___l_s_m6_d_s_l___activity}\index{/Inactivity\_detection@{/Inactivity\_detection}}
+
+
+This section groups all the functions concerning activity/inactivity detection.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l___activity_gab76ac6ded8c80c9b0831c09830ce1adb}{lsm6dsl\+\_\+gy\+\_\+sleep\+\_\+mode\+\_\+set}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, uint8\+\_\+t val)
+\begin{DoxyCompactList}\small\item\em Enables gyroscope Sleep mode.\mbox{[}set\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l___activity_gac62f7e5f153bbe776825a7432837e45f}{lsm6dsl\+\_\+gy\+\_\+sleep\+\_\+mode\+\_\+get}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, uint8\+\_\+t $\ast$val)
+\begin{DoxyCompactList}\small\item\em Enables gyroscope Sleep mode.\mbox{[}get\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l___activity_ga835a46e42617391a06f4fe5eb106b567}{lsm6dsl\+\_\+act\+\_\+mode\+\_\+set}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, \mbox{\hyperlink{group___l_s_m6_d_s_l_ga52a0dfa595125269c7cbb5dc879323de}{lsm6dsl\+\_\+inact\+\_\+en\+\_\+t}} val)
+\begin{DoxyCompactList}\small\item\em Enable inactivity function.\mbox{[}set\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l___activity_ga3a5cd916c95804eba72f0087e40a5eb9}{lsm6dsl\+\_\+act\+\_\+mode\+\_\+get}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, \mbox{\hyperlink{group___l_s_m6_d_s_l_ga52a0dfa595125269c7cbb5dc879323de}{lsm6dsl\+\_\+inact\+\_\+en\+\_\+t}} $\ast$val)
+\begin{DoxyCompactList}\small\item\em Enable inactivity function.\mbox{[}get\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l___activity_gace3c2482702657609fb9e223def89fd5}{lsm6dsl\+\_\+act\+\_\+sleep\+\_\+dur\+\_\+set}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, uint8\+\_\+t val)
+\begin{DoxyCompactList}\small\item\em Duration to go in sleep mode.\+1 LSb = 512 / ODR\mbox{[}set\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l___activity_ga634cc0dca026dc4caea36d8debd774c1}{lsm6dsl\+\_\+act\+\_\+sleep\+\_\+dur\+\_\+get}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, uint8\+\_\+t $\ast$val)
+\begin{DoxyCompactList}\small\item\em Duration to go in sleep mode. 1 LSb = 512 / ODR\mbox{[}get\mbox{]}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This section groups all the functions concerning activity/inactivity detection. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l___activity_ga3a5cd916c95804eba72f0087e40a5eb9}\label{group___l_s_m6_d_s_l___activity_ga3a5cd916c95804eba72f0087e40a5eb9}} 
+\index{/Inactivity\_detection@{/Inactivity\_detection}!lsm6dsl\_act\_mode\_get@{lsm6dsl\_act\_mode\_get}}
+\index{lsm6dsl\_act\_mode\_get@{lsm6dsl\_act\_mode\_get}!/Inactivity\_detection@{/Inactivity\_detection}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_act\_mode\_get()}{lsm6dsl\_act\_mode\_get()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+act\+\_\+mode\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{\mbox{\hyperlink{group___l_s_m6_d_s_l_ga52a0dfa595125269c7cbb5dc879323de}{lsm6dsl\+\_\+inact\+\_\+en\+\_\+t}} $\ast$}]{val }\end{DoxyParamCaption})}
+
+
+
+Enable inactivity function.\mbox{[}get\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Get the values of inact\+\_\+en in reg TAP\+\_\+\+CFG \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l___activity_ga835a46e42617391a06f4fe5eb106b567}\label{group___l_s_m6_d_s_l___activity_ga835a46e42617391a06f4fe5eb106b567}} 
+\index{/Inactivity\_detection@{/Inactivity\_detection}!lsm6dsl\_act\_mode\_set@{lsm6dsl\_act\_mode\_set}}
+\index{lsm6dsl\_act\_mode\_set@{lsm6dsl\_act\_mode\_set}!/Inactivity\_detection@{/Inactivity\_detection}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_act\_mode\_set()}{lsm6dsl\_act\_mode\_set()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+act\+\_\+mode\+\_\+set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{\mbox{\hyperlink{group___l_s_m6_d_s_l_ga52a0dfa595125269c7cbb5dc879323de}{lsm6dsl\+\_\+inact\+\_\+en\+\_\+t}}}]{val }\end{DoxyParamCaption})}
+
+
+
+Enable inactivity function.\mbox{[}set\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Change the values of inact\+\_\+en in reg TAP\+\_\+\+CFG \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l___activity_ga634cc0dca026dc4caea36d8debd774c1}\label{group___l_s_m6_d_s_l___activity_ga634cc0dca026dc4caea36d8debd774c1}} 
+\index{/Inactivity\_detection@{/Inactivity\_detection}!lsm6dsl\_act\_sleep\_dur\_get@{lsm6dsl\_act\_sleep\_dur\_get}}
+\index{lsm6dsl\_act\_sleep\_dur\_get@{lsm6dsl\_act\_sleep\_dur\_get}!/Inactivity\_detection@{/Inactivity\_detection}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_act\_sleep\_dur\_get()}{lsm6dsl\_act\_sleep\_dur\_get()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+act\+\_\+sleep\+\_\+dur\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{uint8\+\_\+t $\ast$}]{val }\end{DoxyParamCaption})}
+
+
+
+Duration to go in sleep mode. 1 LSb = 512 / ODR\mbox{[}get\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Change the values of sleep\+\_\+dur in reg WAKE\+\_\+\+UP\+\_\+\+DUR \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l___activity_gace3c2482702657609fb9e223def89fd5}\label{group___l_s_m6_d_s_l___activity_gace3c2482702657609fb9e223def89fd5}} 
+\index{/Inactivity\_detection@{/Inactivity\_detection}!lsm6dsl\_act\_sleep\_dur\_set@{lsm6dsl\_act\_sleep\_dur\_set}}
+\index{lsm6dsl\_act\_sleep\_dur\_set@{lsm6dsl\_act\_sleep\_dur\_set}!/Inactivity\_detection@{/Inactivity\_detection}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_act\_sleep\_dur\_set()}{lsm6dsl\_act\_sleep\_dur\_set()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+act\+\_\+sleep\+\_\+dur\+\_\+set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{uint8\+\_\+t}]{val }\end{DoxyParamCaption})}
+
+
+
+Duration to go in sleep mode.\+1 LSb = 512 / ODR\mbox{[}set\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Change the values of sleep\+\_\+dur in reg WAKE\+\_\+\+UP\+\_\+\+DUR \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l___activity_gac62f7e5f153bbe776825a7432837e45f}\label{group___l_s_m6_d_s_l___activity_gac62f7e5f153bbe776825a7432837e45f}} 
+\index{/Inactivity\_detection@{/Inactivity\_detection}!lsm6dsl\_gy\_sleep\_mode\_get@{lsm6dsl\_gy\_sleep\_mode\_get}}
+\index{lsm6dsl\_gy\_sleep\_mode\_get@{lsm6dsl\_gy\_sleep\_mode\_get}!/Inactivity\_detection@{/Inactivity\_detection}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_gy\_sleep\_mode\_get()}{lsm6dsl\_gy\_sleep\_mode\_get()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+gy\+\_\+sleep\+\_\+mode\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{uint8\+\_\+t $\ast$}]{val }\end{DoxyParamCaption})}
+
+
+
+Enables gyroscope Sleep mode.\mbox{[}get\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Change the values of sleep in reg CTRL4\+\_\+C \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l___activity_gab76ac6ded8c80c9b0831c09830ce1adb}\label{group___l_s_m6_d_s_l___activity_gab76ac6ded8c80c9b0831c09830ce1adb}} 
+\index{/Inactivity\_detection@{/Inactivity\_detection}!lsm6dsl\_gy\_sleep\_mode\_set@{lsm6dsl\_gy\_sleep\_mode\_set}}
+\index{lsm6dsl\_gy\_sleep\_mode\_set@{lsm6dsl\_gy\_sleep\_mode\_set}!/Inactivity\_detection@{/Inactivity\_detection}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_gy\_sleep\_mode\_set()}{lsm6dsl\_gy\_sleep\_mode\_set()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+gy\+\_\+sleep\+\_\+mode\+\_\+set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{uint8\+\_\+t}]{val }\end{DoxyParamCaption})}
+
+
+
+Enables gyroscope Sleep mode.\mbox{[}set\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Change the values of sleep in reg CTRL4\+\_\+C \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}

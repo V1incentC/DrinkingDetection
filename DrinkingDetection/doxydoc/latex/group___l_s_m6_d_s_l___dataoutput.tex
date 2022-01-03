@@ -1,0 +1,188 @@
+\hypertarget{group___l_s_m6_d_s_l___dataoutput}{}\doxysection{LSM6\+DSL\+\_\+\+Dataoutput}
+\label{group___l_s_m6_d_s_l___dataoutput}\index{LSM6DSL\_Dataoutput@{LSM6DSL\_Dataoutput}}
+
+
+This section groups all the data output functions.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l___dataoutput_gaf4acf4aeb8ff76ee1ac36271b6230d42}{lsm6dsl\+\_\+rounding\+\_\+mode\+\_\+set}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, \mbox{\hyperlink{group___l_s_m6_d_s_l_gadfddf35f5e38659afa3a4463bb9761e5}{lsm6dsl\+\_\+rounding\+\_\+t}} val)
+\begin{DoxyCompactList}\small\item\em Circular burst-\/mode (rounding) read from output registers through the primary interface.\mbox{[}set\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l___dataoutput_gaafcd92143365b1689eed11e04e39ccdf}{lsm6dsl\+\_\+rounding\+\_\+mode\+\_\+get}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, \mbox{\hyperlink{group___l_s_m6_d_s_l_gadfddf35f5e38659afa3a4463bb9761e5}{lsm6dsl\+\_\+rounding\+\_\+t}} $\ast$val)
+\begin{DoxyCompactList}\small\item\em Circular burst-\/mode (rounding) read from output registers through the primary interface.\mbox{[}get\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l___dataoutput_ga14b8071c18f92c6e4d0903510e26219d}{lsm6dsl\+\_\+temperature\+\_\+raw\+\_\+get}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, uint8\+\_\+t $\ast$buff)
+\begin{DoxyCompactList}\small\item\em Temperature data output register (r). L and H registers together express a 16-\/bit word in two’s complement.\mbox{[}get\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l___dataoutput_ga13bbddc26515e8645550c68dfb66e28b}{lsm6dsl\+\_\+angular\+\_\+rate\+\_\+raw\+\_\+get}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, uint8\+\_\+t $\ast$buff)
+\begin{DoxyCompactList}\small\item\em Angular rate sensor. The value is expressed as a 16-\/bit word in two’s complement.\mbox{[}get\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l___dataoutput_ga6f1bc37436d3a7f5e560668d557ea160}{lsm6dsl\+\_\+acceleration\+\_\+raw\+\_\+get}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, uint8\+\_\+t $\ast$buff)
+\begin{DoxyCompactList}\small\item\em Linear acceleration output register. The value is expressed as a 16-\/bit word in two’s complement.\mbox{[}get\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l___dataoutput_gad12c9366005749cbf9b6715a3d2fa1dd}{lsm6dsl\+\_\+mag\+\_\+calibrated\+\_\+raw\+\_\+get}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, uint8\+\_\+t $\ast$buff)
+\begin{DoxyCompactList}\small\item\em External magnetometer raw data.\mbox{[}get\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l___dataoutput_ga672dda27c61d950f8d6b49a09d7261ce}{lsm6dsl\+\_\+fifo\+\_\+raw\+\_\+data\+\_\+get}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, uint8\+\_\+t $\ast$buffer, uint8\+\_\+t len)
+\begin{DoxyCompactList}\small\item\em Read data in FIFO.\mbox{[}get\mbox{]}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This section groups all the data output functions. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l___dataoutput_ga6f1bc37436d3a7f5e560668d557ea160}\label{group___l_s_m6_d_s_l___dataoutput_ga6f1bc37436d3a7f5e560668d557ea160}} 
+\index{LSM6DSL\_Dataoutput@{LSM6DSL\_Dataoutput}!lsm6dsl\_acceleration\_raw\_get@{lsm6dsl\_acceleration\_raw\_get}}
+\index{lsm6dsl\_acceleration\_raw\_get@{lsm6dsl\_acceleration\_raw\_get}!LSM6DSL\_Dataoutput@{LSM6DSL\_Dataoutput}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_acceleration\_raw\_get()}{lsm6dsl\_acceleration\_raw\_get()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+acceleration\+\_\+raw\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{uint8\+\_\+t $\ast$}]{buff }\end{DoxyParamCaption})}
+
+
+
+Linear acceleration output register. The value is expressed as a 16-\/bit word in two’s complement.\mbox{[}get\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em buff} & Buffer that stores data read \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l___dataoutput_ga13bbddc26515e8645550c68dfb66e28b}\label{group___l_s_m6_d_s_l___dataoutput_ga13bbddc26515e8645550c68dfb66e28b}} 
+\index{LSM6DSL\_Dataoutput@{LSM6DSL\_Dataoutput}!lsm6dsl\_angular\_rate\_raw\_get@{lsm6dsl\_angular\_rate\_raw\_get}}
+\index{lsm6dsl\_angular\_rate\_raw\_get@{lsm6dsl\_angular\_rate\_raw\_get}!LSM6DSL\_Dataoutput@{LSM6DSL\_Dataoutput}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_angular\_rate\_raw\_get()}{lsm6dsl\_angular\_rate\_raw\_get()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+angular\+\_\+rate\+\_\+raw\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{uint8\+\_\+t $\ast$}]{buff }\end{DoxyParamCaption})}
+
+
+
+Angular rate sensor. The value is expressed as a 16-\/bit word in two’s complement.\mbox{[}get\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em buff} & Buffer that stores data read \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l___dataoutput_ga672dda27c61d950f8d6b49a09d7261ce}\label{group___l_s_m6_d_s_l___dataoutput_ga672dda27c61d950f8d6b49a09d7261ce}} 
+\index{LSM6DSL\_Dataoutput@{LSM6DSL\_Dataoutput}!lsm6dsl\_fifo\_raw\_data\_get@{lsm6dsl\_fifo\_raw\_data\_get}}
+\index{lsm6dsl\_fifo\_raw\_data\_get@{lsm6dsl\_fifo\_raw\_data\_get}!LSM6DSL\_Dataoutput@{LSM6DSL\_Dataoutput}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_fifo\_raw\_data\_get()}{lsm6dsl\_fifo\_raw\_data\_get()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+fifo\+\_\+raw\+\_\+data\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{uint8\+\_\+t $\ast$}]{buffer,  }\item[{uint8\+\_\+t}]{len }\end{DoxyParamCaption})}
+
+
+
+Read data in FIFO.\mbox{[}get\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em buffer} & Data buffer to store FIFO data. \\
+\hline
+{\em len} & Number of data to read from FIFO. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l___dataoutput_gad12c9366005749cbf9b6715a3d2fa1dd}\label{group___l_s_m6_d_s_l___dataoutput_gad12c9366005749cbf9b6715a3d2fa1dd}} 
+\index{LSM6DSL\_Dataoutput@{LSM6DSL\_Dataoutput}!lsm6dsl\_mag\_calibrated\_raw\_get@{lsm6dsl\_mag\_calibrated\_raw\_get}}
+\index{lsm6dsl\_mag\_calibrated\_raw\_get@{lsm6dsl\_mag\_calibrated\_raw\_get}!LSM6DSL\_Dataoutput@{LSM6DSL\_Dataoutput}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_mag\_calibrated\_raw\_get()}{lsm6dsl\_mag\_calibrated\_raw\_get()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+mag\+\_\+calibrated\+\_\+raw\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{uint8\+\_\+t $\ast$}]{buff }\end{DoxyParamCaption})}
+
+
+
+External magnetometer raw data.\mbox{[}get\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em buff} & Buffer that stores data read \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l___dataoutput_gaafcd92143365b1689eed11e04e39ccdf}\label{group___l_s_m6_d_s_l___dataoutput_gaafcd92143365b1689eed11e04e39ccdf}} 
+\index{LSM6DSL\_Dataoutput@{LSM6DSL\_Dataoutput}!lsm6dsl\_rounding\_mode\_get@{lsm6dsl\_rounding\_mode\_get}}
+\index{lsm6dsl\_rounding\_mode\_get@{lsm6dsl\_rounding\_mode\_get}!LSM6DSL\_Dataoutput@{LSM6DSL\_Dataoutput}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_rounding\_mode\_get()}{lsm6dsl\_rounding\_mode\_get()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+rounding\+\_\+mode\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{\mbox{\hyperlink{group___l_s_m6_d_s_l_gadfddf35f5e38659afa3a4463bb9761e5}{lsm6dsl\+\_\+rounding\+\_\+t}} $\ast$}]{val }\end{DoxyParamCaption})}
+
+
+
+Circular burst-\/mode (rounding) read from output registers through the primary interface.\mbox{[}get\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Get the values of rounding in reg CTRL5\+\_\+C \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l___dataoutput_gaf4acf4aeb8ff76ee1ac36271b6230d42}\label{group___l_s_m6_d_s_l___dataoutput_gaf4acf4aeb8ff76ee1ac36271b6230d42}} 
+\index{LSM6DSL\_Dataoutput@{LSM6DSL\_Dataoutput}!lsm6dsl\_rounding\_mode\_set@{lsm6dsl\_rounding\_mode\_set}}
+\index{lsm6dsl\_rounding\_mode\_set@{lsm6dsl\_rounding\_mode\_set}!LSM6DSL\_Dataoutput@{LSM6DSL\_Dataoutput}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_rounding\_mode\_set()}{lsm6dsl\_rounding\_mode\_set()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+rounding\+\_\+mode\+\_\+set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{\mbox{\hyperlink{group___l_s_m6_d_s_l_gadfddf35f5e38659afa3a4463bb9761e5}{lsm6dsl\+\_\+rounding\+\_\+t}}}]{val }\end{DoxyParamCaption})}
+
+
+
+Circular burst-\/mode (rounding) read from output registers through the primary interface.\mbox{[}set\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Change the values of rounding in reg CTRL5\+\_\+C \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l___dataoutput_ga14b8071c18f92c6e4d0903510e26219d}\label{group___l_s_m6_d_s_l___dataoutput_ga14b8071c18f92c6e4d0903510e26219d}} 
+\index{LSM6DSL\_Dataoutput@{LSM6DSL\_Dataoutput}!lsm6dsl\_temperature\_raw\_get@{lsm6dsl\_temperature\_raw\_get}}
+\index{lsm6dsl\_temperature\_raw\_get@{lsm6dsl\_temperature\_raw\_get}!LSM6DSL\_Dataoutput@{LSM6DSL\_Dataoutput}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_temperature\_raw\_get()}{lsm6dsl\_temperature\_raw\_get()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+temperature\+\_\+raw\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{uint8\+\_\+t $\ast$}]{buff }\end{DoxyParamCaption})}
+
+
+
+Temperature data output register (r). L and H registers together express a 16-\/bit word in two’s complement.\mbox{[}get\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em buff} & Buffer that stores data read \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}

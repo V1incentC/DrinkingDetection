@@ -1,0 +1,929 @@
+\hypertarget{group___l_s_m6_d_s_l___sensor__hub}{}\doxysection{LSM6\+DSL\+\_\+\+Sensor\+\_\+hub}
+\label{group___l_s_m6_d_s_l___sensor__hub}\index{LSM6DSL\_Sensor\_hub@{LSM6DSL\_Sensor\_hub}}
+
+
+This section groups all the functions that manage the sensor hub functionality.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l___sensor__hub_gaf13f4138ac48abf58518d0b8d7f57ace}{lsm6dsl\+\_\+func\+\_\+en\+\_\+set}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, uint8\+\_\+t val)
+\begin{DoxyCompactList}\small\item\em Enable function.\mbox{[}set\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l___sensor__hub_ga75e4242f549864aa40bab933110b0b18}{lsm6dsl\+\_\+sh\+\_\+sync\+\_\+sens\+\_\+frame\+\_\+set}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, uint8\+\_\+t val)
+\begin{DoxyCompactList}\small\item\em Sensor synchronization time frame with the step of 500 ms and full range of 5s. Unsigned 8-\/bit.\mbox{[}set\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l___sensor__hub_ga60f7f234c15bb224dfdb4a53a444f856}{lsm6dsl\+\_\+sh\+\_\+sync\+\_\+sens\+\_\+frame\+\_\+get}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, uint8\+\_\+t $\ast$val)
+\begin{DoxyCompactList}\small\item\em Sensor synchronization time frame with the step of 500 ms and full range of 5s. Unsigned 8-\/bit.\mbox{[}get\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l___sensor__hub_ga4d3b09cc74dc3c7d46a0eb267377b86b}{lsm6dsl\+\_\+sh\+\_\+sync\+\_\+sens\+\_\+ratio\+\_\+set}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, \mbox{\hyperlink{group___l_s_m6_d_s_l_gab1abda21271fa9abc57008e81e9c21d0}{lsm6dsl\+\_\+rr\+\_\+t}} val)
+\begin{DoxyCompactList}\small\item\em Resolution ratio of error code for sensor synchronization.\mbox{[}set\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l___sensor__hub_ga3bb976b6d41ca4cf18739287639e5156}{lsm6dsl\+\_\+sh\+\_\+sync\+\_\+sens\+\_\+ratio\+\_\+get}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, \mbox{\hyperlink{group___l_s_m6_d_s_l_gab1abda21271fa9abc57008e81e9c21d0}{lsm6dsl\+\_\+rr\+\_\+t}} $\ast$val)
+\begin{DoxyCompactList}\small\item\em Resolution ratio of error code for sensor synchronization.\mbox{[}get\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l___sensor__hub_gaa7684d241c2599084c596c5224f47527}{lsm6dsl\+\_\+sh\+\_\+master\+\_\+set}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, uint8\+\_\+t val)
+\begin{DoxyCompactList}\small\item\em Sensor hub I2C master enable.\mbox{[}set\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l___sensor__hub_gacbaa420dc26cc530f4387c7405008c22}{lsm6dsl\+\_\+sh\+\_\+master\+\_\+get}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, uint8\+\_\+t $\ast$val)
+\begin{DoxyCompactList}\small\item\em Sensor hub I2C master enable.\mbox{[}get\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l___sensor__hub_ga9a3893ed07fab8227a52d6dc171718e3}{lsm6dsl\+\_\+sh\+\_\+pass\+\_\+through\+\_\+set}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, uint8\+\_\+t val)
+\begin{DoxyCompactList}\small\item\em I2C interface pass-\/through.\mbox{[}set\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l___sensor__hub_gacb6b78ee2837f1fc68bd92e8d13ca603}{lsm6dsl\+\_\+sh\+\_\+pass\+\_\+through\+\_\+get}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, uint8\+\_\+t $\ast$val)
+\begin{DoxyCompactList}\small\item\em I2C interface pass-\/through.\mbox{[}get\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l___sensor__hub_gae6a0c0eb59fd5ab33b121822771279ee}{lsm6dsl\+\_\+sh\+\_\+pin\+\_\+mode\+\_\+set}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, \mbox{\hyperlink{group___l_s_m6_d_s_l_ga5f32d82f8d1e10c72ba6c25d7aaa8d1f}{lsm6dsl\+\_\+pull\+\_\+up\+\_\+en\+\_\+t}} val)
+\begin{DoxyCompactList}\small\item\em Master I2C pull-\/up enable/disable.\mbox{[}set\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l___sensor__hub_ga2b9267064a13fb4335d2b2701e17ec23}{lsm6dsl\+\_\+sh\+\_\+pin\+\_\+mode\+\_\+get}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, \mbox{\hyperlink{group___l_s_m6_d_s_l_ga5f32d82f8d1e10c72ba6c25d7aaa8d1f}{lsm6dsl\+\_\+pull\+\_\+up\+\_\+en\+\_\+t}} $\ast$val)
+\begin{DoxyCompactList}\small\item\em Master I2C pull-\/up enable/disable.\mbox{[}get\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l___sensor__hub_ga9cff892c6d86aaae27311343f8bf8b9a}{lsm6dsl\+\_\+sh\+\_\+syncro\+\_\+mode\+\_\+set}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, \mbox{\hyperlink{group___l_s_m6_d_s_l_gaa0827bb2d650fcfbdb4bd4ec97732075}{lsm6dsl\+\_\+start\+\_\+config\+\_\+t}} val)
+\begin{DoxyCompactList}\small\item\em Sensor hub trigger signal selection.\mbox{[}set\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l___sensor__hub_ga145cf7ad53b0cdbea0ca41f1ef6b49c5}{lsm6dsl\+\_\+sh\+\_\+syncro\+\_\+mode\+\_\+get}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, \mbox{\hyperlink{group___l_s_m6_d_s_l_gaa0827bb2d650fcfbdb4bd4ec97732075}{lsm6dsl\+\_\+start\+\_\+config\+\_\+t}} $\ast$val)
+\begin{DoxyCompactList}\small\item\em Sensor hub trigger signal selection.\mbox{[}get\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l___sensor__hub_gaf632ebb021a08719aa2ec2ae04ada39f}{lsm6dsl\+\_\+sh\+\_\+drdy\+\_\+on\+\_\+int1\+\_\+set}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, uint8\+\_\+t val)
+\begin{DoxyCompactList}\small\item\em Manage the Master DRDY signal on INT1 pad.\mbox{[}set\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l___sensor__hub_ga514c54bc5e7414a2f76dc5efb4df8e0a}{lsm6dsl\+\_\+sh\+\_\+drdy\+\_\+on\+\_\+int1\+\_\+get}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, uint8\+\_\+t $\ast$val)
+\begin{DoxyCompactList}\small\item\em Manage the Master DRDY signal on INT1 pad.\mbox{[}get\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l___sensor__hub_gadf36dd3b52c3c3420029147507d104c2}{lsm6dsl\+\_\+sh\+\_\+read\+\_\+data\+\_\+raw\+\_\+get}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, \mbox{\hyperlink{structlsm6dsl__emb__sh__read__t}{lsm6dsl\+\_\+emb\+\_\+sh\+\_\+read\+\_\+t}} $\ast$val)
+\begin{DoxyCompactList}\small\item\em Sensor hub output registers.\mbox{[}get\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l___sensor__hub_gae510cdafbaeaba4377303b2f4fef515b}{lsm6dsl\+\_\+sh\+\_\+cmd\+\_\+sens\+\_\+sync\+\_\+set}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, uint8\+\_\+t val)
+\begin{DoxyCompactList}\small\item\em Master command code used for stamping for sensor sync.\mbox{[}set\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l___sensor__hub_ga15ae5472863dc9797e238363156dacba}{lsm6dsl\+\_\+sh\+\_\+cmd\+\_\+sens\+\_\+sync\+\_\+get}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, uint8\+\_\+t $\ast$val)
+\begin{DoxyCompactList}\small\item\em Master command code used for stamping for sensor sync.\mbox{[}get\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l___sensor__hub_gab7afb74091899ba170a43fd436ad5a98}{lsm6dsl\+\_\+sh\+\_\+spi\+\_\+sync\+\_\+error\+\_\+set}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, uint8\+\_\+t val)
+\begin{DoxyCompactList}\small\item\em Error code used for sensor synchronization.\mbox{[}set\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l___sensor__hub_ga7161200303c2a31bf2b99086b7251402}{lsm6dsl\+\_\+sh\+\_\+spi\+\_\+sync\+\_\+error\+\_\+get}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, uint8\+\_\+t $\ast$val)
+\begin{DoxyCompactList}\small\item\em Error code used for sensor synchronization.\mbox{[}get\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l___sensor__hub_ga403ae1bf42f391418414964ab61cd0c3}{lsm6dsl\+\_\+sh\+\_\+num\+\_\+of\+\_\+dev\+\_\+connected\+\_\+set}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, \mbox{\hyperlink{group___l_s_m6_d_s_l_gabb2341ceb407183d476ca13650294437}{lsm6dsl\+\_\+aux\+\_\+sens\+\_\+on\+\_\+t}} val)
+\begin{DoxyCompactList}\small\item\em Number of external sensors to be read by the sensor hub.\mbox{[}set\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l___sensor__hub_ga01a3f81032d7e0ea159f5aac055b624f}{lsm6dsl\+\_\+sh\+\_\+num\+\_\+of\+\_\+dev\+\_\+connected\+\_\+get}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, \mbox{\hyperlink{group___l_s_m6_d_s_l_gabb2341ceb407183d476ca13650294437}{lsm6dsl\+\_\+aux\+\_\+sens\+\_\+on\+\_\+t}} $\ast$val)
+\begin{DoxyCompactList}\small\item\em Number of external sensors to be read by the sensor hub.\mbox{[}get\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l___sensor__hub_ga4da263883b6b02702d2f16e79cc9980b}{lsm6dsl\+\_\+sh\+\_\+cfg\+\_\+write}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, \mbox{\hyperlink{structlsm6dsl__sh__cfg__write__t}{lsm6dsl\+\_\+sh\+\_\+cfg\+\_\+write\+\_\+t}} $\ast$val)
+\begin{DoxyCompactList}\small\item\em Configure slave 0 for perform a write.\mbox{[}set\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l___sensor__hub_gaf59fa0c51bedb7797c5734fafe2bb154}{lsm6dsl\+\_\+sh\+\_\+slv0\+\_\+cfg\+\_\+read}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, \mbox{\hyperlink{structlsm6dsl__sh__cfg__read__t}{lsm6dsl\+\_\+sh\+\_\+cfg\+\_\+read\+\_\+t}} $\ast$val)
+\begin{DoxyCompactList}\small\item\em Configure slave 0 for perform a read.\mbox{[}get\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l___sensor__hub_gabb3d026abb3d7002be064a7dbb583505}{lsm6dsl\+\_\+sh\+\_\+slv1\+\_\+cfg\+\_\+read}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, \mbox{\hyperlink{structlsm6dsl__sh__cfg__read__t}{lsm6dsl\+\_\+sh\+\_\+cfg\+\_\+read\+\_\+t}} $\ast$val)
+\begin{DoxyCompactList}\small\item\em Configure slave 1 for perform a read.\mbox{[}get\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l___sensor__hub_ga14fbb27e91d6c69d59119f87b1fbd2a7}{lsm6dsl\+\_\+sh\+\_\+slv2\+\_\+cfg\+\_\+read}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, \mbox{\hyperlink{structlsm6dsl__sh__cfg__read__t}{lsm6dsl\+\_\+sh\+\_\+cfg\+\_\+read\+\_\+t}} $\ast$val)
+\begin{DoxyCompactList}\small\item\em Configure slave 2 for perform a read.\mbox{[}get\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l___sensor__hub_ga56b7113ffc85c1f2acad69881a9f5883}{lsm6dsl\+\_\+sh\+\_\+slv3\+\_\+cfg\+\_\+read}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, \mbox{\hyperlink{structlsm6dsl__sh__cfg__read__t}{lsm6dsl\+\_\+sh\+\_\+cfg\+\_\+read\+\_\+t}} $\ast$val)
+\begin{DoxyCompactList}\small\item\em Configure slave 3 for perform a read.\mbox{[}get\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l___sensor__hub_gad88e63300de45409696a07792ed0b88c}{lsm6dsl\+\_\+sh\+\_\+slave\+\_\+0\+\_\+dec\+\_\+set}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, \mbox{\hyperlink{group___l_s_m6_d_s_l_ga8e6640898a27d8e8a135aeae027598dd}{lsm6dsl\+\_\+slave0\+\_\+rate\+\_\+t}} val)
+\begin{DoxyCompactList}\small\item\em Decimation of read operation on Slave 0 starting from the sensor hub trigger.\mbox{[}set\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l___sensor__hub_ga2350bcc823d57188203457c7c952141c}{lsm6dsl\+\_\+sh\+\_\+slave\+\_\+0\+\_\+dec\+\_\+get}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, \mbox{\hyperlink{group___l_s_m6_d_s_l_ga8e6640898a27d8e8a135aeae027598dd}{lsm6dsl\+\_\+slave0\+\_\+rate\+\_\+t}} $\ast$val)
+\begin{DoxyCompactList}\small\item\em Decimation of read operation on Slave 0 starting from the sensor hub trigger.\mbox{[}get\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l___sensor__hub_ga801d4bffaf19b271384f69ce8ac8057b}{lsm6dsl\+\_\+sh\+\_\+write\+\_\+mode\+\_\+set}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, \mbox{\hyperlink{group___l_s_m6_d_s_l_ga5500dff8e34f92fa8c5968b4704c68af}{lsm6dsl\+\_\+write\+\_\+once\+\_\+t}} val)
+\begin{DoxyCompactList}\small\item\em Slave 0 write operation is performed only at the first sensor hub cycle. This is effective if the Aux\+\_\+sens\+\_\+on\mbox{[}1\+:0\mbox{]} field in SLAVE0\+\_\+\+CONFIG(04h) is set to a value other than 00.\mbox{[}set\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l___sensor__hub_gaeca9564942d0bc4b2293a422d1fed5a0}{lsm6dsl\+\_\+sh\+\_\+write\+\_\+mode\+\_\+get}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, \mbox{\hyperlink{group___l_s_m6_d_s_l_ga5500dff8e34f92fa8c5968b4704c68af}{lsm6dsl\+\_\+write\+\_\+once\+\_\+t}} $\ast$val)
+\begin{DoxyCompactList}\small\item\em Slave 0 write operation is performed only at the first sensor hub cycle. This is effective if the Aux\+\_\+sens\+\_\+on\mbox{[}1\+:0\mbox{]} field in SLAVE0\+\_\+\+CONFIG(04h) is set to a value other than 00.\mbox{[}get\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l___sensor__hub_ga1ad200cc5c85783fd1060a3f529d7407}{lsm6dsl\+\_\+sh\+\_\+slave\+\_\+1\+\_\+dec\+\_\+set}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, \mbox{\hyperlink{group___l_s_m6_d_s_l_ga79a0349c061c48700ff4caa05f07ef2c}{lsm6dsl\+\_\+slave1\+\_\+rate\+\_\+t}} val)
+\begin{DoxyCompactList}\small\item\em Decimation of read operation on Slave 1 starting from the sensor hub trigger.\mbox{[}set\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l___sensor__hub_gad524da4edb75db8e7cbe992abf5a16fb}{lsm6dsl\+\_\+sh\+\_\+slave\+\_\+1\+\_\+dec\+\_\+get}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, \mbox{\hyperlink{group___l_s_m6_d_s_l_ga79a0349c061c48700ff4caa05f07ef2c}{lsm6dsl\+\_\+slave1\+\_\+rate\+\_\+t}} $\ast$val)
+\begin{DoxyCompactList}\small\item\em Decimation of read operation on Slave 1 starting from the sensor hub trigger.\mbox{[}get\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l___sensor__hub_gada8286120421a1a4422fa968aefc8745}{lsm6dsl\+\_\+sh\+\_\+slave\+\_\+2\+\_\+dec\+\_\+set}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, \mbox{\hyperlink{group___l_s_m6_d_s_l_ga2dd6427dd644815714e5016ac7d3c8c9}{lsm6dsl\+\_\+slave2\+\_\+rate\+\_\+t}} val)
+\begin{DoxyCompactList}\small\item\em Decimation of read operation on Slave 2 starting from the sensor hub trigger.\mbox{[}set\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l___sensor__hub_ga810c8c687ab1db55594b3ac6f3c7ac6f}{lsm6dsl\+\_\+sh\+\_\+slave\+\_\+2\+\_\+dec\+\_\+get}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, \mbox{\hyperlink{group___l_s_m6_d_s_l_ga2dd6427dd644815714e5016ac7d3c8c9}{lsm6dsl\+\_\+slave2\+\_\+rate\+\_\+t}} $\ast$val)
+\begin{DoxyCompactList}\small\item\em Decimation of read operation on Slave 2 starting from the sensor hub trigger.\mbox{[}get\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l___sensor__hub_gabf2df6aba86ca925337145ef5517304a}{lsm6dsl\+\_\+sh\+\_\+slave\+\_\+3\+\_\+dec\+\_\+set}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, \mbox{\hyperlink{group___l_s_m6_d_s_l_gaa373ec3e2cf1699e4284a132335aa6bd}{lsm6dsl\+\_\+slave3\+\_\+rate\+\_\+t}} val)
+\begin{DoxyCompactList}\small\item\em Decimation of read operation on Slave 3 starting from the sensor hub trigger.\mbox{[}set\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l___sensor__hub_ga114639b60d43ab59e433f5da10280313}{lsm6dsl\+\_\+sh\+\_\+slave\+\_\+3\+\_\+dec\+\_\+get}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, \mbox{\hyperlink{group___l_s_m6_d_s_l_gaa373ec3e2cf1699e4284a132335aa6bd}{lsm6dsl\+\_\+slave3\+\_\+rate\+\_\+t}} $\ast$val)
+\begin{DoxyCompactList}\small\item\em Decimation of read operation on Slave 3 starting from the sensor hub trigger.\mbox{[}get\mbox{]}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This section groups all the functions that manage the sensor hub functionality. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l___sensor__hub_gaf13f4138ac48abf58518d0b8d7f57ace}\label{group___l_s_m6_d_s_l___sensor__hub_gaf13f4138ac48abf58518d0b8d7f57ace}} 
+\index{LSM6DSL\_Sensor\_hub@{LSM6DSL\_Sensor\_hub}!lsm6dsl\_func\_en\_set@{lsm6dsl\_func\_en\_set}}
+\index{lsm6dsl\_func\_en\_set@{lsm6dsl\_func\_en\_set}!LSM6DSL\_Sensor\_hub@{LSM6DSL\_Sensor\_hub}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_func\_en\_set()}{lsm6dsl\_func\_en\_set()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+func\+\_\+en\+\_\+set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{uint8\+\_\+t}]{val }\end{DoxyParamCaption})}
+
+
+
+Enable function.\mbox{[}set\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Change the values func\+\_\+en \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l___sensor__hub_ga4da263883b6b02702d2f16e79cc9980b}\label{group___l_s_m6_d_s_l___sensor__hub_ga4da263883b6b02702d2f16e79cc9980b}} 
+\index{LSM6DSL\_Sensor\_hub@{LSM6DSL\_Sensor\_hub}!lsm6dsl\_sh\_cfg\_write@{lsm6dsl\_sh\_cfg\_write}}
+\index{lsm6dsl\_sh\_cfg\_write@{lsm6dsl\_sh\_cfg\_write}!LSM6DSL\_Sensor\_hub@{LSM6DSL\_Sensor\_hub}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_sh\_cfg\_write()}{lsm6dsl\_sh\_cfg\_write()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+sh\+\_\+cfg\+\_\+write (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{\mbox{\hyperlink{structlsm6dsl__sh__cfg__write__t}{lsm6dsl\+\_\+sh\+\_\+cfg\+\_\+write\+\_\+t}} $\ast$}]{val }\end{DoxyParamCaption})}
+
+
+
+Configure slave 0 for perform a write.\mbox{[}set\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Structure that contain\+:
+\begin{DoxyItemize}
+\item uint8\+\_\+t slv\+\_\+add; 8 bit i2c device address
+\item uint8\+\_\+t slv\+\_\+subadd; 8 bit register device address
+\item uint8\+\_\+t slv\+\_\+data; 8 bit data to write 
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l___sensor__hub_ga15ae5472863dc9797e238363156dacba}\label{group___l_s_m6_d_s_l___sensor__hub_ga15ae5472863dc9797e238363156dacba}} 
+\index{LSM6DSL\_Sensor\_hub@{LSM6DSL\_Sensor\_hub}!lsm6dsl\_sh\_cmd\_sens\_sync\_get@{lsm6dsl\_sh\_cmd\_sens\_sync\_get}}
+\index{lsm6dsl\_sh\_cmd\_sens\_sync\_get@{lsm6dsl\_sh\_cmd\_sens\_sync\_get}!LSM6DSL\_Sensor\_hub@{LSM6DSL\_Sensor\_hub}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_sh\_cmd\_sens\_sync\_get()}{lsm6dsl\_sh\_cmd\_sens\_sync\_get()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+sh\+\_\+cmd\+\_\+sens\+\_\+sync\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{uint8\+\_\+t $\ast$}]{val }\end{DoxyParamCaption})}
+
+
+
+Master command code used for stamping for sensor sync.\mbox{[}get\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Change the values of master\+\_\+cmd\+\_\+code in reg MASTER\+\_\+\+CMD\+\_\+\+CODE \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l___sensor__hub_gae510cdafbaeaba4377303b2f4fef515b}\label{group___l_s_m6_d_s_l___sensor__hub_gae510cdafbaeaba4377303b2f4fef515b}} 
+\index{LSM6DSL\_Sensor\_hub@{LSM6DSL\_Sensor\_hub}!lsm6dsl\_sh\_cmd\_sens\_sync\_set@{lsm6dsl\_sh\_cmd\_sens\_sync\_set}}
+\index{lsm6dsl\_sh\_cmd\_sens\_sync\_set@{lsm6dsl\_sh\_cmd\_sens\_sync\_set}!LSM6DSL\_Sensor\_hub@{LSM6DSL\_Sensor\_hub}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_sh\_cmd\_sens\_sync\_set()}{lsm6dsl\_sh\_cmd\_sens\_sync\_set()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+sh\+\_\+cmd\+\_\+sens\+\_\+sync\+\_\+set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{uint8\+\_\+t}]{val }\end{DoxyParamCaption})}
+
+
+
+Master command code used for stamping for sensor sync.\mbox{[}set\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Change the values of master\+\_\+cmd\+\_\+code in reg MASTER\+\_\+\+CMD\+\_\+\+CODE \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l___sensor__hub_ga514c54bc5e7414a2f76dc5efb4df8e0a}\label{group___l_s_m6_d_s_l___sensor__hub_ga514c54bc5e7414a2f76dc5efb4df8e0a}} 
+\index{LSM6DSL\_Sensor\_hub@{LSM6DSL\_Sensor\_hub}!lsm6dsl\_sh\_drdy\_on\_int1\_get@{lsm6dsl\_sh\_drdy\_on\_int1\_get}}
+\index{lsm6dsl\_sh\_drdy\_on\_int1\_get@{lsm6dsl\_sh\_drdy\_on\_int1\_get}!LSM6DSL\_Sensor\_hub@{LSM6DSL\_Sensor\_hub}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_sh\_drdy\_on\_int1\_get()}{lsm6dsl\_sh\_drdy\_on\_int1\_get()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+sh\+\_\+drdy\+\_\+on\+\_\+int1\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{uint8\+\_\+t $\ast$}]{val }\end{DoxyParamCaption})}
+
+
+
+Manage the Master DRDY signal on INT1 pad.\mbox{[}get\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Change the values of drdy\+\_\+on\+\_\+int1 in reg MASTER\+\_\+\+CONFIG \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l___sensor__hub_gaf632ebb021a08719aa2ec2ae04ada39f}\label{group___l_s_m6_d_s_l___sensor__hub_gaf632ebb021a08719aa2ec2ae04ada39f}} 
+\index{LSM6DSL\_Sensor\_hub@{LSM6DSL\_Sensor\_hub}!lsm6dsl\_sh\_drdy\_on\_int1\_set@{lsm6dsl\_sh\_drdy\_on\_int1\_set}}
+\index{lsm6dsl\_sh\_drdy\_on\_int1\_set@{lsm6dsl\_sh\_drdy\_on\_int1\_set}!LSM6DSL\_Sensor\_hub@{LSM6DSL\_Sensor\_hub}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_sh\_drdy\_on\_int1\_set()}{lsm6dsl\_sh\_drdy\_on\_int1\_set()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+sh\+\_\+drdy\+\_\+on\+\_\+int1\+\_\+set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{uint8\+\_\+t}]{val }\end{DoxyParamCaption})}
+
+
+
+Manage the Master DRDY signal on INT1 pad.\mbox{[}set\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Change the values of drdy\+\_\+on\+\_\+int1 in reg MASTER\+\_\+\+CONFIG \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l___sensor__hub_gacbaa420dc26cc530f4387c7405008c22}\label{group___l_s_m6_d_s_l___sensor__hub_gacbaa420dc26cc530f4387c7405008c22}} 
+\index{LSM6DSL\_Sensor\_hub@{LSM6DSL\_Sensor\_hub}!lsm6dsl\_sh\_master\_get@{lsm6dsl\_sh\_master\_get}}
+\index{lsm6dsl\_sh\_master\_get@{lsm6dsl\_sh\_master\_get}!LSM6DSL\_Sensor\_hub@{LSM6DSL\_Sensor\_hub}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_sh\_master\_get()}{lsm6dsl\_sh\_master\_get()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+sh\+\_\+master\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{uint8\+\_\+t $\ast$}]{val }\end{DoxyParamCaption})}
+
+
+
+Sensor hub I2C master enable.\mbox{[}get\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Change the values of master\+\_\+on in reg MASTER\+\_\+\+CONFIG \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l___sensor__hub_gaa7684d241c2599084c596c5224f47527}\label{group___l_s_m6_d_s_l___sensor__hub_gaa7684d241c2599084c596c5224f47527}} 
+\index{LSM6DSL\_Sensor\_hub@{LSM6DSL\_Sensor\_hub}!lsm6dsl\_sh\_master\_set@{lsm6dsl\_sh\_master\_set}}
+\index{lsm6dsl\_sh\_master\_set@{lsm6dsl\_sh\_master\_set}!LSM6DSL\_Sensor\_hub@{LSM6DSL\_Sensor\_hub}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_sh\_master\_set()}{lsm6dsl\_sh\_master\_set()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+sh\+\_\+master\+\_\+set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{uint8\+\_\+t}]{val }\end{DoxyParamCaption})}
+
+
+
+Sensor hub I2C master enable.\mbox{[}set\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Change the values of master\+\_\+on in reg MASTER\+\_\+\+CONFIG \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l___sensor__hub_ga01a3f81032d7e0ea159f5aac055b624f}\label{group___l_s_m6_d_s_l___sensor__hub_ga01a3f81032d7e0ea159f5aac055b624f}} 
+\index{LSM6DSL\_Sensor\_hub@{LSM6DSL\_Sensor\_hub}!lsm6dsl\_sh\_num\_of\_dev\_connected\_get@{lsm6dsl\_sh\_num\_of\_dev\_connected\_get}}
+\index{lsm6dsl\_sh\_num\_of\_dev\_connected\_get@{lsm6dsl\_sh\_num\_of\_dev\_connected\_get}!LSM6DSL\_Sensor\_hub@{LSM6DSL\_Sensor\_hub}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_sh\_num\_of\_dev\_connected\_get()}{lsm6dsl\_sh\_num\_of\_dev\_connected\_get()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+sh\+\_\+num\+\_\+of\+\_\+dev\+\_\+connected\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{\mbox{\hyperlink{group___l_s_m6_d_s_l_gabb2341ceb407183d476ca13650294437}{lsm6dsl\+\_\+aux\+\_\+sens\+\_\+on\+\_\+t}} $\ast$}]{val }\end{DoxyParamCaption})}
+
+
+
+Number of external sensors to be read by the sensor hub.\mbox{[}get\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Get the values of aux\+\_\+sens\+\_\+on in reg SLAVE0\+\_\+\+CONFIG. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l___sensor__hub_ga403ae1bf42f391418414964ab61cd0c3}\label{group___l_s_m6_d_s_l___sensor__hub_ga403ae1bf42f391418414964ab61cd0c3}} 
+\index{LSM6DSL\_Sensor\_hub@{LSM6DSL\_Sensor\_hub}!lsm6dsl\_sh\_num\_of\_dev\_connected\_set@{lsm6dsl\_sh\_num\_of\_dev\_connected\_set}}
+\index{lsm6dsl\_sh\_num\_of\_dev\_connected\_set@{lsm6dsl\_sh\_num\_of\_dev\_connected\_set}!LSM6DSL\_Sensor\_hub@{LSM6DSL\_Sensor\_hub}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_sh\_num\_of\_dev\_connected\_set()}{lsm6dsl\_sh\_num\_of\_dev\_connected\_set()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+sh\+\_\+num\+\_\+of\+\_\+dev\+\_\+connected\+\_\+set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{\mbox{\hyperlink{group___l_s_m6_d_s_l_gabb2341ceb407183d476ca13650294437}{lsm6dsl\+\_\+aux\+\_\+sens\+\_\+on\+\_\+t}}}]{val }\end{DoxyParamCaption})}
+
+
+
+Number of external sensors to be read by the sensor hub.\mbox{[}set\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Change the values of aux\+\_\+sens\+\_\+on in reg SLAVE0\+\_\+\+CONFIG. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l___sensor__hub_gacb6b78ee2837f1fc68bd92e8d13ca603}\label{group___l_s_m6_d_s_l___sensor__hub_gacb6b78ee2837f1fc68bd92e8d13ca603}} 
+\index{LSM6DSL\_Sensor\_hub@{LSM6DSL\_Sensor\_hub}!lsm6dsl\_sh\_pass\_through\_get@{lsm6dsl\_sh\_pass\_through\_get}}
+\index{lsm6dsl\_sh\_pass\_through\_get@{lsm6dsl\_sh\_pass\_through\_get}!LSM6DSL\_Sensor\_hub@{LSM6DSL\_Sensor\_hub}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_sh\_pass\_through\_get()}{lsm6dsl\_sh\_pass\_through\_get()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+sh\+\_\+pass\+\_\+through\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{uint8\+\_\+t $\ast$}]{val }\end{DoxyParamCaption})}
+
+
+
+I2C interface pass-\/through.\mbox{[}get\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Change the values of pass\+\_\+through\+\_\+mode in reg MASTER\+\_\+\+CONFIG \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l___sensor__hub_ga9a3893ed07fab8227a52d6dc171718e3}\label{group___l_s_m6_d_s_l___sensor__hub_ga9a3893ed07fab8227a52d6dc171718e3}} 
+\index{LSM6DSL\_Sensor\_hub@{LSM6DSL\_Sensor\_hub}!lsm6dsl\_sh\_pass\_through\_set@{lsm6dsl\_sh\_pass\_through\_set}}
+\index{lsm6dsl\_sh\_pass\_through\_set@{lsm6dsl\_sh\_pass\_through\_set}!LSM6DSL\_Sensor\_hub@{LSM6DSL\_Sensor\_hub}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_sh\_pass\_through\_set()}{lsm6dsl\_sh\_pass\_through\_set()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+sh\+\_\+pass\+\_\+through\+\_\+set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{uint8\+\_\+t}]{val }\end{DoxyParamCaption})}
+
+
+
+I2C interface pass-\/through.\mbox{[}set\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Change the values of pass\+\_\+through\+\_\+mode in reg MASTER\+\_\+\+CONFIG \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l___sensor__hub_ga2b9267064a13fb4335d2b2701e17ec23}\label{group___l_s_m6_d_s_l___sensor__hub_ga2b9267064a13fb4335d2b2701e17ec23}} 
+\index{LSM6DSL\_Sensor\_hub@{LSM6DSL\_Sensor\_hub}!lsm6dsl\_sh\_pin\_mode\_get@{lsm6dsl\_sh\_pin\_mode\_get}}
+\index{lsm6dsl\_sh\_pin\_mode\_get@{lsm6dsl\_sh\_pin\_mode\_get}!LSM6DSL\_Sensor\_hub@{LSM6DSL\_Sensor\_hub}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_sh\_pin\_mode\_get()}{lsm6dsl\_sh\_pin\_mode\_get()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+sh\+\_\+pin\+\_\+mode\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{\mbox{\hyperlink{group___l_s_m6_d_s_l_ga5f32d82f8d1e10c72ba6c25d7aaa8d1f}{lsm6dsl\+\_\+pull\+\_\+up\+\_\+en\+\_\+t}} $\ast$}]{val }\end{DoxyParamCaption})}
+
+
+
+Master I2C pull-\/up enable/disable.\mbox{[}get\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Get the values of pull\+\_\+up\+\_\+en in reg MASTER\+\_\+\+CONFIG \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l___sensor__hub_gae6a0c0eb59fd5ab33b121822771279ee}\label{group___l_s_m6_d_s_l___sensor__hub_gae6a0c0eb59fd5ab33b121822771279ee}} 
+\index{LSM6DSL\_Sensor\_hub@{LSM6DSL\_Sensor\_hub}!lsm6dsl\_sh\_pin\_mode\_set@{lsm6dsl\_sh\_pin\_mode\_set}}
+\index{lsm6dsl\_sh\_pin\_mode\_set@{lsm6dsl\_sh\_pin\_mode\_set}!LSM6DSL\_Sensor\_hub@{LSM6DSL\_Sensor\_hub}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_sh\_pin\_mode\_set()}{lsm6dsl\_sh\_pin\_mode\_set()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+sh\+\_\+pin\+\_\+mode\+\_\+set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{\mbox{\hyperlink{group___l_s_m6_d_s_l_ga5f32d82f8d1e10c72ba6c25d7aaa8d1f}{lsm6dsl\+\_\+pull\+\_\+up\+\_\+en\+\_\+t}}}]{val }\end{DoxyParamCaption})}
+
+
+
+Master I2C pull-\/up enable/disable.\mbox{[}set\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Change the values of pull\+\_\+up\+\_\+en in reg MASTER\+\_\+\+CONFIG \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l___sensor__hub_gadf36dd3b52c3c3420029147507d104c2}\label{group___l_s_m6_d_s_l___sensor__hub_gadf36dd3b52c3c3420029147507d104c2}} 
+\index{LSM6DSL\_Sensor\_hub@{LSM6DSL\_Sensor\_hub}!lsm6dsl\_sh\_read\_data\_raw\_get@{lsm6dsl\_sh\_read\_data\_raw\_get}}
+\index{lsm6dsl\_sh\_read\_data\_raw\_get@{lsm6dsl\_sh\_read\_data\_raw\_get}!LSM6DSL\_Sensor\_hub@{LSM6DSL\_Sensor\_hub}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_sh\_read\_data\_raw\_get()}{lsm6dsl\_sh\_read\_data\_raw\_get()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+sh\+\_\+read\+\_\+data\+\_\+raw\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{\mbox{\hyperlink{structlsm6dsl__emb__sh__read__t}{lsm6dsl\+\_\+emb\+\_\+sh\+\_\+read\+\_\+t}} $\ast$}]{val }\end{DoxyParamCaption})}
+
+
+
+Sensor hub output registers.\mbox{[}get\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Structure of registers from SENSORHUB1\+\_\+\+REG \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l___sensor__hub_ga2350bcc823d57188203457c7c952141c}\label{group___l_s_m6_d_s_l___sensor__hub_ga2350bcc823d57188203457c7c952141c}} 
+\index{LSM6DSL\_Sensor\_hub@{LSM6DSL\_Sensor\_hub}!lsm6dsl\_sh\_slave\_0\_dec\_get@{lsm6dsl\_sh\_slave\_0\_dec\_get}}
+\index{lsm6dsl\_sh\_slave\_0\_dec\_get@{lsm6dsl\_sh\_slave\_0\_dec\_get}!LSM6DSL\_Sensor\_hub@{LSM6DSL\_Sensor\_hub}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_sh\_slave\_0\_dec\_get()}{lsm6dsl\_sh\_slave\_0\_dec\_get()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+sh\+\_\+slave\+\_\+0\+\_\+dec\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{\mbox{\hyperlink{group___l_s_m6_d_s_l_ga8e6640898a27d8e8a135aeae027598dd}{lsm6dsl\+\_\+slave0\+\_\+rate\+\_\+t}} $\ast$}]{val }\end{DoxyParamCaption})}
+
+
+
+Decimation of read operation on Slave 0 starting from the sensor hub trigger.\mbox{[}get\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Get the values of slave0\+\_\+rate in reg SLAVE0\+\_\+\+CONFIG \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l___sensor__hub_gad88e63300de45409696a07792ed0b88c}\label{group___l_s_m6_d_s_l___sensor__hub_gad88e63300de45409696a07792ed0b88c}} 
+\index{LSM6DSL\_Sensor\_hub@{LSM6DSL\_Sensor\_hub}!lsm6dsl\_sh\_slave\_0\_dec\_set@{lsm6dsl\_sh\_slave\_0\_dec\_set}}
+\index{lsm6dsl\_sh\_slave\_0\_dec\_set@{lsm6dsl\_sh\_slave\_0\_dec\_set}!LSM6DSL\_Sensor\_hub@{LSM6DSL\_Sensor\_hub}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_sh\_slave\_0\_dec\_set()}{lsm6dsl\_sh\_slave\_0\_dec\_set()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+sh\+\_\+slave\+\_\+0\+\_\+dec\+\_\+set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{\mbox{\hyperlink{group___l_s_m6_d_s_l_ga8e6640898a27d8e8a135aeae027598dd}{lsm6dsl\+\_\+slave0\+\_\+rate\+\_\+t}}}]{val }\end{DoxyParamCaption})}
+
+
+
+Decimation of read operation on Slave 0 starting from the sensor hub trigger.\mbox{[}set\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Change the values of slave0\+\_\+rate in reg SLAVE0\+\_\+\+CONFIG \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l___sensor__hub_gad524da4edb75db8e7cbe992abf5a16fb}\label{group___l_s_m6_d_s_l___sensor__hub_gad524da4edb75db8e7cbe992abf5a16fb}} 
+\index{LSM6DSL\_Sensor\_hub@{LSM6DSL\_Sensor\_hub}!lsm6dsl\_sh\_slave\_1\_dec\_get@{lsm6dsl\_sh\_slave\_1\_dec\_get}}
+\index{lsm6dsl\_sh\_slave\_1\_dec\_get@{lsm6dsl\_sh\_slave\_1\_dec\_get}!LSM6DSL\_Sensor\_hub@{LSM6DSL\_Sensor\_hub}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_sh\_slave\_1\_dec\_get()}{lsm6dsl\_sh\_slave\_1\_dec\_get()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+sh\+\_\+slave\+\_\+1\+\_\+dec\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{\mbox{\hyperlink{group___l_s_m6_d_s_l_ga79a0349c061c48700ff4caa05f07ef2c}{lsm6dsl\+\_\+slave1\+\_\+rate\+\_\+t}} $\ast$}]{val }\end{DoxyParamCaption})}
+
+
+
+Decimation of read operation on Slave 1 starting from the sensor hub trigger.\mbox{[}get\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions reg SLAVE1\+\_\+\+CONFIG \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l___sensor__hub_ga1ad200cc5c85783fd1060a3f529d7407}\label{group___l_s_m6_d_s_l___sensor__hub_ga1ad200cc5c85783fd1060a3f529d7407}} 
+\index{LSM6DSL\_Sensor\_hub@{LSM6DSL\_Sensor\_hub}!lsm6dsl\_sh\_slave\_1\_dec\_set@{lsm6dsl\_sh\_slave\_1\_dec\_set}}
+\index{lsm6dsl\_sh\_slave\_1\_dec\_set@{lsm6dsl\_sh\_slave\_1\_dec\_set}!LSM6DSL\_Sensor\_hub@{LSM6DSL\_Sensor\_hub}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_sh\_slave\_1\_dec\_set()}{lsm6dsl\_sh\_slave\_1\_dec\_set()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+sh\+\_\+slave\+\_\+1\+\_\+dec\+\_\+set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{\mbox{\hyperlink{group___l_s_m6_d_s_l_ga79a0349c061c48700ff4caa05f07ef2c}{lsm6dsl\+\_\+slave1\+\_\+rate\+\_\+t}}}]{val }\end{DoxyParamCaption})}
+
+
+
+Decimation of read operation on Slave 1 starting from the sensor hub trigger.\mbox{[}set\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Change the values of slave1\+\_\+rate in reg SLAVE1\+\_\+\+CONFIG \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l___sensor__hub_ga810c8c687ab1db55594b3ac6f3c7ac6f}\label{group___l_s_m6_d_s_l___sensor__hub_ga810c8c687ab1db55594b3ac6f3c7ac6f}} 
+\index{LSM6DSL\_Sensor\_hub@{LSM6DSL\_Sensor\_hub}!lsm6dsl\_sh\_slave\_2\_dec\_get@{lsm6dsl\_sh\_slave\_2\_dec\_get}}
+\index{lsm6dsl\_sh\_slave\_2\_dec\_get@{lsm6dsl\_sh\_slave\_2\_dec\_get}!LSM6DSL\_Sensor\_hub@{LSM6DSL\_Sensor\_hub}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_sh\_slave\_2\_dec\_get()}{lsm6dsl\_sh\_slave\_2\_dec\_get()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+sh\+\_\+slave\+\_\+2\+\_\+dec\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{\mbox{\hyperlink{group___l_s_m6_d_s_l_ga2dd6427dd644815714e5016ac7d3c8c9}{lsm6dsl\+\_\+slave2\+\_\+rate\+\_\+t}} $\ast$}]{val }\end{DoxyParamCaption})}
+
+
+
+Decimation of read operation on Slave 2 starting from the sensor hub trigger.\mbox{[}get\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Get the values of slave2\+\_\+rate in reg SLAVE2\+\_\+\+CONFIG \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l___sensor__hub_gada8286120421a1a4422fa968aefc8745}\label{group___l_s_m6_d_s_l___sensor__hub_gada8286120421a1a4422fa968aefc8745}} 
+\index{LSM6DSL\_Sensor\_hub@{LSM6DSL\_Sensor\_hub}!lsm6dsl\_sh\_slave\_2\_dec\_set@{lsm6dsl\_sh\_slave\_2\_dec\_set}}
+\index{lsm6dsl\_sh\_slave\_2\_dec\_set@{lsm6dsl\_sh\_slave\_2\_dec\_set}!LSM6DSL\_Sensor\_hub@{LSM6DSL\_Sensor\_hub}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_sh\_slave\_2\_dec\_set()}{lsm6dsl\_sh\_slave\_2\_dec\_set()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+sh\+\_\+slave\+\_\+2\+\_\+dec\+\_\+set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{\mbox{\hyperlink{group___l_s_m6_d_s_l_ga2dd6427dd644815714e5016ac7d3c8c9}{lsm6dsl\+\_\+slave2\+\_\+rate\+\_\+t}}}]{val }\end{DoxyParamCaption})}
+
+
+
+Decimation of read operation on Slave 2 starting from the sensor hub trigger.\mbox{[}set\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Change the values of slave2\+\_\+rate in reg SLAVE2\+\_\+\+CONFIG \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l___sensor__hub_ga114639b60d43ab59e433f5da10280313}\label{group___l_s_m6_d_s_l___sensor__hub_ga114639b60d43ab59e433f5da10280313}} 
+\index{LSM6DSL\_Sensor\_hub@{LSM6DSL\_Sensor\_hub}!lsm6dsl\_sh\_slave\_3\_dec\_get@{lsm6dsl\_sh\_slave\_3\_dec\_get}}
+\index{lsm6dsl\_sh\_slave\_3\_dec\_get@{lsm6dsl\_sh\_slave\_3\_dec\_get}!LSM6DSL\_Sensor\_hub@{LSM6DSL\_Sensor\_hub}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_sh\_slave\_3\_dec\_get()}{lsm6dsl\_sh\_slave\_3\_dec\_get()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+sh\+\_\+slave\+\_\+3\+\_\+dec\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{\mbox{\hyperlink{group___l_s_m6_d_s_l_gaa373ec3e2cf1699e4284a132335aa6bd}{lsm6dsl\+\_\+slave3\+\_\+rate\+\_\+t}} $\ast$}]{val }\end{DoxyParamCaption})}
+
+
+
+Decimation of read operation on Slave 3 starting from the sensor hub trigger.\mbox{[}get\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Get the values of slave3\+\_\+rate in reg SLAVE3\+\_\+\+CONFIG. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l___sensor__hub_gabf2df6aba86ca925337145ef5517304a}\label{group___l_s_m6_d_s_l___sensor__hub_gabf2df6aba86ca925337145ef5517304a}} 
+\index{LSM6DSL\_Sensor\_hub@{LSM6DSL\_Sensor\_hub}!lsm6dsl\_sh\_slave\_3\_dec\_set@{lsm6dsl\_sh\_slave\_3\_dec\_set}}
+\index{lsm6dsl\_sh\_slave\_3\_dec\_set@{lsm6dsl\_sh\_slave\_3\_dec\_set}!LSM6DSL\_Sensor\_hub@{LSM6DSL\_Sensor\_hub}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_sh\_slave\_3\_dec\_set()}{lsm6dsl\_sh\_slave\_3\_dec\_set()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+sh\+\_\+slave\+\_\+3\+\_\+dec\+\_\+set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{\mbox{\hyperlink{group___l_s_m6_d_s_l_gaa373ec3e2cf1699e4284a132335aa6bd}{lsm6dsl\+\_\+slave3\+\_\+rate\+\_\+t}}}]{val }\end{DoxyParamCaption})}
+
+
+
+Decimation of read operation on Slave 3 starting from the sensor hub trigger.\mbox{[}set\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Change the values of slave3\+\_\+rate in reg SLAVE3\+\_\+\+CONFIG \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l___sensor__hub_gaf59fa0c51bedb7797c5734fafe2bb154}\label{group___l_s_m6_d_s_l___sensor__hub_gaf59fa0c51bedb7797c5734fafe2bb154}} 
+\index{LSM6DSL\_Sensor\_hub@{LSM6DSL\_Sensor\_hub}!lsm6dsl\_sh\_slv0\_cfg\_read@{lsm6dsl\_sh\_slv0\_cfg\_read}}
+\index{lsm6dsl\_sh\_slv0\_cfg\_read@{lsm6dsl\_sh\_slv0\_cfg\_read}!LSM6DSL\_Sensor\_hub@{LSM6DSL\_Sensor\_hub}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_sh\_slv0\_cfg\_read()}{lsm6dsl\_sh\_slv0\_cfg\_read()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+sh\+\_\+slv0\+\_\+cfg\+\_\+read (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{\mbox{\hyperlink{structlsm6dsl__sh__cfg__read__t}{lsm6dsl\+\_\+sh\+\_\+cfg\+\_\+read\+\_\+t}} $\ast$}]{val }\end{DoxyParamCaption})}
+
+
+
+Configure slave 0 for perform a read.\mbox{[}get\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Structure that contain\+:
+\begin{DoxyItemize}
+\item uint8\+\_\+t slv\+\_\+add; 8 bit i2c device address
+\item uint8\+\_\+t slv\+\_\+subadd; 8 bit register device address
+\item uint8\+\_\+t slv\+\_\+len; num of bit to read 
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l___sensor__hub_gabb3d026abb3d7002be064a7dbb583505}\label{group___l_s_m6_d_s_l___sensor__hub_gabb3d026abb3d7002be064a7dbb583505}} 
+\index{LSM6DSL\_Sensor\_hub@{LSM6DSL\_Sensor\_hub}!lsm6dsl\_sh\_slv1\_cfg\_read@{lsm6dsl\_sh\_slv1\_cfg\_read}}
+\index{lsm6dsl\_sh\_slv1\_cfg\_read@{lsm6dsl\_sh\_slv1\_cfg\_read}!LSM6DSL\_Sensor\_hub@{LSM6DSL\_Sensor\_hub}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_sh\_slv1\_cfg\_read()}{lsm6dsl\_sh\_slv1\_cfg\_read()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+sh\+\_\+slv1\+\_\+cfg\+\_\+read (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{\mbox{\hyperlink{structlsm6dsl__sh__cfg__read__t}{lsm6dsl\+\_\+sh\+\_\+cfg\+\_\+read\+\_\+t}} $\ast$}]{val }\end{DoxyParamCaption})}
+
+
+
+Configure slave 1 for perform a read.\mbox{[}get\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Structure that contain\+:
+\begin{DoxyItemize}
+\item uint8\+\_\+t slv\+\_\+add; 8 bit i2c device address
+\item uint8\+\_\+t slv\+\_\+subadd; 8 bit register device address
+\item uint8\+\_\+t slv\+\_\+len; num of bit to read 
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l___sensor__hub_ga14fbb27e91d6c69d59119f87b1fbd2a7}\label{group___l_s_m6_d_s_l___sensor__hub_ga14fbb27e91d6c69d59119f87b1fbd2a7}} 
+\index{LSM6DSL\_Sensor\_hub@{LSM6DSL\_Sensor\_hub}!lsm6dsl\_sh\_slv2\_cfg\_read@{lsm6dsl\_sh\_slv2\_cfg\_read}}
+\index{lsm6dsl\_sh\_slv2\_cfg\_read@{lsm6dsl\_sh\_slv2\_cfg\_read}!LSM6DSL\_Sensor\_hub@{LSM6DSL\_Sensor\_hub}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_sh\_slv2\_cfg\_read()}{lsm6dsl\_sh\_slv2\_cfg\_read()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+sh\+\_\+slv2\+\_\+cfg\+\_\+read (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{\mbox{\hyperlink{structlsm6dsl__sh__cfg__read__t}{lsm6dsl\+\_\+sh\+\_\+cfg\+\_\+read\+\_\+t}} $\ast$}]{val }\end{DoxyParamCaption})}
+
+
+
+Configure slave 2 for perform a read.\mbox{[}get\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Structure that contain\+:
+\begin{DoxyItemize}
+\item uint8\+\_\+t slv\+\_\+add; 8 bit i2c device address
+\item uint8\+\_\+t slv\+\_\+subadd; 8 bit register device address
+\item uint8\+\_\+t slv\+\_\+len; num of bit to read 
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l___sensor__hub_ga56b7113ffc85c1f2acad69881a9f5883}\label{group___l_s_m6_d_s_l___sensor__hub_ga56b7113ffc85c1f2acad69881a9f5883}} 
+\index{LSM6DSL\_Sensor\_hub@{LSM6DSL\_Sensor\_hub}!lsm6dsl\_sh\_slv3\_cfg\_read@{lsm6dsl\_sh\_slv3\_cfg\_read}}
+\index{lsm6dsl\_sh\_slv3\_cfg\_read@{lsm6dsl\_sh\_slv3\_cfg\_read}!LSM6DSL\_Sensor\_hub@{LSM6DSL\_Sensor\_hub}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_sh\_slv3\_cfg\_read()}{lsm6dsl\_sh\_slv3\_cfg\_read()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+sh\+\_\+slv3\+\_\+cfg\+\_\+read (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{\mbox{\hyperlink{structlsm6dsl__sh__cfg__read__t}{lsm6dsl\+\_\+sh\+\_\+cfg\+\_\+read\+\_\+t}} $\ast$}]{val }\end{DoxyParamCaption})}
+
+
+
+Configure slave 3 for perform a read.\mbox{[}get\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Structure that contain\+:
+\begin{DoxyItemize}
+\item uint8\+\_\+t slv\+\_\+add; 8 bit i2c device address
+\item uint8\+\_\+t slv\+\_\+subadd; 8 bit register device address
+\item uint8\+\_\+t slv\+\_\+len; num of bit to read 
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l___sensor__hub_ga7161200303c2a31bf2b99086b7251402}\label{group___l_s_m6_d_s_l___sensor__hub_ga7161200303c2a31bf2b99086b7251402}} 
+\index{LSM6DSL\_Sensor\_hub@{LSM6DSL\_Sensor\_hub}!lsm6dsl\_sh\_spi\_sync\_error\_get@{lsm6dsl\_sh\_spi\_sync\_error\_get}}
+\index{lsm6dsl\_sh\_spi\_sync\_error\_get@{lsm6dsl\_sh\_spi\_sync\_error\_get}!LSM6DSL\_Sensor\_hub@{LSM6DSL\_Sensor\_hub}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_sh\_spi\_sync\_error\_get()}{lsm6dsl\_sh\_spi\_sync\_error\_get()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+sh\+\_\+spi\+\_\+sync\+\_\+error\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{uint8\+\_\+t $\ast$}]{val }\end{DoxyParamCaption})}
+
+
+
+Error code used for sensor synchronization.\mbox{[}get\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Change the values of error\+\_\+code in reg SENS\+\_\+\+SYNC\+\_\+\+SPI\+\_\+\+ERROR\+\_\+\+CODE. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l___sensor__hub_gab7afb74091899ba170a43fd436ad5a98}\label{group___l_s_m6_d_s_l___sensor__hub_gab7afb74091899ba170a43fd436ad5a98}} 
+\index{LSM6DSL\_Sensor\_hub@{LSM6DSL\_Sensor\_hub}!lsm6dsl\_sh\_spi\_sync\_error\_set@{lsm6dsl\_sh\_spi\_sync\_error\_set}}
+\index{lsm6dsl\_sh\_spi\_sync\_error\_set@{lsm6dsl\_sh\_spi\_sync\_error\_set}!LSM6DSL\_Sensor\_hub@{LSM6DSL\_Sensor\_hub}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_sh\_spi\_sync\_error\_set()}{lsm6dsl\_sh\_spi\_sync\_error\_set()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+sh\+\_\+spi\+\_\+sync\+\_\+error\+\_\+set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{uint8\+\_\+t}]{val }\end{DoxyParamCaption})}
+
+
+
+Error code used for sensor synchronization.\mbox{[}set\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Change the values of error\+\_\+code in reg SENS\+\_\+\+SYNC\+\_\+\+SPI\+\_\+\+ERROR\+\_\+\+CODE. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l___sensor__hub_ga60f7f234c15bb224dfdb4a53a444f856}\label{group___l_s_m6_d_s_l___sensor__hub_ga60f7f234c15bb224dfdb4a53a444f856}} 
+\index{LSM6DSL\_Sensor\_hub@{LSM6DSL\_Sensor\_hub}!lsm6dsl\_sh\_sync\_sens\_frame\_get@{lsm6dsl\_sh\_sync\_sens\_frame\_get}}
+\index{lsm6dsl\_sh\_sync\_sens\_frame\_get@{lsm6dsl\_sh\_sync\_sens\_frame\_get}!LSM6DSL\_Sensor\_hub@{LSM6DSL\_Sensor\_hub}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_sh\_sync\_sens\_frame\_get()}{lsm6dsl\_sh\_sync\_sens\_frame\_get()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+sh\+\_\+sync\+\_\+sens\+\_\+frame\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{uint8\+\_\+t $\ast$}]{val }\end{DoxyParamCaption})}
+
+
+
+Sensor synchronization time frame with the step of 500 ms and full range of 5s. Unsigned 8-\/bit.\mbox{[}get\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Change the values of tph in reg SENSOR\+\_\+\+SYNC\+\_\+\+TIME\+\_\+\+FRAME \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l___sensor__hub_ga75e4242f549864aa40bab933110b0b18}\label{group___l_s_m6_d_s_l___sensor__hub_ga75e4242f549864aa40bab933110b0b18}} 
+\index{LSM6DSL\_Sensor\_hub@{LSM6DSL\_Sensor\_hub}!lsm6dsl\_sh\_sync\_sens\_frame\_set@{lsm6dsl\_sh\_sync\_sens\_frame\_set}}
+\index{lsm6dsl\_sh\_sync\_sens\_frame\_set@{lsm6dsl\_sh\_sync\_sens\_frame\_set}!LSM6DSL\_Sensor\_hub@{LSM6DSL\_Sensor\_hub}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_sh\_sync\_sens\_frame\_set()}{lsm6dsl\_sh\_sync\_sens\_frame\_set()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+sh\+\_\+sync\+\_\+sens\+\_\+frame\+\_\+set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{uint8\+\_\+t}]{val }\end{DoxyParamCaption})}
+
+
+
+Sensor synchronization time frame with the step of 500 ms and full range of 5s. Unsigned 8-\/bit.\mbox{[}set\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Change the values of tph in reg SENSOR\+\_\+\+SYNC\+\_\+\+TIME\+\_\+\+FRAME \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l___sensor__hub_ga3bb976b6d41ca4cf18739287639e5156}\label{group___l_s_m6_d_s_l___sensor__hub_ga3bb976b6d41ca4cf18739287639e5156}} 
+\index{LSM6DSL\_Sensor\_hub@{LSM6DSL\_Sensor\_hub}!lsm6dsl\_sh\_sync\_sens\_ratio\_get@{lsm6dsl\_sh\_sync\_sens\_ratio\_get}}
+\index{lsm6dsl\_sh\_sync\_sens\_ratio\_get@{lsm6dsl\_sh\_sync\_sens\_ratio\_get}!LSM6DSL\_Sensor\_hub@{LSM6DSL\_Sensor\_hub}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_sh\_sync\_sens\_ratio\_get()}{lsm6dsl\_sh\_sync\_sens\_ratio\_get()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+sh\+\_\+sync\+\_\+sens\+\_\+ratio\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{\mbox{\hyperlink{group___l_s_m6_d_s_l_gab1abda21271fa9abc57008e81e9c21d0}{lsm6dsl\+\_\+rr\+\_\+t}} $\ast$}]{val }\end{DoxyParamCaption})}
+
+
+
+Resolution ratio of error code for sensor synchronization.\mbox{[}get\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Get the values of rr in reg SENSOR\+\_\+\+SYNC\+\_\+\+RES\+\_\+\+RATIO \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l___sensor__hub_ga4d3b09cc74dc3c7d46a0eb267377b86b}\label{group___l_s_m6_d_s_l___sensor__hub_ga4d3b09cc74dc3c7d46a0eb267377b86b}} 
+\index{LSM6DSL\_Sensor\_hub@{LSM6DSL\_Sensor\_hub}!lsm6dsl\_sh\_sync\_sens\_ratio\_set@{lsm6dsl\_sh\_sync\_sens\_ratio\_set}}
+\index{lsm6dsl\_sh\_sync\_sens\_ratio\_set@{lsm6dsl\_sh\_sync\_sens\_ratio\_set}!LSM6DSL\_Sensor\_hub@{LSM6DSL\_Sensor\_hub}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_sh\_sync\_sens\_ratio\_set()}{lsm6dsl\_sh\_sync\_sens\_ratio\_set()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+sh\+\_\+sync\+\_\+sens\+\_\+ratio\+\_\+set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{\mbox{\hyperlink{group___l_s_m6_d_s_l_gab1abda21271fa9abc57008e81e9c21d0}{lsm6dsl\+\_\+rr\+\_\+t}}}]{val }\end{DoxyParamCaption})}
+
+
+
+Resolution ratio of error code for sensor synchronization.\mbox{[}set\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Change the values of rr in reg SENSOR\+\_\+\+SYNC\+\_\+\+RES\+\_\+\+RATIO \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l___sensor__hub_ga145cf7ad53b0cdbea0ca41f1ef6b49c5}\label{group___l_s_m6_d_s_l___sensor__hub_ga145cf7ad53b0cdbea0ca41f1ef6b49c5}} 
+\index{LSM6DSL\_Sensor\_hub@{LSM6DSL\_Sensor\_hub}!lsm6dsl\_sh\_syncro\_mode\_get@{lsm6dsl\_sh\_syncro\_mode\_get}}
+\index{lsm6dsl\_sh\_syncro\_mode\_get@{lsm6dsl\_sh\_syncro\_mode\_get}!LSM6DSL\_Sensor\_hub@{LSM6DSL\_Sensor\_hub}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_sh\_syncro\_mode\_get()}{lsm6dsl\_sh\_syncro\_mode\_get()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+sh\+\_\+syncro\+\_\+mode\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{\mbox{\hyperlink{group___l_s_m6_d_s_l_gaa0827bb2d650fcfbdb4bd4ec97732075}{lsm6dsl\+\_\+start\+\_\+config\+\_\+t}} $\ast$}]{val }\end{DoxyParamCaption})}
+
+
+
+Sensor hub trigger signal selection.\mbox{[}get\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Get the values of start\+\_\+config in reg MASTER\+\_\+\+CONFIG \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l___sensor__hub_ga9cff892c6d86aaae27311343f8bf8b9a}\label{group___l_s_m6_d_s_l___sensor__hub_ga9cff892c6d86aaae27311343f8bf8b9a}} 
+\index{LSM6DSL\_Sensor\_hub@{LSM6DSL\_Sensor\_hub}!lsm6dsl\_sh\_syncro\_mode\_set@{lsm6dsl\_sh\_syncro\_mode\_set}}
+\index{lsm6dsl\_sh\_syncro\_mode\_set@{lsm6dsl\_sh\_syncro\_mode\_set}!LSM6DSL\_Sensor\_hub@{LSM6DSL\_Sensor\_hub}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_sh\_syncro\_mode\_set()}{lsm6dsl\_sh\_syncro\_mode\_set()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+sh\+\_\+syncro\+\_\+mode\+\_\+set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{\mbox{\hyperlink{group___l_s_m6_d_s_l_gaa0827bb2d650fcfbdb4bd4ec97732075}{lsm6dsl\+\_\+start\+\_\+config\+\_\+t}}}]{val }\end{DoxyParamCaption})}
+
+
+
+Sensor hub trigger signal selection.\mbox{[}set\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Change the values of start\+\_\+config in reg MASTER\+\_\+\+CONFIG \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l___sensor__hub_gaeca9564942d0bc4b2293a422d1fed5a0}\label{group___l_s_m6_d_s_l___sensor__hub_gaeca9564942d0bc4b2293a422d1fed5a0}} 
+\index{LSM6DSL\_Sensor\_hub@{LSM6DSL\_Sensor\_hub}!lsm6dsl\_sh\_write\_mode\_get@{lsm6dsl\_sh\_write\_mode\_get}}
+\index{lsm6dsl\_sh\_write\_mode\_get@{lsm6dsl\_sh\_write\_mode\_get}!LSM6DSL\_Sensor\_hub@{LSM6DSL\_Sensor\_hub}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_sh\_write\_mode\_get()}{lsm6dsl\_sh\_write\_mode\_get()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+sh\+\_\+write\+\_\+mode\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{\mbox{\hyperlink{group___l_s_m6_d_s_l_ga5500dff8e34f92fa8c5968b4704c68af}{lsm6dsl\+\_\+write\+\_\+once\+\_\+t}} $\ast$}]{val }\end{DoxyParamCaption})}
+
+
+
+Slave 0 write operation is performed only at the first sensor hub cycle. This is effective if the Aux\+\_\+sens\+\_\+on\mbox{[}1\+:0\mbox{]} field in SLAVE0\+\_\+\+CONFIG(04h) is set to a value other than 00.\mbox{[}get\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Get the values of write\+\_\+once in reg SLAVE1\+\_\+\+CONFIG \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l___sensor__hub_ga801d4bffaf19b271384f69ce8ac8057b}\label{group___l_s_m6_d_s_l___sensor__hub_ga801d4bffaf19b271384f69ce8ac8057b}} 
+\index{LSM6DSL\_Sensor\_hub@{LSM6DSL\_Sensor\_hub}!lsm6dsl\_sh\_write\_mode\_set@{lsm6dsl\_sh\_write\_mode\_set}}
+\index{lsm6dsl\_sh\_write\_mode\_set@{lsm6dsl\_sh\_write\_mode\_set}!LSM6DSL\_Sensor\_hub@{LSM6DSL\_Sensor\_hub}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_sh\_write\_mode\_set()}{lsm6dsl\_sh\_write\_mode\_set()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+sh\+\_\+write\+\_\+mode\+\_\+set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{\mbox{\hyperlink{group___l_s_m6_d_s_l_ga5500dff8e34f92fa8c5968b4704c68af}{lsm6dsl\+\_\+write\+\_\+once\+\_\+t}}}]{val }\end{DoxyParamCaption})}
+
+
+
+Slave 0 write operation is performed only at the first sensor hub cycle. This is effective if the Aux\+\_\+sens\+\_\+on\mbox{[}1\+:0\mbox{]} field in SLAVE0\+\_\+\+CONFIG(04h) is set to a value other than 00.\mbox{[}set\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Change the values of write\+\_\+once in reg SLAVE1\+\_\+\+CONFIG \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}

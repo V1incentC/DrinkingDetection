@@ -1,0 +1,104 @@
+\hypertarget{group___i_m_u}{}\doxysection{LOW LEVEL}
+\label{group___i_m_u}\index{LOW LEVEL@{LOW LEVEL}}
+
+
+This file provides a set of functions needed to drive the lsm6dsl enanced inertial module.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int32\+\_\+t \mbox{\hyperlink{group___i_m_u_ga2216e2af937e3f86115623ac15940b8e}{imu\+\_\+ll\+\_\+platform\+\_\+write}} (void $\ast$handle, uint8\+\_\+t reg, uint8\+\_\+t $\ast$buffer, size\+\_\+t length)
+\begin{DoxyCompactList}\small\item\em Hardware specific function for TWI interface writing. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___i_m_u_ga11760f6190cc2d5f987678930d16e1a8}{imu\+\_\+ll\+\_\+platform\+\_\+read}} (void $\ast$handle, uint8\+\_\+t reg, uint8\+\_\+t $\ast$buffer, size\+\_\+t length)
+\begin{DoxyCompactList}\small\item\em Hardware specific function for TWI interface writing. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___i_m_u_gac6fa65b5be05082da07458f3cb6a6a68}{imu\+\_\+ll\+\_\+twi\+\_\+master\+\_\+init}} ()
+\item 
+void \mbox{\hyperlink{group___i_m_u_ga7e5e378594ddc75c4a5fb342196b7ce7}{imu\+\_\+ll\+\_\+twim\+\_\+dma\+\_\+init}} (uint8\+\_\+t ppi\+\_\+trigger\+\_\+pin, uint8\+\_\+t reg, uint8\+\_\+t $\ast$buffer, size\+\_\+t buffer\+\_\+length)
+\begin{DoxyCompactList}\small\item\em Function for initializing TWIM DMA reading triggered by PPI and GPIO. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file provides a set of functions needed to drive the lsm6dsl enanced inertial module. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group___i_m_u_ga11760f6190cc2d5f987678930d16e1a8}\label{group___i_m_u_ga11760f6190cc2d5f987678930d16e1a8}} 
+\index{LOW LEVEL@{LOW LEVEL}!imu\_ll\_platform\_read@{imu\_ll\_platform\_read}}
+\index{imu\_ll\_platform\_read@{imu\_ll\_platform\_read}!LOW LEVEL@{LOW LEVEL}}
+\doxysubsubsection{\texorpdfstring{imu\_ll\_platform\_read()}{imu\_ll\_platform\_read()}}
+{\footnotesize\ttfamily int32\+\_\+t imu\+\_\+ll\+\_\+platform\+\_\+read (\begin{DoxyParamCaption}\item[{void $\ast$}]{handle,  }\item[{uint8\+\_\+t}]{reg,  }\item[{uint8\+\_\+t $\ast$}]{buffer,  }\item[{size\+\_\+t}]{len }\end{DoxyParamCaption})}
+
+
+
+Hardware specific function for TWI interface writing. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em handle} & Pointer to lsm6dsl object \\
+\hline
+\mbox{\texttt{ in}}  & {\em reg} & Register we want to adress \\
+\hline
+\mbox{\texttt{ in}}  & {\em buffer} & Pointer to a buffer for storing the read data \\
+\hline
+\mbox{\texttt{ in}}  & {\em len} & Length of the buffer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ret\+\_\+code\+\_\+t error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___i_m_u_ga2216e2af937e3f86115623ac15940b8e}\label{group___i_m_u_ga2216e2af937e3f86115623ac15940b8e}} 
+\index{LOW LEVEL@{LOW LEVEL}!imu\_ll\_platform\_write@{imu\_ll\_platform\_write}}
+\index{imu\_ll\_platform\_write@{imu\_ll\_platform\_write}!LOW LEVEL@{LOW LEVEL}}
+\doxysubsubsection{\texorpdfstring{imu\_ll\_platform\_write()}{imu\_ll\_platform\_write()}}
+{\footnotesize\ttfamily int32\+\_\+t imu\+\_\+ll\+\_\+platform\+\_\+write (\begin{DoxyParamCaption}\item[{void $\ast$}]{handle,  }\item[{uint8\+\_\+t}]{reg,  }\item[{uint8\+\_\+t $\ast$}]{buffer,  }\item[{size\+\_\+t}]{length }\end{DoxyParamCaption})}
+
+
+
+Hardware specific function for TWI interface writing. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em handle} & Pointer to lsm6dsl object \\
+\hline
+\mbox{\texttt{ in}}  & {\em reg} & Register we want to adress \\
+\hline
+\mbox{\texttt{ in}}  & {\em buffer} & Pointer to a buffer containing data we want to write to the device \\
+\hline
+\mbox{\texttt{ in}}  & {\em len} & Length of the buffer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ret\+\_\+code\+\_\+t error code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___i_m_u_gac6fa65b5be05082da07458f3cb6a6a68}\label{group___i_m_u_gac6fa65b5be05082da07458f3cb6a6a68}} 
+\index{LOW LEVEL@{LOW LEVEL}!imu\_ll\_twi\_master\_init@{imu\_ll\_twi\_master\_init}}
+\index{imu\_ll\_twi\_master\_init@{imu\_ll\_twi\_master\_init}!LOW LEVEL@{LOW LEVEL}}
+\doxysubsubsection{\texorpdfstring{imu\_ll\_twi\_master\_init()}{imu\_ll\_twi\_master\_init()}}
+{\footnotesize\ttfamily void imu\+\_\+ll\+\_\+twi\+\_\+master\+\_\+init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{group___i_m_u_ga7e5e378594ddc75c4a5fb342196b7ce7}\label{group___i_m_u_ga7e5e378594ddc75c4a5fb342196b7ce7}} 
+\index{LOW LEVEL@{LOW LEVEL}!imu\_ll\_twim\_dma\_init@{imu\_ll\_twim\_dma\_init}}
+\index{imu\_ll\_twim\_dma\_init@{imu\_ll\_twim\_dma\_init}!LOW LEVEL@{LOW LEVEL}}
+\doxysubsubsection{\texorpdfstring{imu\_ll\_twim\_dma\_init()}{imu\_ll\_twim\_dma\_init()}}
+{\footnotesize\ttfamily void imu\+\_\+ll\+\_\+twim\+\_\+dma\+\_\+init (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{ppi\+\_\+trigger\+\_\+pin,  }\item[{uint8\+\_\+t}]{reg,  }\item[{uint8\+\_\+t $\ast$}]{buffer,  }\item[{size\+\_\+t}]{buffer\+\_\+length }\end{DoxyParamCaption})}
+
+
+
+Function for initializing TWIM DMA reading triggered by PPI and GPIO. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em ppi\+\_\+trigger\+\_\+pin} & GPIO pin we want to use for triggering the PPI \\
+\hline
+\mbox{\texttt{ in}}  & {\em reg} & Register we want to read data from \\
+\hline
+\mbox{\texttt{ in}}  & {\em buffer} & Pointer to a buffer for storing the read data \\
+\hline
+\mbox{\texttt{ in}}  & {\em buffer\+\_\+length} & Length of the buffer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ret\+\_\+code\+\_\+t error code 
+\end{DoxyReturn}

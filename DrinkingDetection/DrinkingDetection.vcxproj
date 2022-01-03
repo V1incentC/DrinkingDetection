@@ -34,11 +34,13 @@
     <ToolchainID>com.sysprogs.gnuarm.arm-eabi</ToolchainID>
     <ToolchainVersion>7.3.1/8.0/r1</ToolchainVersion>
     <MCUPropertyListFile>$(ProjectDir)nrf5x.props</MCUPropertyListFile>
+    <AutoIncludePaths>true</AutoIncludePaths>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">
     <ToolchainID>com.sysprogs.gnuarm.arm-eabi</ToolchainID>
     <ToolchainVersion>7.3.1/8.0/r1</ToolchainVersion>
     <MCUPropertyListFile>$(ProjectDir)nrf5x.props</MCUPropertyListFile>
+    <AutoIncludePaths>true</AutoIncludePaths>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">
     <ClCompile>
@@ -68,6 +70,13 @@
   </ImportGroup>
   <ItemGroup>
     <ClCompile Include="DrinkingDetection.c" />
+    <ClCompile Include="UserFiles\IMU_API\imu_api.c" />
+    <ClCompile Include="UserFiles\IMU_API\lsm6dsl\lsm6dsl_reg.c" />
+    <ClCompile Include="UserFiles\IMU_API\nrfx_twim_imu\imu_low_level.c" />
+    <ClInclude Include="UserFiles\IMU_API\imu_api.h" />
+    <ClInclude Include="UserFiles\IMU_API\lsm6dsl\lsm6dsl_reg.h" />
+    <ClInclude Include="UserFiles\IMU_API\nrfx_twim_imu\imu_low_level.h" />
+    <None Include="..\default.doxygen" />
     <None Include="nrf5x.props" />
     <ClCompile Include="$(BSP_ROOT)\nRF5x\modules\nrfx\mdk\system_nrf52840.c" />
     <ClCompile Include="$(BSP_ROOT)\nRF5x\modules\nrfx\mdk\gcc_startup_nrf52840.S" />

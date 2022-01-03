@@ -1,0 +1,112 @@
+\hypertarget{imu__low__level_8h}{}\doxysection{User\+Files/\+IMU\+\_\+\+API/nrfx\+\_\+twim\+\_\+imu/imu\+\_\+low\+\_\+level.h File Reference}
+\label{imu__low__level_8h}\index{UserFiles/IMU\_API/nrfx\_twim\_imu/imu\_low\_level.h@{UserFiles/IMU\_API/nrfx\_twim\_imu/imu\_low\_level.h}}
+{\ttfamily \#include \char`\"{}nrfx\+\_\+twim.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}nrf\+\_\+gpio.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pca10056.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{imu__low__level_8h_adf17ae578110a9aed4c7151db9b13172}{DEVKIT}}~/$\ast$Comment out if you\textquotesingle{}re using the wristband$\ast$/
+\item 
+\#define \mbox{\hyperlink{imu__low__level_8h_a35090d5cf30e07213cf12d5e2c614c6a}{IMU\+\_\+\+LL\+\_\+\+SCL}}~NRF\+\_\+\+GPIO\+\_\+\+PIN\+\_\+\+MAP(1, 5)
+\item 
+\#define \mbox{\hyperlink{imu__low__level_8h_aafbd841d669c3bd9811edc36bfb1c890}{IMU\+\_\+\+LL\+\_\+\+SDA}}~NRF\+\_\+\+GPIO\+\_\+\+PIN\+\_\+\+MAP(1, 6)
+\item 
+\#define \mbox{\hyperlink{imu__low__level_8h_ab566d3b59f364728550d3838c8641db6}{IMU\+\_\+\+LL\+\_\+\+INT1}}~NRF\+\_\+\+GPIO\+\_\+\+PIN\+\_\+\+MAP(1, 7)
+\item 
+\#define \mbox{\hyperlink{imu__low__level_8h_aa8b23743d8203413ecc53473a396c282}{IMU\+\_\+\+LL\+\_\+\+INT2}}~NRF\+\_\+\+GPIO\+\_\+\+PIN\+\_\+\+MAP(1, 8)
+\item 
+\#define \mbox{\hyperlink{imu__low__level_8h_a1c344f8b8509751d5f7ea4c79aab3b33}{IMU\+\_\+\+LL\+\_\+\+STATUS\+\_\+\+LED}}~LED\+\_\+1
+\item 
+\#define \mbox{\hyperlink{imu__low__level_8h_a805698e2bb519d2a52f809f59023eac0}{LSM6\+DSL\+\_\+\+ADDRESS}}~0x6B                 /$\ast$TWI address of sensor$\ast$/
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int32\+\_\+t \mbox{\hyperlink{group___i_m_u___l_l__interfaces__functions_ga2216e2af937e3f86115623ac15940b8e}{imu\+\_\+ll\+\_\+platform\+\_\+write}} (void $\ast$handle, uint8\+\_\+t reg, uint8\+\_\+t $\ast$buffer, size\+\_\+t len)
+\begin{DoxyCompactList}\small\item\em Hardware specific function for TWI interface writing. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___i_m_u___l_l__interfaces__functions_ga11760f6190cc2d5f987678930d16e1a8}{imu\+\_\+ll\+\_\+platform\+\_\+read}} (void $\ast$handle, uint8\+\_\+t reg, uint8\+\_\+t $\ast$buffer, size\+\_\+t len)
+\begin{DoxyCompactList}\small\item\em Hardware specific function for TWI interface writing. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___i_m_u___l_o_w___l_e_v_e_l_gac6fa65b5be05082da07458f3cb6a6a68}{imu\+\_\+ll\+\_\+twi\+\_\+master\+\_\+init}} ()
+\begin{DoxyCompactList}\small\item\em Function for initializing and enabling TWI. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___i_m_u___l_o_w___l_e_v_e_l_ga7e5e378594ddc75c4a5fb342196b7ce7}{imu\+\_\+ll\+\_\+twim\+\_\+dma\+\_\+init}} (uint8\+\_\+t ppi\+\_\+trigger\+\_\+pin, uint8\+\_\+t reg, uint8\+\_\+t $\ast$buffer, size\+\_\+t buffer\+\_\+length)
+\begin{DoxyCompactList}\small\item\em Function for initializing TWIM DMA reading triggered by PPI and GPIO. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___i_m_u___l_o_w___l_e_v_e_l_gac3d344c560bbfe2cf2c6d1c766271e50}{imu\+\_\+ll\+\_\+prepare\+\_\+dma}} (uint8\+\_\+t reg, uint8\+\_\+t $\ast$buffer, size\+\_\+t buffer\+\_\+length)
+\begin{DoxyCompactList}\small\item\em Function for preparing TWIM for a new DMA transfer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___i_m_u___l_o_w___l_e_v_e_l_ga566aaa91ef1f25b3446fba4c51a059fa}{imu\+\_\+ll\+\_\+gpio\+\_\+init}} ()
+\begin{DoxyCompactList}\small\item\em Function for initializing input pins required to sense imu interrupts and output pins for status LED. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const nrfx\+\_\+twim\+\_\+t \mbox{\hyperlink{imu__low__level_8h_a9078eb19a664d41fbd4d801ca7faa57f}{twim\+\_\+t}}
+\item 
+volatile bool \mbox{\hyperlink{imu__low__level_8h_aff35f9caccd1dadca68aaac238964850}{fifo\+\_\+transfer\+\_\+done}}
+\item 
+volatile bool \mbox{\hyperlink{imu__low__level_8h_af62b58398c34fe831dac55b52c2c5f09}{m\+\_\+xfer\+\_\+done}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{imu__low__level_8h_adf17ae578110a9aed4c7151db9b13172}\label{imu__low__level_8h_adf17ae578110a9aed4c7151db9b13172}} 
+\index{imu\_low\_level.h@{imu\_low\_level.h}!DEVKIT@{DEVKIT}}
+\index{DEVKIT@{DEVKIT}!imu\_low\_level.h@{imu\_low\_level.h}}
+\doxysubsubsection{\texorpdfstring{DEVKIT}{DEVKIT}}
+{\footnotesize\ttfamily \#define DEVKIT~/$\ast$Comment out if you\textquotesingle{}re using the wristband$\ast$/}
+
+\mbox{\Hypertarget{imu__low__level_8h_ab566d3b59f364728550d3838c8641db6}\label{imu__low__level_8h_ab566d3b59f364728550d3838c8641db6}} 
+\index{imu\_low\_level.h@{imu\_low\_level.h}!IMU\_LL\_INT1@{IMU\_LL\_INT1}}
+\index{IMU\_LL\_INT1@{IMU\_LL\_INT1}!imu\_low\_level.h@{imu\_low\_level.h}}
+\doxysubsubsection{\texorpdfstring{IMU\_LL\_INT1}{IMU\_LL\_INT1}}
+{\footnotesize\ttfamily \#define IMU\+\_\+\+LL\+\_\+\+INT1~NRF\+\_\+\+GPIO\+\_\+\+PIN\+\_\+\+MAP(1, 7)}
+
+\mbox{\Hypertarget{imu__low__level_8h_aa8b23743d8203413ecc53473a396c282}\label{imu__low__level_8h_aa8b23743d8203413ecc53473a396c282}} 
+\index{imu\_low\_level.h@{imu\_low\_level.h}!IMU\_LL\_INT2@{IMU\_LL\_INT2}}
+\index{IMU\_LL\_INT2@{IMU\_LL\_INT2}!imu\_low\_level.h@{imu\_low\_level.h}}
+\doxysubsubsection{\texorpdfstring{IMU\_LL\_INT2}{IMU\_LL\_INT2}}
+{\footnotesize\ttfamily \#define IMU\+\_\+\+LL\+\_\+\+INT2~NRF\+\_\+\+GPIO\+\_\+\+PIN\+\_\+\+MAP(1, 8)}
+
+\mbox{\Hypertarget{imu__low__level_8h_a35090d5cf30e07213cf12d5e2c614c6a}\label{imu__low__level_8h_a35090d5cf30e07213cf12d5e2c614c6a}} 
+\index{imu\_low\_level.h@{imu\_low\_level.h}!IMU\_LL\_SCL@{IMU\_LL\_SCL}}
+\index{IMU\_LL\_SCL@{IMU\_LL\_SCL}!imu\_low\_level.h@{imu\_low\_level.h}}
+\doxysubsubsection{\texorpdfstring{IMU\_LL\_SCL}{IMU\_LL\_SCL}}
+{\footnotesize\ttfamily \#define IMU\+\_\+\+LL\+\_\+\+SCL~NRF\+\_\+\+GPIO\+\_\+\+PIN\+\_\+\+MAP(1, 5)}
+
+\mbox{\Hypertarget{imu__low__level_8h_aafbd841d669c3bd9811edc36bfb1c890}\label{imu__low__level_8h_aafbd841d669c3bd9811edc36bfb1c890}} 
+\index{imu\_low\_level.h@{imu\_low\_level.h}!IMU\_LL\_SDA@{IMU\_LL\_SDA}}
+\index{IMU\_LL\_SDA@{IMU\_LL\_SDA}!imu\_low\_level.h@{imu\_low\_level.h}}
+\doxysubsubsection{\texorpdfstring{IMU\_LL\_SDA}{IMU\_LL\_SDA}}
+{\footnotesize\ttfamily \#define IMU\+\_\+\+LL\+\_\+\+SDA~NRF\+\_\+\+GPIO\+\_\+\+PIN\+\_\+\+MAP(1, 6)}
+
+\mbox{\Hypertarget{imu__low__level_8h_a1c344f8b8509751d5f7ea4c79aab3b33}\label{imu__low__level_8h_a1c344f8b8509751d5f7ea4c79aab3b33}} 
+\index{imu\_low\_level.h@{imu\_low\_level.h}!IMU\_LL\_STATUS\_LED@{IMU\_LL\_STATUS\_LED}}
+\index{IMU\_LL\_STATUS\_LED@{IMU\_LL\_STATUS\_LED}!imu\_low\_level.h@{imu\_low\_level.h}}
+\doxysubsubsection{\texorpdfstring{IMU\_LL\_STATUS\_LED}{IMU\_LL\_STATUS\_LED}}
+{\footnotesize\ttfamily \#define IMU\+\_\+\+LL\+\_\+\+STATUS\+\_\+\+LED~LED\+\_\+1}
+
+\mbox{\Hypertarget{imu__low__level_8h_a805698e2bb519d2a52f809f59023eac0}\label{imu__low__level_8h_a805698e2bb519d2a52f809f59023eac0}} 
+\index{imu\_low\_level.h@{imu\_low\_level.h}!LSM6DSL\_ADDRESS@{LSM6DSL\_ADDRESS}}
+\index{LSM6DSL\_ADDRESS@{LSM6DSL\_ADDRESS}!imu\_low\_level.h@{imu\_low\_level.h}}
+\doxysubsubsection{\texorpdfstring{LSM6DSL\_ADDRESS}{LSM6DSL\_ADDRESS}}
+{\footnotesize\ttfamily \#define LSM6\+DSL\+\_\+\+ADDRESS~0x6B                 /$\ast$TWI address of sensor$\ast$/}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{imu__low__level_8h_aff35f9caccd1dadca68aaac238964850}\label{imu__low__level_8h_aff35f9caccd1dadca68aaac238964850}} 
+\index{imu\_low\_level.h@{imu\_low\_level.h}!fifo\_transfer\_done@{fifo\_transfer\_done}}
+\index{fifo\_transfer\_done@{fifo\_transfer\_done}!imu\_low\_level.h@{imu\_low\_level.h}}
+\doxysubsubsection{\texorpdfstring{fifo\_transfer\_done}{fifo\_transfer\_done}}
+{\footnotesize\ttfamily volatile bool fifo\+\_\+transfer\+\_\+done\hspace{0.3cm}{\ttfamily [extern]}}
+
+Flag for indicating DMA complete transfer event \mbox{\Hypertarget{imu__low__level_8h_af62b58398c34fe831dac55b52c2c5f09}\label{imu__low__level_8h_af62b58398c34fe831dac55b52c2c5f09}} 
+\index{imu\_low\_level.h@{imu\_low\_level.h}!m\_xfer\_done@{m\_xfer\_done}}
+\index{m\_xfer\_done@{m\_xfer\_done}!imu\_low\_level.h@{imu\_low\_level.h}}
+\doxysubsubsection{\texorpdfstring{m\_xfer\_done}{m\_xfer\_done}}
+{\footnotesize\ttfamily volatile bool m\+\_\+xfer\+\_\+done\hspace{0.3cm}{\ttfamily [extern]}}
+
+Flag for indicating TWIM transfer event done \mbox{\Hypertarget{imu__low__level_8h_a9078eb19a664d41fbd4d801ca7faa57f}\label{imu__low__level_8h_a9078eb19a664d41fbd4d801ca7faa57f}} 
+\index{imu\_low\_level.h@{imu\_low\_level.h}!twim\_t@{twim\_t}}
+\index{twim\_t@{twim\_t}!imu\_low\_level.h@{imu\_low\_level.h}}
+\doxysubsubsection{\texorpdfstring{twim\_t}{twim\_t}}
+{\footnotesize\ttfamily const nrfx\+\_\+twim\+\_\+t twim\+\_\+t\hspace{0.3cm}{\ttfamily [extern]}}
+

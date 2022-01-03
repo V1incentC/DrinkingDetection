@@ -1,0 +1,426 @@
+\hypertarget{group___l_s_m6_d_s_l__common}{}\doxysection{LSM6\+DSL\+\_\+common}
+\label{group___l_s_m6_d_s_l__common}\index{LSM6DSL\_common@{LSM6DSL\_common}}
+
+
+This section groups common usefull functions.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l__common_ga43c849fac54e81088b8c39484fe92fd6}{lsm6dsl\+\_\+mem\+\_\+bank\+\_\+set}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, \mbox{\hyperlink{group___l_s_m6_d_s_l_ga7cbaf3b4692f0e41182ac5838c533028}{lsm6dsl\+\_\+func\+\_\+cfg\+\_\+en\+\_\+t}} val)
+\begin{DoxyCompactList}\small\item\em Enable access to the embedded functions/sensor hub configuration registers\mbox{[}set\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l__common_ga33104525359cf590c19b391b5c3a6d5e}{lsm6dsl\+\_\+mem\+\_\+bank\+\_\+get}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, \mbox{\hyperlink{group___l_s_m6_d_s_l_ga7cbaf3b4692f0e41182ac5838c533028}{lsm6dsl\+\_\+func\+\_\+cfg\+\_\+en\+\_\+t}} $\ast$val)
+\begin{DoxyCompactList}\small\item\em Enable access to the embedded functions/sensor hub configuration registers\mbox{[}get\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l__common_gaf5a8894deb9fa1b2c2775bc35c004ba5}{lsm6dsl\+\_\+data\+\_\+ready\+\_\+mode\+\_\+set}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, \mbox{\hyperlink{group___l_s_m6_d_s_l_gab4f6dbb0aa168abea890deaef987380b}{lsm6dsl\+\_\+drdy\+\_\+pulsed\+\_\+g\+\_\+t}} val)
+\begin{DoxyCompactList}\small\item\em Data-\/ready pulsed / letched mode\mbox{[}set\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l__common_ga666dcafdf6673b215d2560faf4dab081}{lsm6dsl\+\_\+data\+\_\+ready\+\_\+mode\+\_\+get}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, \mbox{\hyperlink{group___l_s_m6_d_s_l_gab4f6dbb0aa168abea890deaef987380b}{lsm6dsl\+\_\+drdy\+\_\+pulsed\+\_\+g\+\_\+t}} $\ast$val)
+\begin{DoxyCompactList}\small\item\em Data-\/ready pulsed / letched mode\mbox{[}get\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l__common_gae2895372e8ecedc223f653c8d8f2f5ef}{lsm6dsl\+\_\+device\+\_\+id\+\_\+get}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, uint8\+\_\+t $\ast$buff)
+\begin{DoxyCompactList}\small\item\em Device\+WhoamI.\mbox{[}get\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l__common_ga86242cc33adda188d12a2a327bbd1545}{lsm6dsl\+\_\+reset\+\_\+set}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, uint8\+\_\+t val)
+\begin{DoxyCompactList}\small\item\em Software reset. Restore the default values in user registers\mbox{[}set\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l__common_gaf52f831a9f16abebd7f72d689e4a5693}{lsm6dsl\+\_\+reset\+\_\+get}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, uint8\+\_\+t $\ast$val)
+\begin{DoxyCompactList}\small\item\em Software reset. Restore the default values in user registers\mbox{[}get\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l__common_ga51ebbec6e0849f0e70fd4b59291ef1eb}{lsm6dsl\+\_\+data\+\_\+format\+\_\+set}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, \mbox{\hyperlink{group___l_s_m6_d_s_l_ga6a680c2983a269f7b68baf2d1d558ecb}{lsm6dsl\+\_\+ble\+\_\+t}} val)
+\begin{DoxyCompactList}\small\item\em Big/\+Little Endian Data selection.\mbox{[}set\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l__common_ga636aa6ae7f2a2fd946e77f659ade64a9}{lsm6dsl\+\_\+data\+\_\+format\+\_\+get}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, \mbox{\hyperlink{group___l_s_m6_d_s_l_ga6a680c2983a269f7b68baf2d1d558ecb}{lsm6dsl\+\_\+ble\+\_\+t}} $\ast$val)
+\begin{DoxyCompactList}\small\item\em Big/\+Little Endian Data selection.\mbox{[}get\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l__common_ga336580a2bd2784daf05b8e7eab88afb6}{lsm6dsl\+\_\+auto\+\_\+increment\+\_\+set}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, uint8\+\_\+t val)
+\begin{DoxyCompactList}\small\item\em Register address automatically incremented during a multiple byte access with a serial interface.\mbox{[}set\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l__common_ga2d9673f1a0f4847c3fb9d24e7f09c5b4}{lsm6dsl\+\_\+auto\+\_\+increment\+\_\+get}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, uint8\+\_\+t $\ast$val)
+\begin{DoxyCompactList}\small\item\em Register address automatically incremented during a multiple byte access with a serial interface.\mbox{[}get\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l__common_ga48e664a9dacfdd594bd46f39767c9fc9}{lsm6dsl\+\_\+boot\+\_\+set}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, uint8\+\_\+t val)
+\begin{DoxyCompactList}\small\item\em Reboot memory content. Reload the calibration parameters.\mbox{[}set\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l__common_ga51bc618ccaac9205985236f0964450b8}{lsm6dsl\+\_\+boot\+\_\+get}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, uint8\+\_\+t $\ast$val)
+\begin{DoxyCompactList}\small\item\em Reboot memory content. Reload the calibration parameters.\mbox{[}get\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l__common_gaaae048069a289a9bc6d326e088213462}{lsm6dsl\+\_\+xl\+\_\+self\+\_\+test\+\_\+set}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, \mbox{\hyperlink{group___l_s_m6_d_s_l_ga0e6ac4f9737044f594417c34a406bbf5}{lsm6dsl\+\_\+st\+\_\+xl\+\_\+t}} val)
+\begin{DoxyCompactList}\small\item\em Linear acceleration sensor self-\/test enable.\mbox{[}set\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l__common_gaad32ffa90a5ffc4c1b8286300e90b756}{lsm6dsl\+\_\+xl\+\_\+self\+\_\+test\+\_\+get}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, \mbox{\hyperlink{group___l_s_m6_d_s_l_ga0e6ac4f9737044f594417c34a406bbf5}{lsm6dsl\+\_\+st\+\_\+xl\+\_\+t}} $\ast$val)
+\begin{DoxyCompactList}\small\item\em Linear acceleration sensor self-\/test enable.\mbox{[}get\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l__common_gaf9b7b19206c0d774f132f6ecf0f9e10e}{lsm6dsl\+\_\+gy\+\_\+self\+\_\+test\+\_\+set}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, \mbox{\hyperlink{group___l_s_m6_d_s_l_gaf44dd2b3923ac0f1bb5e9863f7d819e5}{lsm6dsl\+\_\+st\+\_\+g\+\_\+t}} val)
+\begin{DoxyCompactList}\small\item\em Angular rate sensor self-\/test enable.\mbox{[}set\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l__common_gaf5ddfed30bca22fc5b8f11195ea332d1}{lsm6dsl\+\_\+gy\+\_\+self\+\_\+test\+\_\+get}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, \mbox{\hyperlink{group___l_s_m6_d_s_l_gaf44dd2b3923ac0f1bb5e9863f7d819e5}{lsm6dsl\+\_\+st\+\_\+g\+\_\+t}} $\ast$val)
+\begin{DoxyCompactList}\small\item\em Angular rate sensor self-\/test enable.\mbox{[}get\mbox{]}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This section groups common usefull functions. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l__common_ga2d9673f1a0f4847c3fb9d24e7f09c5b4}\label{group___l_s_m6_d_s_l__common_ga2d9673f1a0f4847c3fb9d24e7f09c5b4}} 
+\index{LSM6DSL\_common@{LSM6DSL\_common}!lsm6dsl\_auto\_increment\_get@{lsm6dsl\_auto\_increment\_get}}
+\index{lsm6dsl\_auto\_increment\_get@{lsm6dsl\_auto\_increment\_get}!LSM6DSL\_common@{LSM6DSL\_common}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_auto\_increment\_get()}{lsm6dsl\_auto\_increment\_get()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+auto\+\_\+increment\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{uint8\+\_\+t $\ast$}]{val }\end{DoxyParamCaption})}
+
+
+
+Register address automatically incremented during a multiple byte access with a serial interface.\mbox{[}get\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Change the values of if\+\_\+inc in reg CTRL3\+\_\+C \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l__common_ga336580a2bd2784daf05b8e7eab88afb6}\label{group___l_s_m6_d_s_l__common_ga336580a2bd2784daf05b8e7eab88afb6}} 
+\index{LSM6DSL\_common@{LSM6DSL\_common}!lsm6dsl\_auto\_increment\_set@{lsm6dsl\_auto\_increment\_set}}
+\index{lsm6dsl\_auto\_increment\_set@{lsm6dsl\_auto\_increment\_set}!LSM6DSL\_common@{LSM6DSL\_common}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_auto\_increment\_set()}{lsm6dsl\_auto\_increment\_set()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+auto\+\_\+increment\+\_\+set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{uint8\+\_\+t}]{val }\end{DoxyParamCaption})}
+
+
+
+Register address automatically incremented during a multiple byte access with a serial interface.\mbox{[}set\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Change the values of if\+\_\+inc in reg CTRL3\+\_\+C \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l__common_ga51bc618ccaac9205985236f0964450b8}\label{group___l_s_m6_d_s_l__common_ga51bc618ccaac9205985236f0964450b8}} 
+\index{LSM6DSL\_common@{LSM6DSL\_common}!lsm6dsl\_boot\_get@{lsm6dsl\_boot\_get}}
+\index{lsm6dsl\_boot\_get@{lsm6dsl\_boot\_get}!LSM6DSL\_common@{LSM6DSL\_common}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_boot\_get()}{lsm6dsl\_boot\_get()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+boot\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{uint8\+\_\+t $\ast$}]{val }\end{DoxyParamCaption})}
+
+
+
+Reboot memory content. Reload the calibration parameters.\mbox{[}get\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Change the values of boot in reg CTRL3\+\_\+C \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l__common_ga48e664a9dacfdd594bd46f39767c9fc9}\label{group___l_s_m6_d_s_l__common_ga48e664a9dacfdd594bd46f39767c9fc9}} 
+\index{LSM6DSL\_common@{LSM6DSL\_common}!lsm6dsl\_boot\_set@{lsm6dsl\_boot\_set}}
+\index{lsm6dsl\_boot\_set@{lsm6dsl\_boot\_set}!LSM6DSL\_common@{LSM6DSL\_common}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_boot\_set()}{lsm6dsl\_boot\_set()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+boot\+\_\+set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{uint8\+\_\+t}]{val }\end{DoxyParamCaption})}
+
+
+
+Reboot memory content. Reload the calibration parameters.\mbox{[}set\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Change the values of boot in reg CTRL3\+\_\+C \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l__common_ga636aa6ae7f2a2fd946e77f659ade64a9}\label{group___l_s_m6_d_s_l__common_ga636aa6ae7f2a2fd946e77f659ade64a9}} 
+\index{LSM6DSL\_common@{LSM6DSL\_common}!lsm6dsl\_data\_format\_get@{lsm6dsl\_data\_format\_get}}
+\index{lsm6dsl\_data\_format\_get@{lsm6dsl\_data\_format\_get}!LSM6DSL\_common@{LSM6DSL\_common}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_data\_format\_get()}{lsm6dsl\_data\_format\_get()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+data\+\_\+format\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{\mbox{\hyperlink{group___l_s_m6_d_s_l_ga6a680c2983a269f7b68baf2d1d558ecb}{lsm6dsl\+\_\+ble\+\_\+t}} $\ast$}]{val }\end{DoxyParamCaption})}
+
+
+
+Big/\+Little Endian Data selection.\mbox{[}get\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Get the values of ble in reg CTRL3\+\_\+C \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l__common_ga51ebbec6e0849f0e70fd4b59291ef1eb}\label{group___l_s_m6_d_s_l__common_ga51ebbec6e0849f0e70fd4b59291ef1eb}} 
+\index{LSM6DSL\_common@{LSM6DSL\_common}!lsm6dsl\_data\_format\_set@{lsm6dsl\_data\_format\_set}}
+\index{lsm6dsl\_data\_format\_set@{lsm6dsl\_data\_format\_set}!LSM6DSL\_common@{LSM6DSL\_common}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_data\_format\_set()}{lsm6dsl\_data\_format\_set()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+data\+\_\+format\+\_\+set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{\mbox{\hyperlink{group___l_s_m6_d_s_l_ga6a680c2983a269f7b68baf2d1d558ecb}{lsm6dsl\+\_\+ble\+\_\+t}}}]{val }\end{DoxyParamCaption})}
+
+
+
+Big/\+Little Endian Data selection.\mbox{[}set\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Change the values of ble in reg CTRL3\+\_\+C \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l__common_ga666dcafdf6673b215d2560faf4dab081}\label{group___l_s_m6_d_s_l__common_ga666dcafdf6673b215d2560faf4dab081}} 
+\index{LSM6DSL\_common@{LSM6DSL\_common}!lsm6dsl\_data\_ready\_mode\_get@{lsm6dsl\_data\_ready\_mode\_get}}
+\index{lsm6dsl\_data\_ready\_mode\_get@{lsm6dsl\_data\_ready\_mode\_get}!LSM6DSL\_common@{LSM6DSL\_common}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_data\_ready\_mode\_get()}{lsm6dsl\_data\_ready\_mode\_get()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+data\+\_\+ready\+\_\+mode\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{\mbox{\hyperlink{group___l_s_m6_d_s_l_gab4f6dbb0aa168abea890deaef987380b}{lsm6dsl\+\_\+drdy\+\_\+pulsed\+\_\+g\+\_\+t}} $\ast$}]{val }\end{DoxyParamCaption})}
+
+
+
+Data-\/ready pulsed / letched mode\mbox{[}get\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Get the values of drdy\+\_\+pulsed in reg DRDY\+\_\+\+PULSE\+\_\+\+CFG \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l__common_gaf5a8894deb9fa1b2c2775bc35c004ba5}\label{group___l_s_m6_d_s_l__common_gaf5a8894deb9fa1b2c2775bc35c004ba5}} 
+\index{LSM6DSL\_common@{LSM6DSL\_common}!lsm6dsl\_data\_ready\_mode\_set@{lsm6dsl\_data\_ready\_mode\_set}}
+\index{lsm6dsl\_data\_ready\_mode\_set@{lsm6dsl\_data\_ready\_mode\_set}!LSM6DSL\_common@{LSM6DSL\_common}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_data\_ready\_mode\_set()}{lsm6dsl\_data\_ready\_mode\_set()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+data\+\_\+ready\+\_\+mode\+\_\+set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{\mbox{\hyperlink{group___l_s_m6_d_s_l_gab4f6dbb0aa168abea890deaef987380b}{lsm6dsl\+\_\+drdy\+\_\+pulsed\+\_\+g\+\_\+t}}}]{val }\end{DoxyParamCaption})}
+
+
+
+Data-\/ready pulsed / letched mode\mbox{[}set\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Change the values of drdy\+\_\+pulsed in reg DRDY\+\_\+\+PULSE\+\_\+\+CFG \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l__common_gae2895372e8ecedc223f653c8d8f2f5ef}\label{group___l_s_m6_d_s_l__common_gae2895372e8ecedc223f653c8d8f2f5ef}} 
+\index{LSM6DSL\_common@{LSM6DSL\_common}!lsm6dsl\_device\_id\_get@{lsm6dsl\_device\_id\_get}}
+\index{lsm6dsl\_device\_id\_get@{lsm6dsl\_device\_id\_get}!LSM6DSL\_common@{LSM6DSL\_common}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_device\_id\_get()}{lsm6dsl\_device\_id\_get()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+device\+\_\+id\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{uint8\+\_\+t $\ast$}]{buff }\end{DoxyParamCaption})}
+
+
+
+Device\+WhoamI.\mbox{[}get\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em buff} & Buffer that stores data read \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l__common_gaf5ddfed30bca22fc5b8f11195ea332d1}\label{group___l_s_m6_d_s_l__common_gaf5ddfed30bca22fc5b8f11195ea332d1}} 
+\index{LSM6DSL\_common@{LSM6DSL\_common}!lsm6dsl\_gy\_self\_test\_get@{lsm6dsl\_gy\_self\_test\_get}}
+\index{lsm6dsl\_gy\_self\_test\_get@{lsm6dsl\_gy\_self\_test\_get}!LSM6DSL\_common@{LSM6DSL\_common}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_gy\_self\_test\_get()}{lsm6dsl\_gy\_self\_test\_get()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+gy\+\_\+self\+\_\+test\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{\mbox{\hyperlink{group___l_s_m6_d_s_l_gaf44dd2b3923ac0f1bb5e9863f7d819e5}{lsm6dsl\+\_\+st\+\_\+g\+\_\+t}} $\ast$}]{val }\end{DoxyParamCaption})}
+
+
+
+Angular rate sensor self-\/test enable.\mbox{[}get\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Get the values of st\+\_\+g in reg CTRL5\+\_\+C \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l__common_gaf9b7b19206c0d774f132f6ecf0f9e10e}\label{group___l_s_m6_d_s_l__common_gaf9b7b19206c0d774f132f6ecf0f9e10e}} 
+\index{LSM6DSL\_common@{LSM6DSL\_common}!lsm6dsl\_gy\_self\_test\_set@{lsm6dsl\_gy\_self\_test\_set}}
+\index{lsm6dsl\_gy\_self\_test\_set@{lsm6dsl\_gy\_self\_test\_set}!LSM6DSL\_common@{LSM6DSL\_common}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_gy\_self\_test\_set()}{lsm6dsl\_gy\_self\_test\_set()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+gy\+\_\+self\+\_\+test\+\_\+set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{\mbox{\hyperlink{group___l_s_m6_d_s_l_gaf44dd2b3923ac0f1bb5e9863f7d819e5}{lsm6dsl\+\_\+st\+\_\+g\+\_\+t}}}]{val }\end{DoxyParamCaption})}
+
+
+
+Angular rate sensor self-\/test enable.\mbox{[}set\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Change the values of st\+\_\+g in reg CTRL5\+\_\+C \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l__common_ga33104525359cf590c19b391b5c3a6d5e}\label{group___l_s_m6_d_s_l__common_ga33104525359cf590c19b391b5c3a6d5e}} 
+\index{LSM6DSL\_common@{LSM6DSL\_common}!lsm6dsl\_mem\_bank\_get@{lsm6dsl\_mem\_bank\_get}}
+\index{lsm6dsl\_mem\_bank\_get@{lsm6dsl\_mem\_bank\_get}!LSM6DSL\_common@{LSM6DSL\_common}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_mem\_bank\_get()}{lsm6dsl\_mem\_bank\_get()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+mem\+\_\+bank\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{\mbox{\hyperlink{group___l_s_m6_d_s_l_ga7cbaf3b4692f0e41182ac5838c533028}{lsm6dsl\+\_\+func\+\_\+cfg\+\_\+en\+\_\+t}} $\ast$}]{val }\end{DoxyParamCaption})}
+
+
+
+Enable access to the embedded functions/sensor hub configuration registers\mbox{[}get\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Get the values of func\+\_\+cfg\+\_\+en in reg FUNC\+\_\+\+CFG\+\_\+\+ACCESS \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l__common_ga43c849fac54e81088b8c39484fe92fd6}\label{group___l_s_m6_d_s_l__common_ga43c849fac54e81088b8c39484fe92fd6}} 
+\index{LSM6DSL\_common@{LSM6DSL\_common}!lsm6dsl\_mem\_bank\_set@{lsm6dsl\_mem\_bank\_set}}
+\index{lsm6dsl\_mem\_bank\_set@{lsm6dsl\_mem\_bank\_set}!LSM6DSL\_common@{LSM6DSL\_common}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_mem\_bank\_set()}{lsm6dsl\_mem\_bank\_set()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+mem\+\_\+bank\+\_\+set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{\mbox{\hyperlink{group___l_s_m6_d_s_l_ga7cbaf3b4692f0e41182ac5838c533028}{lsm6dsl\+\_\+func\+\_\+cfg\+\_\+en\+\_\+t}}}]{val }\end{DoxyParamCaption})}
+
+
+
+Enable access to the embedded functions/sensor hub configuration registers\mbox{[}set\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Change the values of func\+\_\+cfg\+\_\+en in reg FUNC\+\_\+\+CFG\+\_\+\+ACCESS \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l__common_gaf52f831a9f16abebd7f72d689e4a5693}\label{group___l_s_m6_d_s_l__common_gaf52f831a9f16abebd7f72d689e4a5693}} 
+\index{LSM6DSL\_common@{LSM6DSL\_common}!lsm6dsl\_reset\_get@{lsm6dsl\_reset\_get}}
+\index{lsm6dsl\_reset\_get@{lsm6dsl\_reset\_get}!LSM6DSL\_common@{LSM6DSL\_common}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_reset\_get()}{lsm6dsl\_reset\_get()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+reset\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{uint8\+\_\+t $\ast$}]{val }\end{DoxyParamCaption})}
+
+
+
+Software reset. Restore the default values in user registers\mbox{[}get\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Change the values of sw\+\_\+reset in reg CTRL3\+\_\+C \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l__common_ga86242cc33adda188d12a2a327bbd1545}\label{group___l_s_m6_d_s_l__common_ga86242cc33adda188d12a2a327bbd1545}} 
+\index{LSM6DSL\_common@{LSM6DSL\_common}!lsm6dsl\_reset\_set@{lsm6dsl\_reset\_set}}
+\index{lsm6dsl\_reset\_set@{lsm6dsl\_reset\_set}!LSM6DSL\_common@{LSM6DSL\_common}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_reset\_set()}{lsm6dsl\_reset\_set()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+reset\+\_\+set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{uint8\+\_\+t}]{val }\end{DoxyParamCaption})}
+
+
+
+Software reset. Restore the default values in user registers\mbox{[}set\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Change the values of sw\+\_\+reset in reg CTRL3\+\_\+C \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l__common_gaad32ffa90a5ffc4c1b8286300e90b756}\label{group___l_s_m6_d_s_l__common_gaad32ffa90a5ffc4c1b8286300e90b756}} 
+\index{LSM6DSL\_common@{LSM6DSL\_common}!lsm6dsl\_xl\_self\_test\_get@{lsm6dsl\_xl\_self\_test\_get}}
+\index{lsm6dsl\_xl\_self\_test\_get@{lsm6dsl\_xl\_self\_test\_get}!LSM6DSL\_common@{LSM6DSL\_common}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_xl\_self\_test\_get()}{lsm6dsl\_xl\_self\_test\_get()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+xl\+\_\+self\+\_\+test\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{\mbox{\hyperlink{group___l_s_m6_d_s_l_ga0e6ac4f9737044f594417c34a406bbf5}{lsm6dsl\+\_\+st\+\_\+xl\+\_\+t}} $\ast$}]{val }\end{DoxyParamCaption})}
+
+
+
+Linear acceleration sensor self-\/test enable.\mbox{[}get\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Get the values of st\+\_\+xl in reg CTRL5\+\_\+C \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l__common_gaaae048069a289a9bc6d326e088213462}\label{group___l_s_m6_d_s_l__common_gaaae048069a289a9bc6d326e088213462}} 
+\index{LSM6DSL\_common@{LSM6DSL\_common}!lsm6dsl\_xl\_self\_test\_set@{lsm6dsl\_xl\_self\_test\_set}}
+\index{lsm6dsl\_xl\_self\_test\_set@{lsm6dsl\_xl\_self\_test\_set}!LSM6DSL\_common@{LSM6DSL\_common}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_xl\_self\_test\_set()}{lsm6dsl\_xl\_self\_test\_set()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+xl\+\_\+self\+\_\+test\+\_\+set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{\mbox{\hyperlink{group___l_s_m6_d_s_l_ga0e6ac4f9737044f594417c34a406bbf5}{lsm6dsl\+\_\+st\+\_\+xl\+\_\+t}}}]{val }\end{DoxyParamCaption})}
+
+
+
+Linear acceleration sensor self-\/test enable.\mbox{[}set\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Change the values of st\+\_\+xl in reg CTRL5\+\_\+C \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}

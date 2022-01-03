@@ -1,0 +1,354 @@
+\hypertarget{group___l_s_m6_d_s_l__}{}\doxysection{Six\+\_\+position\+\_\+detection(6D/4D)}
+\label{group___l_s_m6_d_s_l__}\index{Six\_position\_detection(6D/4D)@{Six\_position\_detection(6D/4D)}}
+
+
+This section groups all the functions concerning six position detection (6D).  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l___gaf8bc310644a169b529363bea76992b47}{lsm6dsl\+\_\+6d\+\_\+feed\+\_\+data\+\_\+set}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, \mbox{\hyperlink{group___l_s_m6_d_s_l_gaa8a8490305ea22d4a7aa69e32b0ddd26}{lsm6dsl\+\_\+low\+\_\+pass\+\_\+on\+\_\+6d\+\_\+t}} val)
+\begin{DoxyCompactList}\small\item\em LPF2 feed 6D function selection.\mbox{[}set\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l___gae87ba9f118ad864d2a444592e47a2f92}{lsm6dsl\+\_\+6d\+\_\+feed\+\_\+data\+\_\+get}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, \mbox{\hyperlink{group___l_s_m6_d_s_l_gaa8a8490305ea22d4a7aa69e32b0ddd26}{lsm6dsl\+\_\+low\+\_\+pass\+\_\+on\+\_\+6d\+\_\+t}} $\ast$val)
+\begin{DoxyCompactList}\small\item\em LPF2 feed 6D function selection.\mbox{[}get\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l___ga79179b3883b5fca1bacb14a0b721383b}{lsm6dsl\+\_\+6d\+\_\+threshold\+\_\+set}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, \mbox{\hyperlink{group___l_s_m6_d_s_l_ga6de337646012b42f18c28627865af340}{lsm6dsl\+\_\+sixd\+\_\+ths\+\_\+t}} val)
+\begin{DoxyCompactList}\small\item\em Threshold for 4D/6D function.\mbox{[}set\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l___ga06026366d48f62aef9417d1c4352e9dd}{lsm6dsl\+\_\+6d\+\_\+threshold\+\_\+get}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, \mbox{\hyperlink{group___l_s_m6_d_s_l_ga6de337646012b42f18c28627865af340}{lsm6dsl\+\_\+sixd\+\_\+ths\+\_\+t}} $\ast$val)
+\begin{DoxyCompactList}\small\item\em Threshold for 4D/6D function.\mbox{[}get\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l___ga617c6ecbdc12e2568d6944a2578a2fb9}{lsm6dsl\+\_\+4d\+\_\+mode\+\_\+set}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, uint8\+\_\+t val)
+\begin{DoxyCompactList}\small\item\em 4D orientation detection enable.\mbox{[}set\mbox{]} \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l___gad03a9de23b18caf7e4cbf4519269cfcc}{lsm6dsl\+\_\+4d\+\_\+mode\+\_\+get}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, uint8\+\_\+t $\ast$val)
+\begin{DoxyCompactList}\small\item\em 4D orientation detection enable.\mbox{[}get\mbox{]} \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l___ga2de9c27ff801fc3f87ed5a8e54dae768}{lsm6dsl\+\_\+mag\+\_\+soft\+\_\+iron\+\_\+set}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, uint8\+\_\+t val)
+\begin{DoxyCompactList}\small\item\em Enable soft-\/iron correction algorithm for magnetometer.\mbox{[}set\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l___gac7ae9848d6901193efd21bf71427a266}{lsm6dsl\+\_\+mag\+\_\+soft\+\_\+iron\+\_\+get}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, uint8\+\_\+t $\ast$val)
+\begin{DoxyCompactList}\small\item\em Enable soft-\/iron correction algorithm for magnetometer.\mbox{[}get\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l___gad3ef9bf067fccdc37503fed57733f7dc}{lsm6dsl\+\_\+mag\+\_\+hard\+\_\+iron\+\_\+set}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, uint8\+\_\+t val)
+\begin{DoxyCompactList}\small\item\em Enable hard-\/iron correction algorithm for magnetometer.\mbox{[}set\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l___ga53bc3b4ccc1d9295164b5eeb9dd234ab}{lsm6dsl\+\_\+mag\+\_\+hard\+\_\+iron\+\_\+get}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, uint8\+\_\+t $\ast$val)
+\begin{DoxyCompactList}\small\item\em Enable hard-\/iron correction algorithm for magnetometer.\mbox{[}get\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l___ga20e83be2039b4da2d026c89d9ebf8d44}{lsm6dsl\+\_\+mag\+\_\+soft\+\_\+iron\+\_\+mat\+\_\+set}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, uint8\+\_\+t $\ast$buff)
+\begin{DoxyCompactList}\small\item\em Soft iron 3x3 matrix. Value are expressed in sign-\/module format. (Es. SVVVVVVVb where S is the sign 0/+1/-\/ and V is the value).\mbox{[}set\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l___ga4fdf8ea4c75e490f4834beca8a8480f3}{lsm6dsl\+\_\+mag\+\_\+soft\+\_\+iron\+\_\+mat\+\_\+get}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, uint8\+\_\+t $\ast$buff)
+\begin{DoxyCompactList}\small\item\em Soft iron 3x3 matrix. Value are expressed in sign-\/module format. (Es. SVVVVVVVb where S is the sign 0/+1/-\/ and V is the value).\mbox{[}get\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l___gada59a90881d9eacd207391542ea2aac1}{lsm6dsl\+\_\+mag\+\_\+offset\+\_\+set}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, uint8\+\_\+t $\ast$buff)
+\begin{DoxyCompactList}\small\item\em Offset for hard-\/iron compensation register (r/w). The value is expressed as a 16-\/bit word in two’s complement.\mbox{[}set\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l___gaa6ab277fb039440e0ff3787121c041e3}{lsm6dsl\+\_\+mag\+\_\+offset\+\_\+get}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, uint8\+\_\+t $\ast$buff)
+\begin{DoxyCompactList}\small\item\em Offset for hard-\/iron compensation register(r/w). The value is expressed as a 16-\/bit word in two’s complement.\mbox{[}get\mbox{]}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This section groups all the functions concerning six position detection (6D). 
+
+This section groups all the functions that manage additional magnetometer sensor.
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l___gad03a9de23b18caf7e4cbf4519269cfcc}\label{group___l_s_m6_d_s_l___gad03a9de23b18caf7e4cbf4519269cfcc}} 
+\index{Six\_position\_detection(6D/4D)@{Six\_position\_detection(6D/4D)}!lsm6dsl\_4d\_mode\_get@{lsm6dsl\_4d\_mode\_get}}
+\index{lsm6dsl\_4d\_mode\_get@{lsm6dsl\_4d\_mode\_get}!Six\_position\_detection(6D/4D)@{Six\_position\_detection(6D/4D)}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_4d\_mode\_get()}{lsm6dsl\_4d\_mode\_get()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+4d\+\_\+mode\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{uint8\+\_\+t $\ast$}]{val }\end{DoxyParamCaption})}
+
+
+
+4D orientation detection enable.\mbox{[}get\mbox{]} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Change the values of d4d\+\_\+en in reg TAP\+\_\+\+THS\+\_\+6D \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l___ga617c6ecbdc12e2568d6944a2578a2fb9}\label{group___l_s_m6_d_s_l___ga617c6ecbdc12e2568d6944a2578a2fb9}} 
+\index{Six\_position\_detection(6D/4D)@{Six\_position\_detection(6D/4D)}!lsm6dsl\_4d\_mode\_set@{lsm6dsl\_4d\_mode\_set}}
+\index{lsm6dsl\_4d\_mode\_set@{lsm6dsl\_4d\_mode\_set}!Six\_position\_detection(6D/4D)@{Six\_position\_detection(6D/4D)}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_4d\_mode\_set()}{lsm6dsl\_4d\_mode\_set()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+4d\+\_\+mode\+\_\+set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{uint8\+\_\+t}]{val }\end{DoxyParamCaption})}
+
+
+
+4D orientation detection enable.\mbox{[}set\mbox{]} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Change the values of d4d\+\_\+en in reg TAP\+\_\+\+THS\+\_\+6D \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l___gae87ba9f118ad864d2a444592e47a2f92}\label{group___l_s_m6_d_s_l___gae87ba9f118ad864d2a444592e47a2f92}} 
+\index{Six\_position\_detection(6D/4D)@{Six\_position\_detection(6D/4D)}!lsm6dsl\_6d\_feed\_data\_get@{lsm6dsl\_6d\_feed\_data\_get}}
+\index{lsm6dsl\_6d\_feed\_data\_get@{lsm6dsl\_6d\_feed\_data\_get}!Six\_position\_detection(6D/4D)@{Six\_position\_detection(6D/4D)}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_6d\_feed\_data\_get()}{lsm6dsl\_6d\_feed\_data\_get()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+6d\+\_\+feed\+\_\+data\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{\mbox{\hyperlink{group___l_s_m6_d_s_l_gaa8a8490305ea22d4a7aa69e32b0ddd26}{lsm6dsl\+\_\+low\+\_\+pass\+\_\+on\+\_\+6d\+\_\+t}} $\ast$}]{val }\end{DoxyParamCaption})}
+
+
+
+LPF2 feed 6D function selection.\mbox{[}get\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Get the values of low\+\_\+pass\+\_\+on\+\_\+6d in reg CTRL8\+\_\+\+XL \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l___gaf8bc310644a169b529363bea76992b47}\label{group___l_s_m6_d_s_l___gaf8bc310644a169b529363bea76992b47}} 
+\index{Six\_position\_detection(6D/4D)@{Six\_position\_detection(6D/4D)}!lsm6dsl\_6d\_feed\_data\_set@{lsm6dsl\_6d\_feed\_data\_set}}
+\index{lsm6dsl\_6d\_feed\_data\_set@{lsm6dsl\_6d\_feed\_data\_set}!Six\_position\_detection(6D/4D)@{Six\_position\_detection(6D/4D)}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_6d\_feed\_data\_set()}{lsm6dsl\_6d\_feed\_data\_set()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+6d\+\_\+feed\+\_\+data\+\_\+set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{\mbox{\hyperlink{group___l_s_m6_d_s_l_gaa8a8490305ea22d4a7aa69e32b0ddd26}{lsm6dsl\+\_\+low\+\_\+pass\+\_\+on\+\_\+6d\+\_\+t}}}]{val }\end{DoxyParamCaption})}
+
+
+
+LPF2 feed 6D function selection.\mbox{[}set\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Change the values of low\+\_\+pass\+\_\+on\+\_\+6d in reg CTRL8\+\_\+\+XL \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l___ga06026366d48f62aef9417d1c4352e9dd}\label{group___l_s_m6_d_s_l___ga06026366d48f62aef9417d1c4352e9dd}} 
+\index{Six\_position\_detection(6D/4D)@{Six\_position\_detection(6D/4D)}!lsm6dsl\_6d\_threshold\_get@{lsm6dsl\_6d\_threshold\_get}}
+\index{lsm6dsl\_6d\_threshold\_get@{lsm6dsl\_6d\_threshold\_get}!Six\_position\_detection(6D/4D)@{Six\_position\_detection(6D/4D)}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_6d\_threshold\_get()}{lsm6dsl\_6d\_threshold\_get()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+6d\+\_\+threshold\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{\mbox{\hyperlink{group___l_s_m6_d_s_l_ga6de337646012b42f18c28627865af340}{lsm6dsl\+\_\+sixd\+\_\+ths\+\_\+t}} $\ast$}]{val }\end{DoxyParamCaption})}
+
+
+
+Threshold for 4D/6D function.\mbox{[}get\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Get the values of sixd\+\_\+ths in reg TAP\+\_\+\+THS\+\_\+6D \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l___ga79179b3883b5fca1bacb14a0b721383b}\label{group___l_s_m6_d_s_l___ga79179b3883b5fca1bacb14a0b721383b}} 
+\index{Six\_position\_detection(6D/4D)@{Six\_position\_detection(6D/4D)}!lsm6dsl\_6d\_threshold\_set@{lsm6dsl\_6d\_threshold\_set}}
+\index{lsm6dsl\_6d\_threshold\_set@{lsm6dsl\_6d\_threshold\_set}!Six\_position\_detection(6D/4D)@{Six\_position\_detection(6D/4D)}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_6d\_threshold\_set()}{lsm6dsl\_6d\_threshold\_set()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+6d\+\_\+threshold\+\_\+set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{\mbox{\hyperlink{group___l_s_m6_d_s_l_ga6de337646012b42f18c28627865af340}{lsm6dsl\+\_\+sixd\+\_\+ths\+\_\+t}}}]{val }\end{DoxyParamCaption})}
+
+
+
+Threshold for 4D/6D function.\mbox{[}set\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Change the values of sixd\+\_\+ths in reg TAP\+\_\+\+THS\+\_\+6D \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l___ga53bc3b4ccc1d9295164b5eeb9dd234ab}\label{group___l_s_m6_d_s_l___ga53bc3b4ccc1d9295164b5eeb9dd234ab}} 
+\index{Six\_position\_detection(6D/4D)@{Six\_position\_detection(6D/4D)}!lsm6dsl\_mag\_hard\_iron\_get@{lsm6dsl\_mag\_hard\_iron\_get}}
+\index{lsm6dsl\_mag\_hard\_iron\_get@{lsm6dsl\_mag\_hard\_iron\_get}!Six\_position\_detection(6D/4D)@{Six\_position\_detection(6D/4D)}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_mag\_hard\_iron\_get()}{lsm6dsl\_mag\_hard\_iron\_get()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+mag\+\_\+hard\+\_\+iron\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{uint8\+\_\+t $\ast$}]{val }\end{DoxyParamCaption})}
+
+
+
+Enable hard-\/iron correction algorithm for magnetometer.\mbox{[}get\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Change the values of iron\+\_\+en in reg MASTER\+\_\+\+CONFIG \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l___gad3ef9bf067fccdc37503fed57733f7dc}\label{group___l_s_m6_d_s_l___gad3ef9bf067fccdc37503fed57733f7dc}} 
+\index{Six\_position\_detection(6D/4D)@{Six\_position\_detection(6D/4D)}!lsm6dsl\_mag\_hard\_iron\_set@{lsm6dsl\_mag\_hard\_iron\_set}}
+\index{lsm6dsl\_mag\_hard\_iron\_set@{lsm6dsl\_mag\_hard\_iron\_set}!Six\_position\_detection(6D/4D)@{Six\_position\_detection(6D/4D)}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_mag\_hard\_iron\_set()}{lsm6dsl\_mag\_hard\_iron\_set()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+mag\+\_\+hard\+\_\+iron\+\_\+set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{uint8\+\_\+t}]{val }\end{DoxyParamCaption})}
+
+
+
+Enable hard-\/iron correction algorithm for magnetometer.\mbox{[}set\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Change the values of iron\+\_\+en in reg MASTER\+\_\+\+CONFIG \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l___gaa6ab277fb039440e0ff3787121c041e3}\label{group___l_s_m6_d_s_l___gaa6ab277fb039440e0ff3787121c041e3}} 
+\index{Six\_position\_detection(6D/4D)@{Six\_position\_detection(6D/4D)}!lsm6dsl\_mag\_offset\_get@{lsm6dsl\_mag\_offset\_get}}
+\index{lsm6dsl\_mag\_offset\_get@{lsm6dsl\_mag\_offset\_get}!Six\_position\_detection(6D/4D)@{Six\_position\_detection(6D/4D)}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_mag\_offset\_get()}{lsm6dsl\_mag\_offset\_get()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+mag\+\_\+offset\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{uint8\+\_\+t $\ast$}]{buff }\end{DoxyParamCaption})}
+
+
+
+Offset for hard-\/iron compensation register(r/w). The value is expressed as a 16-\/bit word in two’s complement.\mbox{[}get\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em buff} & Buffer that stores data read \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l___gada59a90881d9eacd207391542ea2aac1}\label{group___l_s_m6_d_s_l___gada59a90881d9eacd207391542ea2aac1}} 
+\index{Six\_position\_detection(6D/4D)@{Six\_position\_detection(6D/4D)}!lsm6dsl\_mag\_offset\_set@{lsm6dsl\_mag\_offset\_set}}
+\index{lsm6dsl\_mag\_offset\_set@{lsm6dsl\_mag\_offset\_set}!Six\_position\_detection(6D/4D)@{Six\_position\_detection(6D/4D)}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_mag\_offset\_set()}{lsm6dsl\_mag\_offset\_set()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+mag\+\_\+offset\+\_\+set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{uint8\+\_\+t $\ast$}]{buff }\end{DoxyParamCaption})}
+
+
+
+Offset for hard-\/iron compensation register (r/w). The value is expressed as a 16-\/bit word in two’s complement.\mbox{[}set\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em buff} & Buffer that contains data to write \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l___gac7ae9848d6901193efd21bf71427a266}\label{group___l_s_m6_d_s_l___gac7ae9848d6901193efd21bf71427a266}} 
+\index{Six\_position\_detection(6D/4D)@{Six\_position\_detection(6D/4D)}!lsm6dsl\_mag\_soft\_iron\_get@{lsm6dsl\_mag\_soft\_iron\_get}}
+\index{lsm6dsl\_mag\_soft\_iron\_get@{lsm6dsl\_mag\_soft\_iron\_get}!Six\_position\_detection(6D/4D)@{Six\_position\_detection(6D/4D)}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_mag\_soft\_iron\_get()}{lsm6dsl\_mag\_soft\_iron\_get()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+mag\+\_\+soft\+\_\+iron\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{uint8\+\_\+t $\ast$}]{val }\end{DoxyParamCaption})}
+
+
+
+Enable soft-\/iron correction algorithm for magnetometer.\mbox{[}get\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Change the values of soft\+\_\+en in reg CTRL9\+\_\+\+XL \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l___ga4fdf8ea4c75e490f4834beca8a8480f3}\label{group___l_s_m6_d_s_l___ga4fdf8ea4c75e490f4834beca8a8480f3}} 
+\index{Six\_position\_detection(6D/4D)@{Six\_position\_detection(6D/4D)}!lsm6dsl\_mag\_soft\_iron\_mat\_get@{lsm6dsl\_mag\_soft\_iron\_mat\_get}}
+\index{lsm6dsl\_mag\_soft\_iron\_mat\_get@{lsm6dsl\_mag\_soft\_iron\_mat\_get}!Six\_position\_detection(6D/4D)@{Six\_position\_detection(6D/4D)}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_mag\_soft\_iron\_mat\_get()}{lsm6dsl\_mag\_soft\_iron\_mat\_get()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+mag\+\_\+soft\+\_\+iron\+\_\+mat\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{uint8\+\_\+t $\ast$}]{buff }\end{DoxyParamCaption})}
+
+
+
+Soft iron 3x3 matrix. Value are expressed in sign-\/module format. (Es. SVVVVVVVb where S is the sign 0/+1/-\/ and V is the value).\mbox{[}get\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em buff} & Buffer that stores data read \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l___ga20e83be2039b4da2d026c89d9ebf8d44}\label{group___l_s_m6_d_s_l___ga20e83be2039b4da2d026c89d9ebf8d44}} 
+\index{Six\_position\_detection(6D/4D)@{Six\_position\_detection(6D/4D)}!lsm6dsl\_mag\_soft\_iron\_mat\_set@{lsm6dsl\_mag\_soft\_iron\_mat\_set}}
+\index{lsm6dsl\_mag\_soft\_iron\_mat\_set@{lsm6dsl\_mag\_soft\_iron\_mat\_set}!Six\_position\_detection(6D/4D)@{Six\_position\_detection(6D/4D)}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_mag\_soft\_iron\_mat\_set()}{lsm6dsl\_mag\_soft\_iron\_mat\_set()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+mag\+\_\+soft\+\_\+iron\+\_\+mat\+\_\+set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{uint8\+\_\+t $\ast$}]{buff }\end{DoxyParamCaption})}
+
+
+
+Soft iron 3x3 matrix. Value are expressed in sign-\/module format. (Es. SVVVVVVVb where S is the sign 0/+1/-\/ and V is the value).\mbox{[}set\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em buff} & Buffer that contains data to write \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l___ga2de9c27ff801fc3f87ed5a8e54dae768}\label{group___l_s_m6_d_s_l___ga2de9c27ff801fc3f87ed5a8e54dae768}} 
+\index{Six\_position\_detection(6D/4D)@{Six\_position\_detection(6D/4D)}!lsm6dsl\_mag\_soft\_iron\_set@{lsm6dsl\_mag\_soft\_iron\_set}}
+\index{lsm6dsl\_mag\_soft\_iron\_set@{lsm6dsl\_mag\_soft\_iron\_set}!Six\_position\_detection(6D/4D)@{Six\_position\_detection(6D/4D)}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_mag\_soft\_iron\_set()}{lsm6dsl\_mag\_soft\_iron\_set()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+mag\+\_\+soft\+\_\+iron\+\_\+set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{uint8\+\_\+t}]{val }\end{DoxyParamCaption})}
+
+
+
+Enable soft-\/iron correction algorithm for magnetometer.\mbox{[}set\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Change the values of soft\+\_\+en in reg CTRL9\+\_\+\+XL \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}

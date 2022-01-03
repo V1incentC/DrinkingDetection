@@ -1,0 +1,258 @@
+\hypertarget{group___l_s_m6_d_s_l__accelerometer__filters}{}\doxysection{LSM6\+DSL\+\_\+accelerometer\+\_\+filters}
+\label{group___l_s_m6_d_s_l__accelerometer__filters}\index{LSM6DSL\_accelerometer\_filters@{LSM6DSL\_accelerometer\_filters}}
+
+
+This section group all the functions concerning the filters configuration that impact accelerometer in every mode.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l__accelerometer__filters_gad8ccaad2b927c60034e04fb18c376402}{lsm6dsl\+\_\+xl\+\_\+filter\+\_\+analog\+\_\+set}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, \mbox{\hyperlink{group___l_s_m6_d_s_l_ga3bc3616320ef71f528b16ed9a92eaa5c}{lsm6dsl\+\_\+bw0\+\_\+xl\+\_\+t}} val)
+\begin{DoxyCompactList}\small\item\em Accelerometer analog chain bandwidth selection (only for accelerometer ODR ≥ 1.\+67 k\+Hz).\mbox{[}set\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l__accelerometer__filters_ga5ee60f95b05fac923d4bfea70e7cb431}{lsm6dsl\+\_\+xl\+\_\+filter\+\_\+analog\+\_\+get}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, \mbox{\hyperlink{group___l_s_m6_d_s_l_ga3bc3616320ef71f528b16ed9a92eaa5c}{lsm6dsl\+\_\+bw0\+\_\+xl\+\_\+t}} $\ast$val)
+\begin{DoxyCompactList}\small\item\em Accelerometer analog chain bandwidth selection (only for accelerometer ODR ≥ 1.\+67 k\+Hz).\mbox{[}get\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l__accelerometer__filters_gafed527cd6429c28ec7dfbf12c1ff645f}{lsm6dsl\+\_\+xl\+\_\+lp1\+\_\+bandwidth\+\_\+set}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, \mbox{\hyperlink{group___l_s_m6_d_s_l_gaa24da0c0e62decd6b935fa2abd576536}{lsm6dsl\+\_\+lpf1\+\_\+bw\+\_\+sel\+\_\+t}} val)
+\begin{DoxyCompactList}\small\item\em Accelerometer digital LPF (LPF1) bandwidth selection LPF2 is not used.\mbox{[}set\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l__accelerometer__filters_ga67c244c4ae4eef5f63cf78b1e5802169}{lsm6dsl\+\_\+xl\+\_\+lp1\+\_\+bandwidth\+\_\+get}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, \mbox{\hyperlink{group___l_s_m6_d_s_l_gaa24da0c0e62decd6b935fa2abd576536}{lsm6dsl\+\_\+lpf1\+\_\+bw\+\_\+sel\+\_\+t}} $\ast$val)
+\begin{DoxyCompactList}\small\item\em Accelerometer digital LPF (LPF1) bandwidth selection LPF2 is not used.\mbox{[}get\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l__accelerometer__filters_ga5c7cc141f4bdc9710b1253ff5a76aedf}{lsm6dsl\+\_\+xl\+\_\+lp2\+\_\+bandwidth\+\_\+set}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, \mbox{\hyperlink{group___l_s_m6_d_s_l_gac32772f4b1c9b105019901d796552533}{lsm6dsl\+\_\+input\+\_\+composite\+\_\+t}} val)
+\begin{DoxyCompactList}\small\item\em LPF2 on outputs\mbox{[}set\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l__accelerometer__filters_ga693f37589f48601cdedd5d33c1c6e9f5}{lsm6dsl\+\_\+xl\+\_\+lp2\+\_\+bandwidth\+\_\+get}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, \mbox{\hyperlink{group___l_s_m6_d_s_l_gac32772f4b1c9b105019901d796552533}{lsm6dsl\+\_\+input\+\_\+composite\+\_\+t}} $\ast$val)
+\begin{DoxyCompactList}\small\item\em LPF2 on outputs\mbox{[}get\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l__accelerometer__filters_ga3315f7bb42b4ade20b534b29b26800b5}{lsm6dsl\+\_\+xl\+\_\+reference\+\_\+mode\+\_\+set}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, uint8\+\_\+t val)
+\begin{DoxyCompactList}\small\item\em Enable HP filter reference mode.\mbox{[}set\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l__accelerometer__filters_gaeb8992832d013f19bf62a01509e94a7b}{lsm6dsl\+\_\+xl\+\_\+reference\+\_\+mode\+\_\+get}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, uint8\+\_\+t $\ast$val)
+\begin{DoxyCompactList}\small\item\em Enable HP filter reference mode.\mbox{[}get\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l__accelerometer__filters_ga7517b3fbe10ee1aa555fc596e05f6a13}{lsm6dsl\+\_\+xl\+\_\+hp\+\_\+bandwidth\+\_\+set}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, \mbox{\hyperlink{group___l_s_m6_d_s_l_ga68f92cc79868239b1c6fdf38345f908e}{lsm6dsl\+\_\+hpcf\+\_\+xl\+\_\+t}} val)
+\begin{DoxyCompactList}\small\item\em High pass/\+Slope on outputs.\mbox{[}set\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l__accelerometer__filters_gaba116459ddc23244392ba6192e810403}{lsm6dsl\+\_\+xl\+\_\+hp\+\_\+bandwidth\+\_\+get}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, \mbox{\hyperlink{group___l_s_m6_d_s_l_ga68f92cc79868239b1c6fdf38345f908e}{lsm6dsl\+\_\+hpcf\+\_\+xl\+\_\+t}} $\ast$val)
+\begin{DoxyCompactList}\small\item\em High pass/\+Slope on outputs.\mbox{[}get\mbox{]}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This section group all the functions concerning the filters configuration that impact accelerometer in every mode. 
+
+This section group all the functions concerning the filters configuration that impact accelerometer.
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l__accelerometer__filters_ga5ee60f95b05fac923d4bfea70e7cb431}\label{group___l_s_m6_d_s_l__accelerometer__filters_ga5ee60f95b05fac923d4bfea70e7cb431}} 
+\index{LSM6DSL\_accelerometer\_filters@{LSM6DSL\_accelerometer\_filters}!lsm6dsl\_xl\_filter\_analog\_get@{lsm6dsl\_xl\_filter\_analog\_get}}
+\index{lsm6dsl\_xl\_filter\_analog\_get@{lsm6dsl\_xl\_filter\_analog\_get}!LSM6DSL\_accelerometer\_filters@{LSM6DSL\_accelerometer\_filters}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_xl\_filter\_analog\_get()}{lsm6dsl\_xl\_filter\_analog\_get()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+xl\+\_\+filter\+\_\+analog\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{\mbox{\hyperlink{group___l_s_m6_d_s_l_ga3bc3616320ef71f528b16ed9a92eaa5c}{lsm6dsl\+\_\+bw0\+\_\+xl\+\_\+t}} $\ast$}]{val }\end{DoxyParamCaption})}
+
+
+
+Accelerometer analog chain bandwidth selection (only for accelerometer ODR ≥ 1.\+67 k\+Hz).\mbox{[}get\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Get the values of bw0\+\_\+xl in reg CTRL1\+\_\+\+XL \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l__accelerometer__filters_gad8ccaad2b927c60034e04fb18c376402}\label{group___l_s_m6_d_s_l__accelerometer__filters_gad8ccaad2b927c60034e04fb18c376402}} 
+\index{LSM6DSL\_accelerometer\_filters@{LSM6DSL\_accelerometer\_filters}!lsm6dsl\_xl\_filter\_analog\_set@{lsm6dsl\_xl\_filter\_analog\_set}}
+\index{lsm6dsl\_xl\_filter\_analog\_set@{lsm6dsl\_xl\_filter\_analog\_set}!LSM6DSL\_accelerometer\_filters@{LSM6DSL\_accelerometer\_filters}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_xl\_filter\_analog\_set()}{lsm6dsl\_xl\_filter\_analog\_set()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+xl\+\_\+filter\+\_\+analog\+\_\+set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{\mbox{\hyperlink{group___l_s_m6_d_s_l_ga3bc3616320ef71f528b16ed9a92eaa5c}{lsm6dsl\+\_\+bw0\+\_\+xl\+\_\+t}}}]{val }\end{DoxyParamCaption})}
+
+
+
+Accelerometer analog chain bandwidth selection (only for accelerometer ODR ≥ 1.\+67 k\+Hz).\mbox{[}set\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Change the values of bw0\+\_\+xl in reg CTRL1\+\_\+\+XL \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l__accelerometer__filters_gaba116459ddc23244392ba6192e810403}\label{group___l_s_m6_d_s_l__accelerometer__filters_gaba116459ddc23244392ba6192e810403}} 
+\index{LSM6DSL\_accelerometer\_filters@{LSM6DSL\_accelerometer\_filters}!lsm6dsl\_xl\_hp\_bandwidth\_get@{lsm6dsl\_xl\_hp\_bandwidth\_get}}
+\index{lsm6dsl\_xl\_hp\_bandwidth\_get@{lsm6dsl\_xl\_hp\_bandwidth\_get}!LSM6DSL\_accelerometer\_filters@{LSM6DSL\_accelerometer\_filters}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_xl\_hp\_bandwidth\_get()}{lsm6dsl\_xl\_hp\_bandwidth\_get()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+xl\+\_\+hp\+\_\+bandwidth\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{\mbox{\hyperlink{group___l_s_m6_d_s_l_ga68f92cc79868239b1c6fdf38345f908e}{lsm6dsl\+\_\+hpcf\+\_\+xl\+\_\+t}} $\ast$}]{val }\end{DoxyParamCaption})}
+
+
+
+High pass/\+Slope on outputs.\mbox{[}get\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Get the values of hpcf\+\_\+xl in reg CTRL8\+\_\+\+XL \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l__accelerometer__filters_ga7517b3fbe10ee1aa555fc596e05f6a13}\label{group___l_s_m6_d_s_l__accelerometer__filters_ga7517b3fbe10ee1aa555fc596e05f6a13}} 
+\index{LSM6DSL\_accelerometer\_filters@{LSM6DSL\_accelerometer\_filters}!lsm6dsl\_xl\_hp\_bandwidth\_set@{lsm6dsl\_xl\_hp\_bandwidth\_set}}
+\index{lsm6dsl\_xl\_hp\_bandwidth\_set@{lsm6dsl\_xl\_hp\_bandwidth\_set}!LSM6DSL\_accelerometer\_filters@{LSM6DSL\_accelerometer\_filters}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_xl\_hp\_bandwidth\_set()}{lsm6dsl\_xl\_hp\_bandwidth\_set()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+xl\+\_\+hp\+\_\+bandwidth\+\_\+set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{\mbox{\hyperlink{group___l_s_m6_d_s_l_ga68f92cc79868239b1c6fdf38345f908e}{lsm6dsl\+\_\+hpcf\+\_\+xl\+\_\+t}}}]{val }\end{DoxyParamCaption})}
+
+
+
+High pass/\+Slope on outputs.\mbox{[}set\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Change the values of hpcf\+\_\+xl in reg CTRL8\+\_\+\+XL \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l__accelerometer__filters_ga67c244c4ae4eef5f63cf78b1e5802169}\label{group___l_s_m6_d_s_l__accelerometer__filters_ga67c244c4ae4eef5f63cf78b1e5802169}} 
+\index{LSM6DSL\_accelerometer\_filters@{LSM6DSL\_accelerometer\_filters}!lsm6dsl\_xl\_lp1\_bandwidth\_get@{lsm6dsl\_xl\_lp1\_bandwidth\_get}}
+\index{lsm6dsl\_xl\_lp1\_bandwidth\_get@{lsm6dsl\_xl\_lp1\_bandwidth\_get}!LSM6DSL\_accelerometer\_filters@{LSM6DSL\_accelerometer\_filters}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_xl\_lp1\_bandwidth\_get()}{lsm6dsl\_xl\_lp1\_bandwidth\_get()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+xl\+\_\+lp1\+\_\+bandwidth\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{\mbox{\hyperlink{group___l_s_m6_d_s_l_gaa24da0c0e62decd6b935fa2abd576536}{lsm6dsl\+\_\+lpf1\+\_\+bw\+\_\+sel\+\_\+t}} $\ast$}]{val }\end{DoxyParamCaption})}
+
+
+
+Accelerometer digital LPF (LPF1) bandwidth selection LPF2 is not used.\mbox{[}get\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Get the values of lpf1\+\_\+bw\+\_\+sel in reg CTRL1\+\_\+\+XL \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l__accelerometer__filters_gafed527cd6429c28ec7dfbf12c1ff645f}\label{group___l_s_m6_d_s_l__accelerometer__filters_gafed527cd6429c28ec7dfbf12c1ff645f}} 
+\index{LSM6DSL\_accelerometer\_filters@{LSM6DSL\_accelerometer\_filters}!lsm6dsl\_xl\_lp1\_bandwidth\_set@{lsm6dsl\_xl\_lp1\_bandwidth\_set}}
+\index{lsm6dsl\_xl\_lp1\_bandwidth\_set@{lsm6dsl\_xl\_lp1\_bandwidth\_set}!LSM6DSL\_accelerometer\_filters@{LSM6DSL\_accelerometer\_filters}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_xl\_lp1\_bandwidth\_set()}{lsm6dsl\_xl\_lp1\_bandwidth\_set()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+xl\+\_\+lp1\+\_\+bandwidth\+\_\+set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{\mbox{\hyperlink{group___l_s_m6_d_s_l_gaa24da0c0e62decd6b935fa2abd576536}{lsm6dsl\+\_\+lpf1\+\_\+bw\+\_\+sel\+\_\+t}}}]{val }\end{DoxyParamCaption})}
+
+
+
+Accelerometer digital LPF (LPF1) bandwidth selection LPF2 is not used.\mbox{[}set\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Change the values of lpf1\+\_\+bw\+\_\+sel in reg CTRL1\+\_\+\+XL \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l__accelerometer__filters_ga693f37589f48601cdedd5d33c1c6e9f5}\label{group___l_s_m6_d_s_l__accelerometer__filters_ga693f37589f48601cdedd5d33c1c6e9f5}} 
+\index{LSM6DSL\_accelerometer\_filters@{LSM6DSL\_accelerometer\_filters}!lsm6dsl\_xl\_lp2\_bandwidth\_get@{lsm6dsl\_xl\_lp2\_bandwidth\_get}}
+\index{lsm6dsl\_xl\_lp2\_bandwidth\_get@{lsm6dsl\_xl\_lp2\_bandwidth\_get}!LSM6DSL\_accelerometer\_filters@{LSM6DSL\_accelerometer\_filters}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_xl\_lp2\_bandwidth\_get()}{lsm6dsl\_xl\_lp2\_bandwidth\_get()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+xl\+\_\+lp2\+\_\+bandwidth\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{\mbox{\hyperlink{group___l_s_m6_d_s_l_gac32772f4b1c9b105019901d796552533}{lsm6dsl\+\_\+input\+\_\+composite\+\_\+t}} $\ast$}]{val }\end{DoxyParamCaption})}
+
+
+
+LPF2 on outputs\mbox{[}get\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Get the values of input\+\_\+composite in reg CTRL8\+\_\+\+XL \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l__accelerometer__filters_ga5c7cc141f4bdc9710b1253ff5a76aedf}\label{group___l_s_m6_d_s_l__accelerometer__filters_ga5c7cc141f4bdc9710b1253ff5a76aedf}} 
+\index{LSM6DSL\_accelerometer\_filters@{LSM6DSL\_accelerometer\_filters}!lsm6dsl\_xl\_lp2\_bandwidth\_set@{lsm6dsl\_xl\_lp2\_bandwidth\_set}}
+\index{lsm6dsl\_xl\_lp2\_bandwidth\_set@{lsm6dsl\_xl\_lp2\_bandwidth\_set}!LSM6DSL\_accelerometer\_filters@{LSM6DSL\_accelerometer\_filters}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_xl\_lp2\_bandwidth\_set()}{lsm6dsl\_xl\_lp2\_bandwidth\_set()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+xl\+\_\+lp2\+\_\+bandwidth\+\_\+set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{\mbox{\hyperlink{group___l_s_m6_d_s_l_gac32772f4b1c9b105019901d796552533}{lsm6dsl\+\_\+input\+\_\+composite\+\_\+t}}}]{val }\end{DoxyParamCaption})}
+
+
+
+LPF2 on outputs\mbox{[}set\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Change the values of input\+\_\+composite in reg CTRL8\+\_\+\+XL \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l__accelerometer__filters_gaeb8992832d013f19bf62a01509e94a7b}\label{group___l_s_m6_d_s_l__accelerometer__filters_gaeb8992832d013f19bf62a01509e94a7b}} 
+\index{LSM6DSL\_accelerometer\_filters@{LSM6DSL\_accelerometer\_filters}!lsm6dsl\_xl\_reference\_mode\_get@{lsm6dsl\_xl\_reference\_mode\_get}}
+\index{lsm6dsl\_xl\_reference\_mode\_get@{lsm6dsl\_xl\_reference\_mode\_get}!LSM6DSL\_accelerometer\_filters@{LSM6DSL\_accelerometer\_filters}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_xl\_reference\_mode\_get()}{lsm6dsl\_xl\_reference\_mode\_get()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+xl\+\_\+reference\+\_\+mode\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{uint8\+\_\+t $\ast$}]{val }\end{DoxyParamCaption})}
+
+
+
+Enable HP filter reference mode.\mbox{[}get\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Change the values of hp\+\_\+ref\+\_\+mode in reg CTRL8\+\_\+\+XL \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l__accelerometer__filters_ga3315f7bb42b4ade20b534b29b26800b5}\label{group___l_s_m6_d_s_l__accelerometer__filters_ga3315f7bb42b4ade20b534b29b26800b5}} 
+\index{LSM6DSL\_accelerometer\_filters@{LSM6DSL\_accelerometer\_filters}!lsm6dsl\_xl\_reference\_mode\_set@{lsm6dsl\_xl\_reference\_mode\_set}}
+\index{lsm6dsl\_xl\_reference\_mode\_set@{lsm6dsl\_xl\_reference\_mode\_set}!LSM6DSL\_accelerometer\_filters@{LSM6DSL\_accelerometer\_filters}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_xl\_reference\_mode\_set()}{lsm6dsl\_xl\_reference\_mode\_set()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+xl\+\_\+reference\+\_\+mode\+\_\+set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{uint8\+\_\+t}]{val }\end{DoxyParamCaption})}
+
+
+
+Enable HP filter reference mode.\mbox{[}set\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & Change the values of hp\+\_\+ref\+\_\+mode in reg CTRL8\+\_\+\+XL \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}

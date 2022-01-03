@@ -1,0 +1,66 @@
+\hypertarget{group___l_s_m6_d_s_l__gyroscope__filters}{}\doxysection{LSM6\+DSL\+\_\+gyroscope\+\_\+filters}
+\label{group___l_s_m6_d_s_l__gyroscope__filters}\index{LSM6DSL\_gyroscope\_filters@{LSM6DSL\_gyroscope\_filters}}
+
+
+This section group all the functions concerning the filters configuration that impact gyroscope.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l__gyroscope__filters_gaf329a89cbf3aeb73fd676adf3118d7ec}{lsm6dsl\+\_\+gy\+\_\+band\+\_\+pass\+\_\+set}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, \mbox{\hyperlink{group___l_s_m6_d_s_l_gabcd0b27a0389b2295ad3ffb1f173634a}{lsm6dsl\+\_\+lpf1\+\_\+sel\+\_\+g\+\_\+t}} val)
+\begin{DoxyCompactList}\small\item\em Gyroscope low pass path bandwidth.\mbox{[}set\mbox{]}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___l_s_m6_d_s_l__gyroscope__filters_ga9587176ecc07a1263cf907f75902aa5b}{lsm6dsl\+\_\+gy\+\_\+band\+\_\+pass\+\_\+get}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, \mbox{\hyperlink{group___l_s_m6_d_s_l_gabcd0b27a0389b2295ad3ffb1f173634a}{lsm6dsl\+\_\+lpf1\+\_\+sel\+\_\+g\+\_\+t}} $\ast$val)
+\begin{DoxyCompactList}\small\item\em Gyroscope low pass path bandwidth.\mbox{[}get\mbox{]}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This section group all the functions concerning the filters configuration that impact gyroscope. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l__gyroscope__filters_ga9587176ecc07a1263cf907f75902aa5b}\label{group___l_s_m6_d_s_l__gyroscope__filters_ga9587176ecc07a1263cf907f75902aa5b}} 
+\index{LSM6DSL\_gyroscope\_filters@{LSM6DSL\_gyroscope\_filters}!lsm6dsl\_gy\_band\_pass\_get@{lsm6dsl\_gy\_band\_pass\_get}}
+\index{lsm6dsl\_gy\_band\_pass\_get@{lsm6dsl\_gy\_band\_pass\_get}!LSM6DSL\_gyroscope\_filters@{LSM6DSL\_gyroscope\_filters}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_gy\_band\_pass\_get()}{lsm6dsl\_gy\_band\_pass\_get()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+gy\+\_\+band\+\_\+pass\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{\mbox{\hyperlink{group___l_s_m6_d_s_l_gabcd0b27a0389b2295ad3ffb1f173634a}{lsm6dsl\+\_\+lpf1\+\_\+sel\+\_\+g\+\_\+t}} $\ast$}]{val }\end{DoxyParamCaption})}
+
+
+
+Gyroscope low pass path bandwidth.\mbox{[}get\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & gyroscope filtering chain \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___l_s_m6_d_s_l__gyroscope__filters_gaf329a89cbf3aeb73fd676adf3118d7ec}\label{group___l_s_m6_d_s_l__gyroscope__filters_gaf329a89cbf3aeb73fd676adf3118d7ec}} 
+\index{LSM6DSL\_gyroscope\_filters@{LSM6DSL\_gyroscope\_filters}!lsm6dsl\_gy\_band\_pass\_set@{lsm6dsl\_gy\_band\_pass\_set}}
+\index{lsm6dsl\_gy\_band\_pass\_set@{lsm6dsl\_gy\_band\_pass\_set}!LSM6DSL\_gyroscope\_filters@{LSM6DSL\_gyroscope\_filters}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_gy\_band\_pass\_set()}{lsm6dsl\_gy\_band\_pass\_set()}}
+{\footnotesize\ttfamily int32\+\_\+t lsm6dsl\+\_\+gy\+\_\+band\+\_\+pass\+\_\+set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{\mbox{\hyperlink{group___l_s_m6_d_s_l_gabcd0b27a0389b2295ad3ffb1f173634a}{lsm6dsl\+\_\+lpf1\+\_\+sel\+\_\+g\+\_\+t}}}]{val }\end{DoxyParamCaption})}
+
+
+
+Gyroscope low pass path bandwidth.\mbox{[}set\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & Read / write interface definitions \\
+\hline
+{\em val} & gyroscope filtering chain configuration. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Interface} & status (MANDATORY\+: return 0 -\/\texorpdfstring{$>$}{>} no Error). \\
+\hline
+\end{DoxyRetVals}
