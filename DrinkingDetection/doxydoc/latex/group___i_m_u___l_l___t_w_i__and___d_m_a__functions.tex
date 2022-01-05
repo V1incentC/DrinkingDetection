@@ -1,0 +1,74 @@
+\hypertarget{group___i_m_u___l_l___t_w_i__and___d_m_a__functions}{}\doxysection{IMU\+\_\+\+LL\+\_\+\+TWI\+\_\+and\+\_\+\+DMA\+\_\+functions}
+\label{group___i_m_u___l_l___t_w_i__and___d_m_a__functions}\index{IMU\_LL\_TWI\_and\_DMA\_functions@{IMU\_LL\_TWI\_and\_DMA\_functions}}
+
+
+This section provide an implementation of TWI and DMA setup functions.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___i_m_u___l_l___t_w_i__and___d_m_a__functions_gac6fa65b5be05082da07458f3cb6a6a68}{imu\+\_\+ll\+\_\+twi\+\_\+master\+\_\+init}} ()
+\begin{DoxyCompactList}\small\item\em Function for initializing and enabling TWI. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___i_m_u___l_l___t_w_i__and___d_m_a__functions_ga7e5e378594ddc75c4a5fb342196b7ce7}{imu\+\_\+ll\+\_\+twim\+\_\+dma\+\_\+init}} (uint8\+\_\+t ppi\+\_\+trigger\+\_\+pin, uint8\+\_\+t reg, uint8\+\_\+t $\ast$buffer, size\+\_\+t buffer\+\_\+length)
+\begin{DoxyCompactList}\small\item\em Function for initializing TWIM DMA reading triggered by PPI and GPIO. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___i_m_u___l_l___t_w_i__and___d_m_a__functions_gac3d344c560bbfe2cf2c6d1c766271e50}{imu\+\_\+ll\+\_\+prepare\+\_\+dma}} (uint8\+\_\+t reg, uint8\+\_\+t $\ast$buffer, size\+\_\+t buffer\+\_\+length)
+\begin{DoxyCompactList}\small\item\em Function for preparing TWIM for a new DMA transfer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This section provide an implementation of TWI and DMA setup functions. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group___i_m_u___l_l___t_w_i__and___d_m_a__functions_gac3d344c560bbfe2cf2c6d1c766271e50}\label{group___i_m_u___l_l___t_w_i__and___d_m_a__functions_gac3d344c560bbfe2cf2c6d1c766271e50}} 
+\index{IMU\_LL\_TWI\_and\_DMA\_functions@{IMU\_LL\_TWI\_and\_DMA\_functions}!imu\_ll\_prepare\_dma@{imu\_ll\_prepare\_dma}}
+\index{imu\_ll\_prepare\_dma@{imu\_ll\_prepare\_dma}!IMU\_LL\_TWI\_and\_DMA\_functions@{IMU\_LL\_TWI\_and\_DMA\_functions}}
+\doxysubsubsection{\texorpdfstring{imu\_ll\_prepare\_dma()}{imu\_ll\_prepare\_dma()}}
+{\footnotesize\ttfamily void imu\+\_\+ll\+\_\+prepare\+\_\+dma (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{reg,  }\item[{uint8\+\_\+t $\ast$}]{buffer,  }\item[{size\+\_\+t}]{buffer\+\_\+length }\end{DoxyParamCaption})}
+
+
+
+Function for preparing TWIM for a new DMA transfer. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em reg} & Register we want to read data from \\
+\hline
+\mbox{\texttt{ in}}  & {\em buffer} & Pointer to a buffer for storing the read data \\
+\hline
+\mbox{\texttt{ in}}  & {\em buffer\+\_\+length} & Length of the buffer \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group___i_m_u___l_l___t_w_i__and___d_m_a__functions_gac6fa65b5be05082da07458f3cb6a6a68}\label{group___i_m_u___l_l___t_w_i__and___d_m_a__functions_gac6fa65b5be05082da07458f3cb6a6a68}} 
+\index{IMU\_LL\_TWI\_and\_DMA\_functions@{IMU\_LL\_TWI\_and\_DMA\_functions}!imu\_ll\_twi\_master\_init@{imu\_ll\_twi\_master\_init}}
+\index{imu\_ll\_twi\_master\_init@{imu\_ll\_twi\_master\_init}!IMU\_LL\_TWI\_and\_DMA\_functions@{IMU\_LL\_TWI\_and\_DMA\_functions}}
+\doxysubsubsection{\texorpdfstring{imu\_ll\_twi\_master\_init()}{imu\_ll\_twi\_master\_init()}}
+{\footnotesize\ttfamily void imu\+\_\+ll\+\_\+twi\+\_\+master\+\_\+init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Function for initializing and enabling TWI. 
+
+\mbox{\Hypertarget{group___i_m_u___l_l___t_w_i__and___d_m_a__functions_ga7e5e378594ddc75c4a5fb342196b7ce7}\label{group___i_m_u___l_l___t_w_i__and___d_m_a__functions_ga7e5e378594ddc75c4a5fb342196b7ce7}} 
+\index{IMU\_LL\_TWI\_and\_DMA\_functions@{IMU\_LL\_TWI\_and\_DMA\_functions}!imu\_ll\_twim\_dma\_init@{imu\_ll\_twim\_dma\_init}}
+\index{imu\_ll\_twim\_dma\_init@{imu\_ll\_twim\_dma\_init}!IMU\_LL\_TWI\_and\_DMA\_functions@{IMU\_LL\_TWI\_and\_DMA\_functions}}
+\doxysubsubsection{\texorpdfstring{imu\_ll\_twim\_dma\_init()}{imu\_ll\_twim\_dma\_init()}}
+{\footnotesize\ttfamily void imu\+\_\+ll\+\_\+twim\+\_\+dma\+\_\+init (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{ppi\+\_\+trigger\+\_\+pin,  }\item[{uint8\+\_\+t}]{reg,  }\item[{uint8\+\_\+t $\ast$}]{buffer,  }\item[{size\+\_\+t}]{buffer\+\_\+length }\end{DoxyParamCaption})}
+
+
+
+Function for initializing TWIM DMA reading triggered by PPI and GPIO. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em ppi\+\_\+trigger\+\_\+pin} & GPIO pin we want to use for triggering the PPI \\
+\hline
+\mbox{\texttt{ in}}  & {\em reg} & Register we want to read data from \\
+\hline
+\mbox{\texttt{ in}}  & {\em buffer} & Pointer to a buffer for storing the read data \\
+\hline
+\mbox{\texttt{ in}}  & {\em buffer\+\_\+length} & Length of the buffer \\
+\hline
+\end{DoxyParams}

@@ -87,7 +87,8 @@ VisualGDB/Debug/DrinkingDetection.o: DrinkingDetection.c \
  c:\program\ files\ (x86)\gnu\ tools\ arm\ embedded\7\ 2018-q2-update\arm-none-eabi\include\machine\stdlib.h \
  C:/Users/rumen/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/17.0/nRF5x/components/libraries/balloc/nrf_balloc.h \
  C:/Users/rumen/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/17.0/nRF5x/components/libraries/log/nrf_log_default_backends.h \
- UserFiles/IMU_API/imu_api.h \
+ UserFiles/IMU_API/imu_api.h UserFiles/IMU_API/lsm6dsl/lsm6dsl_reg.h \
+ c:\program\ files\ (x86)\gnu\ tools\ arm\ embedded\7\ 2018-q2-update\arm-none-eabi\include\math.h \
  UserFiles/IMU_API/nrfx_twim_imu/imu_low_level.h \
  C:/Users/rumen/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/17.0/nRF5x/modules/nrfx/drivers/include/nrfx_twim.h \
  C:/Users/rumen/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/17.0/nRF5x/modules/nrfx/drivers/include/nrfx_twi_twim.h \
@@ -271,6 +272,10 @@ C:/Users/rumen/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.no
 C:/Users/rumen/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/17.0/nRF5x/components/libraries/log/nrf_log_default_backends.h:
 
 UserFiles/IMU_API/imu_api.h:
+
+UserFiles/IMU_API/lsm6dsl/lsm6dsl_reg.h:
+
+c:\program\ files\ (x86)\gnu\ tools\ arm\ embedded\7\ 2018-q2-update\arm-none-eabi\include\math.h:
 
 UserFiles/IMU_API/nrfx_twim_imu/imu_low_level.h:
 

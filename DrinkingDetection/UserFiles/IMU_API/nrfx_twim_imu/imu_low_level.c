@@ -1,21 +1,36 @@
-
 /*
  ******************************************************************************
  * @file    imu_low_level.c
- * @author  Sensors Software Solution Team
- * @brief   LSM6DSL driver file
+ * @author  Vincent Cergolj
+ * @brief   LSM6DSL low level driver file
  ******************************************************************************
- * @attention
+*/
+/*
+ * Copyright (c) 2021 Vincent Cergolj
  *
- * <h2><center>&copy; Copyright (c) 2019 STMicroelectronics.
- * All rights reserved.</center></h2>
+ * Permission is hereby granted, free of charge, to any person
+ * obtaining a copy of this software and associated documentation
+ * files (the "Software"), to deal in the Software without restriction,
+ * including without limitation the rights to use, copy, modify, merge,
+ * publish, distribute, sublicense, and/or sell copies of the Software,
+ * and to permit persons to whom the Software is furnished to do so,
+ * subject to the following conditions:
  *
- * This software component is licensed by ST under BSD 3-Clause license,
- * the "License"; You may not use this file except in compliance with the
- * License. You may obtain a copy of the License at:
- *                        opensource.org/licenses/BSD-3-Clause
+ * The above copyright notice and this permission notice shall be
+ * included in all copies or substantial portions of the Software.
  *
- ******************************************************************************
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+ * OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE
+ * AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+ * HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+ * WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+ * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+ * OTHER DEALINGS IN THE SOFTWARE.
+ *
+ * This file is part of IMU API.
+ *
+ * Author:          Vincent Cergolj
  */
 #include "imu_low_level.h"
 
@@ -38,13 +53,7 @@ nrfx_twim_t const twim_t = NRFX_TWIM_INSTANCE(TWIM_INSTANCE_ID);
 
 volatile bool m_xfer_done = true, fifo_transfer_done = false; 
 
-/**
-  * @defgroup    IMU_LOW_LEVEL
-  * @brief       This file provides a set of low level functions needed to drive the
-  *              lsm6dsl enanced inertial module on NRF52.
-  * @{
-  *
-  */
+
 
 static void merge_register_and_data(uint8_t * new_buffer, uint8_t reg, 
                                     uint8_t * p_data, size_t length)
@@ -53,14 +62,7 @@ static void merge_register_and_data(uint8_t * new_buffer, uint8_t reg,
 	memcpy((new_buffer + 1), p_data, length);
 }
 
-/**
-  * @defgroup    IMU_LL_interfaces_functions
-  * @brief       This section provide an implementation of platform read
-  *              and write functions.
-  *              MANDATORY: return 0 -> no Error.
-  * @{
-  *
-  */
+
 int32_t imu_ll_platform_write(void*    handle,
                               uint8_t  reg,
                               uint8_t* buffer,
@@ -125,10 +127,7 @@ int32_t imu_ll_platform_read(void*    handle,
 			
 
 }
-/**
-  * @}
-  *
-  */
+
 
  static void twim_handler(nrfx_twim_evt_t const * p_event, void * p_context) {
 
@@ -274,7 +273,3 @@ void imu_ll_gpio_init()
     nrf_gpio_cfg_output(IMU_LL_STATUS_LED);
 
 }
-/**
-  * @}
-  *
-  */

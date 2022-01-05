@@ -69,92 +69,114 @@ $(function() {
   <div class="headertitle"><div class="title">imu_low_level.h</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="imu__low__level_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">/*</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> ******************************************************************************</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> * @file    lsm6dsl_reg.c</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> * @author  Sensors Software Solution Team</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> * @brief   LSM6DSL driver file</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> ******************************************************************************</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"> * @attention</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"> *</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"> * &lt;h2&gt;&lt;center&gt;&amp;copy; Copyright (c) 2019 STMicroelectronics.</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment"> * All rights reserved.&lt;/center&gt;&lt;/h2&gt;</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment"> *</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment"> * This software component is licensed by ST under BSD 3-Clause license,</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment"> * the &quot;License&quot;; You may not use this file except in compliance with the</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment"> * License. You may obtain a copy of the License at:</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment"> *                        opensource.org/licenses/BSD-3-Clause</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment"> *</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment"> ******************************************************************************</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment"> */</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#ifndef IMU_LOW_LEVEL_H</span></div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#define IMU_LOW_LEVEL_H</span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#include &quot;nrfx_twim.h&quot;</span></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#include &quot;nrf_gpio.h&quot;</span></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#include &quot;pca10056.h&quot;</span></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="imu__low__level_8h.html#adf17ae578110a9aed4c7151db9b13172">   27</a></span><span class="preprocessor">#define DEVKIT </span><span class="comment">/*Comment out if you&#39;re using the wristband*/</span><span class="preprocessor"></span></div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#if defined(DEVKIT)</span></div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="imu__low__level_8h.html#a35090d5cf30e07213cf12d5e2c614c6a">   30</a></span><span class="preprocessor">#define IMU_LL_SCL        NRF_GPIO_PIN_MAP(1, 5)         </span><span class="comment">//clock line</span></div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="imu__low__level_8h.html#aafbd841d669c3bd9811edc36bfb1c890">   31</a></span><span class="preprocessor">#define IMU_LL_SDA        NRF_GPIO_PIN_MAP(1, 6)         </span><span class="comment">//data line</span></div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="imu__low__level_8h.html#ab566d3b59f364728550d3838c8641db6">   32</a></span><span class="preprocessor">#define IMU_LL_INT1       NRF_GPIO_PIN_MAP(1, 7)         </span><span class="comment">//for interrupts</span></div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="imu__low__level_8h.html#aa8b23743d8203413ecc53473a396c282">   33</a></span><span class="preprocessor">#define IMU_LL_INT2       NRF_GPIO_PIN_MAP(1, 8)         </span><span class="comment">//for interuppts</span></div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="imu__low__level_8h.html#a1c344f8b8509751d5f7ea4c79aab3b33">   34</a></span><span class="preprocessor">#define IMU_LL_STATUS_LED LED_1                     </span><span class="comment">//led</span></div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="preprocessor">#define IMU_LL_SCL NRF_GPIO_PIN_MAP(0, 24)          </span><span class="comment">//clock line</span></div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">#define IMU_LL_SDA NRF_GPIO_PIN_MAP(0, 19)          </span><span class="comment">//data line</span></div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">#define IMU_LL_INT1 NRF_GPIO_PIN_MAP(0, 22)         </span><span class="comment">//interrupts</span></div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="preprocessor">#define IMU_LL_INT2 NRF_GPIO_PIN_MAP(0, 25)         </span><span class="comment">//interuppts</span></div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">#define IMU_LL_STATUS_LED NRF_GPIO_PIN_MAP(1, 14)    </span><span class="comment">//led</span></div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="preprocessor">#endif </span></div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="preprocessor">#if defined(DEVKIT)</span></div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="imu__low__level_8h.html#a805698e2bb519d2a52f809f59023eac0">   44</a></span><span class="preprocessor">#define LSM6DSL_ADDRESS 0x6B                 </span><span class="comment">/*TWI address of sensor*/</span><span class="preprocessor"></span></div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="preprocessor">#define LSM6DSL_ADDRESS 0x6A                 </span><span class="comment">/*TWI address of sensor*/</span><span class="preprocessor"></span></div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="keyword">extern</span> <span class="keyword">const</span> nrfx_twim_t <a class="code hl_variable" href="imu__low__level_8h.html#a9078eb19a664d41fbd4d801ca7faa57f">twim_t</a>;</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="keyword">extern</span> <span class="keyword">volatile</span> <span class="keywordtype">bool</span> <a class="code hl_variable" href="imu__low__level_8h.html#aff35f9caccd1dadca68aaac238964850">fifo_transfer_done</a>; </div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="keyword">extern</span> <span class="keyword">volatile</span> <span class="keywordtype">bool</span> <a class="code hl_variable" href="imu__low__level_8h.html#af62b58398c34fe831dac55b52c2c5f09">m_xfer_done</a>; </div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>int32_t <a class="code hl_function" href="group___i_m_u___l_l__interfaces__functions.html#ga2216e2af937e3f86115623ac15940b8e">imu_ll_platform_write</a>(<span class="keywordtype">void</span>*    handle,</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>                              uint8_t  reg,</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>                              uint8_t* buffer,</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>                              <span class="keywordtype">size_t</span> len); </div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>int32_t <a class="code hl_function" href="group___i_m_u___l_l__interfaces__functions.html#ga11760f6190cc2d5f987678930d16e1a8">imu_ll_platform_read</a>(<span class="keywordtype">void</span>*    handle,</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>                             uint8_t  reg,</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>                             uint8_t* buffer,</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>                             <span class="keywordtype">size_t</span> len);</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span><span class="keywordtype">void</span> <a class="code hl_function" href="group___i_m_u___l_o_w___l_e_v_e_l.html#gac6fa65b5be05082da07458f3cb6a6a68">imu_ll_twi_master_init</a>();</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span><span class="keywordtype">void</span> <a class="code hl_function" href="group___i_m_u___l_o_w___l_e_v_e_l.html#ga7e5e378594ddc75c4a5fb342196b7ce7">imu_ll_twim_dma_init</a>(uint8_t  ppi_trigger_pin,</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>                          uint8_t  reg,</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>                          uint8_t* buffer, </div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>                          <span class="keywordtype">size_t</span>   buffer_length);</div>
+<a href="imu__low__level_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> ******************************************************************************</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> * @file    imu_low_level.h</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> * @author  Sensors Software Solution Team</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> * @brief   LSM6DSL low level driver file</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> ******************************************************************************</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"> * Copyright (c) 2021 Vincent Cergolj</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment"> * Permission is hereby granted, free of charge, to any person</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment"> * obtaining a copy of this software and associated documentation</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment"> * files (the &quot;Software&quot;), to deal in the Software without restriction,</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment"> * including without limitation the rights to use, copy, modify, merge,</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment"> * publish, distribute, sublicense, and/or sell copies of the Software,</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment"> * and to permit persons to whom the Software is furnished to do so,</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment"> * subject to the following conditions:</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment"> * The above copyright notice and this permission notice shall be</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment"> * included in all copies or substantial portions of the Software.</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment"> * THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND,</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment"> * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment"> * OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment"> * AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment"> * HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment"> * WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment"> * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment"> * OTHER DEALINGS IN THE SOFTWARE.</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment"> * This file is part of IMU API.</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="comment"> * Author:          Vincent Cergolj</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">#ifndef IMU_LOW_LEVEL_H</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="preprocessor">#define IMU_LOW_LEVEL_H</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  <span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>      </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="preprocessor">#include &quot;nrfx_twim.h&quot;</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="preprocessor">#include &quot;nrf_gpio.h&quot;</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="preprocessor">#include &quot;pca10056.h&quot;</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="imu__low__level_8h.html#adf17ae578110a9aed4c7151db9b13172">   46</a></span><span class="preprocessor">#define DEVKIT </span><span class="comment">/*Comment out if you&#39;re using the wristband*/</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="preprocessor">#if defined(DEVKIT)</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="imu__low__level_8h.html#a35090d5cf30e07213cf12d5e2c614c6a">   49</a></span><span class="preprocessor">#define IMU_LL_SCL        NRF_GPIO_PIN_MAP(1, 5)         </span><span class="comment">//clock line</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="imu__low__level_8h.html#aafbd841d669c3bd9811edc36bfb1c890">   50</a></span><span class="preprocessor">#define IMU_LL_SDA        NRF_GPIO_PIN_MAP(1, 6)         </span><span class="comment">//data line</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="imu__low__level_8h.html#ab566d3b59f364728550d3838c8641db6">   51</a></span><span class="preprocessor">#define IMU_LL_INT1       NRF_GPIO_PIN_MAP(1, 7)         </span><span class="comment">//for interrupts</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="imu__low__level_8h.html#aa8b23743d8203413ecc53473a396c282">   52</a></span><span class="preprocessor">#define IMU_LL_INT2       NRF_GPIO_PIN_MAP(1, 8)         </span><span class="comment">//for interuppts</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="imu__low__level_8h.html#a1c344f8b8509751d5f7ea4c79aab3b33">   53</a></span><span class="preprocessor">#define IMU_LL_STATUS_LED LED_1                          </span><span class="comment">//led</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="preprocessor">#define IMU_LL_SCL NRF_GPIO_PIN_MAP(0, 24)               </span><span class="comment">//clock line</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="preprocessor">#define IMU_LL_SDA NRF_GPIO_PIN_MAP(0, 19)               </span><span class="comment">//data line</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="preprocessor">#define IMU_LL_INT1 NRF_GPIO_PIN_MAP(0, 22)              </span><span class="comment">//interrupts</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="preprocessor">#define IMU_LL_INT2 NRF_GPIO_PIN_MAP(0, 25)              </span><span class="comment">//interuppts</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="preprocessor">#define IMU_LL_STATUS_LED NRF_GPIO_PIN_MAP(1, 14)        </span><span class="comment">//led</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="preprocessor">#endif </span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="preprocessor">#if defined(DEVKIT)</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="imu__low__level_8h.html#a805698e2bb519d2a52f809f59023eac0">   63</a></span><span class="preprocessor">#define LSM6DSL_ADDRESS 0x6B                 </span><span class="comment">/*TWI address of sensor*/</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="preprocessor">#define LSM6DSL_ADDRESS 0x6A                 </span><span class="comment">/*TWI address of sensor*/</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="keyword">extern</span> <span class="keyword">const</span> nrfx_twim_t <a class="code hl_variable" href="imu__low__level_8h.html#a9078eb19a664d41fbd4d801ca7faa57f">twim_t</a>;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="keyword">extern</span> <span class="keyword">volatile</span> <span class="keywordtype">bool</span> <a class="code hl_variable" href="imu__low__level_8h.html#aff35f9caccd1dadca68aaac238964850">fifo_transfer_done</a>; </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="keyword">extern</span> <span class="keyword">volatile</span> <span class="keywordtype">bool</span> <a class="code hl_variable" href="imu__low__level_8h.html#af62b58398c34fe831dac55b52c2c5f09">m_xfer_done</a>; </div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>int32_t <a class="code hl_function" href="group___i_m_u___l_l__interfaces__functions.html#gab864fc67e1ddc024d86f0c5716210a0b">imu_ll_platform_write</a>(<span class="keywordtype">void</span>*    handle,</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>                              uint8_t  reg,</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>                              uint8_t* buffer,</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>                              <span class="keywordtype">size_t</span> len); </div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span><span class="keywordtype">void</span> <a class="code hl_function" href="group___i_m_u___l_o_w___l_e_v_e_l.html#gac3d344c560bbfe2cf2c6d1c766271e50">imu_ll_prepare_dma</a>(uint8_t  reg,</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>                        uint8_t* buffer, </div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>                        <span class="keywordtype">size_t</span>   buffer_length);</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span><span class="keywordtype">void</span> <a class="code hl_function" href="group___i_m_u___l_o_w___l_e_v_e_l.html#ga566aaa91ef1f25b3446fba4c51a059fa">imu_ll_gpio_init</a>();</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span><span class="preprocessor">#endif </span><span class="comment">// !NRFX_TWIM_IMU_H</span></div>
-<div class="ttc" id="agroup___i_m_u___l_l__interfaces__functions_html_ga11760f6190cc2d5f987678930d16e1a8"><div class="ttname"><a href="group___i_m_u___l_l__interfaces__functions.html#ga11760f6190cc2d5f987678930d16e1a8">imu_ll_platform_read</a></div><div class="ttdeci">int32_t imu_ll_platform_read(void *handle, uint8_t reg, uint8_t *buffer, size_t len)</div><div class="ttdoc">Hardware specific function for TWI interface writing.</div><div class="ttdef"><b>Definition:</b> imu_low_level.c:93</div></div>
-<div class="ttc" id="agroup___i_m_u___l_l__interfaces__functions_html_ga2216e2af937e3f86115623ac15940b8e"><div class="ttname"><a href="group___i_m_u___l_l__interfaces__functions.html#ga2216e2af937e3f86115623ac15940b8e">imu_ll_platform_write</a></div><div class="ttdeci">int32_t imu_ll_platform_write(void *handle, uint8_t reg, uint8_t *buffer, size_t len)</div><div class="ttdoc">Hardware specific function for TWI interface writing.</div><div class="ttdef"><b>Definition:</b> imu_low_level.c:64</div></div>
-<div class="ttc" id="agroup___i_m_u___l_o_w___l_e_v_e_l_html_ga566aaa91ef1f25b3446fba4c51a059fa"><div class="ttname"><a href="group___i_m_u___l_o_w___l_e_v_e_l.html#ga566aaa91ef1f25b3446fba4c51a059fa">imu_ll_gpio_init</a></div><div class="ttdeci">void imu_ll_gpio_init()</div><div class="ttdoc">Function for initializing input pins required to sense imu interrupts and output pins for status LED.</div><div class="ttdef"><b>Definition:</b> imu_low_level.c:253</div></div>
-<div class="ttc" id="agroup___i_m_u___l_o_w___l_e_v_e_l_html_ga7e5e378594ddc75c4a5fb342196b7ce7"><div class="ttname"><a href="group___i_m_u___l_o_w___l_e_v_e_l.html#ga7e5e378594ddc75c4a5fb342196b7ce7">imu_ll_twim_dma_init</a></div><div class="ttdeci">void imu_ll_twim_dma_init(uint8_t ppi_trigger_pin, uint8_t reg, uint8_t *buffer, size_t buffer_length)</div><div class="ttdoc">Function for initializing TWIM DMA reading triggered by PPI and GPIO.</div><div class="ttdef"><b>Definition:</b> imu_low_level.c:186</div></div>
-<div class="ttc" id="agroup___i_m_u___l_o_w___l_e_v_e_l_html_gac3d344c560bbfe2cf2c6d1c766271e50"><div class="ttname"><a href="group___i_m_u___l_o_w___l_e_v_e_l.html#gac3d344c560bbfe2cf2c6d1c766271e50">imu_ll_prepare_dma</a></div><div class="ttdeci">void imu_ll_prepare_dma(uint8_t reg, uint8_t *buffer, size_t buffer_length)</div><div class="ttdoc">Function for preparing TWIM for a new DMA transfer.</div><div class="ttdef"><b>Definition:</b> imu_low_level.c:231</div></div>
-<div class="ttc" id="agroup___i_m_u___l_o_w___l_e_v_e_l_html_gac6fa65b5be05082da07458f3cb6a6a68"><div class="ttname"><a href="group___i_m_u___l_o_w___l_e_v_e_l.html#gac6fa65b5be05082da07458f3cb6a6a68">imu_ll_twi_master_init</a></div><div class="ttdeci">void imu_ll_twi_master_init()</div><div class="ttdoc">Function for initializing and enabling TWI.</div><div class="ttdef"><b>Definition:</b> imu_low_level.c:170</div></div>
-<div class="ttc" id="aimu__low__level_8h_html_a9078eb19a664d41fbd4d801ca7faa57f"><div class="ttname"><a href="imu__low__level_8h.html#a9078eb19a664d41fbd4d801ca7faa57f">twim_t</a></div><div class="ttdeci">const nrfx_twim_t twim_t</div><div class="ttdef"><b>Definition:</b> imu_low_level.c:37</div></div>
-<div class="ttc" id="aimu__low__level_8h_html_af62b58398c34fe831dac55b52c2c5f09"><div class="ttname"><a href="imu__low__level_8h.html#af62b58398c34fe831dac55b52c2c5f09">m_xfer_done</a></div><div class="ttdeci">volatile bool m_xfer_done</div><div class="ttdef"><b>Definition:</b> imu_low_level.c:39</div></div>
-<div class="ttc" id="aimu__low__level_8h_html_aff35f9caccd1dadca68aaac238964850"><div class="ttname"><a href="imu__low__level_8h.html#aff35f9caccd1dadca68aaac238964850">fifo_transfer_done</a></div><div class="ttdeci">volatile bool fifo_transfer_done</div><div class="ttdef"><b>Definition:</b> imu_low_level.c:39</div></div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>int32_t <a class="code hl_function" href="group___i_m_u___l_l__interfaces__functions.html#gac0ce012dc5d56d358500d1ae70e72f31">imu_ll_platform_read</a>(<span class="keywordtype">void</span>*    handle,</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>                             uint8_t  reg,</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>                             uint8_t* buffer,</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>                             <span class="keywordtype">size_t</span> len);</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span><span class="keywordtype">void</span> <a class="code hl_function" href="group___i_m_u___l_l___t_w_i__and___d_m_a__functions.html#gac6fa65b5be05082da07458f3cb6a6a68">imu_ll_twi_master_init</a>();</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span> </div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span> </div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span><span class="keywordtype">void</span> <a class="code hl_function" href="group___i_m_u___l_l___t_w_i__and___d_m_a__functions.html#ga7e5e378594ddc75c4a5fb342196b7ce7">imu_ll_twim_dma_init</a>(uint8_t  ppi_trigger_pin,</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>                          uint8_t  reg,</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>                          uint8_t* buffer, </div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>                          <span class="keywordtype">size_t</span>   buffer_length);</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span> </div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span> </div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span><span class="keywordtype">void</span> <a class="code hl_function" href="group___i_m_u___l_l___t_w_i__and___d_m_a__functions.html#gac3d344c560bbfe2cf2c6d1c766271e50">imu_ll_prepare_dma</a>(uint8_t  reg,</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>                        uint8_t* buffer, </div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>                        <span class="keywordtype">size_t</span>   buffer_length);</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span><span class="keywordtype">void</span> <a class="code hl_function" href="group___i_m_u___l_l___g_p_i_o__functions.html#ga566aaa91ef1f25b3446fba4c51a059fa">imu_ll_gpio_init</a>();</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>    </div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span><span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>}</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span><span class="preprocessor">#endif  </span></div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span> </div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span><span class="preprocessor">#endif </span><span class="comment">// !NRFX_TWIM_IMU_H</span></div>
+<div class="ttc" id="agroup___i_m_u___l_l___g_p_i_o__functions_html_ga566aaa91ef1f25b3446fba4c51a059fa"><div class="ttname"><a href="group___i_m_u___l_l___g_p_i_o__functions.html#ga566aaa91ef1f25b3446fba4c51a059fa">imu_ll_gpio_init</a></div><div class="ttdeci">void imu_ll_gpio_init()</div><div class="ttdoc">Function for initializing input pins required to sense imu interrupts and output pins for status LED.</div><div class="ttdef"><b>Definition:</b> imu_low_level.c:255</div></div>
+<div class="ttc" id="agroup___i_m_u___l_l___t_w_i__and___d_m_a__functions_html_ga7e5e378594ddc75c4a5fb342196b7ce7"><div class="ttname"><a href="group___i_m_u___l_l___t_w_i__and___d_m_a__functions.html#ga7e5e378594ddc75c4a5fb342196b7ce7">imu_ll_twim_dma_init</a></div><div class="ttdeci">void imu_ll_twim_dma_init(uint8_t ppi_trigger_pin, uint8_t reg, uint8_t *buffer, size_t buffer_length)</div><div class="ttdoc">Function for initializing TWIM DMA reading triggered by PPI and GPIO.</div><div class="ttdef"><b>Definition:</b> imu_low_level.c:188</div></div>
+<div class="ttc" id="agroup___i_m_u___l_l___t_w_i__and___d_m_a__functions_html_gac3d344c560bbfe2cf2c6d1c766271e50"><div class="ttname"><a href="group___i_m_u___l_l___t_w_i__and___d_m_a__functions.html#gac3d344c560bbfe2cf2c6d1c766271e50">imu_ll_prepare_dma</a></div><div class="ttdeci">void imu_ll_prepare_dma(uint8_t reg, uint8_t *buffer, size_t buffer_length)</div><div class="ttdoc">Function for preparing TWIM for a new DMA transfer.</div><div class="ttdef"><b>Definition:</b> imu_low_level.c:233</div></div>
+<div class="ttc" id="agroup___i_m_u___l_l___t_w_i__and___d_m_a__functions_html_gac6fa65b5be05082da07458f3cb6a6a68"><div class="ttname"><a href="group___i_m_u___l_l___t_w_i__and___d_m_a__functions.html#gac6fa65b5be05082da07458f3cb6a6a68">imu_ll_twi_master_init</a></div><div class="ttdeci">void imu_ll_twi_master_init()</div><div class="ttdoc">Function for initializing and enabling TWI.</div><div class="ttdef"><b>Definition:</b> imu_low_level.c:172</div></div>
+<div class="ttc" id="agroup___i_m_u___l_l__interfaces__functions_html_gab864fc67e1ddc024d86f0c5716210a0b"><div class="ttname"><a href="group___i_m_u___l_l__interfaces__functions.html#gab864fc67e1ddc024d86f0c5716210a0b">imu_ll_platform_write</a></div><div class="ttdeci">int32_t imu_ll_platform_write(void *handle, uint8_t reg, uint8_t *buffer, size_t len)</div><div class="ttdoc">Hardware specific function for TWI interface writing.</div><div class="ttdef"><b>Definition:</b> imu_low_level.c:66</div></div>
+<div class="ttc" id="agroup___i_m_u___l_l__interfaces__functions_html_gac0ce012dc5d56d358500d1ae70e72f31"><div class="ttname"><a href="group___i_m_u___l_l__interfaces__functions.html#gac0ce012dc5d56d358500d1ae70e72f31">imu_ll_platform_read</a></div><div class="ttdeci">int32_t imu_ll_platform_read(void *handle, uint8_t reg, uint8_t *buffer, size_t len)</div><div class="ttdoc">Hardware specific function for TWI interface writing.</div><div class="ttdef"><b>Definition:</b> imu_low_level.c:95</div></div>
+<div class="ttc" id="aimu__low__level_8h_html_a9078eb19a664d41fbd4d801ca7faa57f"><div class="ttname"><a href="imu__low__level_8h.html#a9078eb19a664d41fbd4d801ca7faa57f">twim_t</a></div><div class="ttdeci">const nrfx_twim_t twim_t</div><div class="ttdef"><b>Definition:</b> imu_low_level.c:52</div></div>
+<div class="ttc" id="aimu__low__level_8h_html_af62b58398c34fe831dac55b52c2c5f09"><div class="ttname"><a href="imu__low__level_8h.html#af62b58398c34fe831dac55b52c2c5f09">m_xfer_done</a></div><div class="ttdeci">volatile bool m_xfer_done</div><div class="ttdef"><b>Definition:</b> imu_low_level.c:54</div></div>
+<div class="ttc" id="aimu__low__level_8h_html_aff35f9caccd1dadca68aaac238964850"><div class="ttname"><a href="imu__low__level_8h.html#aff35f9caccd1dadca68aaac238964850">fifo_transfer_done</a></div><div class="ttdeci">volatile bool fifo_transfer_done</div><div class="ttdef"><b>Definition:</b> imu_low_level.c:54</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

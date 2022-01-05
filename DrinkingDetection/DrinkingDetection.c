@@ -26,15 +26,15 @@ int main(void)
 	APP_ERROR_CHECK(NRF_LOG_INIT(NULL));
 	NRF_LOG_DEFAULT_BACKENDS_INIT();
 	
-	LEDS_CONFIGURE(LEDS_MASK);
 	NRF_LOG_INFO("This is a log data from nrf");
+    
+    imu_init(&lsm6dsl_dev_ctx_t);
 	for (;;)
 	{
-		for (int i = 0; i < LEDS_NUMBER; i++)
-		{
-			LEDS_INVERT(1 << leds_list[i]);
-			NRF_LOG_INFO("LED: %d", leds_list[i]);
-			nrf_delay_ms(500);
-		}
+    	if (fifo_transfer_done)
+    	{
+        	fifo_transfer_done = false;
+        	imu_fifo_reset();
+    	}
 	}
 }

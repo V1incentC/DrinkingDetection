@@ -2,82 +2,104 @@
 \label{imu__low__level_8h_source}\index{UserFiles/IMU\_API/nrfx\_twim\_imu/imu\_low\_level.h@{UserFiles/IMU\_API/nrfx\_twim\_imu/imu\_low\_level.h}}
 \mbox{\hyperlink{imu__low__level_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{1 }
-\DoxyCodeLine{2 \textcolor{comment}{/*}}
-\DoxyCodeLine{3 \textcolor{comment}{ ******************************************************************************}}
-\DoxyCodeLine{4 \textcolor{comment}{ * @file    lsm6dsl\_reg.c}}
-\DoxyCodeLine{5 \textcolor{comment}{ * @author  Sensors Software Solution Team}}
-\DoxyCodeLine{6 \textcolor{comment}{ * @brief   LSM6DSL driver file}}
-\DoxyCodeLine{7 \textcolor{comment}{ ******************************************************************************}}
-\DoxyCodeLine{8 \textcolor{comment}{ * @attention}}
-\DoxyCodeLine{9 \textcolor{comment}{ *}}
-\DoxyCodeLine{10 \textcolor{comment}{ * <h2><center>\&copy; Copyright (c) 2019 STMicroelectronics.}}
-\DoxyCodeLine{11 \textcolor{comment}{ * All rights reserved.</center></h2>}}
-\DoxyCodeLine{12 \textcolor{comment}{ *}}
-\DoxyCodeLine{13 \textcolor{comment}{ * This software component is licensed by ST under BSD 3-\/Clause license,}}
-\DoxyCodeLine{14 \textcolor{comment}{ * the "{}License"{}; You may not use this file except in compliance with the}}
-\DoxyCodeLine{15 \textcolor{comment}{ * License. You may obtain a copy of the License at:}}
-\DoxyCodeLine{16 \textcolor{comment}{ *                        opensource.org/licenses/BSD-\/3-\/Clause}}
-\DoxyCodeLine{17 \textcolor{comment}{ *}}
-\DoxyCodeLine{18 \textcolor{comment}{ ******************************************************************************}}
-\DoxyCodeLine{19 \textcolor{comment}{ */}}
-\DoxyCodeLine{20 \textcolor{preprocessor}{\#ifndef IMU\_LOW\_LEVEL\_H}}
-\DoxyCodeLine{21 \textcolor{preprocessor}{\#define IMU\_LOW\_LEVEL\_H}}
-\DoxyCodeLine{22 }
-\DoxyCodeLine{23 \textcolor{preprocessor}{\#include "{}nrfx\_twim.h"{}}}
-\DoxyCodeLine{24 \textcolor{preprocessor}{\#include "{}nrf\_gpio.h"{}}}
-\DoxyCodeLine{25 \textcolor{preprocessor}{\#include "{}pca10056.h"{}}}
-\DoxyCodeLine{26 }
-\DoxyCodeLine{27 \textcolor{preprocessor}{\#define DEVKIT }\textcolor{comment}{/*Comment out if you're using the wristband*/}\textcolor{preprocessor}{}}
-\DoxyCodeLine{28 }
-\DoxyCodeLine{29 \textcolor{preprocessor}{\#if defined(DEVKIT)}}
-\DoxyCodeLine{30 \textcolor{preprocessor}{\#define IMU\_LL\_SCL        NRF\_GPIO\_PIN\_MAP(1, 5)         }\textcolor{comment}{//clock line}}
-\DoxyCodeLine{31 \textcolor{preprocessor}{\#define IMU\_LL\_SDA        NRF\_GPIO\_PIN\_MAP(1, 6)         }\textcolor{comment}{//data line}}
-\DoxyCodeLine{32 \textcolor{preprocessor}{\#define IMU\_LL\_INT1       NRF\_GPIO\_PIN\_MAP(1, 7)         }\textcolor{comment}{//for interrupts}}
-\DoxyCodeLine{33 \textcolor{preprocessor}{\#define IMU\_LL\_INT2       NRF\_GPIO\_PIN\_MAP(1, 8)         }\textcolor{comment}{//for interuppts}}
-\DoxyCodeLine{34 \textcolor{preprocessor}{\#define IMU\_LL\_STATUS\_LED LED\_1                     }\textcolor{comment}{//led}}
-\DoxyCodeLine{35 \textcolor{preprocessor}{\#else}}
-\DoxyCodeLine{36 \textcolor{preprocessor}{\#define IMU\_LL\_SCL NRF\_GPIO\_PIN\_MAP(0, 24)          }\textcolor{comment}{//clock line}}
-\DoxyCodeLine{37 \textcolor{preprocessor}{\#define IMU\_LL\_SDA NRF\_GPIO\_PIN\_MAP(0, 19)          }\textcolor{comment}{//data line}}
-\DoxyCodeLine{38 \textcolor{preprocessor}{\#define IMU\_LL\_INT1 NRF\_GPIO\_PIN\_MAP(0, 22)         }\textcolor{comment}{//interrupts}}
-\DoxyCodeLine{39 \textcolor{preprocessor}{\#define IMU\_LL\_INT2 NRF\_GPIO\_PIN\_MAP(0, 25)         }\textcolor{comment}{//interuppts}}
-\DoxyCodeLine{40 \textcolor{preprocessor}{\#define IMU\_LL\_STATUS\_LED NRF\_GPIO\_PIN\_MAP(1, 14)    }\textcolor{comment}{//led}}
-\DoxyCodeLine{41 \textcolor{preprocessor}{\#endif }}
-\DoxyCodeLine{42 }
-\DoxyCodeLine{43 \textcolor{preprocessor}{\#if defined(DEVKIT)}}
-\DoxyCodeLine{44 \textcolor{preprocessor}{\#define LSM6DSL\_ADDRESS 0x6B                 }\textcolor{comment}{/*TWI address of sensor*/}\textcolor{preprocessor}{}}
-\DoxyCodeLine{45 \textcolor{preprocessor}{\#else}}
-\DoxyCodeLine{46 \textcolor{preprocessor}{\#define LSM6DSL\_ADDRESS 0x6A                 }\textcolor{comment}{/*TWI address of sensor*/}\textcolor{preprocessor}{}}
-\DoxyCodeLine{47 \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{48 \textcolor{keyword}{extern} \textcolor{keyword}{const} nrfx\_twim\_t \mbox{\hyperlink{imu__low__level_8h_a9078eb19a664d41fbd4d801ca7faa57f}{twim\_t}};}
-\DoxyCodeLine{49 \textcolor{keyword}{extern} \textcolor{keyword}{volatile} \textcolor{keywordtype}{bool} \mbox{\hyperlink{imu__low__level_8h_aff35f9caccd1dadca68aaac238964850}{fifo\_transfer\_done}}; }
-\DoxyCodeLine{50 \textcolor{keyword}{extern} \textcolor{keyword}{volatile} \textcolor{keywordtype}{bool} \mbox{\hyperlink{imu__low__level_8h_af62b58398c34fe831dac55b52c2c5f09}{m\_xfer\_done}}; }
-\DoxyCodeLine{62 int32\_t \mbox{\hyperlink{group___i_m_u___l_l__interfaces__functions_ga2216e2af937e3f86115623ac15940b8e}{imu\_ll\_platform\_write}}(\textcolor{keywordtype}{void}*    handle,}
-\DoxyCodeLine{63                               uint8\_t  reg,}
-\DoxyCodeLine{64                               uint8\_t* buffer,}
-\DoxyCodeLine{65                               \textcolor{keywordtype}{size\_t} len); }
-\DoxyCodeLine{66 }
-\DoxyCodeLine{67 }
-\DoxyCodeLine{77 int32\_t \mbox{\hyperlink{group___i_m_u___l_l__interfaces__functions_ga11760f6190cc2d5f987678930d16e1a8}{imu\_ll\_platform\_read}}(\textcolor{keywordtype}{void}*    handle,}
-\DoxyCodeLine{78                              uint8\_t  reg,}
-\DoxyCodeLine{79                              uint8\_t* buffer,}
-\DoxyCodeLine{80                              \textcolor{keywordtype}{size\_t} len);}
-\DoxyCodeLine{81 }
-\DoxyCodeLine{82 }
-\DoxyCodeLine{87 \textcolor{keywordtype}{void} \mbox{\hyperlink{group___i_m_u___l_o_w___l_e_v_e_l_gac6fa65b5be05082da07458f3cb6a6a68}{imu\_ll\_twi\_master\_init}}();}
-\DoxyCodeLine{88 }
-\DoxyCodeLine{89 }
-\DoxyCodeLine{98 \textcolor{keywordtype}{void} \mbox{\hyperlink{group___i_m_u___l_o_w___l_e_v_e_l_ga7e5e378594ddc75c4a5fb342196b7ce7}{imu\_ll\_twim\_dma\_init}}(uint8\_t  ppi\_trigger\_pin,}
-\DoxyCodeLine{99                           uint8\_t  reg,}
-\DoxyCodeLine{100                           uint8\_t* buffer, }
-\DoxyCodeLine{101                           \textcolor{keywordtype}{size\_t}   buffer\_length);}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{ ******************************************************************************}}
+\DoxyCodeLine{3 \textcolor{comment}{ * @file    imu\_low\_level.h}}
+\DoxyCodeLine{4 \textcolor{comment}{ * @author  Sensors Software Solution Team}}
+\DoxyCodeLine{5 \textcolor{comment}{ * @brief   LSM6DSL low level driver file}}
+\DoxyCodeLine{6 \textcolor{comment}{ ******************************************************************************}}
+\DoxyCodeLine{7 \textcolor{comment}{*/}}
+\DoxyCodeLine{8 \textcolor{comment}{/*}}
+\DoxyCodeLine{9 \textcolor{comment}{ * Copyright (c) 2021 Vincent Cergolj}}
+\DoxyCodeLine{10 \textcolor{comment}{ *}}
+\DoxyCodeLine{11 \textcolor{comment}{ * Permission is hereby granted, free of charge, to any person}}
+\DoxyCodeLine{12 \textcolor{comment}{ * obtaining a copy of this software and associated documentation}}
+\DoxyCodeLine{13 \textcolor{comment}{ * files (the "{}Software"{}), to deal in the Software without restriction,}}
+\DoxyCodeLine{14 \textcolor{comment}{ * including without limitation the rights to use, copy, modify, merge,}}
+\DoxyCodeLine{15 \textcolor{comment}{ * publish, distribute, sublicense, and/or sell copies of the Software,}}
+\DoxyCodeLine{16 \textcolor{comment}{ * and to permit persons to whom the Software is furnished to do so,}}
+\DoxyCodeLine{17 \textcolor{comment}{ * subject to the following conditions:}}
+\DoxyCodeLine{18 \textcolor{comment}{ *}}
+\DoxyCodeLine{19 \textcolor{comment}{ * The above copyright notice and this permission notice shall be}}
+\DoxyCodeLine{20 \textcolor{comment}{ * included in all copies or substantial portions of the Software.}}
+\DoxyCodeLine{21 \textcolor{comment}{ *}}
+\DoxyCodeLine{22 \textcolor{comment}{ * THE SOFTWARE IS PROVIDED "{}AS IS"{}, WITHOUT WARRANTY OF ANY KIND,}}
+\DoxyCodeLine{23 \textcolor{comment}{ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES}}
+\DoxyCodeLine{24 \textcolor{comment}{ * OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE}}
+\DoxyCodeLine{25 \textcolor{comment}{ * AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT}}
+\DoxyCodeLine{26 \textcolor{comment}{ * HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,}}
+\DoxyCodeLine{27 \textcolor{comment}{ * WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING}}
+\DoxyCodeLine{28 \textcolor{comment}{ * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR}}
+\DoxyCodeLine{29 \textcolor{comment}{ * OTHER DEALINGS IN THE SOFTWARE.}}
+\DoxyCodeLine{30 \textcolor{comment}{ *}}
+\DoxyCodeLine{31 \textcolor{comment}{ * This file is part of IMU API.}}
+\DoxyCodeLine{32 \textcolor{comment}{ *}}
+\DoxyCodeLine{33 \textcolor{comment}{ * Author:          Vincent Cergolj}}
+\DoxyCodeLine{34 \textcolor{comment}{ */}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#ifndef IMU\_LOW\_LEVEL\_H}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#define IMU\_LOW\_LEVEL\_H}}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{39   \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{41       }
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#include "{}nrfx\_twim.h"{}}}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#include "{}nrf\_gpio.h"{}}}
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#include "{}pca10056.h"{}}}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#define DEVKIT }\textcolor{comment}{/*Comment out if you're using the wristband*/}\textcolor{preprocessor}{}}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#if defined(DEVKIT)}}
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#define IMU\_LL\_SCL        NRF\_GPIO\_PIN\_MAP(1, 5)         }\textcolor{comment}{//clock line}}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#define IMU\_LL\_SDA        NRF\_GPIO\_PIN\_MAP(1, 6)         }\textcolor{comment}{//data line}}
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#define IMU\_LL\_INT1       NRF\_GPIO\_PIN\_MAP(1, 7)         }\textcolor{comment}{//for interrupts}}
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#define IMU\_LL\_INT2       NRF\_GPIO\_PIN\_MAP(1, 8)         }\textcolor{comment}{//for interuppts}}
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#define IMU\_LL\_STATUS\_LED LED\_1                          }\textcolor{comment}{//led}}
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#define IMU\_LL\_SCL NRF\_GPIO\_PIN\_MAP(0, 24)               }\textcolor{comment}{//clock line}}
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#define IMU\_LL\_SDA NRF\_GPIO\_PIN\_MAP(0, 19)               }\textcolor{comment}{//data line}}
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#define IMU\_LL\_INT1 NRF\_GPIO\_PIN\_MAP(0, 22)              }\textcolor{comment}{//interrupts}}
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#define IMU\_LL\_INT2 NRF\_GPIO\_PIN\_MAP(0, 25)              }\textcolor{comment}{//interuppts}}
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#define IMU\_LL\_STATUS\_LED NRF\_GPIO\_PIN\_MAP(1, 14)        }\textcolor{comment}{//led}}
+\DoxyCodeLine{60 \textcolor{preprocessor}{\#endif }}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#if defined(DEVKIT)}}
+\DoxyCodeLine{63 \textcolor{preprocessor}{\#define LSM6DSL\_ADDRESS 0x6B                 }\textcolor{comment}{/*TWI address of sensor*/}\textcolor{preprocessor}{}}
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#define LSM6DSL\_ADDRESS 0x6A                 }\textcolor{comment}{/*TWI address of sensor*/}\textcolor{preprocessor}{}}
+\DoxyCodeLine{66 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{67 \textcolor{keyword}{extern} \textcolor{keyword}{const} nrfx\_twim\_t \mbox{\hyperlink{imu__low__level_8h_a9078eb19a664d41fbd4d801ca7faa57f}{twim\_t}};}
+\DoxyCodeLine{68 \textcolor{keyword}{extern} \textcolor{keyword}{volatile} \textcolor{keywordtype}{bool} \mbox{\hyperlink{imu__low__level_8h_aff35f9caccd1dadca68aaac238964850}{fifo\_transfer\_done}}; }
+\DoxyCodeLine{69 \textcolor{keyword}{extern} \textcolor{keyword}{volatile} \textcolor{keywordtype}{bool} \mbox{\hyperlink{imu__low__level_8h_af62b58398c34fe831dac55b52c2c5f09}{m\_xfer\_done}}; }
+\DoxyCodeLine{97 int32\_t \mbox{\hyperlink{group___i_m_u___l_l__interfaces__functions_gab864fc67e1ddc024d86f0c5716210a0b}{imu\_ll\_platform\_write}}(\textcolor{keywordtype}{void}*    handle,}
+\DoxyCodeLine{98                               uint8\_t  reg,}
+\DoxyCodeLine{99                               uint8\_t* buffer,}
+\DoxyCodeLine{100                               \textcolor{keywordtype}{size\_t} len); }
+\DoxyCodeLine{101 }
 \DoxyCodeLine{102 }
-\DoxyCodeLine{103 }
-\DoxyCodeLine{111 \textcolor{keywordtype}{void} \mbox{\hyperlink{group___i_m_u___l_o_w___l_e_v_e_l_gac3d344c560bbfe2cf2c6d1c766271e50}{imu\_ll\_prepare\_dma}}(uint8\_t  reg,}
-\DoxyCodeLine{112                         uint8\_t* buffer, }
-\DoxyCodeLine{113                         \textcolor{keywordtype}{size\_t}   buffer\_length);}
-\DoxyCodeLine{114 }
-\DoxyCodeLine{119 \textcolor{keywordtype}{void} \mbox{\hyperlink{group___i_m_u___l_o_w___l_e_v_e_l_ga566aaa91ef1f25b3446fba4c51a059fa}{imu\_ll\_gpio\_init}}();}
-\DoxyCodeLine{120 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// !NRFX\_TWIM\_IMU\_H}}
+\DoxyCodeLine{112 int32\_t \mbox{\hyperlink{group___i_m_u___l_l__interfaces__functions_gac0ce012dc5d56d358500d1ae70e72f31}{imu\_ll\_platform\_read}}(\textcolor{keywordtype}{void}*    handle,}
+\DoxyCodeLine{113                              uint8\_t  reg,}
+\DoxyCodeLine{114                              uint8\_t* buffer,}
+\DoxyCodeLine{115                              \textcolor{keywordtype}{size\_t} len);}
+\DoxyCodeLine{116 }
+\DoxyCodeLine{135 \textcolor{keywordtype}{void} \mbox{\hyperlink{group___i_m_u___l_l___t_w_i__and___d_m_a__functions_gac6fa65b5be05082da07458f3cb6a6a68}{imu\_ll\_twi\_master\_init}}();}
+\DoxyCodeLine{136 }
+\DoxyCodeLine{137 }
+\DoxyCodeLine{146 \textcolor{keywordtype}{void} \mbox{\hyperlink{group___i_m_u___l_l___t_w_i__and___d_m_a__functions_ga7e5e378594ddc75c4a5fb342196b7ce7}{imu\_ll\_twim\_dma\_init}}(uint8\_t  ppi\_trigger\_pin,}
+\DoxyCodeLine{147                           uint8\_t  reg,}
+\DoxyCodeLine{148                           uint8\_t* buffer, }
+\DoxyCodeLine{149                           \textcolor{keywordtype}{size\_t}   buffer\_length);}
+\DoxyCodeLine{150 }
+\DoxyCodeLine{151 }
+\DoxyCodeLine{159 \textcolor{keywordtype}{void} \mbox{\hyperlink{group___i_m_u___l_l___t_w_i__and___d_m_a__functions_gac3d344c560bbfe2cf2c6d1c766271e50}{imu\_ll\_prepare\_dma}}(uint8\_t  reg,}
+\DoxyCodeLine{160                         uint8\_t* buffer, }
+\DoxyCodeLine{161                         \textcolor{keywordtype}{size\_t}   buffer\_length);}
+\DoxyCodeLine{179 \textcolor{keywordtype}{void} \mbox{\hyperlink{group___i_m_u___l_l___g_p_i_o__functions_ga566aaa91ef1f25b3446fba4c51a059fa}{imu\_ll\_gpio\_init}}();}
+\DoxyCodeLine{180     }
+\DoxyCodeLine{189 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{190 \}}
+\DoxyCodeLine{191 \textcolor{preprocessor}{\#endif  }}
+\DoxyCodeLine{192 }
+\DoxyCodeLine{193 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// !NRFX\_TWIM\_IMU\_H}}
 
 \end{DoxyCode}
