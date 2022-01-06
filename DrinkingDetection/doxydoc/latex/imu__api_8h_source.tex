@@ -4,7 +4,7 @@
 \begin{DoxyCode}{0}
 \DoxyCodeLine{1 \textcolor{comment}{/*}}
 \DoxyCodeLine{2 \textcolor{comment}{ ******************************************************************************}}
-\DoxyCodeLine{3 \textcolor{comment}{ * @file    imu\_low\_level.h}}
+\DoxyCodeLine{3 \textcolor{comment}{ * @file    imu\_api.h}}
 \DoxyCodeLine{4 \textcolor{comment}{ * @author  Sensors Software Solution Team}}
 \DoxyCodeLine{5 \textcolor{comment}{ * @brief   LSM6DSL low level driver file}}
 \DoxyCodeLine{6 \textcolor{comment}{ ******************************************************************************}}
@@ -38,18 +38,50 @@
 \DoxyCodeLine{34 \textcolor{comment}{ */}}
 \DoxyCodeLine{35 \textcolor{preprocessor}{\#ifndef IMU\_API\_H}}
 \DoxyCodeLine{36 \textcolor{preprocessor}{\#define IMU\_API\_H}}
-\DoxyCodeLine{37 }
-\DoxyCodeLine{38 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
-\DoxyCodeLine{39   \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
-\DoxyCodeLine{40 \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{41 }
-\DoxyCodeLine{42       }
-\DoxyCodeLine{43       }
-\DoxyCodeLine{44 }
-\DoxyCodeLine{45 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
-\DoxyCodeLine{46 \}}
-\DoxyCodeLine{47 \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{48 }
-\DoxyCodeLine{49 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// !IMU\_API\_H}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{lsm6dsl__reg_8h}{lsm6dsl\_reg.h}}"{}}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{40   \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{49 \textcolor{keyword}{extern} \mbox{\hyperlink{structstmdev__ctx__t}{stmdev\_ctx\_t}} \mbox{\hyperlink{group___i_m_u___a_p_i_ga6b5a0352d8fbb2ed474368ebdb3a3b40}{lsm6dsl\_dev\_ctx\_t}};}
+\DoxyCodeLine{50 \textcolor{keyword}{extern} \mbox{\hyperlink{structstmdev__ctx__t}{stmdev\_ctx\_t}}* \mbox{\hyperlink{group___i_m_u___a_p_i_ga5b8a1b2ea2d997033338af51d4181301}{p\_lsm6dsl\_dev\_ctx\_t}};}
+\DoxyCodeLine{51       }
+\DoxyCodeLine{52       }
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#define IMU\_FIFO\_SIZE 52}}
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#define IMU\_NUM\_OF\_AXIS 6}}
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#define IMU\_BUFFER\_SIZE (IMU\_FIFO\_SIZE * IMU\_NUM\_OF\_AXIS) * 2 }\textcolor{comment}{/*Multiplied by 2,}}
+\DoxyCodeLine{59 \textcolor{comment}{                                                                because imu outputs 16-\/bit data }}
+\DoxyCodeLine{60 \textcolor{comment}{                                                                but we read 8-\/bit registers*/}\textcolor{preprocessor}{}}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{66 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{67     \textcolor{keywordtype}{float} acc\_x[\mbox{\hyperlink{group___i_m_u___a_p_i_ga753bcc5add85055e2d8f5da41e1acc1e}{IMU\_FIFO\_SIZE}}]; }
+\DoxyCodeLine{68     \textcolor{keywordtype}{float} acc\_y[\mbox{\hyperlink{group___i_m_u___a_p_i_ga753bcc5add85055e2d8f5da41e1acc1e}{IMU\_FIFO\_SIZE}}]; }
+\DoxyCodeLine{69     \textcolor{keywordtype}{float} acc\_z[\mbox{\hyperlink{group___i_m_u___a_p_i_ga753bcc5add85055e2d8f5da41e1acc1e}{IMU\_FIFO\_SIZE}}]; }
+\DoxyCodeLine{70     \textcolor{keywordtype}{float} gyr\_x[\mbox{\hyperlink{group___i_m_u___a_p_i_ga753bcc5add85055e2d8f5da41e1acc1e}{IMU\_FIFO\_SIZE}}]; }
+\DoxyCodeLine{71     \textcolor{keywordtype}{float} gyr\_y[\mbox{\hyperlink{group___i_m_u___a_p_i_ga753bcc5add85055e2d8f5da41e1acc1e}{IMU\_FIFO\_SIZE}}]; }
+\DoxyCodeLine{72     \textcolor{keywordtype}{float} gyr\_z[\mbox{\hyperlink{group___i_m_u___a_p_i_ga753bcc5add85055e2d8f5da41e1acc1e}{IMU\_FIFO\_SIZE}}]; }
+\DoxyCodeLine{73 \} \mbox{\hyperlink{structimu__data__t}{imu\_data\_t}};}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75       }
+\DoxyCodeLine{88 uint8\_t \mbox{\hyperlink{group___i_m_u___a_p_i__fifo_ga6e90dd27b3d4d8354ee759826c896544}{imu\_fifo\_reset}}();}
+\DoxyCodeLine{89  }
+\DoxyCodeLine{90       }
+\DoxyCodeLine{97 uint8\_t \mbox{\hyperlink{group___i_m_u___a_p_i__fifo_ga8cf9163b09bbd3c28f6708509ee8e932}{imu\_fifo\_setup}}(\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\_ctx\_t}}* ctx, uint16\_t fifo\_size);}
+\DoxyCodeLine{98       }
+\DoxyCodeLine{109 uint8\_t \mbox{\hyperlink{group___i_m_u___a_p_i_gacb387435c89fbf6b466e395363e3c154}{imu\_device\_check}}(\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\_ctx\_t}}* ctx);}
+\DoxyCodeLine{110       }
+\DoxyCodeLine{111       }
+\DoxyCodeLine{117 uint8\_t \mbox{\hyperlink{group___i_m_u___a_p_i_ga925032bcfb9ec9d77c1d7e026de99c07}{imu\_restore\_default\_configuration}}(\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\_ctx\_t}}* ctx);}
+\DoxyCodeLine{118       }
+\DoxyCodeLine{119       }
+\DoxyCodeLine{125 \textcolor{keywordtype}{void} \mbox{\hyperlink{group___i_m_u___a_p_i_ga77a11e486174321f2177532212a26fc8}{imu\_init}}(\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\_ctx\_t}}* ctx);}
+\DoxyCodeLine{126       }
+\DoxyCodeLine{127       }
+\DoxyCodeLine{128       }
+\DoxyCodeLine{132 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{133 \}}
+\DoxyCodeLine{134 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{135 }
+\DoxyCodeLine{136 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// !IMU\_API\_H}}
 
 \end{DoxyCode}

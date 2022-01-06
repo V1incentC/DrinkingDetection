@@ -8,5 +8,8 @@ var searchData=
   ['gpiote_5fconfig_5flog_5fenabled_5',['GPIOTE_CONFIG_LOG_ENABLED',['../sdk__config_8h.html#a148040918f2cef8413e41fd9e2b6cbf2',1,'sdk_config.h']]],
   ['gpiote_5fconfig_5flog_5flevel_6',['GPIOTE_CONFIG_LOG_LEVEL',['../sdk__config_8h.html#adf4460fb81da6c955e00c9eb074c77bd',1,'sdk_config.h']]],
   ['gpiote_5fconfig_5fnum_5fof_5flow_5fpower_5fevents_7',['GPIOTE_CONFIG_NUM_OF_LOW_POWER_EVENTS',['../sdk__config_8h.html#aad94a499c1b92e05f0a7b645b5295d7f',1,'sdk_config.h']]],
-  ['gpiote_5fenabled_8',['GPIOTE_ENABLED',['../sdk__config_8h.html#aedd7ac5f91ad5c239613a6552cde8eac',1,'sdk_config.h']]]
+  ['gpiote_5fenabled_8',['GPIOTE_ENABLED',['../sdk__config_8h.html#aedd7ac5f91ad5c239613a6552cde8eac',1,'sdk_config.h']]],
+  ['gyr_5fx_9',['gyr_x',['../structimu__data__t.html#aefb7c5ccb1383e25809a5e174622cbe9',1,'imu_data_t']]],
+  ['gyr_5fy_10',['gyr_y',['../structimu__data__t.html#adccdcec20b69762f174fa16c05c19b64',1,'imu_data_t']]],
+  ['gyr_5fz_11',['gyr_z',['../structimu__data__t.html#aba2dcf3912563bb0649d4dcca8be4bb6',1,'imu_data_t']]]
 ];

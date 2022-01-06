@@ -1,0 +1,49 @@
+\hypertarget{group___i_m_u___a_p_i__fifo}{}\doxysection{IMU\+\_\+\+API\+\_\+fifo}
+\label{group___i_m_u___a_p_i__fifo}\index{IMU\_API\_fifo@{IMU\_API\_fifo}}
+
+
+This section provides all the functions concerning the fifo usage.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{group___i_m_u___a_p_i__fifo_ga6e90dd27b3d4d8354ee759826c896544}{imu\+\_\+fifo\+\_\+reset}} ()
+\begin{DoxyCompactList}\small\item\em Function for reseting the fifo buffer and preparing dma for the next reading. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group___i_m_u___a_p_i__fifo_ga8cf9163b09bbd3c28f6708509ee8e932}{imu\+\_\+fifo\+\_\+setup}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, uint16\+\_\+t fifo\+\_\+size)
+\begin{DoxyCompactList}\small\item\em Function for checking if the device is present on the TWI bus. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This section provides all the functions concerning the fifo usage. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group___i_m_u___a_p_i__fifo_ga6e90dd27b3d4d8354ee759826c896544}\label{group___i_m_u___a_p_i__fifo_ga6e90dd27b3d4d8354ee759826c896544}} 
+\index{IMU\_API\_fifo@{IMU\_API\_fifo}!imu\_fifo\_reset@{imu\_fifo\_reset}}
+\index{imu\_fifo\_reset@{imu\_fifo\_reset}!IMU\_API\_fifo@{IMU\_API\_fifo}}
+\doxysubsubsection{\texorpdfstring{imu\_fifo\_reset()}{imu\_fifo\_reset()}}
+{\footnotesize\ttfamily uint8\+\_\+t imu\+\_\+fifo\+\_\+reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Function for reseting the fifo buffer and preparing dma for the next reading. 
+
+\mbox{\Hypertarget{group___i_m_u___a_p_i__fifo_ga8cf9163b09bbd3c28f6708509ee8e932}\label{group___i_m_u___a_p_i__fifo_ga8cf9163b09bbd3c28f6708509ee8e932}} 
+\index{IMU\_API\_fifo@{IMU\_API\_fifo}!imu\_fifo\_setup@{imu\_fifo\_setup}}
+\index{imu\_fifo\_setup@{imu\_fifo\_setup}!IMU\_API\_fifo@{IMU\_API\_fifo}}
+\doxysubsubsection{\texorpdfstring{imu\_fifo\_setup()}{imu\_fifo\_setup()}}
+{\footnotesize\ttfamily uint8\+\_\+t imu\+\_\+fifo\+\_\+setup (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx,  }\item[{uint16\+\_\+t}]{fifo\+\_\+size }\end{DoxyParamCaption})}
+
+
+
+Function for checking if the device is present on the TWI bus. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em ctx} & IMU structure from lsm6dsl library \\
+\hline
+\mbox{\texttt{ in}}  & {\em fifo\+\_\+size} & Size of the fifo buffer we want to configure \\
+\hline
+\end{DoxyParams}

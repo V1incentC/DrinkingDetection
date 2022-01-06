@@ -66,11 +66,63 @@ $(function() {
 </div>
 </div><!-- top -->
 <div class="header">
+  <div class="summary">
+<a href="#nested-classes">Data Structures</a> &#124;
+<a href="#define-members">Macros</a> &#124;
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">imu_api.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-
+<div class="textblock"><code>#include &quot;<a class="el" href="lsm6dsl__reg_8h_source.html">lsm6dsl_reg.h</a>&quot;</code><br />
+</div>
 <p><a href="imu__api_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structimu__data__t.html">imu_data_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is imu data struct.  <a href="structimu__data__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:ga753bcc5add85055e2d8f5da41e1acc1e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___i_m_u___a_p_i.html#ga753bcc5add85055e2d8f5da41e1acc1e">IMU_FIFO_SIZE</a>&#160;&#160;&#160;52</td></tr>
+<tr class="memdesc:ga753bcc5add85055e2d8f5da41e1acc1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro for defining size of the fifo buffer.  <a href="group___i_m_u___a_p_i.html#ga753bcc5add85055e2d8f5da41e1acc1e">More...</a><br /></td></tr>
+<tr class="separator:ga753bcc5add85055e2d8f5da41e1acc1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga960cd59b644c9fd15a1d97ece5d0dfa0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___i_m_u___a_p_i.html#ga960cd59b644c9fd15a1d97ece5d0dfa0">IMU_NUM_OF_AXIS</a>&#160;&#160;&#160;6</td></tr>
+<tr class="memdesc:ga960cd59b644c9fd15a1d97ece5d0dfa0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro for selecting the number of axis we want to read.  <a href="group___i_m_u___a_p_i.html#ga960cd59b644c9fd15a1d97ece5d0dfa0">More...</a><br /></td></tr>
+<tr class="separator:ga960cd59b644c9fd15a1d97ece5d0dfa0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacd859fa5f66c6a5ec15fa4d6096a62ed"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___i_m_u___a_p_i.html#gacd859fa5f66c6a5ec15fa4d6096a62ed">IMU_BUFFER_SIZE</a></td></tr>
+<tr class="memdesc:gacd859fa5f66c6a5ec15fa4d6096a62ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro for defining the size of the buffer array needed to store fifo data.  <a href="group___i_m_u___a_p_i.html#gacd859fa5f66c6a5ec15fa4d6096a62ed">More...</a><br /></td></tr>
+<tr class="separator:gacd859fa5f66c6a5ec15fa4d6096a62ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ga6e90dd27b3d4d8354ee759826c896544"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___i_m_u___a_p_i__fifo.html#ga6e90dd27b3d4d8354ee759826c896544">imu_fifo_reset</a> ()</td></tr>
+<tr class="memdesc:ga6e90dd27b3d4d8354ee759826c896544"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function for reseting the fifo buffer and preparing dma for the next reading.  <a href="group___i_m_u___a_p_i__fifo.html#ga6e90dd27b3d4d8354ee759826c896544">More...</a><br /></td></tr>
+<tr class="separator:ga6e90dd27b3d4d8354ee759826c896544"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8cf9163b09bbd3c28f6708509ee8e932"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___i_m_u___a_p_i__fifo.html#ga8cf9163b09bbd3c28f6708509ee8e932">imu_fifo_setup</a> (<a class="el" href="structstmdev__ctx__t.html">stmdev_ctx_t</a> *ctx, uint16_t fifo_size)</td></tr>
+<tr class="memdesc:ga8cf9163b09bbd3c28f6708509ee8e932"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function for checking if the device is present on the TWI bus.  <a href="group___i_m_u___a_p_i__fifo.html#ga8cf9163b09bbd3c28f6708509ee8e932">More...</a><br /></td></tr>
+<tr class="separator:ga8cf9163b09bbd3c28f6708509ee8e932"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacb387435c89fbf6b466e395363e3c154"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___i_m_u___a_p_i.html#gacb387435c89fbf6b466e395363e3c154">imu_device_check</a> (<a class="el" href="structstmdev__ctx__t.html">stmdev_ctx_t</a> *ctx)</td></tr>
+<tr class="memdesc:gacb387435c89fbf6b466e395363e3c154"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function for checking if the device is present on the TWI bus.  <a href="group___i_m_u___a_p_i.html#gacb387435c89fbf6b466e395363e3c154">More...</a><br /></td></tr>
+<tr class="separator:gacb387435c89fbf6b466e395363e3c154"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga925032bcfb9ec9d77c1d7e026de99c07"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___i_m_u___a_p_i.html#ga925032bcfb9ec9d77c1d7e026de99c07">imu_restore_default_configuration</a> (<a class="el" href="structstmdev__ctx__t.html">stmdev_ctx_t</a> *ctx)</td></tr>
+<tr class="memdesc:ga925032bcfb9ec9d77c1d7e026de99c07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function for restoring the default settings of the device.  <a href="group___i_m_u___a_p_i.html#ga925032bcfb9ec9d77c1d7e026de99c07">More...</a><br /></td></tr>
+<tr class="separator:ga925032bcfb9ec9d77c1d7e026de99c07"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga77a11e486174321f2177532212a26fc8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___i_m_u___a_p_i.html#ga77a11e486174321f2177532212a26fc8">imu_init</a> (<a class="el" href="structstmdev__ctx__t.html">stmdev_ctx_t</a> *ctx)</td></tr>
+<tr class="memdesc:ga77a11e486174321f2177532212a26fc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function for initializing the IMU device.  <a href="group___i_m_u___a_p_i.html#ga77a11e486174321f2177532212a26fc8">More...</a><br /></td></tr>
+<tr class="separator:ga77a11e486174321f2177532212a26fc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:ga6b5a0352d8fbb2ed474368ebdb3a3b40"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structstmdev__ctx__t.html">stmdev_ctx_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___i_m_u___a_p_i.html#ga6b5a0352d8fbb2ed474368ebdb3a3b40">lsm6dsl_dev_ctx_t</a></td></tr>
+<tr class="memdesc:ga6b5a0352d8fbb2ed474368ebdb3a3b40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global imu object.  <a href="group___i_m_u___a_p_i.html#ga6b5a0352d8fbb2ed474368ebdb3a3b40">More...</a><br /></td></tr>
+<tr class="separator:ga6b5a0352d8fbb2ed474368ebdb3a3b40"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5b8a1b2ea2d997033338af51d4181301"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structstmdev__ctx__t.html">stmdev_ctx_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___i_m_u___a_p_i.html#ga5b8a1b2ea2d997033338af51d4181301">p_lsm6dsl_dev_ctx_t</a></td></tr>
+<tr class="memdesc:ga5b8a1b2ea2d997033338af51d4181301"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to the imu object.  <a href="group___i_m_u___a_p_i.html#ga5b8a1b2ea2d997033338af51d4181301">More...</a><br /></td></tr>
+<tr class="separator:ga5b8a1b2ea2d997033338af51d4181301"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

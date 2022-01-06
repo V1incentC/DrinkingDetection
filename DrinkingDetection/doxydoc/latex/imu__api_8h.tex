@@ -1,2 +1,37 @@
 \hypertarget{imu__api_8h}{}\doxysection{User\+Files/\+IMU\+\_\+\+API/imu\+\_\+api.h File Reference}
 \label{imu__api_8h}\index{UserFiles/IMU\_API/imu\_api.h@{UserFiles/IMU\_API/imu\_api.h}}
+{\ttfamily \#include \char`\"{}lsm6dsl\+\_\+reg.\+h\char`\"{}}\newline
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structimu__data__t}{imu\+\_\+data\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em This is imu data struct. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___i_m_u___a_p_i_ga753bcc5add85055e2d8f5da41e1acc1e}{IMU\+\_\+\+FIFO\+\_\+\+SIZE}}~52
+\begin{DoxyCompactList}\small\item\em Macro for defining size of the fifo buffer. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___i_m_u___a_p_i_ga960cd59b644c9fd15a1d97ece5d0dfa0}{IMU\+\_\+\+NUM\+\_\+\+OF\+\_\+\+AXIS}}~6
+\begin{DoxyCompactList}\small\item\em Macro for selecting the number of axis we want to read. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___i_m_u___a_p_i_gacd859fa5f66c6a5ec15fa4d6096a62ed}{IMU\+\_\+\+BUFFER\+\_\+\+SIZE}}
+\begin{DoxyCompactList}\small\item\em Macro for defining the size of the buffer array needed to store fifo data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{group___i_m_u___a_p_i__fifo_ga6e90dd27b3d4d8354ee759826c896544}{imu\+\_\+fifo\+\_\+reset}} ()
+\begin{DoxyCompactList}\small\item\em Function for reseting the fifo buffer and preparing dma for the next reading. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group___i_m_u___a_p_i__fifo_ga8cf9163b09bbd3c28f6708509ee8e932}{imu\+\_\+fifo\+\_\+setup}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx, uint16\+\_\+t fifo\+\_\+size)
+\begin{DoxyCompactList}\small\item\em Function for checking if the device is present on the TWI bus. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group___i_m_u___a_p_i_gacb387435c89fbf6b466e395363e3c154}{imu\+\_\+device\+\_\+check}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Function for checking if the device is present on the TWI bus. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group___i_m_u___a_p_i_ga925032bcfb9ec9d77c1d7e026de99c07}{imu\+\_\+restore\+\_\+default\+\_\+configuration}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Function for restoring the default settings of the device. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___i_m_u___a_p_i_ga77a11e486174321f2177532212a26fc8}{imu\+\_\+init}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Function for initializing the IMU device. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} \mbox{\hyperlink{group___i_m_u___a_p_i_ga6b5a0352d8fbb2ed474368ebdb3a3b40}{lsm6dsl\+\_\+dev\+\_\+ctx\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Global imu object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ \mbox{\hyperlink{group___i_m_u___a_p_i_ga5b8a1b2ea2d997033338af51d4181301}{p\+\_\+lsm6dsl\+\_\+dev\+\_\+ctx\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Pointer to the imu object. \end{DoxyCompactList}\end{DoxyCompactItemize}

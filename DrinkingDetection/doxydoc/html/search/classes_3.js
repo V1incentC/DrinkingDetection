@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['ucf_5fline_5ft_0',['ucf_line_t',['../structucf__line__t.html',1,'']]]
+  ['stmdev_5fctx_5ft_0',['stmdev_ctx_t',['../structstmdev__ctx__t.html',1,'']]]
 ];

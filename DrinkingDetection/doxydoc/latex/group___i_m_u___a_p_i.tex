@@ -1,0 +1,158 @@
+\hypertarget{group___i_m_u___a_p_i}{}\doxysection{IMU\+\_\+\+API}
+\label{group___i_m_u___a_p_i}\index{IMU\_API@{IMU\_API}}
+
+
+This file provides a set of interface functions to the lsm6dsl enhanced inertial module on NRF52.  
+
+
+\doxysubsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group___i_m_u___a_p_i__fifo}{IMU\+\_\+\+API\+\_\+fifo}}
+\begin{DoxyCompactList}\small\item\em This section provides all the functions concerning the fifo usage. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structimu__data__t}{imu\+\_\+data\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em This is imu data struct. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___i_m_u___a_p_i_ga753bcc5add85055e2d8f5da41e1acc1e}{IMU\+\_\+\+FIFO\+\_\+\+SIZE}}~52
+\begin{DoxyCompactList}\small\item\em Macro for defining size of the fifo buffer. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___i_m_u___a_p_i_ga960cd59b644c9fd15a1d97ece5d0dfa0}{IMU\+\_\+\+NUM\+\_\+\+OF\+\_\+\+AXIS}}~6
+\begin{DoxyCompactList}\small\item\em Macro for selecting the number of axis we want to read. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___i_m_u___a_p_i_gacd859fa5f66c6a5ec15fa4d6096a62ed}{IMU\+\_\+\+BUFFER\+\_\+\+SIZE}}
+\begin{DoxyCompactList}\small\item\em Macro for defining the size of the buffer array needed to store fifo data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{group___i_m_u___a_p_i_gacb387435c89fbf6b466e395363e3c154}{imu\+\_\+device\+\_\+check}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Function for checking if the device is present on the TWI bus. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group___i_m_u___a_p_i_ga925032bcfb9ec9d77c1d7e026de99c07}{imu\+\_\+restore\+\_\+default\+\_\+configuration}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Function for restoring the default settings of the device. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___i_m_u___a_p_i_ga77a11e486174321f2177532212a26fc8}{imu\+\_\+init}} (\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ctx)
+\begin{DoxyCompactList}\small\item\em Function for initializing the IMU device. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} \mbox{\hyperlink{group___i_m_u___a_p_i_ga6b5a0352d8fbb2ed474368ebdb3a3b40}{lsm6dsl\+\_\+dev\+\_\+ctx\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Global imu object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$ \mbox{\hyperlink{group___i_m_u___a_p_i_ga5b8a1b2ea2d997033338af51d4181301}{p\+\_\+lsm6dsl\+\_\+dev\+\_\+ctx\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Pointer to the imu object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file provides a set of interface functions to the lsm6dsl enhanced inertial module on NRF52. 
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group___i_m_u___a_p_i_gacd859fa5f66c6a5ec15fa4d6096a62ed}\label{group___i_m_u___a_p_i_gacd859fa5f66c6a5ec15fa4d6096a62ed}} 
+\index{IMU\_API@{IMU\_API}!IMU\_BUFFER\_SIZE@{IMU\_BUFFER\_SIZE}}
+\index{IMU\_BUFFER\_SIZE@{IMU\_BUFFER\_SIZE}!IMU\_API@{IMU\_API}}
+\doxysubsubsection{\texorpdfstring{IMU\_BUFFER\_SIZE}{IMU\_BUFFER\_SIZE}}
+{\footnotesize\ttfamily \#define IMU\+\_\+\+BUFFER\+\_\+\+SIZE}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{                                                                (\mbox{\hyperlink{group___i_m_u___a_p_i_ga753bcc5add85055e2d8f5da41e1acc1e}{IMU\_FIFO\_SIZE}} * \mbox{\hyperlink{group___i_m_u___a_p_i_ga960cd59b644c9fd15a1d97ece5d0dfa0}{IMU\_NUM\_OF\_AXIS}}) * 2 \textcolor{comment}{/*Multiplied by 2,}}
+\DoxyCodeLine{\textcolor{comment}{                                                                because imu outputs 16-\/bit data }}
+\DoxyCodeLine{\textcolor{comment}{                                                                but we read 8-\/bit registers*/}}
+
+\end{DoxyCode}
+
+
+Macro for defining the size of the buffer array needed to store fifo data. 
+
+\mbox{\Hypertarget{group___i_m_u___a_p_i_ga753bcc5add85055e2d8f5da41e1acc1e}\label{group___i_m_u___a_p_i_ga753bcc5add85055e2d8f5da41e1acc1e}} 
+\index{IMU\_API@{IMU\_API}!IMU\_FIFO\_SIZE@{IMU\_FIFO\_SIZE}}
+\index{IMU\_FIFO\_SIZE@{IMU\_FIFO\_SIZE}!IMU\_API@{IMU\_API}}
+\doxysubsubsection{\texorpdfstring{IMU\_FIFO\_SIZE}{IMU\_FIFO\_SIZE}}
+{\footnotesize\ttfamily \#define IMU\+\_\+\+FIFO\+\_\+\+SIZE~52}
+
+
+
+Macro for defining size of the fifo buffer. 
+
+\mbox{\Hypertarget{group___i_m_u___a_p_i_ga960cd59b644c9fd15a1d97ece5d0dfa0}\label{group___i_m_u___a_p_i_ga960cd59b644c9fd15a1d97ece5d0dfa0}} 
+\index{IMU\_API@{IMU\_API}!IMU\_NUM\_OF\_AXIS@{IMU\_NUM\_OF\_AXIS}}
+\index{IMU\_NUM\_OF\_AXIS@{IMU\_NUM\_OF\_AXIS}!IMU\_API@{IMU\_API}}
+\doxysubsubsection{\texorpdfstring{IMU\_NUM\_OF\_AXIS}{IMU\_NUM\_OF\_AXIS}}
+{\footnotesize\ttfamily \#define IMU\+\_\+\+NUM\+\_\+\+OF\+\_\+\+AXIS~6}
+
+
+
+Macro for selecting the number of axis we want to read. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group___i_m_u___a_p_i_gacb387435c89fbf6b466e395363e3c154}\label{group___i_m_u___a_p_i_gacb387435c89fbf6b466e395363e3c154}} 
+\index{IMU\_API@{IMU\_API}!imu\_device\_check@{imu\_device\_check}}
+\index{imu\_device\_check@{imu\_device\_check}!IMU\_API@{IMU\_API}}
+\doxysubsubsection{\texorpdfstring{imu\_device\_check()}{imu\_device\_check()}}
+{\footnotesize\ttfamily uint8\+\_\+t imu\+\_\+device\+\_\+check (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx }\end{DoxyParamCaption})}
+
+
+
+Function for checking if the device is present on the TWI bus. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em ctx} & IMU structure from lsm6dsl library \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group___i_m_u___a_p_i_ga77a11e486174321f2177532212a26fc8}\label{group___i_m_u___a_p_i_ga77a11e486174321f2177532212a26fc8}} 
+\index{IMU\_API@{IMU\_API}!imu\_init@{imu\_init}}
+\index{imu\_init@{imu\_init}!IMU\_API@{IMU\_API}}
+\doxysubsubsection{\texorpdfstring{imu\_init()}{imu\_init()}}
+{\footnotesize\ttfamily void imu\+\_\+init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx }\end{DoxyParamCaption})}
+
+
+
+Function for initializing the IMU device. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em ctx} & IMU structure from lsm6dsl library \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group___i_m_u___a_p_i_ga925032bcfb9ec9d77c1d7e026de99c07}\label{group___i_m_u___a_p_i_ga925032bcfb9ec9d77c1d7e026de99c07}} 
+\index{IMU\_API@{IMU\_API}!imu\_restore\_default\_configuration@{imu\_restore\_default\_configuration}}
+\index{imu\_restore\_default\_configuration@{imu\_restore\_default\_configuration}!IMU\_API@{IMU\_API}}
+\doxysubsubsection{\texorpdfstring{imu\_restore\_default\_configuration()}{imu\_restore\_default\_configuration()}}
+{\footnotesize\ttfamily uint8\+\_\+t imu\+\_\+restore\+\_\+default\+\_\+configuration (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} $\ast$}]{ctx }\end{DoxyParamCaption})}
+
+
+
+Function for restoring the default settings of the device. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em ctx} & IMU structure from lsm6dsl library \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{group___i_m_u___a_p_i_ga6b5a0352d8fbb2ed474368ebdb3a3b40}\label{group___i_m_u___a_p_i_ga6b5a0352d8fbb2ed474368ebdb3a3b40}} 
+\index{IMU\_API@{IMU\_API}!lsm6dsl\_dev\_ctx\_t@{lsm6dsl\_dev\_ctx\_t}}
+\index{lsm6dsl\_dev\_ctx\_t@{lsm6dsl\_dev\_ctx\_t}!IMU\_API@{IMU\_API}}
+\doxysubsubsection{\texorpdfstring{lsm6dsl\_dev\_ctx\_t}{lsm6dsl\_dev\_ctx\_t}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}} lsm6dsl\+\_\+dev\+\_\+ctx\+\_\+t\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Global imu object. 
+
+\mbox{\Hypertarget{group___i_m_u___a_p_i_ga5b8a1b2ea2d997033338af51d4181301}\label{group___i_m_u___a_p_i_ga5b8a1b2ea2d997033338af51d4181301}} 
+\index{IMU\_API@{IMU\_API}!p\_lsm6dsl\_dev\_ctx\_t@{p\_lsm6dsl\_dev\_ctx\_t}}
+\index{p\_lsm6dsl\_dev\_ctx\_t@{p\_lsm6dsl\_dev\_ctx\_t}!IMU\_API@{IMU\_API}}
+\doxysubsubsection{\texorpdfstring{p\_lsm6dsl\_dev\_ctx\_t}{p\_lsm6dsl\_dev\_ctx\_t}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structstmdev__ctx__t}{stmdev\+\_\+ctx\+\_\+t}}$\ast$ p\+\_\+lsm6dsl\+\_\+dev\+\_\+ctx\+\_\+t\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Pointer to the imu object. 
+

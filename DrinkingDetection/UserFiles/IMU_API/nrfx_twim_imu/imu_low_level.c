@@ -76,15 +76,17 @@ int32_t imu_ll_platform_write(void*    handle,
 	
 	m_xfer_done = false;
     nrfx_twim_tx(&twim_t, LSM6DSL_ADDRESS, twi_tx_buffer, length + 1, false);
+    while (m_xfer_done == false) 
+    {
+        __WFE(); /*Wait for the transfer to finish*/
+    }
+    
     if (err_code != NRFX_SUCCESS) 
     {
         return err_code;
     }
     
-	while (m_xfer_done == false) 
-	{
-    	__WFE();    /*Wait for the transfer to finish*/
-	}    
+    
 	
 	m_xfer_done = false;
     
@@ -104,23 +106,30 @@ int32_t imu_ll_platform_read(void*    handle,
 	
 	m_xfer_done = false;
     err_code = nrfx_twim_tx(&twim_t, LSM6DSL_ADDRESS, tx_data, sizeof(tx_data), true);
+    while (m_xfer_done == false) 
+    {
+        __WFE(); /*Wait for the transfer to finish*/
+    } 
+    
     if (err_code != NRFX_SUCCESS) 
     {
         return err_code;
     }
     
-	while (m_xfer_done == false) {__WFE();}    /*Wait for the transfer to finish*/
+   
 	
 	m_xfer_done = false;	/*Reset the flag for read operation*/
 	err_code =  nrfx_twim_rx(&twim_t, LSM6DSL_ADDRESS, buffer, length);
+    while (m_xfer_done == false)
+    {
+        __WFE(); /*Wait for the transfer to finish*/
+    }
+    
     if (err_code != NRF_SUCCESS) {
         return err_code;
     }
     
-	while (m_xfer_done == false)
-	{
-    	__WFE();	/*Wait for the transfer to finish*/
-	}
+
 	m_xfer_done = false;
 	
     return 0;
@@ -156,7 +165,7 @@ int32_t imu_ll_platform_read(void*    handle,
 			m_xfer_done = true;
 		}
 		
-		
+    	m_xfer_done = true;
 		break;
     																		   
 	default:
@@ -244,7 +253,7 @@ void imu_ll_prepare_dma(uint8_t  reg,
     APP_ERROR_CHECK(err_code);  
 }
 
-static void int1_handler(nrfx_gpiote_pin_t pin, nrf_gpiote_polarity_t action)
+static void int2_handler(nrfx_gpiote_pin_t pin, nrf_gpiote_polarity_t action)
 {
     
 }
@@ -258,13 +267,13 @@ void imu_ll_gpio_init()
     nrfx_gpiote_in_config_t in_config_t = NRFX_GPIOTE_CONFIG_IN_SENSE_LOTOHI(true);
     
     /*Configure pin to sense INT1 of LSM6DSL*/
-    err_code = nrfx_gpiote_in_init(IMU_LL_INT1, &in_config_t, int1_handler);
+    err_code = nrfx_gpiote_in_init(IMU_LL_INT1, &in_config_t, NULL);
     APP_ERROR_CHECK(err_code);
     /*Enable interrupt event*/
     nrfx_gpiote_in_event_enable(IMU_LL_INT1, true);
     
     /*Configure pin to sense INT2 of LSM6DSL*/
-    err_code = nrfx_gpiote_in_init(IMU_LL_INT2, &in_config_t, NULL);
+    err_code = nrfx_gpiote_in_init(IMU_LL_INT2, &in_config_t, int2_handler);
     APP_ERROR_CHECK(err_code);
     /*Enable interrupt event*/
     nrfx_gpiote_in_event_enable(IMU_LL_INT2, false);

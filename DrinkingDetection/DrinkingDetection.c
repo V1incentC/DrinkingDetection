@@ -13,6 +13,7 @@ extern "C" {
 #include "nrf_log_default_backends.h"
 #include "imu_api.h"
 #include "imu_low_level.h"
+#include "lsm6dsl/lsm6dsl_reg.h"
 
 #ifdef __cplusplus
 }
@@ -27,7 +28,7 @@ int main(void)
 	NRF_LOG_DEFAULT_BACKENDS_INIT();
 	
 	NRF_LOG_INFO("This is a log data from nrf");
-    
+
     imu_init(&lsm6dsl_dev_ctx_t);
 	for (;;)
 	{

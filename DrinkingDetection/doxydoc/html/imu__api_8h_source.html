@@ -71,7 +71,7 @@ $(function() {
 <div class="contents">
 <a href="imu__api_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> ******************************************************************************</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> * @file    imu_low_level.h</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> * @file    imu_api.h</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> * @author  Sensors Software Solution Team</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> * @brief   LSM6DSL low level driver file</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> ******************************************************************************</span></div>
@@ -105,19 +105,62 @@ $(function() {
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="comment"> */</span></div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">#ifndef IMU_API_H</span></div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="preprocessor">#define IMU_API_H</span></div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  <span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>      </div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>      </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>}</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="preprocessor">#endif </span><span class="comment">// !IMU_API_H</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">#include &quot;<a class="code" href="lsm6dsl__reg_8h.html">lsm6dsl_reg.h</a>&quot;</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>  <span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="keyword">extern</span> <a class="code hl_struct" href="structstmdev__ctx__t.html">stmdev_ctx_t</a> <a class="code hl_variable" href="group___i_m_u___a_p_i.html#ga6b5a0352d8fbb2ed474368ebdb3a3b40">lsm6dsl_dev_ctx_t</a>;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="keyword">extern</span> <a class="code hl_struct" href="structstmdev__ctx__t.html">stmdev_ctx_t</a>* <a class="code hl_variable" href="group___i_m_u___a_p_i.html#ga5b8a1b2ea2d997033338af51d4181301">p_lsm6dsl_dev_ctx_t</a>;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>      </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>      </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="group___i_m_u___a_p_i.html#ga753bcc5add85055e2d8f5da41e1acc1e">   54</a></span><span class="preprocessor">#define IMU_FIFO_SIZE 52</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="group___i_m_u___a_p_i.html#ga960cd59b644c9fd15a1d97ece5d0dfa0">   56</a></span><span class="preprocessor">#define IMU_NUM_OF_AXIS 6</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="group___i_m_u___a_p_i.html#gacd859fa5f66c6a5ec15fa4d6096a62ed">   58</a></span><span class="preprocessor">#define IMU_BUFFER_SIZE (IMU_FIFO_SIZE * IMU_NUM_OF_AXIS) * 2 </span><span class="comment">/*Multiplied by 2,</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="comment">                                                                because imu outputs 16-bit data </span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="comment">                                                                but we read 8-bit registers*/</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="structimu__data__t.html#ad71e6af3776f2331e86405e7cc1aa463">   66</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="structimu__data__t.html#a05f6a388c7ee698e20b6843c7f9a5f19">   67</a></span>    <span class="keywordtype">float</span> acc_x[<a class="code hl_define" href="group___i_m_u___a_p_i.html#ga753bcc5add85055e2d8f5da41e1acc1e">IMU_FIFO_SIZE</a>]; </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="structimu__data__t.html#aefb7c5ccb1383e25809a5e174622cbe9">   68</a></span>    <span class="keywordtype">float</span> acc_y[<a class="code hl_define" href="group___i_m_u___a_p_i.html#ga753bcc5add85055e2d8f5da41e1acc1e">IMU_FIFO_SIZE</a>]; </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="structimu__data__t.html#adccdcec20b69762f174fa16c05c19b64">   69</a></span>    <span class="keywordtype">float</span> acc_z[<a class="code hl_define" href="group___i_m_u___a_p_i.html#ga753bcc5add85055e2d8f5da41e1acc1e">IMU_FIFO_SIZE</a>]; </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="structimu__data__t.html#aba2dcf3912563bb0649d4dcca8be4bb6">   70</a></span>    <span class="keywordtype">float</span> gyr_x[<a class="code hl_define" href="group___i_m_u___a_p_i.html#ga753bcc5add85055e2d8f5da41e1acc1e">IMU_FIFO_SIZE</a>]; </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="keywordtype">float</span> gyr_y[<a class="code hl_define" href="group___i_m_u___a_p_i.html#ga753bcc5add85055e2d8f5da41e1acc1e">IMU_FIFO_SIZE</a>]; </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <span class="keywordtype">float</span> gyr_z[<a class="code hl_define" href="group___i_m_u___a_p_i.html#ga753bcc5add85055e2d8f5da41e1acc1e">IMU_FIFO_SIZE</a>]; </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>} <a class="code hl_struct" href="structimu__data__t.html">imu_data_t</a>;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>      </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>uint8_t <a class="code hl_function" href="group___i_m_u___a_p_i__fifo.html#ga6e90dd27b3d4d8354ee759826c896544">imu_fifo_reset</a>();</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>      </div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>uint8_t <a class="code hl_function" href="group___i_m_u___a_p_i__fifo.html#ga8cf9163b09bbd3c28f6708509ee8e932">imu_fifo_setup</a>(<a class="code hl_struct" href="structstmdev__ctx__t.html">stmdev_ctx_t</a>* ctx, uint16_t fifo_size);</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>      </div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>uint8_t <a class="code hl_function" href="group___i_m_u___a_p_i.html#gacb387435c89fbf6b466e395363e3c154">imu_device_check</a>(<a class="code hl_struct" href="structstmdev__ctx__t.html">stmdev_ctx_t</a>* ctx);</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>      </div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>      </div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>uint8_t <a class="code hl_function" href="group___i_m_u___a_p_i.html#ga925032bcfb9ec9d77c1d7e026de99c07">imu_restore_default_configuration</a>(<a class="code hl_struct" href="structstmdev__ctx__t.html">stmdev_ctx_t</a>* ctx);</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>      </div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>      </div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span><span class="keywordtype">void</span> <a class="code hl_function" href="group___i_m_u___a_p_i.html#ga77a11e486174321f2177532212a26fc8">imu_init</a>(<a class="code hl_struct" href="structstmdev__ctx__t.html">stmdev_ctx_t</a>* ctx);</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>      </div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>      </div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>      </div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span><span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>}</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span> </div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span><span class="preprocessor">#endif </span><span class="comment">// !IMU_API_H</span></div>
+<div class="ttc" id="agroup___i_m_u___a_p_i__fifo_html_ga6e90dd27b3d4d8354ee759826c896544"><div class="ttname"><a href="group___i_m_u___a_p_i__fifo.html#ga6e90dd27b3d4d8354ee759826c896544">imu_fifo_reset</a></div><div class="ttdeci">uint8_t imu_fifo_reset()</div><div class="ttdoc">Function for reseting the fifo buffer and preparing dma for the next reading.</div><div class="ttdef"><b>Definition:</b> imu_api.c:23</div></div>
+<div class="ttc" id="agroup___i_m_u___a_p_i__fifo_html_ga8cf9163b09bbd3c28f6708509ee8e932"><div class="ttname"><a href="group___i_m_u___a_p_i__fifo.html#ga8cf9163b09bbd3c28f6708509ee8e932">imu_fifo_setup</a></div><div class="ttdeci">uint8_t imu_fifo_setup(stmdev_ctx_t *ctx, uint16_t fifo_size)</div><div class="ttdoc">Function for checking if the device is present on the TWI bus.</div><div class="ttdef"><b>Definition:</b> imu_api.c:29</div></div>
+<div class="ttc" id="agroup___i_m_u___a_p_i_html_ga5b8a1b2ea2d997033338af51d4181301"><div class="ttname"><a href="group___i_m_u___a_p_i.html#ga5b8a1b2ea2d997033338af51d4181301">p_lsm6dsl_dev_ctx_t</a></div><div class="ttdeci">stmdev_ctx_t * p_lsm6dsl_dev_ctx_t</div><div class="ttdoc">Pointer to the imu object.</div><div class="ttdef"><b>Definition:</b> imu_api.c:9</div></div>
+<div class="ttc" id="agroup___i_m_u___a_p_i_html_ga6b5a0352d8fbb2ed474368ebdb3a3b40"><div class="ttname"><a href="group___i_m_u___a_p_i.html#ga6b5a0352d8fbb2ed474368ebdb3a3b40">lsm6dsl_dev_ctx_t</a></div><div class="ttdeci">stmdev_ctx_t lsm6dsl_dev_ctx_t</div><div class="ttdoc">Global imu object.</div><div class="ttdef"><b>Definition:</b> imu_api.c:7</div></div>
+<div class="ttc" id="agroup___i_m_u___a_p_i_html_ga753bcc5add85055e2d8f5da41e1acc1e"><div class="ttname"><a href="group___i_m_u___a_p_i.html#ga753bcc5add85055e2d8f5da41e1acc1e">IMU_FIFO_SIZE</a></div><div class="ttdeci">#define IMU_FIFO_SIZE</div><div class="ttdoc">Macro for defining size of the fifo buffer.</div><div class="ttdef"><b>Definition:</b> imu_api.h:54</div></div>
+<div class="ttc" id="agroup___i_m_u___a_p_i_html_ga77a11e486174321f2177532212a26fc8"><div class="ttname"><a href="group___i_m_u___a_p_i.html#ga77a11e486174321f2177532212a26fc8">imu_init</a></div><div class="ttdeci">void imu_init(stmdev_ctx_t *ctx)</div><div class="ttdoc">Function for initializing the IMU device.</div><div class="ttdef"><b>Definition:</b> imu_api.c:107</div></div>
+<div class="ttc" id="agroup___i_m_u___a_p_i_html_ga925032bcfb9ec9d77c1d7e026de99c07"><div class="ttname"><a href="group___i_m_u___a_p_i.html#ga925032bcfb9ec9d77c1d7e026de99c07">imu_restore_default_configuration</a></div><div class="ttdeci">uint8_t imu_restore_default_configuration(stmdev_ctx_t *ctx)</div><div class="ttdoc">Function for restoring the default settings of the device.</div><div class="ttdef"><b>Definition:</b> imu_api.c:94</div></div>
+<div class="ttc" id="agroup___i_m_u___a_p_i_html_gacb387435c89fbf6b466e395363e3c154"><div class="ttname"><a href="group___i_m_u___a_p_i.html#gacb387435c89fbf6b466e395363e3c154">imu_device_check</a></div><div class="ttdeci">uint8_t imu_device_check(stmdev_ctx_t *ctx)</div><div class="ttdoc">Function for checking if the device is present on the TWI bus.</div><div class="ttdef"><b>Definition:</b> imu_api.c:73</div></div>
+<div class="ttc" id="alsm6dsl__reg_8h_html"><div class="ttname"><a href="lsm6dsl__reg_8h.html">lsm6dsl_reg.h</a></div></div>
+<div class="ttc" id="astructimu__data__t_html"><div class="ttname"><a href="structimu__data__t.html">imu_data_t</a></div><div class="ttdoc">This is imu data struct.</div><div class="ttdef"><b>Definition:</b> imu_api.h:64</div></div>
+<div class="ttc" id="astructstmdev__ctx__t_html"><div class="ttname"><a href="structstmdev__ctx__t.html">stmdev_ctx_t</a></div><div class="ttdef"><b>Definition:</b> lsm6dsl_reg.h:71</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
