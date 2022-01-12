@@ -221,51 +221,25 @@ uint8_t imu_restore_default_configuration(stmdev_ctx_t* ctx)
     
     return EXIT_SUCCESS;
 }
-void imu_absolte_wrist_tilt_setup2(stmdev_ctx_t *ctx)
+
+static int32_t imu_ll_platform_write1(void *handle, uint8_t reg, uint8_t *buffer, uint16_t len)
 {
-    //enable embedded functions
-    lsm6dsl_wrist_tilt_sens_set(ctx, PROPERTY_ENABLE);
-    nrf_delay_ms(50);
-    //disable embedded functions
-    lsm6dsl_wrist_tilt_sens_set(ctx, PROPERTY_DISABLE);
 
-    //set latency 1lsb=40ms
-    uint8_t latency = 0x01;
-    lsm6dsl_tilt_latency_set(ctx, &latency);
-    //set threshold
-    uint8_t threshold = 10;
-    lsm6dsl_tilt_threshold_set(ctx, &threshold);
-    //setup mask
+    uint8_t tx_data[len + 1];
+    tx_data[0] = reg;
+    memcpy(&tx_data[1], buffer, len);
+    return nrfx_twim_tx(&twim_t, LSM6DSL_ADDRESS, tx_data, sizeof(tx_data), false);
 
-    uint8_t setting = 0xA0; //enable access to embedded register B
-    lsm6dsl_write_reg(ctx, LSM6DSL_FUNC_CFG_ACCESS, &setting, 1);
-
-    setting = 0x40; //mask on y positive
-    lsm6dsl_write_reg(ctx, LSM6DSL_A_WRIST_TILT_MASK, &setting, 1); 
-    lsm6dsl_mem_bank_set(ctx, LSM6DSL_USER_BANK);
-
-    //enable embedded functions
-    lsm6dsl_wrist_tilt_sens_set(ctx, PROPERTY_ENABLE);
-
-    lsm6dsl_data_ready_mode_set(ctx, LSM6DSL_DRDY_PULSED);
 }
-void imu_activity_inactivity_setup2(stmdev_ctx_t *ctx)
-{
-    lsm6dsl_xl_power_mode_set(ctx, LSM6DSL_XL_NORMAL);
-    //Set Output Data Rate and full scale for acc
-    lsm6dsl_xl_data_rate_set(ctx, LSM6DSL_XL_ODR_52Hz);
-    lsm6dsl_xl_full_scale_set(ctx, LSM6DSL_2g);
-    lsm6dsl_gy_data_rate_set(ctx, LSM6DSL_GY_ODR_OFF);
-    //set duration for inactivity detection
-    lsm6dsl_act_sleep_dur_set(ctx, 1); // comes out as 5seconds
 
-    // Set Activity/Inactivity threshold
-    lsm6dsl_wkup_threshold_set(ctx, 1); //value is 2 which comes out as 62.5mg
+static int32_t imu_ll_platform_read1(void *handle, uint8_t reg, uint8_t *buffer, uint16_t len) {
 
-    // Inactivity configuration: acc to 12.5 LP, gyro to Power-Down
-    lsm6dsl_act_mode_set(ctx, LSM6DSL_XL_12Hz5_GY_PD);
-    //enable slope filter
-    lsm6dsl_xl_hp_path_internal_set(ctx, LSM6DSL_USE_SLOPE);
+    uint8_t tx_data[1] = { reg };
+    ret_code_t err = nrfx_twim_tx(&twim_t, LSM6DSL_ADDRESS, tx_data, sizeof(tx_data), true);
+    if (err != NRFX_SUCCESS)
+        return err;
+    return nrfx_twim_rx(&twim_t, LSM6DSL_ADDRESS, buffer, len);
+
 }
 void imu_init(stmdev_ctx_t* ctx)
 {
@@ -286,28 +260,27 @@ void imu_init(stmdev_ctx_t* ctx)
     /*TEMPORARY CODE*/
     //INTERRUPT 2
 
-/*
+
     lsm6dsl_a_wrist_tilt_mask_t wrist_tilt_mask =
     { 
         .wrist_tilt_mask_xpos = PROPERTY_ENABLE,
-        .wrist_tilt_mask_xneg = PROPERTY_ENABLE 
-    };*/
+        .wrist_tilt_mask_xneg = PROPERTY_DISABLE 
+    };
     
     lsm6dsl_int2_route_t int2_route =
     { 
         .int2_wrist_tilt = PROPERTY_ENABLE,
-        .int2_inact_state = PROPERTY_ENABLE,
-        .int2_drdy_xl = PROPERTY_ENABLE
+        .int2_inact_state = PROPERTY_DISABLE,
+        .int2_drdy_xl = PROPERTY_DISABLE
             
     };
     lsm6dsl_pin_int2_route_set(p_lsm6dsl_dev_ctx_t, int2_route);
     
     lsm6dsl_block_data_update_set(p_lsm6dsl_dev_ctx_t, PROPERTY_ENABLE);
     lsm6dsl_auto_increment_set(p_lsm6dsl_dev_ctx_t, PROPERTY_ENABLE);
-    lsm6dsl_xl_power_mode_set(p_lsm6dsl_dev_ctx_t, LSM6DSL_XL_NORMAL);
-    imu_activity_inactivity_setup2(p_lsm6dsl_dev_ctx_t);
-    imu_absolte_wrist_tilt_setup2(p_lsm6dsl_dev_ctx_t);
-    //imu_absolte_wrist_tilt_setup(p_lsm6dsl_dev_ctx_t, 40, &wrist_tilt_mask, 30);
+    
+    imu_activity_inactivity_setup(p_lsm6dsl_dev_ctx_t);
+    imu_absolte_wrist_tilt_setup(p_lsm6dsl_dev_ctx_t, 40, &wrist_tilt_mask, 30);
     /*TEMPORARY CODE*/
     
     

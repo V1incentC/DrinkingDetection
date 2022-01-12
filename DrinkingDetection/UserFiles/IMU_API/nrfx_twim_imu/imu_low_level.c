@@ -73,10 +73,12 @@ int32_t imu_ll_platform_write(void*    handle,
     uint8_t twi_tx_buffer[length + 1];
 	ret_code_t err_code;
 		
-    merge_register_and_data(twi_tx_buffer, reg, buffer, length);
-	
+    //merge_register_and_data(twi_tx_buffer, reg, buffer, length);
+    twi_tx_buffer[0] = reg;
+    memcpy(&twi_tx_buffer[1], buffer, length);
+    
 	m_xfer_done = false;
-    nrfx_twim_tx(&twim_t, LSM6DSL_ADDRESS, twi_tx_buffer, length + 1, false);
+    nrfx_twim_tx(&twim_t, LSM6DSL_ADDRESS, twi_tx_buffer, sizeof(twi_tx_buffer), false);
     while (m_xfer_done == false) 
     {
         __WFE(); /*Wait for the transfer to finish*/
@@ -84,7 +86,7 @@ int32_t imu_ll_platform_write(void*    handle,
     
     if (err_code != NRFX_SUCCESS) 
     {
-        return err_code;
+        //APP_ERROR_CHECK(err_code);
     }
     
     
@@ -114,7 +116,7 @@ int32_t imu_ll_platform_read(void*    handle,
     
     if (err_code != NRFX_SUCCESS) 
     {
-        return err_code;
+        //APP_ERROR_CHECK(err_code);
     }
     
    
@@ -125,9 +127,9 @@ int32_t imu_ll_platform_read(void*    handle,
     {
         __WFE(); /*Wait for the transfer to finish*/
     }
-    
+ 
     if (err_code != NRF_SUCCESS) {
-        return err_code;
+        //APP_ERROR_CHECK(err_code);
     }
     
 
