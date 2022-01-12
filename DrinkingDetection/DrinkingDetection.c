@@ -37,5 +37,7 @@ int main(void)
         	fifo_transfer_done = false;
         	imu_fifo_reset();
     	}
+    	nrf_delay_ms(100);
+    	nrf_gpio_pin_toggle(IMU_LL_STATUS_LED);
 	}
 }

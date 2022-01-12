@@ -51,7 +51,7 @@ extern stmdev_ctx_t* p_lsm6dsl_dev_ctx_t;
       
       
 /** @brief Macro for defining size of the fifo buffer. */
-#define IMU_FIFO_SIZE 52
+#define IMU_FIFO_SIZE 104
 /** @brief Macro for selecting the number of axis we want to read. */
 #define IMU_NUM_OF_AXIS 6
 /** @brief Macro for defining the size of the buffer array needed to store fifo data. */
@@ -66,7 +66,7 @@ extern stmdev_ctx_t* p_lsm6dsl_dev_ctx_t;
 /** \brief   Macro for defining wake up threshold in activity/inactivity mode
   *           1 LSB = (FS_XL)/(2^6)  FS_XL as in full scale output eg. +- 2g
   */   
-#define IMU_WKUP_THRESHOLD  1   /* For +-2 1LSB = 31.25 mg */
+#define IMU_WKUP_THRESHOLD  2   /* For +-2 1LSB = 31.25 mg */
 
 /**
   * \brief           This is imu data struct
@@ -80,8 +80,34 @@ typedef struct {
     float gyr_y[IMU_FIFO_SIZE]; /*!< Y axis gyroscope data */
     float gyr_z[IMU_FIFO_SIZE]; /*!< Z axis gyroscope data */
 } imu_data_t;
-
       
+/**
+  * \brief           Function that sets up activty/inactivity detection
+  * 
+  * \param[in]       ctx: IMU structure from lsm6dsl library
+  * 
+  * \retval EXIT_SUCESS    Function completed sucessfully.
+  */       
+uint8_t imu_activity_inactivity_setup(stmdev_ctx_t *ctx);
+      
+/**
+ * \brief              Function that configures the device for absolute wrist
+ *                     tilt detection.
+ *
+ * \param[in]          ctx:                 IMU structure from lsm6dsl library
+ * \param[in]          latency_ms:          Angle detection latency in milliseconds
+ * 
+ * \param[in]          wrist_titlt_mask:    Structure that holds the mask for selecting
+ *                                          on what plane we want to detect the angle
+ *                                          
+ * \param[in]          trigger_angle_deg:   Angle of detection in degrees
+ * 
+ * \retval EXIT_SUCESS    Function completed sucessfully.
+ */      
+uint8_t imu_absolte_wrist_tilt_setup(stmdev_ctx_t*                 ctx,
+                                     uint16_t                      latency_ms,
+                                     lsm6dsl_a_wrist_tilt_mask_t*  wrist_tilt_mask,
+                                     float                         trigger_angle_deg);      
 /**
   * @defgroup    IMU_API_fifo
   * @brief       This section provides all the functions concerning the fifo usage.

@@ -16,7 +16,7 @@ stmdev_ctx_t lsm6dsl_dev_ctx_t;
 /** \brief   Array used for storing fifo data */
 uint8_t imu_data_buffer[IMU_BUFFER_SIZE];
 
-void imu_activity_inactivity_setup(stmdev_ctx_t *ctx)
+uint8_t imu_activity_inactivity_setup(stmdev_ctx_t *ctx)
 {
     lsm6dsl_xl_power_mode_set(ctx, LSM6DSL_XL_NORMAL);
     /* Set Output Data Rate and full scale for accelerometer
@@ -29,26 +29,28 @@ void imu_activity_inactivity_setup(stmdev_ctx_t *ctx)
     lsm6dsl_act_sleep_dur_set(ctx, IMU_SLEEP_DUR); /* Comes out as 10 seconds */
 
     /* Set Activity/Inactivity threshold */
-    lsm6dsl_wkup_threshold_set(ctx, IMU_WKUP_THRESHOLD); //value is 2 which comes out as 62.5mg
+    lsm6dsl_wkup_threshold_set(ctx, IMU_WKUP_THRESHOLD); /* value is 2 which comes out as 62.5mg */
 
-    // Inactivity configuration: acc to 12.5 LP, gyro to Power-Down
+    /* Inactivity configuration: acc to 12.5 LP, gyro to Power-Down */
     lsm6dsl_act_mode_set(ctx, LSM6DSL_XL_12Hz5_GY_PD);
-    //enable slope filter
+    /* enable slope filter */
     lsm6dsl_xl_hp_path_internal_set(ctx, LSM6DSL_USE_SLOPE);
+    
+    return EXIT_SUCCESS;
 }
 
 
 static uint8_t convert_angle_to_int(double angle)
 {
-    
+    /* Equation extracted from datasheet pg. 55*/
     return (uint8_t) 64*(sin(angle * PI / 180));
 }
 
 
-void imu_absolte_wrist_tilt_setup(stmdev_ctx_t* ctx,
-                                  uint16_t latency_ms,
-                                  lsm6dsl_a_wrist_tilt_mask_t* wrist_tilt_mask,
-                                  float trigger_angle_deg)
+uint8_t imu_absolte_wrist_tilt_setup(stmdev_ctx_t*                 ctx,
+                                  uint16_t                      latency_ms,
+                                  lsm6dsl_a_wrist_tilt_mask_t*  wrist_tilt_mask,
+                                  float                         trigger_angle_deg)
 {
     uint8_t latency_converted;
     
@@ -74,6 +76,8 @@ void imu_absolte_wrist_tilt_setup(stmdev_ctx_t* ctx,
     lsm6dsl_wrist_tilt_sens_set(ctx, PROPERTY_ENABLE);
 
     lsm6dsl_data_ready_mode_set(ctx, LSM6DSL_DRDY_PULSED);
+    
+    return EXIT_SUCCESS;
 }
 uint8_t imu_fifo_disable(stmdev_ctx_t*ctx)
 {
@@ -190,7 +194,8 @@ uint8_t imu_device_check(stmdev_ctx_t* ctx)
     lsm6dsl_device_id_get(ctx, &whoamI);
     if (whoamI != LSM6DSL_ID)
     {
-        while (1) ;
+        NRF_LOG_INFO("whoamI not matching");
+        //while (1) ;
     }
     /* Restore default configuration */    
     uint8_t reset;
@@ -216,7 +221,52 @@ uint8_t imu_restore_default_configuration(stmdev_ctx_t* ctx)
     
     return EXIT_SUCCESS;
 }
+void imu_absolte_wrist_tilt_setup2(stmdev_ctx_t *ctx)
+{
+    //enable embedded functions
+    lsm6dsl_wrist_tilt_sens_set(ctx, PROPERTY_ENABLE);
+    nrf_delay_ms(50);
+    //disable embedded functions
+    lsm6dsl_wrist_tilt_sens_set(ctx, PROPERTY_DISABLE);
 
+    //set latency 1lsb=40ms
+    uint8_t latency = 0x01;
+    lsm6dsl_tilt_latency_set(ctx, &latency);
+    //set threshold
+    uint8_t threshold = 10;
+    lsm6dsl_tilt_threshold_set(ctx, &threshold);
+    //setup mask
+
+    uint8_t setting = 0xA0; //enable access to embedded register B
+    lsm6dsl_write_reg(ctx, LSM6DSL_FUNC_CFG_ACCESS, &setting, 1);
+
+    setting = 0x40; //mask on y positive
+    lsm6dsl_write_reg(ctx, LSM6DSL_A_WRIST_TILT_MASK, &setting, 1); 
+    lsm6dsl_mem_bank_set(ctx, LSM6DSL_USER_BANK);
+
+    //enable embedded functions
+    lsm6dsl_wrist_tilt_sens_set(ctx, PROPERTY_ENABLE);
+
+    lsm6dsl_data_ready_mode_set(ctx, LSM6DSL_DRDY_PULSED);
+}
+void imu_activity_inactivity_setup2(stmdev_ctx_t *ctx)
+{
+    lsm6dsl_xl_power_mode_set(ctx, LSM6DSL_XL_NORMAL);
+    //Set Output Data Rate and full scale for acc
+    lsm6dsl_xl_data_rate_set(ctx, LSM6DSL_XL_ODR_52Hz);
+    lsm6dsl_xl_full_scale_set(ctx, LSM6DSL_2g);
+    lsm6dsl_gy_data_rate_set(ctx, LSM6DSL_GY_ODR_OFF);
+    //set duration for inactivity detection
+    lsm6dsl_act_sleep_dur_set(ctx, 1); // comes out as 5seconds
+
+    // Set Activity/Inactivity threshold
+    lsm6dsl_wkup_threshold_set(ctx, 1); //value is 2 which comes out as 62.5mg
+
+    // Inactivity configuration: acc to 12.5 LP, gyro to Power-Down
+    lsm6dsl_act_mode_set(ctx, LSM6DSL_XL_12Hz5_GY_PD);
+    //enable slope filter
+    lsm6dsl_xl_hp_path_internal_set(ctx, LSM6DSL_USE_SLOPE);
+}
 void imu_init(stmdev_ctx_t* ctx)
 {
   
@@ -230,25 +280,40 @@ void imu_init(stmdev_ctx_t* ctx)
     /* Check id and reset device */
     imu_device_check(p_lsm6dsl_dev_ctx_t);
     /* FIFO mode setup */
-    imu_fifo_setup(p_lsm6dsl_dev_ctx_t, IMU_FIFO_SIZE);
+   // imu_fifo_setup(p_lsm6dsl_dev_ctx_t, IMU_FIFO_SIZE);
     
     
     /*TEMPORARY CODE*/
     //INTERRUPT 2
-    lsm6dsl_int1_route_t int1_route = 
-    {
-        .int1_full_flag = PROPERTY_ENABLE
-       
-         
-    };
+
+/*
+    lsm6dsl_a_wrist_tilt_mask_t wrist_tilt_mask =
+    { 
+        .wrist_tilt_mask_xpos = PROPERTY_ENABLE,
+        .wrist_tilt_mask_xneg = PROPERTY_ENABLE 
+    };*/
     
-    lsm6dsl_pin_int1_route_set(p_lsm6dsl_dev_ctx_t, int1_route); 
+    lsm6dsl_int2_route_t int2_route =
+    { 
+        .int2_wrist_tilt = PROPERTY_ENABLE,
+        .int2_inact_state = PROPERTY_ENABLE,
+        .int2_drdy_xl = PROPERTY_ENABLE
+            
+    };
+    lsm6dsl_pin_int2_route_set(p_lsm6dsl_dev_ctx_t, int2_route);
+    
+    lsm6dsl_block_data_update_set(p_lsm6dsl_dev_ctx_t, PROPERTY_ENABLE);
+    lsm6dsl_auto_increment_set(p_lsm6dsl_dev_ctx_t, PROPERTY_ENABLE);
+    lsm6dsl_xl_power_mode_set(p_lsm6dsl_dev_ctx_t, LSM6DSL_XL_NORMAL);
+    imu_activity_inactivity_setup2(p_lsm6dsl_dev_ctx_t);
+    imu_absolte_wrist_tilt_setup2(p_lsm6dsl_dev_ctx_t);
+    //imu_absolte_wrist_tilt_setup(p_lsm6dsl_dev_ctx_t, 40, &wrist_tilt_mask, 30);
     /*TEMPORARY CODE*/
     
     
-    /* Set up the dma transfer */
+    /* Set up the dma transfer 
     imu_ll_twim_dma_init(IMU_LL_INT1,
                          LSM6DSL_FIFO_DATA_OUT_L,
-                         imu_data_buffer, IMU_BUFFER_SIZE);
+                         imu_data_buffer, IMU_BUFFER_SIZE);*/
                        
 }

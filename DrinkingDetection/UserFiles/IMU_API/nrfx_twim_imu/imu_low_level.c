@@ -37,6 +37,7 @@
 #include <stdbool.h>
 #include <stdint.h>
 #include <string.h>
+#include "nrf_log.h"
 #include "nrfx_twim.h"
 #include "nrfx_gpiote.h"
 #include "nrfx_ppi.h"
@@ -253,9 +254,9 @@ void imu_ll_prepare_dma(uint8_t  reg,
     APP_ERROR_CHECK(err_code);  
 }
 
-static void int2_handler(nrfx_gpiote_pin_t pin, nrf_gpiote_polarity_t action)
+void int2_handler(nrfx_gpiote_pin_t pin, nrf_gpiote_polarity_t action)
 {
-    
+    NRF_LOG_INFO("AWT INT2 ENTERED");
 }
 
 void imu_ll_gpio_init()
@@ -270,15 +271,15 @@ void imu_ll_gpio_init()
     err_code = nrfx_gpiote_in_init(IMU_LL_INT1, &in_config_t, NULL);
     APP_ERROR_CHECK(err_code);
     /*Enable interrupt event*/
-    nrfx_gpiote_in_event_enable(IMU_LL_INT1, true);
+    nrfx_gpiote_in_event_enable(IMU_LL_INT1, false);
     
     /*Configure pin to sense INT2 of LSM6DSL*/
     err_code = nrfx_gpiote_in_init(IMU_LL_INT2, &in_config_t, int2_handler);
     APP_ERROR_CHECK(err_code);
     /*Enable interrupt event*/
-    nrfx_gpiote_in_event_enable(IMU_LL_INT2, false);
+    nrfx_gpiote_in_event_enable(IMU_LL_INT2, true);
     
    /*Configure BSP LED or wristband LED depending on .h file setup*/
     nrf_gpio_cfg_output(IMU_LL_STATUS_LED);
-
+    NRF_LOG_INFO("GPIO config finished");
 }

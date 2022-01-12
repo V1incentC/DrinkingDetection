@@ -4287,7 +4287,7 @@ int32_t lsm6dsl_fifo_stop_on_wtm_get(stmdev_ctx_t *ctx, uint8_t *val)
   int32_t ret;
 
   ret = lsm6dsl_read_reg(ctx, LSM6DSL_FIFO_CTRL4, (uint8_t*)&fifo_ctrl4, 1);
-  *val = fifo_ctrl4.stop_on_fth;1
+  *val = fifo_ctrl4.stop_on_fth;
 
   return ret;
 }
