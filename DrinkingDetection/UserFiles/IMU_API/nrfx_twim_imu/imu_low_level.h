@@ -190,4 +190,5 @@ void imu_ll_gpio_init();
 }
 #endif  
 
-#endif // !NRFX_TWIM_IMU_H
+#endif // !IMU_LOW_LEVEL_H
+

@@ -67,26 +67,32 @@
     <Filter Include="Source files\UserFiles">
       <UniqueIdentifier>{83e50b8a-86e2-412b-bee3-c680e6370850}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source files\UserFiles\IMU_API">
-      <UniqueIdentifier>{a34065ea-abbe-47bf-b30e-25eacb2f7808}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source files\UserFiles\IMU_API\lsm6dsl">
-      <UniqueIdentifier>{04dfd37b-965a-4517-9801-f883600e1319}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header files\UserFiles">
       <UniqueIdentifier>{8df9a31a-92b7-4849-8fb9-814ad4edc909}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source files\UserFiles\IMU_API">
+      <UniqueIdentifier>{a03d0586-e94a-4326-a15f-33feacc2449a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\UserFiles\IMU_API\lsm6dsl">
+      <UniqueIdentifier>{3d6a52db-c90f-408c-b5a1-7e56a7e5b155}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\UserFiles\IMU_API\nrfx_twim_imu">
+      <UniqueIdentifier>{362332b9-ff34-4070-a4f8-0541e353b3da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\UserFiles\NRFX_INTERRUPTS">
+      <UniqueIdentifier>{79578452-0786-4947-a69c-17f3dc77c71e}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Header files\UserFiles\IMU_API">
-      <UniqueIdentifier>{aadd36b4-d3a7-4f0f-8d42-f49f963a6fa7}</UniqueIdentifier>
+      <UniqueIdentifier>{519a6a2a-192d-4146-b862-d85d02108dba}</UniqueIdentifier>
     </Filter>
     <Filter Include="Header files\UserFiles\IMU_API\lsm6dsl">
-      <UniqueIdentifier>{ae5c8e88-1da5-4363-9992-35e983fb4ef6}</UniqueIdentifier>
+      <UniqueIdentifier>{9c026be2-67b8-4add-a8c9-0119bd1d0970}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source files\UserFiles\IMU_API\imu_low_level">
-      <UniqueIdentifier>{65041e10-af6f-4e8a-a626-719705d2cb6d}</UniqueIdentifier>
+    <Filter Include="Header files\UserFiles\IMU_API\nrfx_twim_imu">
+      <UniqueIdentifier>{c67cf858-84f9-4405-8cd5-cbf02b5d97b7}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header files\UserFiles\IMU_API\imu_low_level">
-      <UniqueIdentifier>{5490c506-5bcb-452d-b08a-cb2ce6292e0d}</UniqueIdentifier>
+    <Filter Include="Header files\UserFiles\NRFX_INTERRUPTS">
+      <UniqueIdentifier>{2f694f5d-40ca-4130-b779-2d64636bf721}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -1240,8 +1246,14 @@
       <Filter>Source files\UserFiles\IMU_API\lsm6dsl</Filter>
     </ClCompile>
     <ClCompile Include="UserFiles\IMU_API\nrfx_twim_imu\imu_low_level.c">
-      <Filter>Source files\UserFiles\IMU_API\imu_low_level</Filter>
+      <Filter>Source files\UserFiles\IMU_API\nrfx_twim_imu</Filter>
     </ClCompile>
+    <ClCompile Include="UserFiles\NRFX_INTERRUPTS\nrfx_interrupts.c">
+      <Filter>Source files\UserFiles\NRFX_INTERRUPTS</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\default.doxygen" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="UserFiles\IMU_API\imu_api.h">
@@ -1251,10 +1263,10 @@
       <Filter>Header files\UserFiles\IMU_API\lsm6dsl</Filter>
     </ClInclude>
     <ClInclude Include="UserFiles\IMU_API\nrfx_twim_imu\imu_low_level.h">
-      <Filter>Header files\UserFiles\IMU_API\imu_low_level</Filter>
+      <Filter>Header files\UserFiles\IMU_API\nrfx_twim_imu</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\default.doxygen" />
+    <ClInclude Include="UserFiles\NRFX_INTERRUPTS\nrfx_interrupts.h">
+      <Filter>Header files\UserFiles\NRFX_INTERRUPTS</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

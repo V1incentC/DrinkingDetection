@@ -109,6 +109,16 @@ uint8_t imu_absolte_wrist_tilt_setup(stmdev_ctx_t*                 ctx,
                                      lsm6dsl_a_wrist_tilt_mask_t*  wrist_tilt_mask,
                                      float                         trigger_angle_deg);      
 /**
+  * \brief           Function that disables fifo and sets up awt detection
+  * 
+  * \param[in]       ctx: IMU structure from lsm6dsl library
+  * 
+  * \retval EXIT_SUCESS    Function completed sucessfully.
+  */       
+uint8_t imu_awt_detection_mode(stmdev_ctx_t* ctx);
+      
+      
+/**
   * @defgroup    IMU_API_fifo
   * @brief       This section provides all the functions concerning the fifo usage.
   * @{

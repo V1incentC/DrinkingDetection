@@ -79,8 +79,24 @@ uint8_t imu_absolte_wrist_tilt_setup(stmdev_ctx_t*                 ctx,
     
     return EXIT_SUCCESS;
 }
-uint8_t imu_fifo_disable(stmdev_ctx_t*ctx)
+uint8_t imu_awt_detection_mode(stmdev_ctx_t* ctx)
 {
+    lsm6dsl_int2_route_t int2_route;
+    
+    imu_fifo_disable(ctx);
+    
+    int2_route.int2_wrist_tilt = PROPERTY_ENABLE;
+    lsm6dsl_pin_int2_route_set(ctx, int2_route);
+    
+    imu_activity_inactivity_setup(ctx);
+}
+uint8_t imu_fifo_disable(stmdev_ctx_t* ctx)
+{
+    lsm6dsl_int1_route_t int1_route;
+    
+    //int1_route.int1_full_flag =  PROPERTY_DISABLE;
+    //lsm6dsl_pin_int1_route_set(ctx, int1_route);
+    
     lsm6dsl_xl_power_mode_set(ctx, LSM6DSL_XL_NORMAL);
     lsm6dsl_gy_power_mode_set(ctx, LSM6DSL_GY_NORMAL);
     lsm6dsl_fifo_mode_set(ctx, LSM6DSL_BYPASS_MODE);
@@ -129,17 +145,20 @@ uint8_t imu_is_fifo_full(stmdev_ctx_t *ctx)
 
 uint8_t imu_fifo_mode(stmdev_ctx_t *ctx, uint16_t fifo_size)
 {
+    lsm6dsl_int1_route_t int1_route;
     lsm6dsl_int2_route_t int2_route;
+    
+
+    /* Set fifo full flag on INT1 pin */
+    //int1_route.int1_full_flag =  PROPERTY_ENABLE;
+    //lsm6dsl_pin_int1_route_set(ctx, int1_route);
+    /* Disable AWT interrupt */
+    int2_route.int2_wrist_tilt = PROPERTY_DISABLE;
+    lsm6dsl_pin_int2_route_set(ctx, int2_route);
     
     imu_fifo_setup(ctx, fifo_size); /* Configure fifo */
     imu_fifo_reset();
-    /* Set fifo full flag on INT2 pin */
-    int2_route.int2_full_flag =  PROPERTY_ENABLE;
-    int2_route.int2_wrist_tilt = PROPERTY_DISABLE;
-    int2_route.int2_inact_state = PROPERTY_DISABLE;
 
-    lsm6dsl_pin_int2_route_set(ctx, int2_route);
-    
     return EXIT_SUCCESS;
 }
 
@@ -222,25 +241,7 @@ uint8_t imu_restore_default_configuration(stmdev_ctx_t* ctx)
     return EXIT_SUCCESS;
 }
 
-static int32_t imu_ll_platform_write1(void *handle, uint8_t reg, uint8_t *buffer, uint16_t len)
-{
 
-    uint8_t tx_data[len + 1];
-    tx_data[0] = reg;
-    memcpy(&tx_data[1], buffer, len);
-    return nrfx_twim_tx(&twim_t, LSM6DSL_ADDRESS, tx_data, sizeof(tx_data), false);
-
-}
-
-static int32_t imu_ll_platform_read1(void *handle, uint8_t reg, uint8_t *buffer, uint16_t len) {
-
-    uint8_t tx_data[1] = { reg };
-    ret_code_t err = nrfx_twim_tx(&twim_t, LSM6DSL_ADDRESS, tx_data, sizeof(tx_data), true);
-    if (err != NRFX_SUCCESS)
-        return err;
-    return nrfx_twim_rx(&twim_t, LSM6DSL_ADDRESS, buffer, len);
-
-}
 void imu_init(stmdev_ctx_t* ctx)
 {
   
@@ -250,43 +251,57 @@ void imu_init(stmdev_ctx_t* ctx)
     
     imu_ll_gpio_init();         /* Initialize inputs and interrupts used for the IMU */
     imu_ll_twi_master_init();   /* Initialize TWI pins and frequency, enable TWI */
+
     
     /* Check id and reset device */
     imu_device_check(p_lsm6dsl_dev_ctx_t);
     /* FIFO mode setup */
-   // imu_fifo_setup(p_lsm6dsl_dev_ctx_t, IMU_FIFO_SIZE);
+   
     
-    
+    lsm6dsl_int1_route_t int1 =
+    { 
+        .int1_full_flag = PROPERTY_ENABLE,
+        
+    };
+    lsm6dsl_pin_int1_route_set(p_lsm6dsl_dev_ctx_t, int1);
+    imu_fifo_setup(p_lsm6dsl_dev_ctx_t, IMU_FIFO_SIZE);
     /*TEMPORARY CODE*/
     //INTERRUPT 2
 
-
-    lsm6dsl_a_wrist_tilt_mask_t wrist_tilt_mask =
-    { 
-        .wrist_tilt_mask_xpos = PROPERTY_ENABLE,
-        .wrist_tilt_mask_xneg = PROPERTY_DISABLE 
-    };
-    
-    lsm6dsl_int2_route_t int2_route =
-    { 
-        .int2_wrist_tilt = PROPERTY_ENABLE,
-        .int2_inact_state = PROPERTY_DISABLE,
-        .int2_drdy_xl = PROPERTY_DISABLE
-            
-    };
-    lsm6dsl_pin_int2_route_set(p_lsm6dsl_dev_ctx_t, int2_route);
-    
-    lsm6dsl_block_data_update_set(p_lsm6dsl_dev_ctx_t, PROPERTY_ENABLE);
-    lsm6dsl_auto_increment_set(p_lsm6dsl_dev_ctx_t, PROPERTY_ENABLE);
-    
-    imu_activity_inactivity_setup(p_lsm6dsl_dev_ctx_t);
-    imu_absolte_wrist_tilt_setup(p_lsm6dsl_dev_ctx_t, 40, &wrist_tilt_mask, 30);
+//
+//    lsm6dsl_a_wrist_tilt_mask_t wrist_tilt_mask =
+//    { 
+//        .wrist_tilt_mask_xpos = PROPERTY_ENABLE,
+//        .wrist_tilt_mask_xneg = PROPERTY_DISABLE 
+//    };
+//    
+//    lsm6dsl_int2_route_t int2_route =
+//    { 
+//        .int2_wrist_tilt = PROPERTY_ENABLE,
+//        .int2_inact_state = PROPERTY_DISABLE,
+//        .int2_drdy_xl = PROPERTY_DISABLE
+//            
+//    };
+//    lsm6dsl_pin_int2_route_set(p_lsm6dsl_dev_ctx_t, int2_route);
+//    
+//    lsm6dsl_block_data_update_set(p_lsm6dsl_dev_ctx_t, PROPERTY_ENABLE);
+//    lsm6dsl_auto_increment_set(p_lsm6dsl_dev_ctx_t, PROPERTY_ENABLE);
+//    lsm6dsl_xl_power_mode_set(p_lsm6dsl_dev_ctx_t, LSM6DSL_XL_NORMAL);
+//    /* Set Output Data Rate and full scale for accelerometer
+//     * Disable gyroscope
+//     **/
+//    lsm6dsl_xl_data_rate_set(p_lsm6dsl_dev_ctx_t, LSM6DSL_XL_ODR_52Hz);
+//    lsm6dsl_xl_full_scale_set(p_lsm6dsl_dev_ctx_t, LSM6DSL_2g);
+//    lsm6dsl_gy_data_rate_set(p_lsm6dsl_dev_ctx_t, LSM6DSL_GY_ODR_OFF);
+//    //imu_activity_inactivity_setup(p_lsm6dsl_dev_ctx_t);
+//    imu_absolte_wrist_tilt_setup(p_lsm6dsl_dev_ctx_t, 120, &wrist_tilt_mask, 30);
     /*TEMPORARY CODE*/
-    
-    
-    /* Set up the dma transfer 
-    imu_ll_twim_dma_init(IMU_LL_INT1,
+    /* Set up the dma transfer */
+
+        imu_ll_twim_dma_init(IMU_LL_INT1,
                          LSM6DSL_FIFO_DATA_OUT_L,
-                         imu_data_buffer, IMU_BUFFER_SIZE);*/
+                         imu_data_buffer, IMU_BUFFER_SIZE);
+    
+
                        
 }

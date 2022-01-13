@@ -43,11 +43,15 @@
 #include "nrfx_ppi.h"
 #include "nrf_gpio.h"
 #include "lsm6dsl_reg.h"
+//#include "nrfx_interrupts.h"
+
+#include "imu_api.h"
 
 /*Initializing TWIM0 instance*/
 #define TWIM_INSTANCE_ID    0
 #define TWIM_FREQ           NRF_TWIM_FREQ_100K
 #define TWIM_IRQ_PRIORITY   APP_IRQ_PRIORITY_HIGH
+#define IMU_TWIM_TIMEOUT    10000 
 
 
 nrfx_twim_t const twim_t = NRFX_TWIM_INSTANCE(TWIM_INSTANCE_ID);
@@ -72,6 +76,7 @@ int32_t imu_ll_platform_write(void*    handle,
 
     uint8_t twi_tx_buffer[length + 1];
 	ret_code_t err_code;
+    uint32_t timeout = IMU_TWIM_TIMEOUT;
 		
     //merge_register_and_data(twi_tx_buffer, reg, buffer, length);
     twi_tx_buffer[0] = reg;
@@ -79,9 +84,9 @@ int32_t imu_ll_platform_write(void*    handle,
     
 	m_xfer_done = false;
     nrfx_twim_tx(&twim_t, LSM6DSL_ADDRESS, twi_tx_buffer, sizeof(twi_tx_buffer), false);
-    while (m_xfer_done == false) 
+    while ((!m_xfer_done) && --timeout) 
     {
-        __WFE(); /*Wait for the transfer to finish*/
+        //__WFE(); /*Wait for the transfer to finish*/
     }
     
     if (err_code != NRFX_SUCCESS) 
@@ -105,13 +110,13 @@ int32_t imu_ll_platform_read(void*    handle,
 
 	uint8_t tx_data[1] = { reg };
 	ret_code_t err_code;
-	
+    uint32_t timeout = IMU_TWIM_TIMEOUT;
 	
 	m_xfer_done = false;
     err_code = nrfx_twim_tx(&twim_t, LSM6DSL_ADDRESS, tx_data, sizeof(tx_data), true);
-    while (m_xfer_done == false) 
+    while ((!m_xfer_done) && --timeout) 
     {
-        __WFE(); /*Wait for the transfer to finish*/
+        //__WFE(); /*Wait for the transfer to finish*/
     } 
     
     if (err_code != NRFX_SUCCESS) 
@@ -122,10 +127,11 @@ int32_t imu_ll_platform_read(void*    handle,
    
 	
 	m_xfer_done = false;	/*Reset the flag for read operation*/
+    timeout = IMU_TWIM_TIMEOUT;
 	err_code =  nrfx_twim_rx(&twim_t, LSM6DSL_ADDRESS, buffer, length);
-    while (m_xfer_done == false)
+    while ((!m_xfer_done) && --timeout)
     {
-        __WFE(); /*Wait for the transfer to finish*/
+        //__WFE(); /*Wait for the transfer to finish*/
     }
  
     if (err_code != NRF_SUCCESS) {
@@ -256,11 +262,32 @@ void imu_ll_prepare_dma(uint8_t  reg,
     APP_ERROR_CHECK(err_code);  
 }
 
+lsm6dsl_all_sources_t lsm6dsl_int_src;
+
+
 void int2_handler(nrfx_gpiote_pin_t pin, nrf_gpiote_polarity_t action)
 {
-    NRF_LOG_INFO("AWT INT2 ENTERED");
-}
+    
+    static bool setAWT = 0, fifo_enable = 0;
 
+   // lsm6dsl_all_sources_get(&lsm6dsl_dev_ctx_t, &lsm6dsl_int_src);
+    //imu_fifo_mode(&lsm6dsl_dev_ctx_t, IMU_FIFO_SIZE);
+    /*
+    if (lsm6dsl_int_src.a_wrist_tilt_mask.wrist_tilt_mask_xpos == 1)
+    {
+        //NRF_LOG_INFO("AWT detected: IMU in fifo mode");
+        lsm6dsl_a_wrist_tilt_mask_t wrist_tilt_mask =
+        { 
+            .wrist_tilt_mask_xpos = PROPERTY_DISABLE,
+            .wrist_tilt_mask_xneg = PROPERTY_DISABLE 
+        };
+        lsm6dsl_tilt_src_set(&lsm6dsl_dev_ctx_t, &wrist_tilt_mask);
+    
+        
+        imu_fifo_mode(&lsm6dsl_dev_ctx_t, IMU_FIFO_SIZE);
+
+    }*/
+}
 void imu_ll_gpio_init()
 {
     ret_code_t err_code;

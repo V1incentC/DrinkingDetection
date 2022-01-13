@@ -31,21 +31,21 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">
     <GNUConfigurationType>Debug</GNUConfigurationType>
-    <ToolchainID>com.sysprogs.gnuarm.arm-eabi</ToolchainID>
-    <ToolchainVersion>7.3.1/8.0/r1</ToolchainVersion>
+    <ToolchainID>com.visualgdb.arm-eabi</ToolchainID>
+    <ToolchainVersion>10.3.1/10.2.90/r1</ToolchainVersion>
     <MCUPropertyListFile>$(ProjectDir)nrf5x.props</MCUPropertyListFile>
     <AutoIncludePaths>true</AutoIncludePaths>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">
-    <ToolchainID>com.sysprogs.gnuarm.arm-eabi</ToolchainID>
-    <ToolchainVersion>7.3.1/8.0/r1</ToolchainVersion>
+    <ToolchainID>com.visualgdb.arm-eabi</ToolchainID>
+    <ToolchainVersion>10.3.1/10.2.90/r1</ToolchainVersion>
     <MCUPropertyListFile>$(ProjectDir)nrf5x.props</MCUPropertyListFile>
     <AutoIncludePaths>true</AutoIncludePaths>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">
     <ClCompile>
       <CLanguageStandard>C99</CLanguageStandard>
-      <AdditionalIncludeDirectories>C:/Users/rumen/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/17.0/nRF5x/components/softdevice/s112/headers;%(ClCompile.AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:/Users/rumen/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/17.0/nRF5x/components/softdevice/s112/headers;C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/softdevice/s112/headers;UserFiles/NRFX_INTERRUPTS;%(ClCompile.AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>DEBUG=1;%(ClCompile.PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalOptions />
       <CPPLanguageStandard />
@@ -63,8 +63,6 @@
       <CLanguageStandard>C99</CLanguageStandard>
     </ClCompile>
   </ItemDefinitionGroup>
-  <ItemGroup>
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
@@ -73,9 +71,11 @@
     <ClCompile Include="UserFiles\IMU_API\imu_api.c" />
     <ClCompile Include="UserFiles\IMU_API\lsm6dsl\lsm6dsl_reg.c" />
     <ClCompile Include="UserFiles\IMU_API\nrfx_twim_imu\imu_low_level.c" />
+    <ClCompile Include="UserFiles\NRFX_INTERRUPTS\nrfx_interrupts.c" />
     <ClInclude Include="UserFiles\IMU_API\imu_api.h" />
     <ClInclude Include="UserFiles\IMU_API\lsm6dsl\lsm6dsl_reg.h" />
     <ClInclude Include="UserFiles\IMU_API\nrfx_twim_imu\imu_low_level.h" />
+    <ClInclude Include="UserFiles\NRFX_INTERRUPTS\nrfx_interrupts.h" />
     <None Include="..\default.doxygen" />
     <None Include="nrf5x.props" />
     <ClCompile Include="$(BSP_ROOT)\nRF5x\modules\nrfx\mdk\system_nrf52840.c" />
