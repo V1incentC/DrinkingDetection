@@ -51,7 +51,7 @@ extern stmdev_ctx_t* p_lsm6dsl_dev_ctx_t;
       
       
 /** @brief Macro for defining size of the fifo buffer. */
-#define IMU_FIFO_SIZE 104
+#define IMU_FIFO_SIZE 256
 /** @brief Macro for selecting the number of axis we want to read. */
 #define IMU_NUM_OF_AXIS 6
 /** @brief Macro for defining the size of the buffer array needed to store fifo data. */
@@ -67,7 +67,15 @@ extern stmdev_ctx_t* p_lsm6dsl_dev_ctx_t;
   *           1 LSB = (FS_XL)/(2^6)  FS_XL as in full scale output eg. +- 2g
   */   
 #define IMU_WKUP_THRESHOLD  2   /* For +-2 1LSB = 31.25 mg */
-
+      
+/**
+  * \brief           This is a union that holds data from 3 axis
+  * \note            This union is used to convert raw int data to to float
+  */      
+typedef union{
+  int16_t i16bit[3];
+  uint8_t u8bit[6];
+} axis3bit16_t;
 /**
   * \brief           This is imu data struct
   * \note            This structure is used to store converted imu data
@@ -194,6 +202,14 @@ uint8_t imu_device_check(stmdev_ctx_t* ctx);
  * \retval EXIT_SUCESS    Function completed sucessfully.
  */
 uint8_t imu_restore_default_configuration(stmdev_ctx_t* ctx);
+   
+      
+/**
+ * \brief           Function for checking the fifo full flag and 
+ *                  setting imu modes accordingly
+ * 
+ */      
+void imu_handle_fifo_transfer_done();   
       
       
 /**

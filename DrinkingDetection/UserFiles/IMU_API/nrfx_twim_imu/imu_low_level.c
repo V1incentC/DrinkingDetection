@@ -43,7 +43,7 @@
 #include "nrfx_ppi.h"
 #include "nrf_gpio.h"
 #include "lsm6dsl_reg.h"
-//#include "nrfx_interrupts.h"
+#include "nrfx_interrupts.h"
 
 #include "imu_api.h"
 
@@ -78,15 +78,13 @@ int32_t imu_ll_platform_write(void*    handle,
 	ret_code_t err_code;
     uint32_t timeout = IMU_TWIM_TIMEOUT;
 		
-    //merge_register_and_data(twi_tx_buffer, reg, buffer, length);
-    twi_tx_buffer[0] = reg;
-    memcpy(&twi_tx_buffer[1], buffer, length);
+    merge_register_and_data(twi_tx_buffer, reg, buffer, length);
     
 	m_xfer_done = false;
     nrfx_twim_tx(&twim_t, LSM6DSL_ADDRESS, twi_tx_buffer, sizeof(twi_tx_buffer), false);
     while ((!m_xfer_done) && --timeout) 
     {
-        //__WFE(); /*Wait for the transfer to finish*/
+        __WFE(); /*Wait for the transfer to finish*/
     }
     
     if (err_code != NRFX_SUCCESS) 
@@ -116,7 +114,7 @@ int32_t imu_ll_platform_read(void*    handle,
     err_code = nrfx_twim_tx(&twim_t, LSM6DSL_ADDRESS, tx_data, sizeof(tx_data), true);
     while ((!m_xfer_done) && --timeout) 
     {
-        //__WFE(); /*Wait for the transfer to finish*/
+        __WFE(); /*Wait for the transfer to finish*/
     } 
     
     if (err_code != NRFX_SUCCESS) 
@@ -131,7 +129,7 @@ int32_t imu_ll_platform_read(void*    handle,
 	err_code =  nrfx_twim_rx(&twim_t, LSM6DSL_ADDRESS, buffer, length);
     while ((!m_xfer_done) && --timeout)
     {
-        //__WFE(); /*Wait for the transfer to finish*/
+        __WFE(); /*Wait for the transfer to finish*/
     }
  
     if (err_code != NRF_SUCCESS) {
@@ -216,11 +214,11 @@ void imu_ll_twim_dma_init(uint8_t  ppi_trigger_pin,
     
 	/*Create a transfer description for DMA*/
     nrfx_twim_xfer_desc_t xfer = NRFX_TWIM_XFER_DESC_TXRX(LSM6DSL_ADDRESS,
-                                                          &reg, 1,
+                                                          &reg, sizeof(reg),
                                                           buffer, buffer_length);
 	
     uint32_t flags =   NRFX_TWIM_FLAG_RX_POSTINC  | NRFX_TWIM_FLAG_HOLD_XFER;
-    err_code = nrfx_twim_xfer(&twim_t, &xfer, flags); 
+    //err_code = nrfx_twim_xfer(&twim_t, &xfer, flags); 
 	
 
     /* Get the address of the TWI start task.*/
@@ -262,32 +260,7 @@ void imu_ll_prepare_dma(uint8_t  reg,
     APP_ERROR_CHECK(err_code);  
 }
 
-lsm6dsl_all_sources_t lsm6dsl_int_src;
 
-
-void int2_handler(nrfx_gpiote_pin_t pin, nrf_gpiote_polarity_t action)
-{
-    
-    static bool setAWT = 0, fifo_enable = 0;
-
-   // lsm6dsl_all_sources_get(&lsm6dsl_dev_ctx_t, &lsm6dsl_int_src);
-    //imu_fifo_mode(&lsm6dsl_dev_ctx_t, IMU_FIFO_SIZE);
-    /*
-    if (lsm6dsl_int_src.a_wrist_tilt_mask.wrist_tilt_mask_xpos == 1)
-    {
-        //NRF_LOG_INFO("AWT detected: IMU in fifo mode");
-        lsm6dsl_a_wrist_tilt_mask_t wrist_tilt_mask =
-        { 
-            .wrist_tilt_mask_xpos = PROPERTY_DISABLE,
-            .wrist_tilt_mask_xneg = PROPERTY_DISABLE 
-        };
-        lsm6dsl_tilt_src_set(&lsm6dsl_dev_ctx_t, &wrist_tilt_mask);
-    
-        
-        imu_fifo_mode(&lsm6dsl_dev_ctx_t, IMU_FIFO_SIZE);
-
-    }*/
-}
 void imu_ll_gpio_init()
 {
     ret_code_t err_code;
@@ -309,6 +282,7 @@ void imu_ll_gpio_init()
     nrfx_gpiote_in_event_enable(IMU_LL_INT2, true);
     
    /*Configure BSP LED or wristband LED depending on .h file setup*/
-    nrf_gpio_cfg_output(IMU_LL_STATUS_LED);
+    //nrf_gpio_cfg_output(IMU_LL_STATUS_LED);
+    //nrf_gpio_pin_clear(IMU_LL_STATUS_LED);
     NRF_LOG_INFO("GPIO config finished");
 }

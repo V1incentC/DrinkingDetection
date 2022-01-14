@@ -5,6 +5,7 @@
 #include "imu_low_level.h"
 #include "nrf_log.h"
 #include "nrf_delay.h"
+#include "nrf_gpio.h"
 
 #define LATENCY_MIN 40
 
@@ -13,6 +14,8 @@ stmdev_ctx_t lsm6dsl_dev_ctx_t;
 /** \brief   Pointer to the imu object */
  stmdev_ctx_t* p_lsm6dsl_dev_ctx_t;
 
+/** \brief   Array used for storing converted fifo data */
+imu_data_t imu_data;
 /** \brief   Array used for storing fifo data */
 uint8_t imu_data_buffer[IMU_BUFFER_SIZE];
 
@@ -89,13 +92,18 @@ uint8_t imu_awt_detection_mode(stmdev_ctx_t* ctx)
     lsm6dsl_pin_int2_route_set(ctx, int2_route);
     
     imu_activity_inactivity_setup(ctx);
+    
+    return EXIT_SUCCESS;
 }
 uint8_t imu_fifo_disable(stmdev_ctx_t* ctx)
 {
-    lsm6dsl_int1_route_t int1_route;
+    lsm6dsl_int1_route_t int1_route =
+    { 
+        .int1_full_flag =  PROPERTY_DISABLE
+    };
     
-    //int1_route.int1_full_flag =  PROPERTY_DISABLE;
-    //lsm6dsl_pin_int1_route_set(ctx, int1_route);
+    
+    lsm6dsl_pin_int1_route_set(ctx, int1_route);
     
     lsm6dsl_xl_power_mode_set(ctx, LSM6DSL_XL_NORMAL);
     lsm6dsl_gy_power_mode_set(ctx, LSM6DSL_GY_NORMAL);
@@ -145,15 +153,19 @@ uint8_t imu_is_fifo_full(stmdev_ctx_t *ctx)
 
 uint8_t imu_fifo_mode(stmdev_ctx_t *ctx, uint16_t fifo_size)
 {
-    lsm6dsl_int1_route_t int1_route;
-    lsm6dsl_int2_route_t int2_route;
+    lsm6dsl_int1_route_t int1_route =
+    {
+        .int1_full_flag =  PROPERTY_ENABLE
+    };
+    lsm6dsl_int2_route_t int2_route =
+    { 
+        .int2_wrist_tilt = PROPERTY_DISABLE        
+     };
     
 
     /* Set fifo full flag on INT1 pin */
-    //int1_route.int1_full_flag =  PROPERTY_ENABLE;
-    //lsm6dsl_pin_int1_route_set(ctx, int1_route);
+    lsm6dsl_pin_int1_route_set(ctx, int1_route);
     /* Disable AWT interrupt */
-    int2_route.int2_wrist_tilt = PROPERTY_DISABLE;
     lsm6dsl_pin_int2_route_set(ctx, int2_route);
     
     imu_fifo_setup(ctx, fifo_size); /* Configure fifo */
@@ -240,8 +252,99 @@ uint8_t imu_restore_default_configuration(stmdev_ctx_t* ctx)
     
     return EXIT_SUCCESS;
 }
+static void imu_parse_data_buffer(imu_data_t* data)
+{
+    axis3bit16_t data_raw_acceleration;
+    axis3bit16_t data_raw_gyroscope;
+    const uint8_t offset = IMU_NUM_OF_AXIS * 2, data_width = IMU_NUM_OF_AXIS;
+    char print_buffer[100];
+    
+    
+    for (uint16_t i = 0; i < IMU_FIFO_SIZE; ++i)
+    {
 
+				
+        memcpy( data_raw_gyroscope.u8bit,
+                &imu_data_buffer[i*offset],
+                data_width);
+        
+        data->gyr_x[i] = 
+        
+            lsm6dsl_from_fs500dps_to_mdps(data_raw_gyroscope.i16bit[0]) / 1000;
 
+        data->gyr_y[i] = 
+            
+            lsm6dsl_from_fs500dps_to_mdps(data_raw_gyroscope.i16bit[1]) / 1000;
+
+        data->gyr_z[i] = 
+            
+            lsm6dsl_from_fs500dps_to_mdps(data_raw_gyroscope.i16bit[2]) / 1000;
+
+        
+        //acc code
+
+        memcpy( data_raw_acceleration.u8bit,
+               &imu_data_buffer[i*offset + data_width],
+                data_width);
+        
+        data->acc_x[i] = 
+            
+            lsm6dsl_from_fs2g_to_mg(data_raw_acceleration.i16bit[0]) / 1000; 
+
+        data->acc_y[i] = 
+            
+            lsm6dsl_from_fs2g_to_mg(data_raw_acceleration.i16bit[1]) / 1000;
+
+        data->acc_z[i] = 
+            
+            lsm6dsl_from_fs2g_to_mg(data_raw_acceleration.i16bit[2]) / 1000;
+
+        /*sprintf(print_buffer," X = %f  Y = %f  Z = %f    X = %f  Y = %f  Z = %f",
+                                                            data->acc_x[i],
+                                                            data->acc_y[i],
+                                                            data->acc_z[i],
+                                                            data->gyr_x[i],
+                                                            data->gyr_y[i],
+                                                            data->gyr_z[i]);
+        NRF_LOG_INFO("%s",print_buffer); */ 
+        //printf("%d", fifo_data[i]);
+    } 
+    
+}
+void imu_handle_fifo_transfer_done()
+{
+    static u_int8_t counter = 0;
+    
+    if (fifo_transfer_done)
+    {
+        	
+        	
+        NRF_LOG_INFO("FIFO full: %d", counter);
+        	
+        fifo_transfer_done = false;
+        //features
+        //predict
+        ++counter;  
+        if (counter >= 5)
+        {
+            NRF_LOG_INFO("FIFO over");
+            imu_fifo_disable(p_lsm6dsl_dev_ctx_t);
+
+            imu_awt_detection_mode(&lsm6dsl_dev_ctx_t);
+            counter = 0;
+        }
+        else
+        {
+            imu_fifo_reset();
+        }
+        imu_parse_data_buffer(&imu_data);
+        
+    }
+    while (!fifo_transfer_done)
+    {
+        __WFE();
+    }
+}
 void imu_init(stmdev_ctx_t* ctx)
 {
   
@@ -251,56 +354,46 @@ void imu_init(stmdev_ctx_t* ctx)
     
     imu_ll_gpio_init();         /* Initialize inputs and interrupts used for the IMU */
     imu_ll_twi_master_init();   /* Initialize TWI pins and frequency, enable TWI */
+    /* Set up the dma transfer */
 
+      imu_ll_twim_dma_init(IMU_LL_INT1,
+                           LSM6DSL_FIFO_DATA_OUT_L,
+                           imu_data_buffer, IMU_BUFFER_SIZE);
     
     /* Check id and reset device */
     imu_device_check(p_lsm6dsl_dev_ctx_t);
-    /* FIFO mode setup */
-   
     
+    lsm6dsl_block_data_update_set(p_lsm6dsl_dev_ctx_t, PROPERTY_ENABLE);
+    lsm6dsl_auto_increment_set(p_lsm6dsl_dev_ctx_t, PROPERTY_ENABLE);
+      
     lsm6dsl_int1_route_t int1 =
     { 
         .int1_full_flag = PROPERTY_ENABLE,
         
     };
     lsm6dsl_pin_int1_route_set(p_lsm6dsl_dev_ctx_t, int1);
-    imu_fifo_setup(p_lsm6dsl_dev_ctx_t, IMU_FIFO_SIZE);
-    /*TEMPORARY CODE*/
-    //INTERRUPT 2
+    
+    lsm6dsl_int2_route_t int2_route =
+    { 
+        .int2_wrist_tilt = PROPERTY_ENABLE,
+        .int2_inact_state = PROPERTY_DISABLE,
+        .int2_drdy_xl = PROPERTY_DISABLE
+            
+    };
+    lsm6dsl_pin_int2_route_set(p_lsm6dsl_dev_ctx_t, int2_route);
+    
 
-//
-//    lsm6dsl_a_wrist_tilt_mask_t wrist_tilt_mask =
-//    { 
-//        .wrist_tilt_mask_xpos = PROPERTY_ENABLE,
-//        .wrist_tilt_mask_xneg = PROPERTY_DISABLE 
-//    };
-//    
-//    lsm6dsl_int2_route_t int2_route =
-//    { 
-//        .int2_wrist_tilt = PROPERTY_ENABLE,
-//        .int2_inact_state = PROPERTY_DISABLE,
-//        .int2_drdy_xl = PROPERTY_DISABLE
-//            
-//    };
-//    lsm6dsl_pin_int2_route_set(p_lsm6dsl_dev_ctx_t, int2_route);
-//    
-//    lsm6dsl_block_data_update_set(p_lsm6dsl_dev_ctx_t, PROPERTY_ENABLE);
-//    lsm6dsl_auto_increment_set(p_lsm6dsl_dev_ctx_t, PROPERTY_ENABLE);
-//    lsm6dsl_xl_power_mode_set(p_lsm6dsl_dev_ctx_t, LSM6DSL_XL_NORMAL);
-//    /* Set Output Data Rate and full scale for accelerometer
-//     * Disable gyroscope
-//     **/
-//    lsm6dsl_xl_data_rate_set(p_lsm6dsl_dev_ctx_t, LSM6DSL_XL_ODR_52Hz);
-//    lsm6dsl_xl_full_scale_set(p_lsm6dsl_dev_ctx_t, LSM6DSL_2g);
-//    lsm6dsl_gy_data_rate_set(p_lsm6dsl_dev_ctx_t, LSM6DSL_GY_ODR_OFF);
-//    //imu_activity_inactivity_setup(p_lsm6dsl_dev_ctx_t);
-//    imu_absolte_wrist_tilt_setup(p_lsm6dsl_dev_ctx_t, 120, &wrist_tilt_mask, 30);
-    /*TEMPORARY CODE*/
-    /* Set up the dma transfer */
 
-        imu_ll_twim_dma_init(IMU_LL_INT1,
-                         LSM6DSL_FIFO_DATA_OUT_L,
-                         imu_data_buffer, IMU_BUFFER_SIZE);
+    imu_activity_inactivity_setup(p_lsm6dsl_dev_ctx_t);
+    
+    lsm6dsl_a_wrist_tilt_mask_t wrist_tilt_mask =
+    { 
+        .wrist_tilt_mask_xpos = PROPERTY_ENABLE,
+        .wrist_tilt_mask_xneg = PROPERTY_DISABLE 
+    };
+    imu_absolte_wrist_tilt_setup(p_lsm6dsl_dev_ctx_t, 120, &wrist_tilt_mask, 30);
+    /*TEMPORARY CODE*/
+
     
 
                        
