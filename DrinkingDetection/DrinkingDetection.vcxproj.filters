@@ -94,6 +94,18 @@
     <Filter Include="Header files\UserFiles\NRFX_INTERRUPTS">
       <UniqueIdentifier>{2f694f5d-40ca-4130-b779-2d64636bf721}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source files\UserFiles\ML_FEATURES">
+      <UniqueIdentifier>{e2545e97-2168-4905-a8c0-d386a2dfbf3f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\UserFiles\ML_FEATURES\CF_functions">
+      <UniqueIdentifier>{16b428a5-6da4-4889-910b-cf8e3534019a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header files\UserFiles\ML_FEATURES">
+      <UniqueIdentifier>{350da707-21af-44a6-a30d-19b5ff3346f2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header files\UserFiles\ML_FEATURES\CF_functions">
+      <UniqueIdentifier>{32dd76b8-614f-4185-b8c6-a74efb80fc27}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DrinkingDetection.c">
@@ -1251,6 +1263,15 @@
     <ClCompile Include="UserFiles\NRFX_INTERRUPTS\nrfx_interrupts.c">
       <Filter>Source files\UserFiles\NRFX_INTERRUPTS</Filter>
     </ClCompile>
+    <ClCompile Include="UserFiles\ML_FEATURES\machine_learning_features.c">
+      <Filter>Source files\UserFiles\ML_FEATURES</Filter>
+    </ClCompile>
+    <ClCompile Include="UserFiles\ML_FEATURES\CF_functions\calculation_features.c">
+      <Filter>Source files\UserFiles\ML_FEATURES\CF_functions</Filter>
+    </ClCompile>
+    <ClCompile Include="UserFiles\ML_FEATURES\mlf_windows.c">
+      <Filter>Source files\UserFiles\ML_FEATURES</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\default.doxygen" />
@@ -1267,6 +1288,15 @@
     </ClInclude>
     <ClInclude Include="UserFiles\NRFX_INTERRUPTS\nrfx_interrupts.h">
       <Filter>Header files\UserFiles\NRFX_INTERRUPTS</Filter>
+    </ClInclude>
+    <ClInclude Include="UserFiles\ML_FEATURES\machine_learning_features.h">
+      <Filter>Header files\UserFiles\ML_FEATURES</Filter>
+    </ClInclude>
+    <ClInclude Include="UserFiles\ML_FEATURES\CF_functions\calculation_features.h">
+      <Filter>Header files\UserFiles\ML_FEATURES\CF_functions</Filter>
+    </ClInclude>
+    <ClInclude Include="UserFiles\ML_FEATURES\mlf_windows.h">
+      <Filter>Header files\UserFiles\ML_FEATURES</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

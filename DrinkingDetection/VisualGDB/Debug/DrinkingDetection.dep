@@ -97,7 +97,19 @@ VisualGDB/Debug/DrinkingDetection.o: DrinkingDetection.c \
  UserFiles/IMU_API/lsm6dsl/lsm6dsl_reg.h \
  C:/Users/rumen/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/17.0/nRF5x/components/libraries/bsp/bsp.h \
  C:/Users/rumen/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/17.0/nRF5x/components/libraries/button/app_button.h \
- C:/Users/rumen/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/17.0/nRF5x/components/libraries/util/app_error.h
+ C:/Users/rumen/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/17.0/nRF5x/components/libraries/util/app_error.h \
+ UserFiles/ML_FEATURES/CF_functions/calculation_features.h \
+ c:\program\ files\ (x86)\gnu\ tools\ arm\ embedded\7\ 2018-q2-update\arm-none-eabi\include\time.h \
+ c:\program\ files\ (x86)\gnu\ tools\ arm\ embedded\7\ 2018-q2-update\arm-none-eabi\include\machine\time.h \
+ c:\program\ files\ (x86)\gnu\ tools\ arm\ embedded\7\ 2018-q2-update\arm-none-eabi\include\sys\timespec.h \
+ c:\program\ files\ (x86)\gnu\ tools\ arm\ embedded\7\ 2018-q2-update\arm-none-eabi\include\sys\_timespec.h \
+ D:/Root/Documents/Programming/NRF/DrinkingDetection/DrinkingDetection/UserFiles/DSP/Include/arm_math.h \
+ C:/Users/rumen/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/17.0/nRF5x/components/toolchain/cmsis/include/cmsis_compiler.h \
+ c:\program\ files\ (x86)\gnu\ tools\ arm\ embedded\7\ 2018-q2-update\lib\gcc\arm-none-eabi\7.3.1\include\float.h \
+ c:\program\ files\ (x86)\gnu\ tools\ arm\ embedded\7\ 2018-q2-update\lib\gcc\arm-none-eabi\7.3.1\include-fixed\limits.h \
+ c:\program\ files\ (x86)\gnu\ tools\ arm\ embedded\7\ 2018-q2-update\lib\gcc\arm-none-eabi\7.3.1\include-fixed\syslimits.h \
+ c:\program\ files\ (x86)\gnu\ tools\ arm\ embedded\7\ 2018-q2-update\arm-none-eabi\include\limits.h \
+ UserFiles/ML_FEATURES/machine_learning_features.h
 
 c:\program\ files\ (x86)\gnu\ tools\ arm\ embedded\7\ 2018-q2-update\lib\gcc\arm-none-eabi\7.3.1\include\stdbool.h:
 
@@ -298,3 +310,27 @@ C:/Users/rumen/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.no
 C:/Users/rumen/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/17.0/nRF5x/components/libraries/button/app_button.h:
 
 C:/Users/rumen/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/17.0/nRF5x/components/libraries/util/app_error.h:
+
+UserFiles/ML_FEATURES/CF_functions/calculation_features.h:
+
+c:\program\ files\ (x86)\gnu\ tools\ arm\ embedded\7\ 2018-q2-update\arm-none-eabi\include\time.h:
+
+c:\program\ files\ (x86)\gnu\ tools\ arm\ embedded\7\ 2018-q2-update\arm-none-eabi\include\machine\time.h:
+
+c:\program\ files\ (x86)\gnu\ tools\ arm\ embedded\7\ 2018-q2-update\arm-none-eabi\include\sys\timespec.h:
+
+c:\program\ files\ (x86)\gnu\ tools\ arm\ embedded\7\ 2018-q2-update\arm-none-eabi\include\sys\_timespec.h:
+
+D:/Root/Documents/Programming/NRF/DrinkingDetection/DrinkingDetection/UserFiles/DSP/Include/arm_math.h:
+
+C:/Users/rumen/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/17.0/nRF5x/components/toolchain/cmsis/include/cmsis_compiler.h:
+
+c:\program\ files\ (x86)\gnu\ tools\ arm\ embedded\7\ 2018-q2-update\lib\gcc\arm-none-eabi\7.3.1\include\float.h:
+
+c:\program\ files\ (x86)\gnu\ tools\ arm\ embedded\7\ 2018-q2-update\lib\gcc\arm-none-eabi\7.3.1\include-fixed\limits.h:
+
+c:\program\ files\ (x86)\gnu\ tools\ arm\ embedded\7\ 2018-q2-update\lib\gcc\arm-none-eabi\7.3.1\include-fixed\syslimits.h:
+
+c:\program\ files\ (x86)\gnu\ tools\ arm\ embedded\7\ 2018-q2-update\arm-none-eabi\include\limits.h:
+
+UserFiles/ML_FEATURES/machine_learning_features.h:

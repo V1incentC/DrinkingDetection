@@ -45,15 +45,15 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">
     <ClCompile>
       <CLanguageStandard>C99</CLanguageStandard>
-      <AdditionalIncludeDirectories>C:/Users/rumen/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/17.0/nRF5x/components/softdevice/s112/headers;C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/softdevice/s112/headers;UserFiles/NRFX_INTERRUPTS;%(ClCompile.AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>DEBUG=1;%(ClCompile.PreprocessorDefinitions);FLOAT_ABI_HARD;ARM_MATH_CM4</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:/Users/rumen/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/17.0/nRF5x/components/softdevice/s112/headers;C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/softdevice/s112/headers;UserFiles/NRFX_INTERRUPTS;D:\Root\Documents\Programming\NRF\DrinkingDetection\DrinkingDetection\UserFiles\DSP\Include;D:\Root\Documents\Programming\NRF\DrinkingDetection\DrinkingDetection\UserFiles\DSP</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>DEBUG=1;%(ClCompile.PreprocessorDefinitions);FLOAT_ABI_HARD;ARM_MATH_CM4;__TARGET_FPU_VFP</PreprocessorDefinitions>
       <AdditionalOptions />
       <CPPLanguageStandard />
     </ClCompile>
     <Link>
       <LibrarySearchDirectories>%(Link.LibrarySearchDirectories)</LibrarySearchDirectories>
       <AdditionalLibraryNames>%(Link.AdditionalLibraryNames)</AdditionalLibraryNames>
-      <AdditionalLinkerInputs>%(Link.AdditionalLinkerInputs)</AdditionalLinkerInputs>
+      <AdditionalLinkerInputs>%(Link.AdditionalLinkerInputs);"D:\Root\Documents\Programming\NRF\DrinkingDetection\DrinkingDetection\UserFiles\DSP\libarm_cortexM4lf_math.a"</AdditionalLinkerInputs>
       <LinkerScript />
       <AdditionalOptions />
     </Link>
@@ -72,10 +72,16 @@
     <ClCompile Include="UserFiles\IMU_API\imu_api.c" />
     <ClCompile Include="UserFiles\IMU_API\lsm6dsl\lsm6dsl_reg.c" />
     <ClCompile Include="UserFiles\IMU_API\nrfx_twim_imu\imu_low_level.c" />
+    <ClCompile Include="UserFiles\ML_FEATURES\CF_functions\calculation_features.c" />
+    <ClCompile Include="UserFiles\ML_FEATURES\machine_learning_features.c" />
+    <ClCompile Include="UserFiles\ML_FEATURES\mlf_windows.c" />
     <ClCompile Include="UserFiles\NRFX_INTERRUPTS\nrfx_interrupts.c" />
     <ClInclude Include="UserFiles\IMU_API\imu_api.h" />
     <ClInclude Include="UserFiles\IMU_API\lsm6dsl\lsm6dsl_reg.h" />
     <ClInclude Include="UserFiles\IMU_API\nrfx_twim_imu\imu_low_level.h" />
+    <ClInclude Include="UserFiles\ML_FEATURES\CF_functions\calculation_features.h" />
+    <ClInclude Include="UserFiles\ML_FEATURES\machine_learning_features.h" />
+    <ClInclude Include="UserFiles\ML_FEATURES\mlf_windows.h" />
     <ClInclude Include="UserFiles\NRFX_INTERRUPTS\nrfx_interrupts.h" />
     <None Include="..\default.doxygen" />
     <None Include="nrf5x.props" />
