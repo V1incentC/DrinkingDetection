@@ -592,3 +592,251 @@ float mlf_spectrum_energy(float* data, size_t length)
         return energy;
     }
 }
+
+
+void mlf_detrend(float* data, size_t length)
+{
+    float mean = mlf_mean_value(data, length);
+    
+    for (size_t i = 0; i < length; ++i)
+    {
+        data[i] = data[i] - mean;
+    }
+}
+
+
+void mlf_window_data(float* data, size_t length, const float* window)
+{
+    for (size_t i = 0; i < length; ++i)
+    {
+        data[i] = data[i] * window[i];
+    }
+}
+
+
+static void conjugate_multiply(float* data,     size_t length,
+                               float* data_out, size_t out_length,
+                               float scale)
+{
+    float a, b;
+    uint16_t counter = 0;
+    
+    for (size_t i = 0; i < length; ++i)
+    {
+        if (i == 0)
+        {
+            data_out[i] = (data[i] * data[i]) * scale;
+            ++counter;
+        }
+        else if (i == 1)
+        {
+            data[out_length - 1] = (data[i] * data[i]) * scale;
+        }
+        else
+        {
+            if (i % 2 == 0)
+            {
+                a = data[i];
+                b = data[i + 1];
+                ++i;
+                data_out[counter] = (a*a + b*b)* scale * 2;
+                ++counter;
+            }
+        }
+    }
+    
+}
+
+
+void mlf_welch_method(float* data, size_t length,
+                      uint16_t window_length,
+                      uint16_t overlap,
+                      uint16_t fft_length,
+                      const float* window, 
+                      float* data_out, size_t out_length)
+{
+    /* variables used for arm_rfft */
+    uint16_t fftSize      = fft_length;
+    uint8_t ifftFlag     = 0; /* We don't want inverse fft*/
+    arm_rfft_fast_instance_f32 varInstRfftF32; /* Create fft struct */
+    arm_status status;
+    
+    /*scale is dependent on the sampling frequency
+    scale = 1/(sampling_freq * 96); 
+    96 is dependent on the window type and length of npreseg. 
+    If you change any of these two, recalculate it by (win*win).sum() 
+    (win is an array which can be generated in python with the following function 
+    https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.get_window.html)*/
+    
+    float32_t scale = (float) 1 / (MLF_FS * 96);
+    uint16_t num_of_windows = (length - window_length) / overlap + 1;
+    
+    //Next, we will divide the array in segments
+    float32_t segment[window_length];
+    float32_t segment_fft_output[window_length];
+    float32_t final_arr[num_of_windows][out_length];
+    
+    /* Set arrays to 0 */
+    memset(segment, 0, window_length);
+    memset(segment_fft_output, 0, window_length);
+    status = ARM_MATH_SUCCESS;
+    
+    status = arm_rfft_fast_init_f32(&varInstRfftF32, fftSize);
+
+    mlf_detrend(data, length);
+    
+    for (size_t i = 0; i < num_of_windows; ++i)
+    {
+        /* Select a window from signal data*/
+        memcpy(segment, &data[i * overlap], window_length * sizeof(segment[0]));
+        
+        /* After we have the selected segment, we need to detrend the values */
+        mlf_detrend(segment, window_length);
+        mlf_window_data(segment, window_length, window);
+        
+        /* perform the fft*/
+        arm_rfft_fast_f32(&varInstRfftF32, segment, segment_fft_output, ifftFlag);
+        /* Now, in segment we have real discrete fourier transform of the windowed signal
+         * Next, we need to multipy the values with their conjugte */
+        conjugate_multiply(segment_fft_output, window_length,
+                           final_arr[i],       out_length,
+                           scale);
+    }
+    
+    /* calculating the mean value of each column and storing them in the output_arr */
+    for (size_t i = 0; i < out_length; ++i)
+    {
+        float sum  = 0.0f;
+        float mean = 0.0f;
+        for (uint16_t j = 0; j < num_of_windows; j++)
+        {
+            sum += final_arr[j][i];
+        }
+        mean = (float) sum / num_of_windows;
+        data_out[i] = mean;
+    }
+}
+
+
+float mlf_squared_sum(float*   data,
+                      uint16_t start_index,
+                      uint16_t stop_index)
+{
+    float sum = 0;
+    for (size_t i = start_index; i < stop_index; ++i)
+    {
+        sum += square(data[i]);
+    }
+    return sum;
+}
+
+/* hardcoded values but can be modified to be modular*/
+void mlf_fill_bin_array(float* data,      size_t length,
+                        float* bin_array, size_t bin_length)
+{
+    float total_fft_sum = mlf_squared_sum(data, 0, length);
+    
+    for (size_t i = 0; i < 45; i += 5)
+    {
+        bin_array[i / 5] = mlf_squared_sum(data, i, i + 5);
+    }
+    bin_array[bin_length - 1] = mlf_squared_sum(data, 45, length); 
+}
+
+
+
+int cmp_argsort(const void *a, const void *b)
+{
+    argsort_st *a1 = (argsort_st *)a;
+    argsort_st *a2 = (argsort_st *)b;
+    if (a1->value > a2->value)
+        return -1;
+    else if (a1->value < a2->value)
+        return 1;
+    else
+        return 0;
+}
+
+void mlf_argsort(float*      data,
+                 size_t      length,
+                 argsort_st* sorted_values) 
+            
+{
+    for (size_t i = 0; i < length; ++i)
+    {
+        sorted_values->value = data[i];
+        sorted_values->index = (uint32_t) i;
+    }
+    /* sort objects array according to value maybe using qsort */
+    qsort(sorted_values, length, sizeof(sorted_values[0]), cmp_argsort);
+}
+
+
+void mlf_fill_raw_eating_features(float* features,
+                                  float* data, size_t length)
+{
+    features[0]  = mlf_abs_mean_value(data, length);
+    features[1]  = mlf_standard_deviation(data, length);
+    features[2]  = mlf_coefficient_of_variation(data, length);
+    features[3]  = mlf_abs_mean_value(data, length);
+    features[4]  = mlf_num_of_zero_crossings(data, length);
+    features[5]  = mlf_amplitude(data, length);
+    features[6]  = mlf_velocity(data, length, MLF_TIMESTEP);
+    features[7]  = mlf_sum_per_component(data, length, MLF_TIMESTEP);
+    features[8]  = mlf_mean_crossing_rate(data, length);
+    features[9]  = mlf_entropy(data, length);
+    features[10] = mlf_iqr(data, length);
+    features[11] = mlf_kurtosis(data, length);
+    features[12] = mlf_skewness(data, length);
+    
+}
+/* Has hardcoded some values because feature vector won't change on the fly*/
+void mlf_fill_frequency_eating_features(float* features,
+                                        float* data, size_t length)
+{
+    float bin_values[MLF_BIN_SIZE], fft_spectre[MLF_BUFFER_SIZE * 2],
+          Pxx_density[MLF_WELCH_OUT_LEN], sample_freq[MLF_WELCH_OUT_LEN];
+    float abs_mean, iqr, energy, entropy, skeweness, kurtosis;
+    argsort_st sorted_values_t[MLF_BUFFER_SIZE];
+    
+    abs_mean =  mlf_abs_mean_value(data, length);
+    iqr      =  mlf_iqr(data, length);
+    
+    mlf_fft_numpy(data, length, fft_spectre, sizeof(fft_spectre));
+    
+    energy = mlf_spectrum_energy(data, length);
+    entropy = mlf_spectrum_entropy(data, length);
+    
+    mlf_welch_method(   data, length,
+                        MLF_WIN_LEN,
+                        MLF_OVERLAP,
+                        MLF_FFT_SIZE,
+                        mlf_window,
+                        Pxx_density, MLF_WELCH_OUT_LEN);
+    mlf_fill_bin_array( Pxx_density,
+                        MLF_WELCH_OUT_LEN,
+                        bin_values,
+                        MLF_BIN_SIZE);
+    skeweness = mlf_skewness(data, length);
+    kurtosis = mlf_kurtosis(data, length);
+    
+    mlf_argsort(data, length, sorted_values_t);
+    mlf_sample_frequencies( MLF_FS,
+                            MLF_FFT_SIZE,
+                            MLF_WELCH_OUT_LEN,
+                            sample_freq);
+    
+    for (uint16_t i = 0; i < MLF_BIN_SIZE; ++i)
+    {
+        features[i] = sample_freq[sorted_values_t[i].index];
+        features[10 + i] = sorted_values_t[i].value;
+        features[22 + i] = bin_values[i];
+    }
+    features[20] = energy;
+    features[21] = entropy;
+    features[32] = abs_mean;
+    features[33] = skeweness;
+    features[34] = kurtosis;
+    features[35] = iqr;    
+    
+}

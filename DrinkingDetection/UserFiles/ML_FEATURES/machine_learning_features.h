@@ -39,6 +39,7 @@
 #endif
 #include <stddef.h>
 #include <stdint.h>
+#include "mlf_windows.h"
 /**
   * @defgroup    MACHINE_LEARNING_FEATURES
   * @brief       This file contains function for calculating features on IMU signals in time and 
@@ -48,8 +49,20 @@
   *
   */
 
+#define  MLF_BUFFER_SIZE    256 //length of the array
+#define  MLF_FS             52 //sampling frequency of the signal
+#define  MLF_TIMESTEP       1/MLF_FS
+#define  MLF_WIN_LEN        256 //window length
+#define  MLF_OVERLAP        128 //overlap length
+#define  MLF_FFT_SIZE       256
+#define  MLF_WELCH_OUT_LEN  MLF_FFT_SIZE / 2 + 1
+#define MLF_BIN_SIZE        10
 
-
+typedef struct
+{
+    float value;
+    uint32_t index;
+}argsort_st;
 
 /**
   * @defgroup    TIME_DOMAIN_FEATURES
@@ -361,7 +374,7 @@ void mlf_sample_frequencies(uint16_t sampling_frequency,
   *                  Fast Fourier Transform (FFT) algorithm [CT].
   *  
   * \param[in]       data_in:           Dataset we want to execute calculations on
-  * \param[in]       data_in_length:    Length of inoput array
+  * \param[in]       data_in_length:    Length of input array
   * \param[in]       data_out:          Pointer to output array
   * \param[in]       data_out_length:   Length of output array
   *
@@ -370,11 +383,145 @@ uint8_t mlf_fft_numpy(float* data_in,    size_t data_in_length,
                       float* data_out, uint32_t data_out_length);
 
 
-      
+/**
+  * \brief           This function computes the entropy of
+  *                  frequency spectrum of a signal.
+  *                  Input array should be complex nubers of format: data[0] = Re0, data[1] = Im0,
+  *                                                                  data[2] = Re1, data[3] = Im1
+  *  
+  * \param[in]       data:      Dataset we want to execute calculations on
+  * \param[in]       length:    Length of input array
+  *
+  * \retval val      Entropy of frequency spectrum        
+  */        
 float mlf_spectrum_entropy(float* data, size_t length);
       
-      
+ 
+/**
+  * \brief           This function computes the energy of
+  *                  frequency spectrum of a signal.
+  *                  Input array should be complex nubers of format: data[0] = Re0, data[1] = Im0,
+  *                                                                  data[2] = Re1, data[3] = Im1
+  *  
+  * \param[in]       data:      Dataset we want to execute calculations on
+  * \param[in]       length:    Length of input array
+  *
+  * \retval val      Energy of frequency spectrum        
+  */        
 float mlf_spectrum_energy(float* data, size_t length);
+      
+
+/**
+  * \brief           Function for subtracting the mean of the dataset.
+  *                  It removes a linear trend from the dataset.
+  *  
+  * \param[in]       data:   Dataset we want to execute calculations on
+  * \param[in]       length: Lenght of data
+  * 
+  */      
+void mlf_detrend(float* data, size_t length);      
+      
+
+/**
+  * \brief           Function for windowing the selected dataset with
+  *                  windows provided in mlf_windows.h.
+  *                  Windows should be added by the user with the appropriate length.
+  *  
+  * \param[in]       data:   Dataset we want to execute calculations on
+  * \param[in]       length: Lenght of data
+  * \param[in]       window: Pointer to window array
+  * 
+  */      
+void mlf_window_data(float* data, size_t length, const float* window);    
+
+      
+/**
+  * \brief           Function for estimating power spectral density using Welch’s method.
+  *                  
+  *
+  * \param[in]       data:          Dataset we want to execute calculations on
+  * \param[in]       length:        Lenght of data
+  * \param[in]       window_length: Size of windows used for Welch's method
+  * \param[in]       overlap:       Overlap between windows
+  * \param[in]       fft_length:    Lenght of fft performed on windows
+  * \param[in]       window:        Pointer to window used for signal windowing
+  *                                 (Hanning is included in mlf_windows.h).
+  * \param[in]       data_out:      Pointer to output array
+  * \param[in]       out_length:    Length of output array.
+  *                                 This can be calculated with MLF_WELCH_OUT_LEN macro.
+  * 
+  */       
+void mlf_welch_method(float* data, size_t length,
+                      uint16_t window_length,
+                      uint16_t overlap,
+                      uint16_t fft_length,
+                      const float* window, 
+                      float* data_out, size_t out_length);
+      
+/**
+  * \brief           Function for calculating the squared sum.
+  *                  sum += a*a
+  *  
+  * \param[in]       data:          Dataset we want to execute calculations on
+  * \param[in]       start_index:   From where to start summing the array
+  * \param[in]       stop_index:    To where to stop summing the array
+  * 
+  */          
+float mlf_squared_sum(float*   data,
+                      uint16_t start_index,   uint16_t stop_index);
+      
+
+/**
+  * \brief           Function for filling a bin array. Usually used to make bins from
+  *                  fft results.
+  *  
+  * \param[in]       data:          Dataset we want to execute calculations on
+  * \param[in]       length:        Lenght of data
+  * \param[in]       bin_array:     Pointer to bin array
+  * \param[in]       bin_length:    Length of the bin array
+  * 
+  */      
+void mlf_fill_bin_array(float* data,      size_t length,
+                        float* bin_array, size_t bin_length);
+      
+/**
+  * \brief           Function for sorting an array and keeping track of sorted indices.
+  *  
+  * \param[in]       data:          Dataset we want to execute calculations on
+  * \param[in]       length:        Lenght of data
+  * \param[in]       sorted_values: Pointer to a structure that will hold the
+  *                                 sorted values and respective indices
+
+  * 
+  */       
+void mlf_argsort(float*      data,
+                 size_t      length,
+                 argsort_st* sorted_values);      
+
+/**
+  * \brief           Function for filling the feature array with calculated features in time domain.
+  *                  This function is application specific.
+  *  
+  * \param[in]       features:  Features array
+  * \param[in]       data:      Dataset we want to execute calculations on
+  * \param[in]       length:    Lenght of data
+  *                                 
+  */        
+void mlf_fill_raw_eating_features(float* features,
+                                  float* data, size_t length);
+      
+
+/**
+  * \brief           Function for filling the feature array with calculated features in time domain.
+  *                  This function is application specific.
+  *  
+  * \param[in]       features:  Features array
+  * \param[in]       data:      Dataset we want to execute calculations on
+  * \param[in]       length:    Lenght of data
+  *                                 
+  */ 
+void mlf_fill_frequency_eating_features(float* features,
+                                        float* data, size_t length);
 /**
   * @}
   */ 
