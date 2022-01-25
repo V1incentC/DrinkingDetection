@@ -76,5 +76,6 @@ void CF_fill_frequency_features(float32_t* features, float32_t* input_arr, uint1
 void CF_fill_features_arr(float* acc_X, float* acc_Y, float* acc_Z,
                           float* gyr_X, float* gyr_Y, float* gyr_Z,
                           uint16_t n_samples,float *features);
+void CF_fill_raw_features(float32_t* features, float32_t* input_arr, uint16_t n);
 
 #endif

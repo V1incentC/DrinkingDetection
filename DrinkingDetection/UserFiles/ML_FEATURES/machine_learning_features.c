@@ -738,9 +738,9 @@ void mlf_fill_bin_array(float* data,      size_t length,
     
     for (size_t i = 0; i < 45; i += 5)
     {
-        bin_array[i / 5] = mlf_squared_sum(data, i, i + 5);
+        bin_array[i / 5] = mlf_squared_sum(data, i, i + 5) / total_fft_sum;
     }
-    bin_array[bin_length - 1] = mlf_squared_sum(data, 45, length); 
+    bin_array[bin_length - 1] = mlf_squared_sum(data, 45, length) / total_fft_sum; 
 }
 
 
@@ -775,7 +775,7 @@ void mlf_argsort(float*      data,
 void mlf_fill_raw_eating_features(float* features,
                                   float* data, size_t length)
 {
-    features[0]  = mlf_abs_mean_value(data, length);
+    features[0]  = mlf_mean_value(data, length);
     features[1]  = mlf_standard_deviation(data, length);
     features[2]  = mlf_coefficient_of_variation(data, length);
     features[3]  = mlf_abs_mean_value(data, length);
@@ -802,10 +802,12 @@ void mlf_fill_frequency_eating_features(float* features,
     abs_mean =  mlf_abs_mean_value(data, length);
     iqr      =  mlf_iqr(data, length);
     
-    mlf_fft_numpy(data, length, fft_spectre, sizeof(fft_spectre));
+    mlf_fft_numpy(data, length, fft_spectre, MLF_BUFFER_SIZE * 2);
     
-    energy = mlf_spectrum_energy(data, length);
-    entropy = mlf_spectrum_entropy(data, length);
+    energy = mlf_spectrum_energy(fft_spectre, MLF_BUFFER_SIZE * 2);
+    entropy = mlf_spectrum_entropy(fft_spectre, MLF_BUFFER_SIZE * 2);
+    skeweness = mlf_skewness(Pxx_density, MLF_WELCH_OUT_LEN);
+    kurtosis = mlf_kurtosis(Pxx_density, MLF_WELCH_OUT_LEN);
     
     mlf_welch_method(   data, length,
                         MLF_WIN_LEN,
@@ -817,10 +819,19 @@ void mlf_fill_frequency_eating_features(float* features,
                         MLF_WELCH_OUT_LEN,
                         bin_values,
                         MLF_BIN_SIZE);
-    skeweness = mlf_skewness(data, length);
-    kurtosis = mlf_kurtosis(data, length);
+
     
-    mlf_argsort(data, length, sorted_values_t);
+    //mlf_argsort(data, length, sorted_values_t);
+    
+    for (size_t i = 0; i < MLF_WELCH_OUT_LEN; ++i)
+    {
+        sorted_values_t[i].value = Pxx_density[i];
+        sorted_values_t[i].index = (uint32_t) i;
+    }
+    /* sort objects array according to value maybe using qsort */
+    uint16_t size = sizeof(sorted_values_t[0]);
+    qsort(sorted_values_t, length, size, cmp_argsort);
+    
     mlf_sample_frequencies( MLF_FS,
                             MLF_FFT_SIZE,
                             MLF_WELCH_OUT_LEN,
