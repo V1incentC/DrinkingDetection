@@ -487,7 +487,7 @@ float32_t CF_func_skewness_and_kurtosis(float32_t* niza, uint32_t n, float32_t* 
 
 
 } 
-void CF_conjugate_multipy(float32_t* niza, uint32_t n, float32_t* new_list, uint32_t m, float32_t scale)
+voidCF_conjugate_multipy(float32_t* niza, uint32_t n, float32_t* new_list, uint32_t m, float32_t scale)
 {
 	uint32_t i=0;
 	float32_t a,b;

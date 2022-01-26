@@ -522,6 +522,19 @@ void mlf_fill_raw_eating_features(float* features,
   */ 
 void mlf_fill_frequency_eating_features(float* features,
                                         float* data, size_t length);
+       
+/**
+  * \brief           Function for filling the feature array with calculated features in time domain.
+  *                  This function is application specific.
+  *  
+  * \param[in]       features:  Features array
+  * \param[in]       data:      Dataset we want to execute calculations on
+  * \param[in]       length:    Lenght of data
+  *                                 
+  */        
+void mlf_fill_raw_drinking_features(float* features,
+                                    float* data,
+                                    size_t length);
 /**
   * @}
   */ 

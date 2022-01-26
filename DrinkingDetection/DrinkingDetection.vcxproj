@@ -75,6 +75,7 @@
     <ClCompile Include="UserFiles\ML_FEATURES\CF_functions\calculation_features.c" />
     <ClCompile Include="UserFiles\ML_FEATURES\machine_learning_features.c" />
     <ClCompile Include="UserFiles\ML_FEATURES\mlf_windows.c" />
+    <ClCompile Include="UserFiles\ML_FEATURES\XGBoost.c" />
     <ClCompile Include="UserFiles\NRFX_INTERRUPTS\nrfx_interrupts.c" />
     <ClInclude Include="UserFiles\IMU_API\imu_api.h" />
     <ClInclude Include="UserFiles\IMU_API\lsm6dsl\lsm6dsl_reg.h" />
@@ -82,6 +83,7 @@
     <ClInclude Include="UserFiles\ML_FEATURES\CF_functions\calculation_features.h" />
     <ClInclude Include="UserFiles\ML_FEATURES\machine_learning_features.h" />
     <ClInclude Include="UserFiles\ML_FEATURES\mlf_windows.h" />
+    <ClInclude Include="UserFiles\ML_FEATURES\XGBoost.h" />
     <ClInclude Include="UserFiles\NRFX_INTERRUPTS\nrfx_interrupts.h" />
     <None Include="..\default.doxygen" />
     <None Include="nrf5x.props" />

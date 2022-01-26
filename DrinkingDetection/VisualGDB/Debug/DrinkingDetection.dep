@@ -111,7 +111,7 @@ VisualGDB/Debug/DrinkingDetection.o: DrinkingDetection.c \
  c:\sysgcc\arm-eabi\arm-none-eabi\include\limits.h \
  c:\sysgcc\arm-eabi\arm-none-eabi\include\sys\syslimits.h \
  UserFiles/ML_FEATURES/machine_learning_features.h \
- UserFiles/ML_FEATURES/mlf_windows.h
+ UserFiles/ML_FEATURES/mlf_windows.h UserFiles/ML_FEATURES/XGBoost.h
 c:\sysgcc\arm-eabi\lib\gcc\arm-none-eabi\10.3.1\include\stdbool.h:
 c:\sysgcc\arm-eabi\lib\gcc\arm-none-eabi\10.3.1\include\stdint.h:
 c:\sysgcc\arm-eabi\arm-none-eabi\include\stdint.h:
@@ -226,3 +226,4 @@ c:\sysgcc\arm-eabi\arm-none-eabi\include\limits.h:
 c:\sysgcc\arm-eabi\arm-none-eabi\include\sys\syslimits.h:
 UserFiles/ML_FEATURES/machine_learning_features.h:
 UserFiles/ML_FEATURES/mlf_windows.h:
+UserFiles/ML_FEATURES/XGBoost.h:

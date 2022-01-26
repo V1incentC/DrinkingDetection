@@ -6,6 +6,7 @@
 #include "nrf_log.h"
 #include "nrf_delay.h"
 #include "nrf_gpio.h"
+#include "machine_learning_features.h"
 
 #define LATENCY_MIN 40
 
@@ -311,6 +312,9 @@ static void imu_parse_data_buffer(imu_data_t* data)
     } 
     
 }
+
+
+
 void imu_handle_fifo_transfer_done()
 {
     static u_int8_t counter = 0;

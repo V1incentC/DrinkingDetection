@@ -289,33 +289,33 @@ uint16_t mlf_count_below_mean(float* data, size_t length)
 
 float mlf_maximum(float* data, size_t length)
 {
-    float *maximum = data;
-    *maximum = data[0];
+    float maximum = data[0];
+    
 
     for(size_t i = 1; i < length; ++i)
     {
-        if(data[i] > *maximum)
+        if(data[i] > maximum)
         {
-            *maximum = data[i];
+            maximum = data[i];
         }
     }
-    return *maximum;
+    return maximum;
 }
 
 
 float mlf_minimum(float* data, size_t length)
 {
-    float *minimum = data;
-    *minimum = data[0];
+    float minimum = data[0];
+    
 
     for(size_t i = 1; i < length; ++i)
     {
-        if(data[i] < *minimum)
+        if(data[i] < minimum)
         {
-            *minimum = data[i];
+            minimum = data[i];
         }
     }
-    return *minimum;
+    return minimum;
 }
 
 
@@ -362,20 +362,16 @@ float mlf_mean_abs_change(float* data, size_t length)
     float sum = 0;
     for(size_t i = 0; i < length - 1; ++i)
     {
-        sum += fabs(data[i] - data[i + 1]);
+        sum += fabs(data[i + 1] - data[i]);
     }
-    return sum / (length - 1);
+    return sum / (float)(length - 1);
+    
 }
 
 
 float mlf_mean_change(float* data, size_t length)
 {
-    float sum = 0;
-    for(size_t i = 0; i < length - 1; ++i)
-    {
-        sum += data[i] - data[i + 1];
-    }
-    return sum / (length - 1);
+    return (data[length - 1] - data[0]) / (length - 1);
 }
 
 
@@ -630,7 +626,7 @@ static void conjugate_multiply(float* data,     size_t length,
         }
         else if (i == 1)
         {
-            data[out_length - 1] = (data[i] * data[i]) * scale;
+            data_out[out_length - 1] = (data[i] * data[i]) * scale;
         }
         else
         {
@@ -639,7 +635,7 @@ static void conjugate_multiply(float* data,     size_t length,
                 a = data[i];
                 b = data[i + 1];
                 ++i;
-                data_out[counter] = (a*a + b*b)* scale * 2;
+                data_out[counter] = (a * a + b * b) * scale * 2;
                 ++counter;
             }
         }
@@ -764,11 +760,12 @@ void mlf_argsort(float*      data,
 {
     for (size_t i = 0; i < length; ++i)
     {
-        sorted_values->value = data[i];
-        sorted_values->index = (uint32_t) i;
+        sorted_values[i].value = data[i];
+        sorted_values[i].index = (uint32_t) i;
     }
     /* sort objects array according to value maybe using qsort */
-    qsort(sorted_values, length, sizeof(sorted_values[0]), cmp_argsort);
+    uint16_t size = sizeof(sorted_values[0]);
+    qsort(sorted_values, length, size, cmp_argsort);
 }
 
 
@@ -806,8 +803,7 @@ void mlf_fill_frequency_eating_features(float* features,
     
     energy = mlf_spectrum_energy(fft_spectre, MLF_BUFFER_SIZE * 2);
     entropy = mlf_spectrum_entropy(fft_spectre, MLF_BUFFER_SIZE * 2);
-    skeweness = mlf_skewness(Pxx_density, MLF_WELCH_OUT_LEN);
-    kurtosis = mlf_kurtosis(Pxx_density, MLF_WELCH_OUT_LEN);
+
     
     mlf_welch_method(   data, length,
                         MLF_WIN_LEN,
@@ -815,22 +811,16 @@ void mlf_fill_frequency_eating_features(float* features,
                         MLF_FFT_SIZE,
                         mlf_window,
                         Pxx_density, MLF_WELCH_OUT_LEN);
+    
+    skeweness = mlf_skewness(Pxx_density, MLF_WELCH_OUT_LEN);
+    kurtosis = mlf_kurtosis(Pxx_density, MLF_WELCH_OUT_LEN);
+    
     mlf_fill_bin_array( Pxx_density,
                         MLF_WELCH_OUT_LEN,
                         bin_values,
                         MLF_BIN_SIZE);
-
     
-    //mlf_argsort(data, length, sorted_values_t);
-    
-    for (size_t i = 0; i < MLF_WELCH_OUT_LEN; ++i)
-    {
-        sorted_values_t[i].value = Pxx_density[i];
-        sorted_values_t[i].index = (uint32_t) i;
-    }
-    /* sort objects array according to value maybe using qsort */
-    uint16_t size = sizeof(sorted_values_t[0]);
-    qsort(sorted_values_t, length, size, cmp_argsort);
+    mlf_argsort(Pxx_density, MLF_WELCH_OUT_LEN, sorted_values_t);
     
     mlf_sample_frequencies( MLF_FS,
                             MLF_FFT_SIZE,
@@ -849,5 +839,26 @@ void mlf_fill_frequency_eating_features(float* features,
     features[33] = skeweness;
     features[34] = kurtosis;
     features[35] = iqr;    
+    
+}
+
+
+void mlf_fill_raw_drinking_features(float* features,
+                                    float* data,
+                                    size_t length)
+{
+    features[0]  = mlf_absolute_sum_of_changes(data, length);
+    features[1]  = mlf_count_above_mean(data, length);
+    features[2]  = mlf_count_below_mean(data, length);
+    features[3]  = mlf_maximum(data, length);
+    features[4]  = mlf_median(data, length);
+    features[5]  = mlf_minimum(data, length);
+    features[6]  = mlf_mean_abs_change(data, length);
+    features[7]  = mlf_mean_change(data, length);
+    features[8]  = mlf_standard_deviation(data, length);
+    features[9]  = mlf_longest_strike_above_mean(data, length);
+    features[10] = mlf_longest_strike_below_mean(data, length);
+    features[11] = mlf_kurtosis(data, length);
+    features[12] = mlf_skewness(data, length);
     
 }
