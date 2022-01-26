@@ -92,7 +92,9 @@ VisualGDB/Debug/UserFiles/IMU_API/imu_api.o: UserFiles/IMU_API/imu_api.c \
  C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/libraries/log/nrf_log_instance.h \
  C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/libraries/log/nrf_log_types.h \
  C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/libraries/log/nrf_log_types.h \
- C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/libraries/delay/nrf_delay.h
+ C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/libraries/delay/nrf_delay.h \
+ UserFiles/ML_FEATURES/machine_learning_features.h \
+ UserFiles/ML_FEATURES/mlf_windows.h UserFiles/ML_FEATURES/XGBoost.h
 c:\sysgcc\arm-eabi\arm-none-eabi\include\stdlib.h:
 c:\sysgcc\arm-eabi\arm-none-eabi\include\machine\ieeefp.h:
 c:\sysgcc\arm-eabi\arm-none-eabi\include\_ansi.h:
@@ -188,3 +190,6 @@ C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.
 C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/libraries/log/nrf_log_types.h:
 C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/libraries/log/nrf_log_types.h:
 C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/libraries/delay/nrf_delay.h:
+UserFiles/ML_FEATURES/machine_learning_features.h:
+UserFiles/ML_FEATURES/mlf_windows.h:
+UserFiles/ML_FEATURES/XGBoost.h:

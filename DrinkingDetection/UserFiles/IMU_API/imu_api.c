@@ -7,6 +7,7 @@
 #include "nrf_delay.h"
 #include "nrf_gpio.h"
 #include "machine_learning_features.h"
+#include "XGBoost.h"
 
 #define LATENCY_MIN 40
 
@@ -314,10 +315,46 @@ static void imu_parse_data_buffer(imu_data_t* data)
 }
 
 
+void fill_features_array(imu_data_t* data, float* features)
+{
+    
+    float *axis[6] = { data->acc_x, data->acc_y, data->acc_x,
+                        data->gyr_x, data->gyr_y, data->gyr_z };
+   
+    const uint8_t raw_feature_offset      = 13,
+                    frequency_feature_offset = 36,
+                    all_raw_length           = 78;
+        
+    for (uint16_t i = 0; i < 6; i++)
+    {
+        mlf_fill_raw_drinking_features(&features[i * raw_feature_offset],
+                                        axis[i],
+                                        IMU_FIFO_SIZE);
+    }
+    for (uint16_t i = 0; i < 6; i++)
+    {
+        mlf_fill_frequency_eating_features(
+            &features[i * frequency_feature_offset + all_raw_length],
+            axis[i],
+            IMU_FIFO_SIZE);
+    }
+}
 
+void imu_predict(imu_data_t* data, float* result)
+{
+    float features[MLF_NUM_OF_FEATURES] = { 0 };
+    
+    fill_features_array(data, features);
+    
+    score(features, result);
+    
+    
+}
 void imu_handle_fifo_transfer_done()
 {
     static u_int8_t counter = 0;
+    char buffer[50];
+    float result[2];
     
     if (fifo_transfer_done)
     {
@@ -326,8 +363,7 @@ void imu_handle_fifo_transfer_done()
         NRF_LOG_INFO("FIFO full: %d", counter);
         	
         fifo_transfer_done = false;
-        //features
-        //predict
+
         ++counter;  
         if (counter >= 5)
         {
@@ -343,6 +379,11 @@ void imu_handle_fifo_transfer_done()
         }
         imu_parse_data_buffer(&imu_data);
         
+        imu_predict(&imu_data, result);
+        
+        sprintf(buffer, "res[0] = %f  res[1] = %f", result[0], result[1]);
+    
+        NRF_LOG_INFO("%s", buffer);
     }
     while (!fifo_transfer_done)
     {

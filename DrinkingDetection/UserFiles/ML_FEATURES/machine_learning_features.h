@@ -49,14 +49,15 @@
   *
   */
 
-#define  MLF_BUFFER_SIZE    256 //length of the array
-#define  MLF_FS             52 //sampling frequency of the signal
-#define  MLF_TIMESTEP       1/MLF_FS
-#define  MLF_WIN_LEN        256 //window length
-#define  MLF_OVERLAP        128 //overlap length
-#define  MLF_FFT_SIZE       256
-#define  MLF_WELCH_OUT_LEN  MLF_FFT_SIZE / 2 + 1
-#define MLF_BIN_SIZE        10
+#define  MLF_BUFFER_SIZE     256 //length of the array
+#define  MLF_FS              52 //sampling frequency of the signal
+#define  MLF_TIMESTEP        1/MLF_FS
+#define  MLF_WIN_LEN         256 //window length
+#define  MLF_OVERLAP         128 //overlap length
+#define  MLF_FFT_SIZE        256
+#define  MLF_WELCH_OUT_LEN   MLF_FFT_SIZE / 2 + 1
+#define  MLF_BIN_SIZE        10
+#define  MLF_NUM_OF_FEATURES 294
 
 typedef struct
 {
