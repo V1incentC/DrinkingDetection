@@ -34,3 +34,6 @@ DrinkingDetection/.visualgdb/CodeDB/DrinkingDetection-Debug-VisualGDB/GlobalCach
 DrinkingDetection/.visualgdb/CodeDB/DrinkingDetection-Debug-VisualGDB/GlobalCache/000/Names.idx
 DrinkingDetection/.visualgdb/CodeDB/DrinkingDetection-Debug-VisualGDB/GlobalCache/000/SymbolDefs.dat
 DrinkingDetection/.visualgdb/CodeDB/DrinkingDetection-Debug-VisualGDB/GlobalCache/000/SymbolRefs.dat
+BLE_UART/.visualgdb/
+BLE_UART/.vs/
+

@@ -18,7 +18,7 @@
 		<Link>
 			<LinkerScript Condition="'%(Link.LinkerScript)' == ''">$(BSP_ROOT)/nRF5x/LinkerScripts/nRF52840_XXAA_nosoftdev.lds</LinkerScript>
 			<LibrarySearchDirectories>$(BSP_ROOT)/nRF5x/SoftdeviceLibraries/hard;$(BSP_ROOT)/nRF5x/LinkerScripts;%(Link.LibrarySearchDirectories)</LibrarySearchDirectories>
-			<AdditionalOptions>--specs=nosys.specs -mabi=aapcs %(Link.AdditionalOptions)</AdditionalOptions>
+			<AdditionalOptions>--specs=nano.specs -u _printf_float -u _scanf_float --specs=nosys.specs -mabi=aapcs %(Link.AdditionalOptions)</AdditionalOptions>
 		</Link>
 	</ItemDefinitionGroup>
 	<PropertyGroup>

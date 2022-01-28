@@ -1,0 +1,184 @@
+VisualGDB/Debug/__BSP_ROOT__/nRF5x/modules/nrfx/drivers/src/nrfx_uart.o: \
+ C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/modules/nrfx/drivers/src/nrfx_uart.c \
+ C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/modules/nrfx/nrfx.h \
+ C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/integration/nrfx/nrfx_config.h \
+ D:/ROOT/Programming/NRF/BLE_UART/sdk_config.h \
+ D:/ROOT/Programming/NRF/BLE_UART/config.h \
+ C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/modules/nrfx/drivers/nrfx_common.h \
+ c:\sysgcc\arm-eabi\lib\gcc\arm-none-eabi\10.3.1\include\stdint.h \
+ c:\sysgcc\arm-eabi\arm-none-eabi\include\stdint.h \
+ c:\sysgcc\arm-eabi\arm-none-eabi\include\machine\_default_types.h \
+ c:\sysgcc\arm-eabi\arm-none-eabi\include\sys\features.h \
+ c:\sysgcc\arm-eabi\arm-none-eabi\include\_newlib_version.h \
+ c:\sysgcc\arm-eabi\arm-none-eabi\include\sys\_intsup.h \
+ c:\sysgcc\arm-eabi\arm-none-eabi\include\sys\_stdint.h \
+ c:\sysgcc\arm-eabi\lib\gcc\arm-none-eabi\10.3.1\include\stddef.h \
+ c:\sysgcc\arm-eabi\lib\gcc\arm-none-eabi\10.3.1\include\stdbool.h \
+ C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/modules/nrfx/mdk/nrf.h \
+ C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/modules/nrfx/mdk/nrf52840.h \
+ C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/toolchain/cmsis/include/core_cm4.h \
+ C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/toolchain/cmsis/include/cmsis_version.h \
+ C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/toolchain/cmsis/include/cmsis_compiler.h \
+ C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/toolchain/cmsis/include/cmsis_gcc.h \
+ C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/toolchain/cmsis/include/mpu_armv7.h \
+ C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/modules/nrfx/mdk/system_nrf52840.h \
+ C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/modules/nrfx/mdk/nrf52840_bitfields.h \
+ C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/modules/nrfx/mdk/nrf51_to_nrf52840.h \
+ C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/modules/nrfx/mdk/nrf52_to_nrf52840.h \
+ C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/modules/nrfx/mdk/compiler_abstraction.h \
+ C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/modules/nrfx/mdk/nrf_peripherals.h \
+ C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/modules/nrfx/mdk/nrf52840_peripherals.h \
+ C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/integration/nrfx/nrfx_glue.h \
+ C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/integration/nrfx/legacy/apply_old_config.h \
+ C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/modules/nrfx/soc/nrfx_irqs.h \
+ C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/modules/nrfx/soc/nrfx_irqs_nrf52840.h \
+ C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/libraries/util/nrf_assert.h \
+ C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/libraries/util/app_util.h \
+ C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/modules/nrfx/mdk/compiler_abstraction.h \
+ C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/libraries/util/nordic_common.h \
+ C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/softdevice/S140/headers/nrf52/nrf_mbr.h \
+ C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/softdevice/S140/headers/nrf_svc.h \
+ C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/libraries/util/nordic_common.h \
+ C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/libraries/util/app_util_platform.h \
+ C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/softdevice/S140/headers/nrf_soc.h \
+ C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/softdevice/S140/headers/nrf_svc.h \
+ C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/softdevice/S140/headers/nrf_error.h \
+ C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/softdevice/S140/headers/nrf_error_soc.h \
+ C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/softdevice/S140/headers/nrf_nvic.h \
+ C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/libraries/util/nrf_assert.h \
+ C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/libraries/util/app_error.h \
+ c:\sysgcc\arm-eabi\arm-none-eabi\include\stdio.h \
+ c:\sysgcc\arm-eabi\arm-none-eabi\include\_ansi.h \
+ c:\sysgcc\arm-eabi\arm-none-eabi\include\newlib.h \
+ c:\sysgcc\arm-eabi\arm-none-eabi\include\sys\config.h \
+ c:\sysgcc\arm-eabi\arm-none-eabi\include\machine\ieeefp.h \
+ c:\sysgcc\arm-eabi\arm-none-eabi\include\sys\cdefs.h \
+ c:\sysgcc\arm-eabi\lib\gcc\arm-none-eabi\10.3.1\include\stdarg.h \
+ c:\sysgcc\arm-eabi\arm-none-eabi\include\sys\reent.h \
+ c:\sysgcc\arm-eabi\arm-none-eabi\include\_ansi.h \
+ c:\sysgcc\arm-eabi\arm-none-eabi\include\sys\_types.h \
+ c:\sysgcc\arm-eabi\arm-none-eabi\include\machine\_types.h \
+ c:\sysgcc\arm-eabi\arm-none-eabi\include\sys\lock.h \
+ c:\sysgcc\arm-eabi\arm-none-eabi\include\sys\types.h \
+ c:\sysgcc\arm-eabi\arm-none-eabi\include\sys\_pthreadtypes.h \
+ c:\sysgcc\arm-eabi\arm-none-eabi\include\machine\types.h \
+ c:\sysgcc\arm-eabi\arm-none-eabi\include\sys\stdio.h \
+ C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/libraries/util/sdk_errors.h \
+ C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/softdevice/S140/headers/nrf_error.h \
+ C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/libraries/util/app_error_weak.h \
+ C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/modules/nrfx/soc/nrfx_coredep.h \
+ C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/modules/nrfx/soc/nrfx_atomic.h \
+ C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/libraries/util/sdk_errors.h \
+ C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/libraries/util/sdk_resources.h \
+ C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/softdevice/S140/headers/nrf_sd_def.h \
+ C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/softdevice/S140/headers/nrf_soc.h \
+ C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/modules/nrfx/drivers/nrfx_errors.h \
+ C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/modules/nrfx/drivers/include/nrfx_uart.h \
+ C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/modules/nrfx/hal/nrf_uart.h \
+ C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/modules/nrfx/drivers/src/prs/nrfx_prs.h \
+ C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/modules/nrfx/hal/nrf_gpio.h \
+ C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/integration/nrfx/nrfx_log.h \
+ C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/libraries/log/nrf_log.h \
+ C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/libraries/util/sdk_common.h \
+ c:\sysgcc\arm-eabi\arm-none-eabi\include\string.h \
+ c:\sysgcc\arm-eabi\arm-none-eabi\include\sys\string.h \
+ C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/libraries/util/sdk_os.h \
+ C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/libraries/util/app_util.h \
+ C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/libraries/util/sdk_macros.h \
+ C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/libraries/experimental_section_vars/nrf_section.h \
+ C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/libraries/strerror/nrf_strerror.h \
+ C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/libraries/log/src/nrf_log_internal.h \
+ C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/libraries/log/nrf_log_instance.h \
+ C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/libraries/log/nrf_log_types.h \
+ C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/libraries/log/nrf_log_types.h
+C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/modules/nrfx/nrfx.h:
+C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/integration/nrfx/nrfx_config.h:
+D:/ROOT/Programming/NRF/BLE_UART/sdk_config.h:
+D:/ROOT/Programming/NRF/BLE_UART/config.h:
+C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/modules/nrfx/drivers/nrfx_common.h:
+c:\sysgcc\arm-eabi\lib\gcc\arm-none-eabi\10.3.1\include\stdint.h:
+c:\sysgcc\arm-eabi\arm-none-eabi\include\stdint.h:
+c:\sysgcc\arm-eabi\arm-none-eabi\include\machine\_default_types.h:
+c:\sysgcc\arm-eabi\arm-none-eabi\include\sys\features.h:
+c:\sysgcc\arm-eabi\arm-none-eabi\include\_newlib_version.h:
+c:\sysgcc\arm-eabi\arm-none-eabi\include\sys\_intsup.h:
+c:\sysgcc\arm-eabi\arm-none-eabi\include\sys\_stdint.h:
+c:\sysgcc\arm-eabi\lib\gcc\arm-none-eabi\10.3.1\include\stddef.h:
+c:\sysgcc\arm-eabi\lib\gcc\arm-none-eabi\10.3.1\include\stdbool.h:
+C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/modules/nrfx/mdk/nrf.h:
+C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/modules/nrfx/mdk/nrf52840.h:
+C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/toolchain/cmsis/include/core_cm4.h:
+C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/toolchain/cmsis/include/cmsis_version.h:
+C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/toolchain/cmsis/include/cmsis_compiler.h:
+C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/toolchain/cmsis/include/cmsis_gcc.h:
+C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/toolchain/cmsis/include/mpu_armv7.h:
+C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/modules/nrfx/mdk/system_nrf52840.h:
+C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/modules/nrfx/mdk/nrf52840_bitfields.h:
+C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/modules/nrfx/mdk/nrf51_to_nrf52840.h:
+C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/modules/nrfx/mdk/nrf52_to_nrf52840.h:
+C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/modules/nrfx/mdk/compiler_abstraction.h:
+C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/modules/nrfx/mdk/nrf_peripherals.h:
+C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/modules/nrfx/mdk/nrf52840_peripherals.h:
+C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/integration/nrfx/nrfx_glue.h:
+C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/integration/nrfx/legacy/apply_old_config.h:
+C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/modules/nrfx/soc/nrfx_irqs.h:
+C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/modules/nrfx/soc/nrfx_irqs_nrf52840.h:
+C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/libraries/util/nrf_assert.h:
+C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/libraries/util/app_util.h:
+C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/modules/nrfx/mdk/compiler_abstraction.h:
+C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/libraries/util/nordic_common.h:
+C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/softdevice/S140/headers/nrf52/nrf_mbr.h:
+C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/softdevice/S140/headers/nrf_svc.h:
+C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/libraries/util/nordic_common.h:
+C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/libraries/util/app_util_platform.h:
+C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/softdevice/S140/headers/nrf_soc.h:
+C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/softdevice/S140/headers/nrf_svc.h:
+C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/softdevice/S140/headers/nrf_error.h:
+C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/softdevice/S140/headers/nrf_error_soc.h:
+C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/softdevice/S140/headers/nrf_nvic.h:
+C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/libraries/util/nrf_assert.h:
+C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/libraries/util/app_error.h:
+c:\sysgcc\arm-eabi\arm-none-eabi\include\stdio.h:
+c:\sysgcc\arm-eabi\arm-none-eabi\include\_ansi.h:
+c:\sysgcc\arm-eabi\arm-none-eabi\include\newlib.h:
+c:\sysgcc\arm-eabi\arm-none-eabi\include\sys\config.h:
+c:\sysgcc\arm-eabi\arm-none-eabi\include\machine\ieeefp.h:
+c:\sysgcc\arm-eabi\arm-none-eabi\include\sys\cdefs.h:
+c:\sysgcc\arm-eabi\lib\gcc\arm-none-eabi\10.3.1\include\stdarg.h:
+c:\sysgcc\arm-eabi\arm-none-eabi\include\sys\reent.h:
+c:\sysgcc\arm-eabi\arm-none-eabi\include\_ansi.h:
+c:\sysgcc\arm-eabi\arm-none-eabi\include\sys\_types.h:
+c:\sysgcc\arm-eabi\arm-none-eabi\include\machine\_types.h:
+c:\sysgcc\arm-eabi\arm-none-eabi\include\sys\lock.h:
+c:\sysgcc\arm-eabi\arm-none-eabi\include\sys\types.h:
+c:\sysgcc\arm-eabi\arm-none-eabi\include\sys\_pthreadtypes.h:
+c:\sysgcc\arm-eabi\arm-none-eabi\include\machine\types.h:
+c:\sysgcc\arm-eabi\arm-none-eabi\include\sys\stdio.h:
+C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/libraries/util/sdk_errors.h:
+C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/softdevice/S140/headers/nrf_error.h:
+C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/libraries/util/app_error_weak.h:
+C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/modules/nrfx/soc/nrfx_coredep.h:
+C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/modules/nrfx/soc/nrfx_atomic.h:
+C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/libraries/util/sdk_errors.h:
+C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/libraries/util/sdk_resources.h:
+C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/softdevice/S140/headers/nrf_sd_def.h:
+C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/softdevice/S140/headers/nrf_soc.h:
+C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/modules/nrfx/drivers/nrfx_errors.h:
+C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/modules/nrfx/drivers/include/nrfx_uart.h:
+C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/modules/nrfx/hal/nrf_uart.h:
+C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/modules/nrfx/drivers/src/prs/nrfx_prs.h:
+C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/modules/nrfx/hal/nrf_gpio.h:
+C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/integration/nrfx/nrfx_log.h:
+C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/libraries/log/nrf_log.h:
+C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/libraries/util/sdk_common.h:
+c:\sysgcc\arm-eabi\arm-none-eabi\include\string.h:
+c:\sysgcc\arm-eabi\arm-none-eabi\include\sys\string.h:
+C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/libraries/util/sdk_os.h:
+C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/libraries/util/app_util.h:
+C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/libraries/util/sdk_macros.h:
+C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/libraries/experimental_section_vars/nrf_section.h:
+C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/libraries/strerror/nrf_strerror.h:
+C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/libraries/log/src/nrf_log_internal.h:
+C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/libraries/log/nrf_log_instance.h:
+C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/libraries/log/nrf_log_types.h:
+C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/libraries/log/nrf_log_types.h:
