@@ -1,6 +1,6 @@
 VisualGDB/Debug/__BSP_ROOT__/nRF5x/components/libraries/fstorage/nrf_fstorage.o: \
  C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/libraries/fstorage/nrf_fstorage.c \
- D:/ROOT/Programming/NRF/BLE_UART/sdk_config.h \
- D:/ROOT/Programming/NRF/BLE_UART/config.h
-D:/ROOT/Programming/NRF/BLE_UART/sdk_config.h:
-D:/ROOT/Programming/NRF/BLE_UART/config.h:
+ D:/ROOT/Programming/NRF/DrinkingDetection/BLE_UART/sdk_config.h \
+ D:/ROOT/Programming/NRF/DrinkingDetection/BLE_UART/config.h
+D:/ROOT/Programming/NRF/DrinkingDetection/BLE_UART/sdk_config.h:
+D:/ROOT/Programming/NRF/DrinkingDetection/BLE_UART/config.h:

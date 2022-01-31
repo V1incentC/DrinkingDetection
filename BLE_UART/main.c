@@ -729,7 +729,7 @@ int main(void)
 
     // Initialize.
    // uart_init();
-    log_init();
+    //log_init();
     timers_init();
     //buttons_leds_init(&erase_bonds);
     power_management_init();
@@ -757,9 +757,9 @@ int main(void)
         if (fifo_transfer_done)
         {
             fifo_transfer_done = false;
-            nrf_gpio_pin_set(IMU_LL_STATUS_LED);
+
             imu_predict(&imu_data, result);
-            nrf_gpio_pin_clear(IMU_LL_STATUS_LED);
+
             len = sprintf(buffer, "res[0] = %f  res[1] = %f \n", result[0], result[1]);
             ble_send_string(buffer, len);
             for (uint16_t i = 0; i < IMU_FIFO_SIZE; ++i)
@@ -774,7 +774,7 @@ int main(void)
                     imu_data.gyr_z[i]);
         
                 /* NRF_LOG_INFO("%s",print_buffer); */ 
-                //ble_send_string(buffer, len);   
+               // ble_send_string(buffer, len);   
         
             }
             

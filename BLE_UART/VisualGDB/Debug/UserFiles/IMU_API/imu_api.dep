@@ -33,8 +33,8 @@ VisualGDB/Debug/UserFiles/IMU_API/imu_api.o: UserFiles/IMU_API/imu_api.c \
  UserFiles/IMU_API/imu_api.h UserFiles/IMU_API/lsm6dsl/lsm6dsl_reg.h \
  C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/ble/ble_services/ble_nus/ble_nus.h \
  c:\sysgcc\arm-eabi\lib\gcc\arm-none-eabi\10.3.1\include\stdbool.h \
- D:/ROOT/Programming/NRF/BLE_UART/sdk_config.h \
- D:/ROOT/Programming/NRF/BLE_UART/config.h \
+ D:/ROOT/Programming/NRF/DrinkingDetection/BLE_UART/sdk_config.h \
+ D:/ROOT/Programming/NRF/DrinkingDetection/BLE_UART/config.h \
  C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/softdevice/S140/headers/ble.h \
  C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/softdevice/S140/headers/nrf_svc.h \
  C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/softdevice/S140/headers/nrf_error.h \
@@ -161,8 +161,8 @@ UserFiles/IMU_API/imu_api.h:
 UserFiles/IMU_API/lsm6dsl/lsm6dsl_reg.h:
 C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/ble/ble_services/ble_nus/ble_nus.h:
 c:\sysgcc\arm-eabi\lib\gcc\arm-none-eabi\10.3.1\include\stdbool.h:
-D:/ROOT/Programming/NRF/BLE_UART/sdk_config.h:
-D:/ROOT/Programming/NRF/BLE_UART/config.h:
+D:/ROOT/Programming/NRF/DrinkingDetection/BLE_UART/sdk_config.h:
+D:/ROOT/Programming/NRF/DrinkingDetection/BLE_UART/config.h:
 C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/softdevice/S140/headers/ble.h:
 C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/softdevice/S140/headers/nrf_svc.h:
 C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/softdevice/S140/headers/nrf_error.h:

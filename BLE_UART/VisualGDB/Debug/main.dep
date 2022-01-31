@@ -56,8 +56,8 @@ VisualGDB/Debug/main.o: main.c \
  C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/softdevice/S140/headers/ble_gattc.h \
  C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/softdevice/S140/headers/ble_gatts.h \
  C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/libraries/util/sdk_common.h \
- D:/ROOT/Programming/NRF/BLE_UART/sdk_config.h \
- D:/ROOT/Programming/NRF/BLE_UART/config.h \
+ D:/ROOT/Programming/NRF/DrinkingDetection/BLE_UART/sdk_config.h \
+ D:/ROOT/Programming/NRF/DrinkingDetection/BLE_UART/config.h \
  C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/libraries/util/nordic_common.h \
  C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/modules/nrfx/mdk/compiler_abstraction.h \
  C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/libraries/util/sdk_os.h \
@@ -209,8 +209,8 @@ C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.
 C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/softdevice/S140/headers/ble_gattc.h:
 C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/softdevice/S140/headers/ble_gatts.h:
 C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/libraries/util/sdk_common.h:
-D:/ROOT/Programming/NRF/BLE_UART/sdk_config.h:
-D:/ROOT/Programming/NRF/BLE_UART/config.h:
+D:/ROOT/Programming/NRF/DrinkingDetection/BLE_UART/sdk_config.h:
+D:/ROOT/Programming/NRF/DrinkingDetection/BLE_UART/config.h:
 C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/libraries/util/nordic_common.h:
 C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/modules/nrfx/mdk/compiler_abstraction.h:
 C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/libraries/util/sdk_os.h:

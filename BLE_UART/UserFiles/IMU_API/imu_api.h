@@ -232,6 +232,8 @@ void imu_init(stmdev_ctx_t* ctx);
       void imu_polling_init(stmdev_ctx_t* dev_ctx);
       void imu_read_fifo(stmdev_ctx_t* ctx, imu_data_t* data);
       void imu_predict(imu_data_t* data, float* result);
+      
+      uint8_t imu_continious_to_fifo_setup(stmdev_ctx_t* ctx, uint16_t fifo_size);
 /**
   * @}
   */ 

@@ -221,6 +221,51 @@ uint8_t imu_fifo_setup(stmdev_ctx_t* ctx, uint16_t fifo_size)
 }
 
 
+uint8_t imu_continious_to_fifo_setup(stmdev_ctx_t* ctx, uint16_t fifo_size)
+{
+    /*
+     *  Enable Block Data Update
+     */
+    lsm6dsl_block_data_update_set(ctx, PROPERTY_ENABLE);
+    lsm6dsl_auto_increment_set(ctx, PROPERTY_ENABLE);
+    
+    /* Before changing FIFO settings the device must be in bypass mode */
+    lsm6dsl_fifo_mode_set(ctx, LSM6DSL_BYPASS_MODE);
+    
+    /* Set power modes for accelerometer and gyroscope */
+    lsm6dsl_xl_power_mode_set(ctx, LSM6DSL_XL_NORMAL);
+    lsm6dsl_gy_power_mode_set(ctx, LSM6DSL_GY_NORMAL); 
+    
+    /* Set Output Data Rate and full scale for accelerometer */
+    lsm6dsl_xl_data_rate_set(ctx, LSM6DSL_XL_ODR_52Hz);
+    lsm6dsl_xl_full_scale_set(ctx, LSM6DSL_2g);
+    
+    /* Set Output Data Rate and full scale for gyroscope */
+    lsm6dsl_gy_data_rate_set(ctx, LSM6DSL_GY_ODR_52Hz);
+    lsm6dsl_gy_full_scale_set(ctx, LSM6DSL_500dps);
+    
+    /* Set FIFO trigger - acc data ready signal */
+    lsm6dsl_fifo_write_trigger_set(ctx, LSM6DSL_TRG_XL_GY_DRDY);
+    /* Set watermark level(size of FIFO) */
+    lsm6dsl_fifo_watermark_set(ctx, fifo_size * IMU_NUM_OF_AXIS + 3);
+    /* Enable FIFO threshold */
+    lsm6dsl_fifo_stop_on_wtm_set(ctx, PROPERTY_ENABLE);
+    
+    /* Decimation - data to be stored in FIFO */
+    lsm6dsl_fifo_gy_batch_set(ctx, LSM6DSL_FIFO_GY_NO_DEC);
+    lsm6dsl_fifo_xl_batch_set(ctx, LSM6DSL_FIFO_XL_NO_DEC);
+    lsm6dsl_fifo_dataset_3_batch_set(ctx, LSM6DSL_FIFO_DS3_DISABLE);
+    lsm6dsl_fifo_dataset_4_batch_set(ctx, LSM6DSL_FIFO_DS4_DISABLE);
+    
+    /* FIFO data rate and mode */
+    lsm6dsl_fifo_data_rate_set(ctx, LSM6DSL_FIFO_52Hz);
+    lsm6dsl_fifo_mode_set(ctx, LSM6DSL_BYPASS_MODE);
+    lsm6dsl_fifo_mode_set(ctx, LSM6DSL_STREAM_TO_FIFO_MODE);
+    
+    return EXIT_SUCCESS;
+}
+
+
 uint8_t imu_device_check(stmdev_ctx_t* ctx)
 {
     /* Check device ID */
@@ -366,7 +411,9 @@ void imu_read_fifo(stmdev_ctx_t* ctx,imu_data_t* data)
                                                          
         //printf("%d", fifo_data[i]);
     }
-    imu_fifo_reset_dev(ctx);
+    lsm6dsl_fifo_mode_set(ctx, LSM6DSL_BYPASS_MODE); /* resets buffer */
+    lsm6dsl_fifo_mode_set(ctx, LSM6DSL_FIFO_MODE);
+   // imu_fifo_reset_dev(ctx);
    
 //    for (uint16_t i = 0; i < IMU_FIFO_SIZE; ++i)
 //    {
@@ -496,19 +543,20 @@ void imu_init(stmdev_ctx_t* ctx)
       
     lsm6dsl_int1_route_t int1 =
     { 
-        .int1_full_flag = PROPERTY_ENABLE,
+        .int1_full_flag = PROPERTY_DISABLE,
+        .int1_inact_state = PROPERTY_ENABLE
         
     };
     lsm6dsl_pin_int1_route_set(p_lsm6dsl_dev_ctx_t, int1);
     
     lsm6dsl_int2_route_t int2_route =
     { 
-        .int2_wrist_tilt = PROPERTY_ENABLE,
-        .int2_inact_state = PROPERTY_DISABLE,
+        ///.int2_wrist_tilt = PROPERTY_ENABLE,
+        //.int2_inact_state = PROPERTY_ENABLE,
         .int2_drdy_xl = PROPERTY_DISABLE
             
     };
-    lsm6dsl_pin_int2_route_set(p_lsm6dsl_dev_ctx_t, int2_route);
+    //lsm6dsl_pin_int2_route_set(p_lsm6dsl_dev_ctx_t, int2_route);
     
 
 
@@ -516,10 +564,14 @@ void imu_init(stmdev_ctx_t* ctx)
     
     lsm6dsl_a_wrist_tilt_mask_t wrist_tilt_mask =
     { 
-        .wrist_tilt_mask_xpos = PROPERTY_ENABLE,
+        .wrist_tilt_mask_xpos = PROPERTY_DISABLE,
         .wrist_tilt_mask_xneg = PROPERTY_ENABLE
     };
-    imu_absolte_wrist_tilt_setup(p_lsm6dsl_dev_ctx_t, 120, &wrist_tilt_mask, 10);
+    /* The lsm6dsl.c code has a bug in wrist tilt mask set
+     * (watch out if you're installing a fresh library */
+    imu_absolte_wrist_tilt_setup(p_lsm6dsl_dev_ctx_t, 120, &wrist_tilt_mask, 30);
+    
+   // imu_continious_to_fifo_setup(p_lsm6dsl_dev_ctx_t, IMU_FIFO_SIZE);
     /*TEMPORARY CODE*/
     /* Accelerometer - LPF1 path ( LPF2 not used )
     lsm6dsl_xl_filter_analog_set(p_lsm6dsl_dev_ctx_t, LSM6DSL_XL_ANA_BW_400Hz);

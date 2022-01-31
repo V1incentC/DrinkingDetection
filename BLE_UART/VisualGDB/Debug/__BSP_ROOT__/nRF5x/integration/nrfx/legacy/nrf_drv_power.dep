@@ -22,8 +22,8 @@ VisualGDB/Debug/__BSP_ROOT__/nRF5x/integration/nrfx/legacy/nrf_drv_power.o: \
  c:\sysgcc\arm-eabi\arm-none-eabi\include\sys\lock.h \
  c:\sysgcc\arm-eabi\arm-none-eabi\include\sys\cdefs.h \
  c:\sysgcc\arm-eabi\arm-none-eabi\include\sys\string.h \
- D:/ROOT/Programming/NRF/BLE_UART/sdk_config.h \
- D:/ROOT/Programming/NRF/BLE_UART/config.h \
+ D:/ROOT/Programming/NRF/DrinkingDetection/BLE_UART/sdk_config.h \
+ D:/ROOT/Programming/NRF/DrinkingDetection/BLE_UART/config.h \
  C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/libraries/util/nordic_common.h \
  C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/modules/nrfx/mdk/compiler_abstraction.h \
  C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/libraries/util/sdk_os.h \
@@ -68,8 +68,8 @@ c:\sysgcc\arm-eabi\arm-none-eabi\include\machine\_types.h:
 c:\sysgcc\arm-eabi\arm-none-eabi\include\sys\lock.h:
 c:\sysgcc\arm-eabi\arm-none-eabi\include\sys\cdefs.h:
 c:\sysgcc\arm-eabi\arm-none-eabi\include\sys\string.h:
-D:/ROOT/Programming/NRF/BLE_UART/sdk_config.h:
-D:/ROOT/Programming/NRF/BLE_UART/config.h:
+D:/ROOT/Programming/NRF/DrinkingDetection/BLE_UART/sdk_config.h:
+D:/ROOT/Programming/NRF/DrinkingDetection/BLE_UART/config.h:
 C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/libraries/util/nordic_common.h:
 C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/modules/nrfx/mdk/compiler_abstraction.h:
 C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/libraries/util/sdk_os.h:

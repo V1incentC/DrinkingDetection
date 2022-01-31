@@ -2,8 +2,8 @@ VisualGDB/Debug/__BSP_ROOT__/nRF5x/components/libraries/timer/drv_rtc.o: \
  C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/libraries/timer/drv_rtc.c \
  C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/modules/nrfx/nrfx.h \
  C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/integration/nrfx/nrfx_config.h \
- D:/ROOT/Programming/NRF/BLE_UART/sdk_config.h \
- D:/ROOT/Programming/NRF/BLE_UART/config.h \
+ D:/ROOT/Programming/NRF/DrinkingDetection/BLE_UART/sdk_config.h \
+ D:/ROOT/Programming/NRF/DrinkingDetection/BLE_UART/config.h \
  C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/modules/nrfx/drivers/nrfx_common.h \
  c:\sysgcc\arm-eabi\lib\gcc\arm-none-eabi\10.3.1\include\stdint.h \
  c:\sysgcc\arm-eabi\arm-none-eabi\include\stdint.h \
@@ -91,8 +91,8 @@ VisualGDB/Debug/__BSP_ROOT__/nRF5x/components/libraries/timer/drv_rtc.o: \
  C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/libraries/log/nrf_log_types.h
 C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/modules/nrfx/nrfx.h:
 C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/integration/nrfx/nrfx_config.h:
-D:/ROOT/Programming/NRF/BLE_UART/sdk_config.h:
-D:/ROOT/Programming/NRF/BLE_UART/config.h:
+D:/ROOT/Programming/NRF/DrinkingDetection/BLE_UART/sdk_config.h:
+D:/ROOT/Programming/NRF/DrinkingDetection/BLE_UART/config.h:
 C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/modules/nrfx/drivers/nrfx_common.h:
 c:\sysgcc\arm-eabi\lib\gcc\arm-none-eabi\10.3.1\include\stdint.h:
 c:\sysgcc\arm-eabi\arm-none-eabi\include\stdint.h:

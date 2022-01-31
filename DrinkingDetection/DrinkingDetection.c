@@ -32,10 +32,10 @@ const uint8_t leds_list[LEDS_NUMBER] = LEDS_LIST;
 int main(void)
 {
     
-    APP_ERROR_CHECK(NRF_LOG_INIT(NULL));
-    NRF_LOG_DEFAULT_BACKENDS_INIT();
+   // APP_ERROR_CHECK(NRF_LOG_INIT(NULL));
+   // NRF_LOG_DEFAULT_BACKENDS_INIT();
 	
-    NRF_LOG_INFO("This is a log data from nrf");
+  //  NRF_LOG_INFO("This is a log data from nrf");
     nrf_gpio_cfg_input(BUTTON, NRF_GPIO_PIN_PULLUP);
     imu_init(&lsm6dsl_dev_ctx_t);
 
