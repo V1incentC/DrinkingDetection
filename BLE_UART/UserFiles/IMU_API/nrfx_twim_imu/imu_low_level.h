@@ -75,6 +75,25 @@ extern volatile bool m_xfer_done; /*!< Flag for indicating TWIM transfer event d
   * @{
   *
   */
+
+      
+/**
+ * \brief          Function for checking fifo transfer complete flag 
+ *
+ */      
+bool imu_ll_is_fifo_transfer_complete();
+
+/**
+ * \brief          Function for setting the fifo transfer complete flag 
+ *
+ */ 
+void imu_ll_set_fifo_transfer_complete();
+      
+/**
+ * \brief          Function for clearing the fifo transfer complete flag 
+ *
+ */ 
+void imu_ll_clear_fifo_transfer_complete();
       
 /**
   * @defgroup    IMU_LL_interfaces_functions

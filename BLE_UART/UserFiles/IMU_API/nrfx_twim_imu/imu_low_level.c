@@ -58,7 +58,20 @@ nrfx_twim_t const twim_t = NRFX_TWIM_INSTANCE(TWIM_INSTANCE_ID);
 
 volatile bool m_xfer_done = true, fifo_transfer_done = false; 
 
+bool imu_ll_is_fifo_transfer_complete()
+{
+    return fifo_transfer_done;
+}
 
+void imu_ll_set_fifo_transfer_complete()
+{
+    fifo_transfer_done = true;
+}
+
+void imu_ll_clear_fifo_transfer_complete()
+{
+    fifo_transfer_done = false;
+}
 
 static void merge_register_and_data(uint8_t * new_buffer, uint8_t reg, 
                                     uint8_t * p_data, size_t length)

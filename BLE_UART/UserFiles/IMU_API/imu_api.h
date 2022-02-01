@@ -57,6 +57,10 @@ extern stmdev_ctx_t lsm6dsl_dev_ctx_t;
       
 /** @brief Macro for defining size of the fifo buffer. */
 #define IMU_FIFO_SIZE 256
+      
+/** @brief Macro for defining how many fifo buffers should be read
+ ** after absolute wrist tilt detection. */
+#define IMU_NUM_OF_FIFO_BUFFERS_TO_READ 3
 /** @brief Macro for selecting the number of axis we want to read. */
 #define IMU_NUM_OF_AXIS 6
 /** @brief Macro for defining the size of the buffer array needed to store fifo data. */
@@ -71,7 +75,7 @@ extern stmdev_ctx_t lsm6dsl_dev_ctx_t;
 /** \brief   Macro for defining wake up threshold in activity/inactivity mode
   *           1 LSB = (FS_XL)/(2^6)  FS_XL as in full scale output eg. +- 2g
   */   
-#define IMU_WKUP_THRESHOLD  2   /* For +-2 1LSB = 31.25 mg */
+#define IMU_WKUP_THRESHOLD  5   /* For +-2 1LSB = 31.25 mg */
       
 /**
   * \brief           This is a union that holds data from 3 axis
@@ -105,6 +109,27 @@ extern imu_data_t imu_data;
   * \retval EXIT_SUCESS    Function completed sucessfully.
   */       
 uint8_t imu_activity_inactivity_setup(stmdev_ctx_t *ctx);
+
+      
+/**
+  * \brief           Function that enables activty/inactivity detection
+  * 
+  * \param[in]       ctx: IMU structure from lsm6dsl library
+  * 
+  * \retval EXIT_SUCESS    Function completed sucessfully.
+  */        
+uint8_t imu_activity_inactivity_enable(stmdev_ctx_t* ctx);
+      
+      
+/**
+  * \brief           Function that disables activty/inactivity detection
+  * 
+  * \param[in]       ctx: IMU structure from lsm6dsl library
+  * 
+  * \retval EXIT_SUCESS    Function completed sucessfully.
+  */        
+uint8_t imu_activity_inactivity_disable(stmdev_ctx_t* ctx);
+      
       
 /**
  * \brief              Function that configures the device for absolute wrist
@@ -176,6 +201,29 @@ uint8_t imu_is_fifo_full(stmdev_ctx_t* ctx);
   * \retval EXIT_SUCESS    Function completed sucessfully.
   */      
 uint8_t imu_fifo_mode(stmdev_ctx_t* ctx, uint16_t fifo_size); 
+
+      
+/**
+  * \brief           Function for enabling the device in çontinious to fifo mode
+  * 
+  * \param[in]       ctx:       IMU structure from lsm6dsl library
+  * \param[in]       fifo_size: Size of the fifo buffer we want to configure
+  * 
+  * \retval EXIT_SUCESS    Function completed sucessfully.
+  */  
+uint8_t imu_continious_to_fifo_setup(stmdev_ctx_t* ctx, uint16_t fifo_size);
+      
+      
+/**
+  * \brief           Function for reading and parsing the fifo data.
+  * 
+  * \param[in]       ctx:       IMU structure from lsm6dsl library
+  * \param[in]       data:      Pointer to imu_data_t struct
+  *                             where parsed data is stored
+  * 
+  * \retval EXIT_SUCESS    Function completed sucessfully.
+  */  
+uint8_t imu_read_fifo(stmdev_ctx_t* ctx, imu_data_t* data);
       
 /**
   * \brief           Function for configuring the fifo buffer of the device
@@ -218,8 +266,18 @@ uint8_t imu_restore_default_configuration(stmdev_ctx_t* ctx);
  * 
  */      
 void imu_handle_fifo_transfer_done();   
+
       
-      
+/**
+ * \brief           Function for creating the features for drinking detection and
+ *                  using the machine learning model for drinking predicitons.
+ * 
+ * \param[in]       data:   Pointer to imu_data_t struct containing sensor samples
+ * \param[in]       result: Pointer to an array of 2 elements holding the prediciton reusults
+ * 
+ * \retval EXIT_SUCESS    Function completed sucessfully.
+ */
+void imu_predict(imu_data_t* data, float* result);     
 /**
  * \brief           Function for initializing the IMU device
  * 
@@ -227,13 +285,25 @@ void imu_handle_fifo_transfer_done();
  */
 void imu_init(stmdev_ctx_t* ctx);
       
+
+/**
+ * \brief           Function for handling events on INT2 pin of IMU
+ * 
+ */      
+void imu_handle_int2();
+/**
+ * \brief           Function for handling events on INT1 pin of IMU
+ * 
+ */      
+void imu_handle_int1();
+/**
+ * \brief           Function for reading fifo data and printing predicitons
+ * 
+ */      
+void imu_handle_drinking_detection();
       
-      void imu_polling_and_ble_transfer(stmdev_ctx_t* dev_ctx);
-      void imu_polling_init(stmdev_ctx_t* dev_ctx);
-      void imu_read_fifo(stmdev_ctx_t* ctx, imu_data_t* data);
-      void imu_predict(imu_data_t* data, float* result);
       
-      uint8_t imu_continious_to_fifo_setup(stmdev_ctx_t* ctx, uint16_t fifo_size);
+      
 /**
   * @}
   */ 

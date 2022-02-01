@@ -43,6 +43,16 @@ uint8_t imu_activity_inactivity_setup(stmdev_ctx_t *ctx)
     
     return EXIT_SUCCESS;
 }
+uint8_t imu_activity_inactivity_enable(stmdev_ctx_t* ctx)
+{
+    lsm6dsl_act_mode_set(ctx, LSM6DSL_XL_12Hz5_GY_PD);
+}
+
+
+uint8_t imu_activity_inactivity_disable(stmdev_ctx_t* ctx)
+{
+    lsm6dsl_act_mode_set(ctx, LSM6DSL_PROPERTY_DISABLE);
+}
 
 
 static uint8_t convert_angle_to_int(double angle)
@@ -359,11 +369,11 @@ static void imu_parse_data_buffer(imu_data_t* data)
         ble_send_string(print_buffer, len);                                                            
         //printf("%d", fifo_data[i]);
     } 
-    
+   
 }
 
 
-void imu_read_fifo(stmdev_ctx_t* ctx,imu_data_t* data)
+uint8_t imu_read_fifo(stmdev_ctx_t* ctx,imu_data_t* data)
 {
     axis3bit16_t data_raw_acceleration;
     axis3bit16_t data_raw_gyroscope;
@@ -374,7 +384,8 @@ void imu_read_fifo(stmdev_ctx_t* ctx,imu_data_t* data)
     for (uint16_t i = 0; i < IMU_FIFO_SIZE; ++i)
     {
 
-				
+        /* Parsing gyroscope data*/	
+        
         memset(data_raw_gyroscope.u8bit, 0x00, data_width);
         lsm6dsl_fifo_raw_data_get(ctx, data_raw_gyroscope.u8bit, data_width);
         
@@ -391,7 +402,7 @@ void imu_read_fifo(stmdev_ctx_t* ctx,imu_data_t* data)
             lsm6dsl_from_fs500dps_to_mdps(data_raw_gyroscope.i16bit[2]) / 1000;
 
         
-        //acc code
+        /* Parsing accelerometer data*/
 
         memset(data_raw_acceleration.u8bit, 0, data_width);
         lsm6dsl_fifo_raw_data_get(ctx, data_raw_acceleration.u8bit, data_width);
@@ -407,13 +418,9 @@ void imu_read_fifo(stmdev_ctx_t* ctx,imu_data_t* data)
         data->acc_z[i] = 
             
             lsm6dsl_from_fs2g_to_mg(data_raw_acceleration.i16bit[2]) / 1000;
-  
-                                                         
-        //printf("%d", fifo_data[i]);
     }
-    lsm6dsl_fifo_mode_set(ctx, LSM6DSL_BYPASS_MODE); /* resets buffer */
-    lsm6dsl_fifo_mode_set(ctx, LSM6DSL_FIFO_MODE);
-   // imu_fifo_reset_dev(ctx);
+    imu_fifo_reset_dev(ctx);
+
    
 //    for (uint16_t i = 0; i < IMU_FIFO_SIZE; ++i)
 //    {
@@ -430,47 +437,12 @@ void imu_read_fifo(stmdev_ctx_t* ctx,imu_data_t* data)
 //        ble_send_string(print_buffer, len);   
 //        
 //    }
+    return EXIT_SUCCESS;
     
 }
 
-void fill_features_array(imu_data_t* data, float* features)
-{
-    
-    float *axis[6] = { data->acc_x, data->acc_y, data->acc_x,
-                        data->gyr_x, data->gyr_y, data->gyr_z };
-   
-    const uint8_t raw_feature_offset      = 13,
-                    frequency_feature_offset = 36,
-                    all_raw_length           = 78;
-        
-    for (uint16_t i = 0; i < 6; i++)
-    {
-        mlf_fill_raw_drinking_features(&features[i * raw_feature_offset],
-                                        axis[i],
-                                        IMU_FIFO_SIZE);
-    }
-    for (uint16_t i = 0; i < 6; i++)
-    {
-        mlf_fill_frequency_eating_features(
-            &features[i * frequency_feature_offset + all_raw_length],
-            axis[i],
-            IMU_FIFO_SIZE);
-    }
-}
 
-void imu_predict(imu_data_t* data, float* result)
-{
-    float features[MLF_NUM_OF_FEATURES] = { 0 };
-    
-    fill_features_array(data, features);
-    
-    score(features, result);
-    
-    
-}
 float result[2];
-
-
 void imu_handle_fifo_transfer_done()
 {
     static uint8_t counter = 0;
@@ -520,6 +492,49 @@ void imu_handle_fifo_transfer_done()
         __WFE();
     }*/
 }
+
+
+void fill_features_array(imu_data_t* data, float* features)
+{
+    
+    float *axis[6] = {
+        data->acc_x,
+        data->acc_y,
+        data->acc_x,
+        data->gyr_x,
+        data->gyr_y,
+        data->gyr_z
+    };
+   
+    const uint8_t raw_feature_offset       = 13,
+                  frequency_feature_offset = 36,
+                  all_raw_length           = 78;
+        
+    for (uint16_t i = 0; i < 6; i++)
+    {
+        mlf_fill_raw_drinking_features(&features[i * raw_feature_offset],
+            axis[i],
+            IMU_FIFO_SIZE);
+    }
+    for (uint16_t i = 0; i < 6; i++)
+    {
+        mlf_fill_frequency_eating_features(
+            &features[i * frequency_feature_offset + all_raw_length],
+            axis[i],
+            IMU_FIFO_SIZE);
+    }
+}
+
+void imu_predict(imu_data_t* data, float* result)
+{
+    float features[MLF_NUM_OF_FEATURES] = { 0 };
+    
+    fill_features_array(data, features);
+    
+    score(features, result);
+}
+
+
 void imu_init(stmdev_ctx_t* ctx)
 {
   
@@ -529,12 +544,7 @@ void imu_init(stmdev_ctx_t* ctx)
     
     imu_ll_gpio_init();         /* Initialize inputs and interrupts used for the IMU */
     imu_ll_twi_master_init();   /* Initialize TWI pins and frequency, enable TWI */
-    /* Set up the dma transfer */
 
-//      imu_ll_twim_dma_init(IMU_LL_INT1,
-//                           LSM6DSL_FIFO_DATA_OUT_L,
-//                           imu_data_buffer, IMU_BUFFER_SIZE);
-    
     /* Check id and reset device */
     imu_device_check(p_lsm6dsl_dev_ctx_t);
     
@@ -549,17 +559,7 @@ void imu_init(stmdev_ctx_t* ctx)
     };
     lsm6dsl_pin_int1_route_set(p_lsm6dsl_dev_ctx_t, int1);
     
-    lsm6dsl_int2_route_t int2_route =
-    { 
-        ///.int2_wrist_tilt = PROPERTY_ENABLE,
-        //.int2_inact_state = PROPERTY_ENABLE,
-        .int2_drdy_xl = PROPERTY_DISABLE
-            
-    };
-    //lsm6dsl_pin_int2_route_set(p_lsm6dsl_dev_ctx_t, int2_route);
     
-
-
     imu_activity_inactivity_setup(p_lsm6dsl_dev_ctx_t);
     
     lsm6dsl_a_wrist_tilt_mask_t wrist_tilt_mask =
@@ -569,115 +569,136 @@ void imu_init(stmdev_ctx_t* ctx)
     };
     /* The lsm6dsl.c code has a bug in wrist tilt mask set
      * (watch out if you're installing a fresh library */
-    imu_absolte_wrist_tilt_setup(p_lsm6dsl_dev_ctx_t, 120, &wrist_tilt_mask, 30);
-    
-   // imu_continious_to_fifo_setup(p_lsm6dsl_dev_ctx_t, IMU_FIFO_SIZE);
-    /*TEMPORARY CODE*/
-    /* Accelerometer - LPF1 path ( LPF2 not used )
-    lsm6dsl_xl_filter_analog_set(p_lsm6dsl_dev_ctx_t, LSM6DSL_XL_ANA_BW_400Hz);
-    
-    lsm6dsl_xl_lp2_bandwidth_set(p_lsm6dsl_dev_ctx_t,
-                                 LSM6DSL_XL_LOW_NOISE_LP_ODR_DIV_100);
-    
-    lsm6dsl_gy_band_pass_set(p_lsm6dsl_dev_ctx_t, LSM6DSL_HP_260mHz_LP1_STRONG);*/
-
-    
-
-                       
-}
-
-void imu_polling_init(stmdev_ctx_t* dev_ctx)
-{
-
-    
-    static uint8_t whoamI, rst;
-    dev_ctx->write_reg = *(stmdev_read_ptr)  imu_ll_platform_write;
-    dev_ctx->read_reg = *(stmdev_read_ptr)  imu_ll_platform_read;
-    
-    imu_ll_gpio_init(); /* Initialize inputs and interrupts used for the IMU */
-    imu_ll_twi_master_init(); /* Initialize TWI pins and frequency, enable TWI */
-    
-    imu_device_check(dev_ctx);
-
-    /* Enable Block Data Update */
-    lsm6dsl_block_data_update_set(dev_ctx, PROPERTY_ENABLE);
-    /* Set power modes for accelerometer and gyroscope */
-    lsm6dsl_xl_power_mode_set(dev_ctx, LSM6DSL_XL_NORMAL);
-    lsm6dsl_gy_power_mode_set(dev_ctx, LSM6DSL_GY_NORMAL); 
-    
-    /* Set Output Data Rate and full scale for accelerometer */
-    lsm6dsl_xl_data_rate_set(dev_ctx, LSM6DSL_XL_ODR_12Hz5);
-    lsm6dsl_xl_full_scale_set(dev_ctx, LSM6DSL_2g);
-    
-    /* Set Output Data Rate and full scale for gyroscope */
-    lsm6dsl_gy_data_rate_set(dev_ctx, LSM6DSL_GY_ODR_12Hz5);
-    lsm6dsl_gy_full_scale_set(dev_ctx, LSM6DSL_500dps);
-    
-    /* Configure filtering chain(No aux interface) */
-    /* Accelerometer - analog filter */
-    lsm6dsl_xl_filter_analog_set(dev_ctx, LSM6DSL_XL_ANA_BW_400Hz);
-    /* Accelerometer - LPF1 path ( LPF2 not used )*/
-    //lsm6dsl_xl_lp1_bandwidth_set(&dev_ctx, LSM6DSL_XL_LP1_ODR_DIV_4);
-    /* Accelerometer - LPF1 + LPF2 path */
-    lsm6dsl_xl_lp2_bandwidth_set(dev_ctx,
-        LSM6DSL_XL_LOW_NOISE_LP_ODR_DIV_100);
-    /* Accelerometer - High Pass / Slope path */
-    //lsm6dsl_xl_reference_mode_set(&dev_ctx, PROPERTY_DISABLE);
-    //lsm6dsl_xl_hp_bandwidth_set(&dev_ctx, LSM6DSL_XL_HP_ODR_DIV_100);
-    /* Gyroscope - filtering chain */
-    lsm6dsl_gy_band_pass_set(dev_ctx, LSM6DSL_HP_260mHz_LP1_STRONG);
+    imu_absolte_wrist_tilt_setup(p_lsm6dsl_dev_ctx_t, 120, &wrist_tilt_mask, 30);                     
 }
 
 
-static int16_t data_raw_acceleration[3];
-static int16_t data_raw_angular_rate[3];
-static int16_t data_raw_temperature;
-static float acceleration_mg[3];
-static float angular_rate_mdps[3];
 
-void imu_polling_and_ble_transfer(stmdev_ctx_t* dev_ctx)
+static uint8_t counter = 0;
+
+static bool fifo_enable = 0;
+
+void imu_handle_int2()
 {
-    /* Read output only if new value is available */
-    lsm6dsl_reg_t reg;
-    lsm6dsl_status_reg_get(dev_ctx, &reg.status_reg);
-    char print_buffer[250];
-    uint8_t len;
+    lsm6dsl_all_sources_t lsm6dsl_int_src;
+
+    lsm6dsl_all_sources_get(&lsm6dsl_dev_ctx_t, &lsm6dsl_int_src);
+   
+    
+    if (lsm6dsl_int_src.a_wrist_tilt_mask.wrist_tilt_mask_xneg == 1)
+    {
+        counter = 0;
+        fifo_enable = 1;
+        lsm6dsl_int1_route_t int1;
+       
+        int1.int1_full_flag = PROPERTY_ENABLE;
+        int1.int1_inact_state = PROPERTY_DISABLE;
+        int1.int1_drdy_xl = PROPERTY_DISABLE;
+        
+        lsm6dsl_pin_int1_route_set(&lsm6dsl_dev_ctx_t, int1);
+        
+        imu_activity_inactivity_disable(&lsm6dsl_dev_ctx_t);
+    }    
+}
+
+void imu_handle_int1()
+{
 
     
+    lsm6dsl_all_sources_t lsm6dsl_int_src;
+    lsm6dsl_int1_route_t int1;
+    lsm6dsl_int2_route_t int2_route;
     
-    if (reg.status_reg.xlda) {
-      /* Read magnetic field data */
-      memset(data_raw_acceleration, 0x00, 3 * sizeof(int16_t));
-      lsm6dsl_acceleration_raw_get(&dev_ctx, data_raw_acceleration);
-      acceleration_mg[0] = lsm6dsl_from_fs2g_to_mg(
-                             data_raw_acceleration[0]);
-      acceleration_mg[1] = lsm6dsl_from_fs2g_to_mg(
-                             data_raw_acceleration[1]);
-      acceleration_mg[2] = lsm6dsl_from_fs2g_to_mg(
-                             data_raw_acceleration[2]);
+    lsm6dsl_all_sources_get(&lsm6dsl_dev_ctx_t, &lsm6dsl_int_src);
+   
+    if ((lsm6dsl_int_src.wake_up_src.wu_ia == 1) && (!fifo_enable))
+    {
+
+        int2_route.int2_wrist_tilt = PROPERTY_ENABLE;
+        int2_route.int2_drdy_xl = PROPERTY_DISABLE;
+
+        lsm6dsl_pin_int2_route_set(&lsm6dsl_dev_ctx_t, int2_route);
+        
+        imu_continious_to_fifo_setup(&lsm6dsl_dev_ctx_t, IMU_FIFO_SIZE);
+        
+
+            
+    }
+    else if (lsm6dsl_int_src.wake_up_src.sleep_state_ia == 1)
+    {
+
+        int2_route.int2_wrist_tilt = PROPERTY_DISABLE;
+        int2_route.int2_drdy_xl = PROPERTY_DISABLE;
+        
+        lsm6dsl_pin_int2_route_set(&lsm6dsl_dev_ctx_t, int2_route);
+        
+        
+        
+        lsm6dsl_fifo_mode_set(&lsm6dsl_dev_ctx_t, LSM6DSL_BYPASS_MODE);
+        fifo_enable = 0;
+        
 
     }
+    
+    if (imu_is_fifo_full(&lsm6dsl_dev_ctx_t))
+    {
+        ++counter;  
+        if (counter > IMU_NUM_OF_FIFO_BUFFERS_TO_READ)
+        {
+            imu_ll_set_fifo_transfer_complete();
+            
+            int1.int1_full_flag = PROPERTY_DISABLE;
+            int1.int1_inact_state = PROPERTY_ENABLE;
+            int1.int1_drdy_xl = PROPERTY_DISABLE;
+            
+            lsm6dsl_pin_int1_route_set(&lsm6dsl_dev_ctx_t, int1);
+            imu_activity_inactivity_enable(&lsm6dsl_dev_ctx_t);
+            NRF_LOG_INFO("FIFO over");
+            counter = 0;
 
-    if (reg.status_reg.gda) {
-      /* Read magnetic field data */
-      memset(data_raw_angular_rate, 0x00, 3 * sizeof(int16_t));
-      lsm6dsl_angular_rate_raw_get(&dev_ctx, data_raw_angular_rate);
-      angular_rate_mdps[0] = lsm6dsl_from_fs2000dps_to_mdps(
-                               data_raw_angular_rate[0]);
-      angular_rate_mdps[1] = lsm6dsl_from_fs2000dps_to_mdps(
-                               data_raw_angular_rate[1]);
-      angular_rate_mdps[2] = lsm6dsl_from_fs2000dps_to_mdps(
-                               data_raw_angular_rate[2]);
-        len = sprintf(print_buffer,
-            " %f, %f, %f, %f, %f, %f \n",
-            acceleration_mg[0],
-            acceleration_mg[1],
-            acceleration_mg[2],
-            angular_rate_mdps[0],
-            angular_rate_mdps[1],
-            angular_rate_mdps[2]);
+        }
+        else
+        {
+            
+            imu_ll_set_fifo_transfer_complete();
+        }
+    }    
+}
+
+void imu_handle_drinking_detection()
+{
+    uint8_t buffer[BLE_NUS_MAX_DATA_LEN];
+    uint8_t len;
+    float result[2];
+    
+    if (imu_ll_is_fifo_transfer_complete())
+    {
         
-        /* NRF_LOG_INFO("%s",print_buffer); */ 
-        ble_send_string(print_buffer, len);  
+        
+        imu_read_fifo(&lsm6dsl_dev_ctx_t, &imu_data);
+        
+        imu_ll_clear_fifo_transfer_complete();
+        imu_predict(&imu_data, result);
+
+        len = sprintf(buffer, "res[0] = %f  res[1] = %f \n", result[0], result[1]);
+        ble_send_string(buffer, len);
+        
+        
+        for (uint16_t i = 0; i < IMU_FIFO_SIZE; ++i)
+        {
+            len = sprintf(buffer,
+                " %f, %f, %f, %f, %f, %f \n",
+                imu_data.acc_x[i],
+                imu_data.acc_y[i],
+                imu_data.acc_z[i],
+                imu_data.gyr_x[i],
+                imu_data.gyr_y[i],
+                imu_data.gyr_z[i]);
+        
+            /* NRF_LOG_INFO("%s",print_buffer); */ 
+           // ble_send_string(buffer, len);   
+        
+        }
+            
     }
 }

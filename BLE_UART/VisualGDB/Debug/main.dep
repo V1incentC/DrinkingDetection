@@ -138,20 +138,7 @@ VisualGDB/Debug/main.o: main.c \
  C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/libraries/log/nrf_log_backend_interface.h \
  C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/libraries/memobj/nrf_memobj.h \
  C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/libraries/balloc/nrf_balloc.h \
- C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/libraries/log/nrf_log_default_backends.h \
- UserFiles/DSP/Include/arm_math.h \
- C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/toolchain/cmsis/include/cmsis_compiler.h \
- c:\sysgcc\arm-eabi\lib\gcc\arm-none-eabi\10.3.1\include\float.h \
- c:\sysgcc\arm-eabi\lib\gcc\arm-none-eabi\10.3.1\include-fixed\limits.h \
- c:\sysgcc\arm-eabi\lib\gcc\arm-none-eabi\10.3.1\include-fixed\syslimits.h \
- c:\sysgcc\arm-eabi\arm-none-eabi\include\limits.h \
- c:\sysgcc\arm-eabi\arm-none-eabi\include\sys\syslimits.h \
- C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/libraries/delay/nrf_delay.h \
- UserFiles/IMU_API/nrfx_twim_imu/imu_low_level.h \
- C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/modules/nrfx/drivers/include/nrfx_twim.h \
- C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/modules/nrfx/drivers/include/nrfx_twi_twim.h \
- C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/modules/nrfx/hal/nrf_twim.h \
- C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/boards/pca10056.h
+ C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/libraries/log/nrf_log_default_backends.h
 c:\sysgcc\arm-eabi\lib\gcc\arm-none-eabi\10.3.1\include\stdint.h:
 c:\sysgcc\arm-eabi\arm-none-eabi\include\stdint.h:
 c:\sysgcc\arm-eabi\arm-none-eabi\include\machine\_default_types.h:
@@ -293,16 +280,3 @@ C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.
 C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/libraries/memobj/nrf_memobj.h:
 C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/libraries/balloc/nrf_balloc.h:
 C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/libraries/log/nrf_log_default_backends.h:
-UserFiles/DSP/Include/arm_math.h:
-C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/toolchain/cmsis/include/cmsis_compiler.h:
-c:\sysgcc\arm-eabi\lib\gcc\arm-none-eabi\10.3.1\include\float.h:
-c:\sysgcc\arm-eabi\lib\gcc\arm-none-eabi\10.3.1\include-fixed\limits.h:
-c:\sysgcc\arm-eabi\lib\gcc\arm-none-eabi\10.3.1\include-fixed\syslimits.h:
-c:\sysgcc\arm-eabi\arm-none-eabi\include\limits.h:
-c:\sysgcc\arm-eabi\arm-none-eabi\include\sys\syslimits.h:
-C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/libraries/delay/nrf_delay.h:
-UserFiles/IMU_API/nrfx_twim_imu/imu_low_level.h:
-C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/modules/nrfx/drivers/include/nrfx_twim.h:
-C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/modules/nrfx/drivers/include/nrfx_twi_twim.h:
-C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/modules/nrfx/hal/nrf_twim.h:
-C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/boards/pca10056.h:

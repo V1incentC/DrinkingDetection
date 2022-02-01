@@ -698,9 +698,7 @@ static void advertising_start(void)
 }
 /*******************************************************************************/
 
-#include "arm_math.h"
-#include "nrf_delay.h"
-#include  "imu_low_level.h"
+
 
 void ble_send_string(uint8_t* data, u_int16_t length)
 {
@@ -746,39 +744,13 @@ int main(void)
    // printf("\r\nUART started.\r\n");
     NRF_LOG_INFO("Debug logging for UART over RTT started.");
     advertising_start();
-    uint8_t buffer[BLE_NUS_MAX_DATA_LEN];
-    uint8_t len;
-    float result[2];
+
     
     // Enter main loop.
     for (;;)
     {
         //imu_handle_fifo_transfer_done();
-        if (fifo_transfer_done)
-        {
-            fifo_transfer_done = false;
-
-            imu_predict(&imu_data, result);
-
-            len = sprintf(buffer, "res[0] = %f  res[1] = %f \n", result[0], result[1]);
-            ble_send_string(buffer, len);
-            for (uint16_t i = 0; i < IMU_FIFO_SIZE; ++i)
-            {
-                len = sprintf(buffer,
-                    " %f, %f, %f, %f, %f, %f \n",
-                    imu_data.acc_x[i],
-                    imu_data.acc_y[i],
-                    imu_data.acc_z[i],
-                    imu_data.gyr_x[i],
-                    imu_data.gyr_y[i],
-                    imu_data.gyr_z[i]);
-        
-                /* NRF_LOG_INFO("%s",print_buffer); */ 
-               // ble_send_string(buffer, len);   
-        
-            }
-            
-        }
+        imu_handle_drinking_detection();
         idle_state_handle();
     }
 }
