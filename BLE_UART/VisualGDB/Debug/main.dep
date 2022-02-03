@@ -127,6 +127,14 @@ VisualGDB/Debug/main.o: main.c \
  C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/libraries/pwr_mgmt/nrf_pwr_mgmt.h \
  UserFiles/IMU_API/imu_api.h UserFiles/IMU_API/lsm6dsl/lsm6dsl_reg.h \
  c:\sysgcc\arm-eabi\arm-none-eabi\include\math.h \
+ UserFiles/IMU_API/nrfx_twim_imu/imu_low_level.h \
+ C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/modules/nrfx/drivers/include/nrfx_twim.h \
+ C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/modules/nrfx/drivers/include/nrfx_twi_twim.h \
+ C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/modules/nrfx/hal/nrf_twim.h \
+ C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/boards/pca10056.h \
+ C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/modules/nrfx/drivers/include/nrfx_gpiote.h \
+ C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/modules/nrfx/hal/nrf_gpiote.h \
+ C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/modules/nrfx/hal/nrf_gpio.h \
  C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/modules/nrfx/hal/nrf_uart.h \
  C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/modules/nrfx/hal/nrf_uarte.h \
  C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/libraries/log/nrf_log.h \
@@ -268,6 +276,14 @@ C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.
 UserFiles/IMU_API/imu_api.h:
 UserFiles/IMU_API/lsm6dsl/lsm6dsl_reg.h:
 c:\sysgcc\arm-eabi\arm-none-eabi\include\math.h:
+UserFiles/IMU_API/nrfx_twim_imu/imu_low_level.h:
+C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/modules/nrfx/drivers/include/nrfx_twim.h:
+C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/modules/nrfx/drivers/include/nrfx_twi_twim.h:
+C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/modules/nrfx/hal/nrf_twim.h:
+C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/boards/pca10056.h:
+C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/modules/nrfx/drivers/include/nrfx_gpiote.h:
+C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/modules/nrfx/hal/nrf_gpiote.h:
+C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/modules/nrfx/hal/nrf_gpio.h:
 C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/modules/nrfx/hal/nrf_uart.h:
 C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/modules/nrfx/hal/nrf_uarte.h:
 C:/Users/vincent/AppData/Local/VisualGDB/EmbeddedBSPs/arm-eabi/com.sysprogs.arm.nordic.nrf5x/nRF5x/components/libraries/log/nrf_log.h:

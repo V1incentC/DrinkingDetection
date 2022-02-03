@@ -14,7 +14,10 @@
 #include "imu_low_level.h"
 
 
-
+void push_button_handler(nrfx_gpiote_pin_t pin, nrf_gpiote_polarity_t action)
+{
+    imu_handle_push_button();
+}
 void int2_handler(nrfx_gpiote_pin_t pin, nrf_gpiote_polarity_t action)
 {
 

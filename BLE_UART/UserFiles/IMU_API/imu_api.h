@@ -284,8 +284,12 @@ void imu_predict(imu_data_t* data, float* result);
  * \param[in]       ctx: IMU structure from lsm6dsl library
  */
 void imu_init(stmdev_ctx_t* ctx);
-      
 
+/**
+  * \brief           Function for handling events on push button of the wristband
+  * 
+  */   
+void imu_handle_push_button();
 /**
  * \brief           Function for handling events on INT2 pin of IMU
  * 

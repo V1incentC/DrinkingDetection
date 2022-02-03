@@ -57,6 +57,7 @@
 #define IMU_LL_INT1 NRF_GPIO_PIN_MAP(0, 22)              //interrupts
 #define IMU_LL_INT2 NRF_GPIO_PIN_MAP(0, 25)              //interuppts
 #define IMU_LL_STATUS_LED NRF_GPIO_PIN_MAP(1, 14)        //led
+#define IMU_LL_PUSH_BUTTON NRF_GPIO_PIN_MAP(0,30)
 #endif 
 
 #if defined(DEVKIT)

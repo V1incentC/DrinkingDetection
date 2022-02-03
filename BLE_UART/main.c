@@ -70,7 +70,11 @@
 #include "app_util_platform.h"
 #include "bsp_btn_ble.h"
 #include "nrf_pwr_mgmt.h"
+
 #include "imu_api.h"
+#include "imu_low_level.h"
+#include "nrfx_gpiote.h"
+#include "nrf_gpio.h"
 
 #if defined (UART_PRESENT)
 #include "nrf_uart.h"
@@ -716,6 +720,8 @@ void ble_send_string(uint8_t* data, u_int16_t length)
     } while (err_code == NRF_ERROR_RESOURCES);
 }
 
+
+
 /**@brief Application main function.
  */
 int main(void)
@@ -740,9 +746,10 @@ int main(void)
 
     // Start execution.
     imu_init(&lsm6dsl_dev_ctx_t);
+
     //imu_polling_init(&lsm6dsl_dev_ctx_t);
    // printf("\r\nUART started.\r\n");
-    NRF_LOG_INFO("Debug logging for UART over RTT started.");
+    //NRF_LOG_INFO("Debug logging for UART over RTT started.");
     advertising_start();
 
     

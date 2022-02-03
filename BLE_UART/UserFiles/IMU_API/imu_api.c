@@ -574,9 +574,11 @@ void imu_init(stmdev_ctx_t* ctx)
 
 
 
-static uint8_t counter = 0;
+static uint8_t counter = 0, activity_counter = 0;
 
 static bool fifo_enable = 0;
+
+static bool sleep_mode = false;
 
 void imu_handle_int2()
 {
@@ -626,7 +628,7 @@ void imu_handle_int1()
     }
     else if (lsm6dsl_int_src.wake_up_src.sleep_state_ia == 1)
     {
-
+        
         int2_route.int2_wrist_tilt = PROPERTY_DISABLE;
         int2_route.int2_drdy_xl = PROPERTY_DISABLE;
         
@@ -636,7 +638,7 @@ void imu_handle_int1()
         
         lsm6dsl_fifo_mode_set(&lsm6dsl_dev_ctx_t, LSM6DSL_BYPASS_MODE);
         fifo_enable = 0;
-        
+        sleep_mode = true;
 
     }
     
@@ -655,7 +657,7 @@ void imu_handle_int1()
             imu_activity_inactivity_enable(&lsm6dsl_dev_ctx_t);
             NRF_LOG_INFO("FIFO over");
             counter = 0;
-
+           
         }
         else
         {
@@ -665,10 +667,34 @@ void imu_handle_int1()
     }    
 }
 
+static void print_sleep_mode()
+{
+    uint8_t buffer[BLE_NUS_MAX_DATA_LEN];
+    uint8_t len;
+    if (sleep_mode)
+    {
+        sleep_mode = false;
+        len = sprintf(buffer, "Sleep mode \n");
+        ble_send_string(buffer, len);        
+    }
+}
+
+
+void imu_handle_push_button()
+{
+    uint8_t buffer[BLE_NUS_MAX_DATA_LEN];
+    uint8_t len;
+    activity_counter = 0;
+    //len = sprintf(buffer, "Counter reset \n");
+   // ble_send_string(buffer, len);        
+     
+}
+
 void imu_handle_drinking_detection()
 {
     uint8_t buffer[BLE_NUS_MAX_DATA_LEN];
     uint8_t len;
+
     float result[2];
     
     if (imu_ll_is_fifo_transfer_complete())
@@ -679,10 +705,13 @@ void imu_handle_drinking_detection()
         
         imu_ll_clear_fifo_transfer_complete();
         imu_predict(&imu_data, result);
-
-        len = sprintf(buffer, "res[0] = %f  res[1] = %f \n", result[0], result[1]);
+        len = sprintf(buffer, "%d, %f, %f \n",activity_counter, result[0], result[1]);
+       
         ble_send_string(buffer, len);
-        
+        if (counter == 0)
+        {
+            ++activity_counter;
+        }
         
         for (uint16_t i = 0; i < IMU_FIFO_SIZE; ++i)
         {
@@ -701,4 +730,5 @@ void imu_handle_drinking_detection()
         }
             
     }
+    print_sleep_mode();
 }
