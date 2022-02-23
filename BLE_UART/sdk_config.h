@@ -1476,7 +1476,7 @@
 // <7=> 7 
 
 #ifndef GPIOTE_CONFIG_IRQ_PRIORITY
-#define GPIOTE_CONFIG_IRQ_PRIORITY 6
+#define GPIOTE_CONFIG_IRQ_PRIORITY 7
 #endif
 
 // </e>
@@ -2004,7 +2004,7 @@
 // <7=> 7 
 
 #ifndef NRFX_GPIOTE_CONFIG_IRQ_PRIORITY
-#define NRFX_GPIOTE_CONFIG_IRQ_PRIORITY 6
+#define NRFX_GPIOTE_CONFIG_IRQ_PRIORITY 7
 #endif
 
 // <e> NRFX_GPIOTE_CONFIG_LOG_ENABLED - Enables logging in the module.

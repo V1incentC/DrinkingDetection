@@ -31,13 +31,13 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">
     <GNUConfigurationType>Debug</GNUConfigurationType>
-    <ToolchainID>com.visualgdb.arm-eabi</ToolchainID>
-    <ToolchainVersion>10.3.1/10.2.90/r1</ToolchainVersion>
+    <ToolchainID>com.sysprogs.gnuarm.arm-eabi</ToolchainID>
+    <ToolchainVersion>7.3.1/8.0/r1</ToolchainVersion>
     <MCUPropertyListFile>$(ProjectDir)nrf5x.props</MCUPropertyListFile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">
-    <ToolchainID>com.visualgdb.arm-eabi</ToolchainID>
-    <ToolchainVersion>10.3.1/10.2.90/r1</ToolchainVersion>
+    <ToolchainID>com.sysprogs.gnuarm.arm-eabi</ToolchainID>
+    <ToolchainVersion>7.3.1/8.0/r1</ToolchainVersion>
     <MCUPropertyListFile>$(ProjectDir)nrf5x.props</MCUPropertyListFile>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">

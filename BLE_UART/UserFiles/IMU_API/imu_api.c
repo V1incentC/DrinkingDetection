@@ -589,15 +589,20 @@ void imu_handle_int2()
     
     if (lsm6dsl_int_src.a_wrist_tilt_mask.wrist_tilt_mask_xneg == 1)
     {
-        counter = 0;
+        
         fifo_enable = 1;
         lsm6dsl_int1_route_t int1;
-       
+        lsm6dsl_int2_route_t int2_route;
+        
         int1.int1_full_flag = PROPERTY_ENABLE;
         int1.int1_inact_state = PROPERTY_DISABLE;
-        int1.int1_drdy_xl = PROPERTY_DISABLE;
-        
+       // int1.int1_drdy_xl = PROPERTY_DISABLE;
         lsm6dsl_pin_int1_route_set(&lsm6dsl_dev_ctx_t, int1);
+        
+        int2_route.int2_wrist_tilt = PROPERTY_DISABLE;
+       // int2_route.int2_drdy_xl = PROPERTY_DISABLE;
+        lsm6dsl_pin_int2_route_set(&lsm6dsl_dev_ctx_t, int2_route);
+
         
         imu_activity_inactivity_disable(&lsm6dsl_dev_ctx_t);
     }    
@@ -615,12 +620,12 @@ void imu_handle_int1()
    
     if ((lsm6dsl_int_src.wake_up_src.wu_ia == 1) && (!fifo_enable))
     {
-
+        
         int2_route.int2_wrist_tilt = PROPERTY_ENABLE;
-        int2_route.int2_drdy_xl = PROPERTY_DISABLE;
+        //int2_route.int2_drdy_xl = PROPERTY_DISABLE;
 
         lsm6dsl_pin_int2_route_set(&lsm6dsl_dev_ctx_t, int2_route);
-        
+
         imu_continious_to_fifo_setup(&lsm6dsl_dev_ctx_t, IMU_FIFO_SIZE);
         
 
@@ -628,6 +633,8 @@ void imu_handle_int1()
     }
     else if (lsm6dsl_int_src.wake_up_src.sleep_state_ia == 1)
     {
+        fifo_enable = 0;
+        sleep_mode = true;
         
         int2_route.int2_wrist_tilt = PROPERTY_DISABLE;
         int2_route.int2_drdy_xl = PROPERTY_DISABLE;
@@ -637,12 +644,11 @@ void imu_handle_int1()
         
         
         lsm6dsl_fifo_mode_set(&lsm6dsl_dev_ctx_t, LSM6DSL_BYPASS_MODE);
-        fifo_enable = 0;
-        sleep_mode = true;
+
 
     }
     
-    if (imu_is_fifo_full(&lsm6dsl_dev_ctx_t))
+    if ((imu_is_fifo_full(&lsm6dsl_dev_ctx_t)) && (fifo_enable))
     {
         ++counter;  
         if (counter > IMU_NUM_OF_FIFO_BUFFERS_TO_READ)
@@ -654,6 +660,9 @@ void imu_handle_int1()
             int1.int1_drdy_xl = PROPERTY_DISABLE;
             
             lsm6dsl_pin_int1_route_set(&lsm6dsl_dev_ctx_t, int1);
+            
+
+            
             imu_activity_inactivity_enable(&lsm6dsl_dev_ctx_t);
             NRF_LOG_INFO("FIFO over");
             counter = 0;
@@ -675,7 +684,12 @@ static void print_sleep_mode()
     {
         sleep_mode = false;
         len = sprintf(buffer, "Sleep mode \n");
-        ble_send_string(buffer, len);        
+        //ble_send_string(buffer, len);        
+        nrf_gpio_pin_clear(IMU_LL_STATUS_LED);
+    }
+    else
+    {
+        nrf_gpio_pin_set(IMU_LL_STATUS_LED);
     }
 }
 
@@ -685,7 +699,7 @@ void imu_handle_push_button()
     uint8_t buffer[BLE_NUS_MAX_DATA_LEN];
     uint8_t len;
     activity_counter = 0;
-    //len = sprintf(buffer, "Counter reset \n");
+    //len = sprintf(buffer, "Counte3r reset \n");
    // ble_send_string(buffer, len);        
      
 }
@@ -694,23 +708,29 @@ void imu_handle_drinking_detection()
 {
     uint8_t buffer[BLE_NUS_MAX_DATA_LEN];
     uint8_t len;
-
+    lsm6dsl_int2_route_t int2_route;
     float result[2];
     
     if (imu_ll_is_fifo_transfer_complete())
     {
         
-        
+        imu_ll_clear_fifo_transfer_complete();
         imu_read_fifo(&lsm6dsl_dev_ctx_t, &imu_data);
         
-        imu_ll_clear_fifo_transfer_complete();
+        
         imu_predict(&imu_data, result);
-        len = sprintf(buffer, "%d, %f, %f \n",activity_counter, result[0], result[1]);
+        len = sprintf(buffer, "%d,%f,%f \n",activity_counter, result[0], result[1]);
        
         ble_send_string(buffer, len);
         if (counter == 0)
         {
             ++activity_counter;
+            
+            int2_route.int2_wrist_tilt = PROPERTY_ENABLE;
+            int2_route.int2_drdy_xl = PROPERTY_DISABLE;
+        
+            lsm6dsl_pin_int2_route_set(&lsm6dsl_dev_ctx_t, int2_route);
+            
         }
         
         for (uint16_t i = 0; i < IMU_FIFO_SIZE; ++i)
