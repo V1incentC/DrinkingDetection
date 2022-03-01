@@ -49,7 +49,7 @@
 #define IMU_LL_SCL        NRF_GPIO_PIN_MAP(1, 5)         //clock line
 #define IMU_LL_SDA        NRF_GPIO_PIN_MAP(1, 6)         //data line
 #define IMU_LL_INT1       NRF_GPIO_PIN_MAP(1, 7)         //for interrupts
-#define IMU_LL_INT2       NRF_GPIO_PIN_MAP(1, 8)         //for interuppts
+#define IMU_LL_INT2       NRF_GPIO_PIN_MAP(0, 3)         //for interuppts
 #define IMU_LL_STATUS_LED NRF_GPIO_PIN_MAP(0,13)                          //led
 #define IMU_LL_PUSH_BUTTON NRF_GPIO_PIN_MAP(0,11)      
 #else

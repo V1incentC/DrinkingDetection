@@ -16,15 +16,21 @@
 
 void push_button_handler(nrfx_gpiote_pin_t pin, nrf_gpiote_polarity_t action)
 {
-    imu_handle_push_button();
+    //imu_handle_push_button();
 }
 void int2_handler(nrfx_gpiote_pin_t pin, nrf_gpiote_polarity_t action)
 {
-
-    imu_handle_int2();
+    if (pin == IMU_LL_INT2)
+    {
+        imu_handle_int2();    
+    }
+    
 }
 
 void int1_handler(nrfx_gpiote_pin_t pin, nrf_gpiote_polarity_t action)
 {
-    imu_handle_int1(); 
+    if (pin == IMU_LL_INT1)
+    {    
+        imu_handle_int1(); 
+    }
 }

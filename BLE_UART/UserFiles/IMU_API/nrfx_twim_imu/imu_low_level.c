@@ -299,7 +299,7 @@ void imu_ll_gpio_init()
     err_code = nrfx_gpiote_in_init(IMU_LL_PUSH_BUTTON, &in_config_t, push_button_handler);
     APP_ERROR_CHECK(err_code);
     /*Enable interrupt event*/
-    nrfx_gpiote_in_event_enable(IMU_LL_PUSH_BUTTON, true);
+    //nrfx_gpiote_in_event_enable(IMU_LL_PUSH_BUTTON, false);
     
    /*Configure BSP LED or wristband LED depending on .h file setup*/
     nrf_gpio_cfg_output(IMU_LL_STATUS_LED);
