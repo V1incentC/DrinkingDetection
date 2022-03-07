@@ -570,7 +570,7 @@ void imu_init(stmdev_ctx_t* ctx)
     };
     /* The lsm6dsl.c code has a bug in wrist tilt mask set
      * (watch out if you're installing a fresh library */
-    imu_absolte_wrist_tilt_setup(p_lsm6dsl_dev_ctx_t, 120, &wrist_tilt_mask, 30);                     
+    imu_absolte_wrist_tilt_setup(p_lsm6dsl_dev_ctx_t, 320, &wrist_tilt_mask, 15);                     
 }
 
 
@@ -593,7 +593,7 @@ void imu_handle_int2()
     lsm6dsl_all_sources_get(&lsm6dsl_dev_ctx_t, &lsm6dsl_int_src);
    
     
-    if (lsm6dsl_int_src.a_wrist_tilt_mask.wrist_tilt_mask_xneg == 1)
+    if ((lsm6dsl_int_src.a_wrist_tilt_mask.wrist_tilt_mask_xneg == 1) || (lsm6dsl_int_src.a_wrist_tilt_mask.wrist_tilt_mask_xpos == 1))
     {
         
         fifo_enable = 1;
@@ -707,14 +707,34 @@ static void print_sleep_mode()
     }
 }
 
-
+volatile bool right_handed_person = true;
+volatile bool print_hand_orientation = false;
 void imu_handle_push_button()
 {
     uint8_t buffer[BLE_NUS_MAX_DATA_LEN];
     uint8_t len;
+    
+    lsm6dsl_a_wrist_tilt_mask_t wrist_tilt_mask;
+    memset(&wrist_tilt_mask, 0, sizeof(wrist_tilt_mask));
+    
+    print_hand_orientation = true;
     activity_counter = 0;
-    //len = sprintf(buffer, "Counte3r reset \n");
-   // ble_send_string(buffer, len);        
+    if (right_handed_person)
+    {
+        right_handed_person = false;
+        wrist_tilt_mask.wrist_tilt_mask_xpos = PROPERTY_ENABLE;
+        wrist_tilt_mask.wrist_tilt_mask_xneg = PROPERTY_DISABLE;
+        imu_absolte_wrist_tilt_setup(p_lsm6dsl_dev_ctx_t, 320, &wrist_tilt_mask, 15);
+
+    }
+    else
+    {
+        right_handed_person = true;
+        wrist_tilt_mask.wrist_tilt_mask_xpos = PROPERTY_DISABLE;
+        wrist_tilt_mask.wrist_tilt_mask_xneg = PROPERTY_ENABLE;
+        imu_absolte_wrist_tilt_setup(p_lsm6dsl_dev_ctx_t, 320, &wrist_tilt_mask, 15);
+
+    }
      
 }
 
@@ -765,4 +785,12 @@ void imu_handle_drinking_detection()
             
     }
     print_sleep_mode();
+    if (print_hand_orientation)
+    {
+        print_hand_orientation = false;
+        len = sprintf(buffer, "%s",right_handed_person ? "right handed \n" : "left_handed \n");
+       
+        ble_send_string(buffer, len);
+        
+    }
 }

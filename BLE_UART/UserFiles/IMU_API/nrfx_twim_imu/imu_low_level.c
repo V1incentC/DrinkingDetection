@@ -295,12 +295,14 @@ void imu_ll_gpio_init()
     nrfx_gpiote_in_event_enable(IMU_LL_INT2, true);
     
     in_config_t.pull = NRF_GPIO_PIN_PULLUP;
+    in_config_t.sense = NRF_GPIOTE_POLARITY_HITOLO;
     /*Configure pin to sense push button of the wristband*/
     err_code = nrfx_gpiote_in_init(IMU_LL_PUSH_BUTTON, &in_config_t, push_button_handler);
     APP_ERROR_CHECK(err_code);
     /*Enable interrupt event*/
-    //nrfx_gpiote_in_event_enable(IMU_LL_PUSH_BUTTON, false);
+    nrfx_gpiote_in_event_enable(IMU_LL_PUSH_BUTTON, true);
     
+
    /*Configure BSP LED or wristband LED depending on .h file setup*/
     nrf_gpio_cfg_output(IMU_LL_STATUS_LED);
     nrf_gpio_pin_clear(IMU_LL_STATUS_LED);

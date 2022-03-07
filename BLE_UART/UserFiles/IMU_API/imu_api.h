@@ -75,7 +75,7 @@ extern stmdev_ctx_t lsm6dsl_dev_ctx_t;
 /** \brief   Macro for defining wake up threshold in activity/inactivity mode
   *           1 LSB = (FS_XL)/(2^6)  FS_XL as in full scale output eg. +- 2g
   */   
-#define IMU_WKUP_THRESHOLD  5   /* For +-2 1LSB = 31.25 mg */
+#define IMU_WKUP_THRESHOLD  3   /* For +-2 1LSB = 31.25 mg */
       
 /**
   * \brief           This is a union that holds data from 3 axis

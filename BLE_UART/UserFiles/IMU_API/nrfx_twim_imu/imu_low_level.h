@@ -43,7 +43,7 @@
 #include "nrf_gpio.h"
 #include "pca10056.h"
 
-#define DEVKIT /*Comment out if you're using the wristband*/
+//#define DEVKIT /*Comment out if you're using the wristband*/
 
 #if defined(DEVKIT)
 #define IMU_LL_SCL        NRF_GPIO_PIN_MAP(1, 5)         //clock line
