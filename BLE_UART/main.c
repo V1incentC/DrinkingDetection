@@ -96,7 +96,7 @@
 
 #define APP_ADV_INTERVAL                64                                          /**< The advertising interval (in units of 0.625 ms. This value corresponds to 40 ms). */
 
-#define APP_ADV_DURATION                100                                       /**< The advertising duration (180 seconds) in units of 10 milliseconds. */
+#define APP_ADV_DURATION                1000                                       /**< The advertising duration (180 seconds) in units of 10 milliseconds. */
 
 #define MIN_CONN_INTERVAL               MSEC_TO_UNITS(300, UNIT_1_25_MS)             /**< Minimum acceptable connection interval (20 ms), Connection interval uses 1.25 ms units. */
 #define MAX_CONN_INTERVAL               MSEC_TO_UNITS(1000, UNIT_1_25_MS)             /**< Maximum acceptable connection interval (75 ms), Connection interval uses 1.25 ms units. */
@@ -650,7 +650,7 @@ static void buttons_leds_init(bool * p_erase_bonds)
     bsp_event_t startup_event;
 
     uint32_t err_code = bsp_init(BSP_INIT_LEDS | BSP_INIT_BUTTONS, bsp_event_handler);
-    APP_ERROR_CHECK(err_code);
+   // APP_ERROR_CHECK(err_code);
 
     err_code = bsp_btn_ble_init(NULL, &startup_event);
     APP_ERROR_CHECK(err_code);
@@ -735,7 +735,7 @@ int main(void)
    // uart_init();
     //log_init();
     timers_init();
-    //buttons_leds_init(&erase_bonds);
+    
     power_management_init();
     ble_stack_init();
     gap_params_init();
@@ -743,10 +743,12 @@ int main(void)
     services_init();
     advertising_init();
     conn_params_init();
-
+   // buttons_leds_init(&erase_bonds);
     // Start execution.
     imu_init(&lsm6dsl_dev_ctx_t);
+    
 
+    
     //imu_polling_init(&lsm6dsl_dev_ctx_t);
    // printf("\r\nUART started.\r\n");
     //NRF_LOG_INFO("Debug logging for UART over RTT started.");

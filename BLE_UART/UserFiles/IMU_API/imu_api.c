@@ -551,7 +551,9 @@ void imu_init(stmdev_ctx_t* ctx)
     
     lsm6dsl_block_data_update_set(p_lsm6dsl_dev_ctx_t, PROPERTY_ENABLE);
     lsm6dsl_auto_increment_set(p_lsm6dsl_dev_ctx_t, PROPERTY_ENABLE);
-      
+    lsm6dsl_xl_lp1_bandwidth_set(p_lsm6dsl_dev_ctx_t, LSM6DSL_XL_LP1_ODR_DIV_4);
+    lsm6dsl_gy_band_pass_set(p_lsm6dsl_dev_ctx_t, LSM6DSL_HP_DISABLE_LP1_NORMAL);
+    
     lsm6dsl_int1_route_t int1 =
     { 
         .int1_full_flag = PROPERTY_DISABLE,
@@ -570,7 +572,7 @@ void imu_init(stmdev_ctx_t* ctx)
     };
     /* The lsm6dsl.c code has a bug in wrist tilt mask set
      * (watch out if you're installing a fresh library */
-    imu_absolte_wrist_tilt_setup(p_lsm6dsl_dev_ctx_t, 320, &wrist_tilt_mask, 15);                     
+    imu_absolte_wrist_tilt_setup(p_lsm6dsl_dev_ctx_t, 120, &wrist_tilt_mask, 15);                     
 }
 
 
@@ -718,13 +720,14 @@ void imu_handle_push_button()
     memset(&wrist_tilt_mask, 0, sizeof(wrist_tilt_mask));
     
     print_hand_orientation = true;
+    /*
     activity_counter = 0;
     if (right_handed_person)
     {
         right_handed_person = false;
         wrist_tilt_mask.wrist_tilt_mask_xpos = PROPERTY_ENABLE;
         wrist_tilt_mask.wrist_tilt_mask_xneg = PROPERTY_DISABLE;
-        imu_absolte_wrist_tilt_setup(p_lsm6dsl_dev_ctx_t, 320, &wrist_tilt_mask, 15);
+        imu_absolte_wrist_tilt_setup(p_lsm6dsl_dev_ctx_t, 120, &wrist_tilt_mask, 15);
 
     }
     else
@@ -732,10 +735,10 @@ void imu_handle_push_button()
         right_handed_person = true;
         wrist_tilt_mask.wrist_tilt_mask_xpos = PROPERTY_DISABLE;
         wrist_tilt_mask.wrist_tilt_mask_xneg = PROPERTY_ENABLE;
-        imu_absolte_wrist_tilt_setup(p_lsm6dsl_dev_ctx_t, 320, &wrist_tilt_mask, 15);
+        imu_absolte_wrist_tilt_setup(p_lsm6dsl_dev_ctx_t, 120, &wrist_tilt_mask, 15);
 
     }
-     
+     */
 }
 
 void imu_handle_drinking_detection()
@@ -788,8 +791,8 @@ void imu_handle_drinking_detection()
     if (print_hand_orientation)
     {
         print_hand_orientation = false;
-        len = sprintf(buffer, "%s",right_handed_person ? "right handed \n" : "left_handed \n");
-       
+        //len = sprintf(buffer, "%s",right_handed_person ? "right handed \n" : "left_handed \n");
+        len = sprintf(buffer, "drinking \n");
         ble_send_string(buffer, len);
         
     }

@@ -278,7 +278,7 @@ void imu_ll_gpio_init()
 {
     ret_code_t err_code;
     err_code = nrfx_gpiote_init();
-    APP_ERROR_CHECK(err_code);
+    //APP_ERROR_CHECK(err_code);
     
     nrfx_gpiote_in_config_t in_config_t = NRFX_GPIOTE_CONFIG_IN_SENSE_LOTOHI(true);
     
@@ -290,7 +290,7 @@ void imu_ll_gpio_init()
     
     /*Configure pin to sense INT2 of LSM6DSL*/
     err_code = nrfx_gpiote_in_init(IMU_LL_INT2, &in_config_t, int2_handler);
-    APP_ERROR_CHECK(err_code);
+//    APP_ERROR_CHECK(err_code);
     /*Enable interrupt event*/
     nrfx_gpiote_in_event_enable(IMU_LL_INT2, true);
     
@@ -304,7 +304,7 @@ void imu_ll_gpio_init()
     
 
    /*Configure BSP LED or wristband LED depending on .h file setup*/
-    nrf_gpio_cfg_output(IMU_LL_STATUS_LED);
-    nrf_gpio_pin_clear(IMU_LL_STATUS_LED);
+   // nrf_gpio_cfg_output(IMU_LL_STATUS_LED);
+   // nrf_gpio_pin_clear(IMU_LL_STATUS_LED);
     NRF_LOG_INFO("GPIO config finished");
 }
